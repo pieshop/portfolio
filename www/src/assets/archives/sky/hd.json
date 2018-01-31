@@ -1,0 +1,20 @@
+[
+    {
+      "type" : "swf",
+        "id":      "unit1",
+        "url":     "/media/olm/sky/tigers/sky_tiger_mpu_640x360.swf",
+        "width":   "640",
+        "height":  "360",
+        "wmode":   "transparent",
+        "bgcolor": "#FFFFFF"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit2",
+        "url":     "/media/olm/sky/static/sky_static_hd_mpu.swf",
+        "width":   "640",
+        "height":  "360",
+        "wmode":   "transparent",
+        "bgcolor": "#FFFFFF"
+    }
+]

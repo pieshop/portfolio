@@ -1,0 +1,16 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/web/msn/videoviral/flash/media/Wrapper.swf",
+        "base":      "/media/web/msn/videoviral/",
+        "width":     "760",
+        "height":    "420",
+        "bgcolor":   "#000000",
+        "flashvars": {
+            "approot":    "flash/",
+            "configfile": "settings/config.xml",
+            "language":   "ENG"
+        }
+    }
+]

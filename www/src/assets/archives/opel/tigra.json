@@ -1,0 +1,19 @@
+[
+    {
+        "type": "swf",
+        "id": "unit1",
+        "url": "/media/web/opel/rendevous.swf",
+        "base": "/media/web/opel/",
+        "width": "742",
+        "height": "428",
+        "bgcolor": "#000000",
+        "flashvars": {
+            "journeyID": "1001",
+            "countryID": "gb",
+            "langID": "en",
+            "connectionType": "broad",
+            "flashURL": "/media/web/opel/",
+            "aspxURL": "/media/web/opel/"
+        }
+    }
+]

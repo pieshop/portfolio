@@ -1,0 +1,66 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "google"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs":true,
+    "es6":true,
+    "jquery":true,
+    "amd":true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  },
+  "rules": {
+    // Additional, per-project rules...
+    "max-len": [ 1,
+      {
+        "code": 260,
+        "tabWidth": 4,
+        "ignoreComments": true,
+        "ignoreUrls": true
+      }
+    ],
+    "no-unused-vars": 0,
+    "no-undef": 0,
+    "key-spacing": 0,
+    "no-multi-spaces": 0,
+    "no-trailing-spaces": 0,
+    "spaced-comment": [0, "always"],
+//    "comma-dangle": [1, "never"],
+    "comma-dangle": "off",
+    "comma-spacing": "off",
+    "padded-blocks": "off",
+    "no-extra-semi": "off",
+    "valid-jsdoc": "off",
+    "space-before-function-paren": [0, "always"],
+    "camelcase" : "off",
+    "object-curly-spacing" : "off",
+    "arrow-parens" : "off",
+    "no-console" : "off",
+    "quote-props": [2, "consistent-as-needed"],
+    "require-jsdoc": [0, "never"],
+    "react/jsx-no-bind": "off",
+    "switch-colon-spacing": "off",
+    "react/jsx-filename-extension": ["off", { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": "off"
+  },
+  "globals": {
+    "Modernizr": false,
+    "TweenMax": false,
+    "Power1": false,
+    "Power2": false
+  }
+}

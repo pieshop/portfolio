@@ -1,0 +1,38 @@
+[
+  {
+    "type": "swf",
+    "id": "tom_leader",
+    "url": "/media/olm/disney/tomorrowlandrich/leader/tom_leader_gb.swf",
+    "base": "/media/olm/disney/tomorrowlandrich/leader/",
+    "width": "728",
+    "height": "90",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "tom_vidburst",
+    "url": "/media/olm/disney/tomorrowlandrich/vidburst/mpu.swf",
+        "base": "/media/olm/disney/tomorrowlandrich/vidburst/",
+    "width": "300",
+    "height": "250",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "tom_mpu",
+    "url": "/media/olm/disney/tomorrowlandrich/mpu/tom_mpu_gb.swf",
+        "base": "/media/olm/disney/tomorrowlandrich/mpu/",
+    "width": "300",
+    "height": "250",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "tom_sky",
+    "url": "/media/olm/disney/tomorrowlandrich/sky/tom_sky_gb.swf",
+        "base": "/media/olm/disney/tomorrowlandrich/sky/",
+    "width": "160",
+    "height": "600",
+    "bgcolor": "#000000"
+  }
+]

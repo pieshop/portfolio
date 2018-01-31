@@ -1,0 +1,21 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/game/intel/mobility/minigames/mobility/mobility.swf",
+        "base":      "/media/game/intel/mobility/",
+        "width":     "550",
+        "height":    "480",
+        "bgcolor":   "#FFFFFF",
+        "flashvars": {
+            "language":   "eng",
+            "path":       "/portfolio/media/game/intel/mobility/",
+            "serverType": "Intel_Itanium_2_server",
+            "soundOn":    "true",
+            "gameTitle":  "mobility Game",
+            "loadingTxt": "Loading",
+            "prefix":     "",
+            "tracking":   "off"
+        }
+    }
+]

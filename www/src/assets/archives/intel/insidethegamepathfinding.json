@@ -1,0 +1,15 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/game/intel/pathfinding/common/media/int-insidethegame-pathfinding.swf",
+        "base":      "/media/game/intel/pathfinding/common/media/",
+        "width":     "100%",
+        "height":    "572",
+        "wmode":     "transparent",
+        "bgcolor":   "#FFFFFF",
+        "flashvars": {
+            "language": "en-gb"
+        }
+    }
+]

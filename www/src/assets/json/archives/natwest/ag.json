@@ -1,0 +1,51 @@
+[
+    {
+      "type" : "swf",
+        "id":      "unit1",
+        "url":     "/media/olm/natwest/advantageGoldOTP.swf",
+        "width":   "615",
+        "height":  "515",
+        "wmode":   "transparent",
+        "bgcolor": "#FFFFFF"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit2",
+        "url":     "/media/olm/natwest/reminder.swf",
+        "width":   "160",
+        "height":  "140",
+        "bgcolor": "#FFFFFF"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit3",
+        "url":     "/media/olm/natwest/generic.swf",
+        "width":   "468",
+        "height":  "60",
+        "bgcolor": "#FFFFFF"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit4",
+        "url":     "/media/olm/natwest/finance.swf",
+        "width":   "468",
+        "height":  "60",
+        "bgcolor": "#FFFFFF"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit5",
+        "url":     "/media/olm/natwest/home.swf",
+        "width":   "468",
+        "height":  "60",
+        "bgcolor": "#FFFFFF"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit6",
+        "url":     "/media/olm/natwest/travel.swf",
+        "width":   "468",
+        "height":  "60",
+        "bgcolor": "#FFFFFF"
+    }
+]

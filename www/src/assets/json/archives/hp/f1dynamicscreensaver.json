@@ -1,0 +1,14 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/web/hp/f1/dynamicscreensaver/HPdynamicScreensaver.swf",
+        "base":      "/media/web/hp/f1/dynamicscreensaver/",
+        "width":     "980",
+        "height":    "768",
+        "bgcolor":   "#FFFFFF",
+        "flashvars": {
+            "flashURL": "/portfolio/media/web/hp/f1/dynamicscreensaver/"
+        }
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+      "type" : "swf",
+        "id":      "unit1",
+        "url":     "/media/olm/sky/rcc/knowledge/SkyPlusHD_RCC_preload.swf",
+        "base":    "/media/olm/sky/rcc/knowledge/",
+        "width":   "300",
+        "height":  "250",
+        "wmode":   "transparent",
+        "bgcolor": "#000000"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit2",
+        "url":     "/media/olm/sky/rcc/variety/SkyPlusHD_RCC_preload.swf",
+        "base":    "/media/olm/sky/rcc/variety/",
+        "width":   "300",
+        "height":  "250",
+        "wmode":   "transparent",
+        "bgcolor": "#000000"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit3",
+        "url":     "/media/olm/sky/rcc/arts-highbrow/SkyPlusHD_CWPF_artsHighbrow_preload.swf",
+        "base":    "/media/olm/sky/rcc/arts-highbrow/",
+        "width":   "300",
+        "height":  "250",
+        "wmode":   "transparent",
+        "bgcolor": "#000000"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit4",
+        "url":     "/media/olm/sky/rcc/arts-mainstream/SkyPlusHD_CWPF_artsMainstream_preload.swf",
+        "base":    "/media/olm/sky/rcc/arts-mainstream/",
+        "width":   "300",
+        "height":  "250",
+        "wmode":   "transparent",
+        "bgcolor": "#000000"
+    }
+]

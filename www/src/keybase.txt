@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/stephenhamilton
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.stephenhamilton.co.uk
+  * I am stephenhamilton (https://keybase.io/stephenhamilton) on keybase.
+  * I have a public key with fingerprint E29B AD9B C28F A840 CADA  5E30 480E 2418 45D5 2D4E
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01010a42270b368b008e98e08e3384b27a61e9e29954cd2278239bc10a6231a0221e0a",
+            "fingerprint": "e29bad9bc28fa840cada5e30480e241845d52d4e",
+            "host": "keybase.io",
+            "key_id": "480e241845d52d4e",
+            "kid": "01010a42270b368b008e98e08e3384b27a61e9e29954cd2278239bc10a6231a0221e0a",
+            "uid": "79c1735cf78339a8522187f2f01b5c19",
+            "username": "stephenhamilton"
+        },
+        "service": {
+            "hostname": "www.stephenhamilton.co.uk",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1480282933,
+    "expire_in": 157680000,
+    "prev": "5cbe7de65b379222d830d687b1640d81655e001ec118c485729e4d0665c71603",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMIrAnicrZJZaNRAGMe3HpWuWgUP8KhgkCpaw8wkk0y2dlUQpaAvteKBsOb40o2t
+ybqbbm23dWuViqKCBfE+qIg36IMHKqVqQUHwAEVYFRVfVLxFLXjUSakv4qMzMMPM
+/P7/72C6hvYPhfP6HfHSBXMO5vJuXT1RG1pSupBmBMOz6oVIRqiG3g1qLEj5sWrH
+EiICwnzqMiEqMiSFGQgx0BjwVZKYbBBVVzBoQDSNyqbFMUYkzTC5RiES1hEhGJAu
+lAi241ZBMpF0XJ/bcoGhWxwkzNaZjEzd0ilISGYIiIyZTC1KLBm4MO6lAgVPztBT
+IDoev+OHWG96/+D/c961vXaqZmJVoqatMknSdEb5O1NtYiNsUBNrAZiCpKuvAk6n
+fEjEwY3rq5wa33OFphKBP6YdE4L+BgX1gXV1deJfsGh6Ym0190skPd8zvRqOxX0/
+EQlc/PpErwyMWJ9hzHBci7eWC9KQTDk8WgRz0vSdIALmDSKMaJJUIsCahJOEmBMQ
+VFUY4iMIA2luSU0DVAsUakiqRgixmIQshakGVmRkMaxQCghhMDFmpsyoSjSQLaQo
+1FSxgiQhKHG16wkRytPUq4IuOFWu7tcmQWi61rl8QCgvHMof2C/4cqFwwfA/H/Hu
+hEE989jYl/FBO78dtTfmcp8+j1zxYvSP4/fVMzOLCsiYypW53Y1F57+8S389XdgV
+vdDTtnQx63juqkO2bRi1+eYV89J9seK98OEwPAlnjdZNO/LvlG8ZTIsrmqaWaM1l
+0cT7KTf2DG1tP3AzWnj2kGjPfby1f6MdP3mqB375p3Lhhrfq5o794oz2x/Flh/Gm
+RVPGX7+9oHPD0Tevj8Hg+rO3LhaJxZmB3VueNn8d9uv8xLl7s5NHdXzPLZ72au20
+N/Mzu2TxY3bS/M7yyw/3zL73c9E+yHz7cJFWll7LzCrbXtEy73h+6/SGde1tI6T2
+tS3RT88aih9FutePow/Gvbsd7m45l8WNvwFyGUJc
+=4GUJ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/stephenhamilton
+
+==================================================================

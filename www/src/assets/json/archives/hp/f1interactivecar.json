@@ -1,0 +1,14 @@
+[
+    {
+        "type": "swf",
+        "id": "unit1",
+        "url": "/media/web/hp/f1/interactivecar/hpIntCar.swf",
+        "base": "/media/web/hp/f1/interactivecar/",
+        "width": "759",
+        "height": "566",
+        "bgcolor": "#FFFFFF",
+        "flashvars": {
+            "flashURL": "/portfolio/media/web/hp/f1/interactivecar/"
+        }
+    }
+]

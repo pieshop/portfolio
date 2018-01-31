@@ -1,0 +1,29 @@
+[
+    {
+        "type"   : "swf",
+        "id"     : "unit1",
+        "url"    : "/media/olm/disney/planes/cloudwriting.swf",
+        "width"  : "300",
+        "height" : "250",
+        "wmode"  : "transparent",
+        "bgcolor": "#FFFFFF"
+    },
+    {
+        "type"   : "swf",
+        "id"     : "unit2",
+        "url"    : "/media/olm/disney/planes/dusty.swf",
+        "width"  : "300",
+        "height" : "250",
+        "wmode"  : "transparent",
+        "bgcolor": "#FFFFFF"
+    },
+    {
+        "type"   : "swf",
+        "id"     : "unit3",
+        "url"    : "/media/olm/disney/planes/race_to_camera.swf",
+        "width"  : "300",
+        "height" : "250",
+        "wmode"  : "transparent",
+        "bgcolor": "#FFFFFF"
+    }
+]

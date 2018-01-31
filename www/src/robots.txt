@@ -1,0 +1,17 @@
+# https://www.elegantthemes.com/blog/tips-tricks/how-to-create-and-configure-your-robots-txt-file
+# robots.txt file for http://webcrawler.com/
+# mail webmaster@webcrawler.com for constructive criticism
+
+User-agent: *
+Disallow:
+
+# User-agent: *
+# Disallow: /about/
+# Disallow: /all/
+# Disallow: /web/
+# Disallow: /olm/
+# Disallow: /games/
+# Disallow: /portfolio/
+# Disallow: /cv/
+
+Sitemap: http://www.stephenhamilton.co.uk/sitemap.xml

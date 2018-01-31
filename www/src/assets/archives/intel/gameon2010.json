@@ -1,0 +1,15 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/web/intel/gameon2010/swf/marquee/common/marquee.swf",
+        "base":      "/media/web/intel/gameon2010/swf/marquee/uk_en/",
+        "width":     "100%",
+        "height":    "385",
+        "wmode":     "transparent",
+        "bgcolor":   "#000000",
+        "flashvars": {
+            "configPath": "xml/config.xml"
+        }
+    }
+]

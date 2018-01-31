@@ -1,0 +1,12 @@
+[
+  {
+    "type": "iframe",
+    "id": "contentiframe1",
+    "url": "/media/olm/sky/tbyd/",
+    "width": "300px",
+    "height": "250px",
+    "frameborder": "0",
+    "style": "width:100%;height:300px"
+  }
+]
+

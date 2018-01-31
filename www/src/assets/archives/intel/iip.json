@@ -1,0 +1,15 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/web/intel/iip/common/media/int-landing-page-wizard.swf",
+        "base":      "/media/web/intel/iip/common/media/",
+        "width":     "100%",
+        "height":    "800",
+        "wmode":     "transparent",
+        "bgcolor":   "#000000",
+        "flashvars": {
+            "configPath": "../settings/config.xml"
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "type"       : "iframe",
+        "id"         : "contentiframe",
+        "url"        : "/media/web/samsung/monstersuniversity/",
+        "width"      : "100%",
+        "height"     : "800px",
+        "frameborder": "0",
+        "style"      : "height:800px;width:100%"
+    }
+]
+

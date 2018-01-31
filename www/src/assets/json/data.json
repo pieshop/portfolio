@@ -1,0 +1,1333 @@
+{
+  "alico": {
+    "metlife": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.png",
+        "desktop_03.jpg"
+      ],
+      "pdfs": [
+        "output.pdf"
+      ]
+    }
+  },
+  "anirog": {
+    "variousgames": {
+      "has_archive": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "commodore_user.png"
+      ],
+      "links": [
+        {
+          "url": "http://www.mobygames.com/game/vic-20/skramble_/screenshots",
+          "label": "Skramble on Moby Games1",
+          "target": "_blank"
+        },
+        {
+          "url": "http://www.youtube.com/watch?v=Rc9nUwttO4E",
+          "label": "Scramble play 1",
+          "target": "_blank"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=IJlozsi6Djg",
+          "label": "Scramble play 2",
+          "target": "_blank"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=seTZESC4-5Y",
+          "label": "Jungle Drums long play",
+          "target": "_blank"
+        }
+      ]
+    }
+  },
+  "apl": {
+    "various": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": []
+    }
+  },
+  "bbc": {
+    "nextstep": {
+      "has_archive": false,
+      "is_flash": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg",
+        "desktop_08.jpg"
+      ],
+      "links": [
+        {
+          "url": "http://www.bbc.co.uk/cbbc/games/the-next-step-take-it-to-the-top",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ]
+    }
+  },
+  "betgenius": {
+    "variousolm": {
+      "has_archive": false,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg",
+        "olm_05.jpg",
+        "olm_06.jpg"
+      ]
+    }
+  },
+  "birdseye": {
+    "continent": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ],
+      "awards": [
+        {
+          "award_name": "CONNECTIONS",
+          "award_long_name": "Marketing Connections Awards",
+          "award_result": "WINNER",
+          "award_category": "Best use of the internet for customer communications (consumer)",
+          "link": "http://www.campaignlive.co.uk/article/71862/connections-2000---marketing-awards-best-use-internet-customer-communications-consumer",
+          "pdf": "pdf/captain_birdseye_connections2000.pdf"
+        },
+        {
+          "award_name": "LIAA",
+          "award_long_name": "London International Advertising Awards",
+          "award_result": "Finalist",
+          "award_category": "Best Food Website",
+          "link": "",
+          "pdf": ""
+        },
+        {
+          "award_name": "FAB",
+          "award_long_name": "International Food and Beverage",
+          "award_result": "Finalist",
+          "award_category": "Best Savoury Foods Website",
+          "link": "http://www.fab-awards.com/winners.html",
+          "pdf": ""
+        }
+      ]
+    }
+  },
+  "cartoonnetwork": {
+    "benten": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "http://myomnitrix.com/uk/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg"
+      ]
+    },
+    "bentenrepack": {
+      "has_archive": true,
+      "is_flash": true,
+      "links": [
+        {
+          "url": "http://www.cartoonnetwork.co.uk/show/ben-10-omniverse/games/ben-10-alien-unlock",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg"
+      ]
+    },
+    "unlock2": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "http://unlock2.myomnitrix.com/uk/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg",
+        "desktop_08.jpg",
+        "desktop_09.jpg"
+      ]
+    },
+    "unlock2repack": {
+      "has_archive": true,
+      "is_flash": true,
+      "links": [
+        {
+          "url": "http://www.cartoonnetwork.co.uk/show/ben-10-omniverse/games/ben-10-alien-unlock-2",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg"
+      ]
+    }
+  },
+  "disney": {
+    "avengersaou": {
+      "has_archive": true,
+      "is_flash": true,
+      "links": [
+        {
+          "url": "https://www.whichavengerareyou.com/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg"
+      ]
+    },
+    "capamerads": {
+      "has_archive": true,
+      "is_dark_background": false,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg",
+        "olm_05.jpg",
+        "olm_06.jpg"
+      ]
+    },
+    "cfuf": {
+      "has_archive": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg",
+        "desktop_08.jpg",
+        "smartphone.jpg"
+      ]
+    },
+    "dorybanner": {
+      "has_archive": true,
+      "is_dark_background": false,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg",
+        "olm_05.jpg",
+        "olm_06.jpg"
+      ]
+    },
+    "epicmickey": {
+      "has_archive": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    },
+    "fandf": {
+      "has_archive": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    },
+    "gotg": {
+      "has_archive": true,
+      "is_flash": true,
+      "links": [
+        {
+          "url": "http://which-guardian-are-you.com/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg"
+      ]
+    },
+    "grootdance": {
+      "has_archive": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg"
+      ]
+    },
+    "ironman3it": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg"
+      ]
+    },
+    "monstermatch": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "http://www.jollyhosting2.com/Disney/monsters_university/monster_match/uk/",
+          "target": "_blank",
+          "label": "View external archive"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg"
+      ]
+    },
+    "planes": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg"
+      ]
+    },
+    "stm2012": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg"
+      ]
+    },
+    "stm2013": {
+      "has_archive": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg"
+      ]
+    },
+    "stm2014": {
+      "has_archive": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg",
+        "desktop_08.jpg",
+        "desktop_09.jpg",
+        "desktop_10.jpg"
+      ]
+    },
+    "starwarsrogue": {
+      "has_archive": true,
+      "is_dark_background": false,
+      "images": [
+        "olm_011.jpg",
+        "olm_012.jpg",
+        "olm_013.jpg",
+        "olm_041.jpg",
+        "olm_042.jpg",
+        "olm_043.jpg",
+        "olm_044.jpg"
+      ]
+    },
+    "tbpf": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "http://www.disney.co.uk/piratefairycomp/",
+          "target": "_blank",
+          "label": "Live Site"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg"
+      ]
+    },
+    "tomorrowlandrich": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg",
+        "olm_05.jpg",
+        "olm_06.jpg",
+        "olm_07.jpg"
+      ]
+    },
+    "zootopia": {
+      "has_archive": true,
+      "is_dark_background": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg",
+        "olm_05.jpg",
+        "olm_06.jpg",
+        "olm_07.jpg",
+        "olm_08.jpg"
+      ]
+    }
+  },
+  "fidelity": {
+    "fundsnetwork": {
+      "has_archive": false,
+      "is_flash": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ],
+      "awards": [
+        {
+          "award_name": "Money Award",
+          "award_long_name": "Money Award",
+          "award_result": "",
+          "award_category": "",
+          "link": "",
+          "pdf": ""
+        },
+        {
+          "award_name": "Investor’s Week",
+          "award_long_name": "Investor’s Week",
+          "award_result": "",
+          "award_category": "",
+          "link": "",
+          "pdf": ""
+        }
+      ]
+    }
+  },
+  "hp": {
+    "f1dynamicscreensaver": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_2002ss.jpg",
+        "desktop_2003ss.jpg",
+        "desktop_2004ss.jpg"
+      ]
+    },
+    "f1interactivecar": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ],
+      "swfs": [
+        "intro.swf",
+        "car_spin.swf"
+      ],
+      "swfs_data": {
+        "intro": {
+          "width": "759",
+          "height": "566",
+          "bgcolor": "#FFFFFF"
+        },
+        "car_spin": {
+          "width": "759",
+          "height": "566",
+          "bgcolor": "#FFFFFF"
+        }
+      }
+    }
+  },
+  "intel": {
+    "gameon2008": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    },
+    "gameon2010": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    },
+    "iip": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    },
+    "insidethegameparticles": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg"
+      ]
+    },
+    "insidethegamepathfinding": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg"
+      ]
+    },
+    "itmgceo": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    },
+    "itmgdynamicduo": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    },
+    "itmghackerinvasion": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    },
+    "itmgpcmeltdown": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    },
+    "studio": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ],
+      "awards": [
+        {
+          "award_id": 1,
+          "award_name": "BIMA",
+          "award_long_name": "British Interactive Media Association",
+          "award_result": "Winner",
+          "award_category": "B2C Measurement &amp; Results",
+          "link": "http://www.bima.co.uk/bima-award/020E131703/bima-awards-2008/view-shortlist/81/",
+          "pdf": "pdf/intelstudio-bima.pdf"
+        }
+      ]
+    },
+    "vprocompetition": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    }
+  },
+  "jollywise": {
+    "miscellaneous2016": {
+      "has_archive": false,
+      "images": []
+    },
+    "miscellaneous2015": {
+      "has_archive": false,
+      "images": []
+    },
+    "miscellaneous2014": {
+      "has_archive": false,
+      "images": []
+    },
+    "miscellaneous2013": {
+      "has_archive": false,
+      "images": []
+    },
+    "miscellaneous2012": {
+      "has_archive": false,
+      "images": []
+    }
+  },
+  "kraft": {
+    "prototype": {
+      "has_archive": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    }
+  },
+  "louboutin": {
+    "boutique": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg"
+      ]
+    }
+  },
+  "magnum": {
+    "senses": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    }
+  },
+  "mastercard": {
+    "carousel": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    }
+  },
+  "microsoft": {
+    "bcc": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg"
+      ]
+    },
+    "diver": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg"
+      ]
+    },
+    "dynamics": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    }
+  },
+  "mini": {
+    "avengers": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    }
+  },
+  "mrm": {
+    "works": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    }
+  },
+  "msn": {
+    "hotmail": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg"
+      ]
+    },
+    "kittycaper": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg"
+      ],
+      "awards": [
+        {
+          "award_id": 8,
+          "award_name": "NMA",
+          "award_long_name": "New Media Age Effectiveness",
+          "award_result": "Winner",
+          "award_category": "Technology",
+          "link": "",
+          "pdf": "pdf/kittycaper-nma.pdf"
+        },
+        {
+          "award_id": 9,
+          "award_name": "IMAA",
+          "award_long_name": "Interactive Marketing and Advertising",
+          "award_result": "Winner",
+          "award_category": "Technology",
+          "link": "",
+          "pdf": "pdf/kittycaper-imaa.pdf"
+        },
+        {
+          "award_id": 10,
+          "award_name": "DMA",
+          "award_long_name": "Direct Marketing Association",
+          "award_result": "Bronze",
+          "award_category": "Online Advertising",
+          "link": "",
+          "pdf": "pdf/kittycaper-dma.pdf"
+        }
+      ]
+    },
+    "minimiseme": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.png"
+      ],
+      "awards": [
+        {
+          "award_id": 2,
+          "award_name": "NMA",
+          "award_long_name": "New Media Age Effectiveness",
+          "award_result": "Finalist",
+          "award_category": "Best Technology Campaign",
+          "link": "",
+          "pdf": ""
+        },
+        {
+          "award_id": 3,
+          "award_name": "BIMA",
+          "award_long_name": "British Interactive Media Association",
+          "award_result": "Finalist",
+          "award_category": "B2C Measurement &amp; Results",
+          "link": "http://www.bima.co.uk/bima-award/020E131703/bima-awards-2008/view-shortlist/53/",
+          "pdf": "pdf/msn-minimise-bima.pdf"
+        }
+      ]
+    },
+    "searchladder": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    },
+    "searchsupremo": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ],
+      "awards": [
+        {
+          "award_id": 7,
+          "award_name": "IMAA",
+          "award_long_name": "Interactive Marketing and Advertising",
+          "award_result": "Finalist",
+          "award_category": "",
+          "link": "",
+          "pdf": ""
+        }
+      ]
+    },
+    "videoviral": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ],
+      "awards": [
+        {
+          "award_id": 4,
+          "award_name": "NMA",
+          "award_long_name": "New Media Age Effectiveness",
+          "award_result": "Finalist",
+          "award_category": "Entertainment",
+          "link": "",
+          "pdf": ""
+        }
+      ]
+    },
+    "videowall": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    }
+  },
+  "natwest": {
+    "advantagegold": {
+      "has_archive": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    },
+    "ag": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg"
+      ]
+    }
+  },
+  "nesquik": {
+    "hopalong": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    },
+    "plus": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    }
+  },
+  "nickelodeon": {
+    "chimpquiz": {
+      "has_archive": false,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    },
+    "nickleap": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "http://www.nickjr.co.uk/_/leap/",
+          "target": "_blank",
+          "label": "Live"
+        },
+        {
+          "url": "http://www.jollywise.co.uk/case-studies/nick-jr-leap",
+          "target": "_blank",
+          "label": "Case Study"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg",
+        "desktop_08.jpg",
+        "desktop_09.jpg",
+        "desktop_10.jpg"
+      ],
+      "awards": [
+        {
+          "award_id": 14,
+          "award_name": "Lovies\n",
+          "award_long_name": "Lovies",
+          "award_result": "Bronze",
+          "award_category": "Schools and Education",
+          "link": "http://winners.lovieawards.eu/share/?y=2015&a=215",
+          "pdf": "pdf/nickelodeon-nickleap-lovie.pdf"
+        }
+      ]
+    }
+  },
+  "opel": {
+    "tigra": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    }
+  },
+  "peugeot": {
+    "smartnav": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ]
+    }
+  },
+  "royalmail": {
+    "tistheseason": {
+      "has_archive": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg",
+        "olm_05.jpg",
+        "olm_06.jpg"
+      ]
+    }
+  },
+  "samsung": {
+    "monstersuniversity": {
+      "has_archive": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "smartphone_05.jpg"
+      ]
+    }
+  },
+  "sightsavers": {
+    "donation": {
+      "has_archive": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg"
+      ]
+    },
+    "imagine2030": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "http://www.sightsavers.org.uk/our_campaign/your-2030/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ]
+    }
+  },
+  "sky": {
+    "hd": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg"
+      ]
+    },
+    "hdplus": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg"
+      ]
+    },
+    "keyhole": {
+      "has_archive": true,
+      "is_flash": true,
+      "links": [
+        {
+          "url": "http://www.flashtalking.com/skyKeyhole/",
+          "target": "_blank",
+          "label": "Flashtalking"
+        }
+      ],
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg"
+      ]
+    },
+    "movies": {
+      "has_archive": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg",
+        "olm_05.jpg",
+        "olm_06.jpg",
+        "olm_07.jpg"
+      ]
+    },
+    "rcc": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg",
+        "olm_05.jpg"
+      ]
+    },
+    "tbyd": {
+      "has_archive": true,
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg",
+        "olm_05.jpg",
+        "olm_06.jpg"
+      ]
+    }
+  },
+  "sony": {
+    "playstationstore": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "http://www.flashtalking.net/view/508379/",
+          "target": "_blank",
+          "label": "Flashtalking"
+        }
+      ],
+      "images": [
+        "olm_01.jpg",
+        "olm_02.jpg",
+        "olm_03.jpg",
+        "olm_04.jpg"
+      ]
+    },
+    "tinypopartpad": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "https://itunes.apple.com/gb/app/pop-artpad/id898203063?mt=8",
+          "target": "_blank",
+          "label": "ios App Store"
+        }
+      ],
+      "is_dark_background": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg"
+      ]
+    },
+    "tinypoptv": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "https://itunes.apple.com/gb/app/tiny-pop-tv/id874837680?mt=8",
+          "target": "_blank",
+          "label": "ios App Store"
+        }
+      ],
+      "is_dark_background": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg"
+      ]
+    }
+  },
+  "telstar": {
+    "challenge": {
+      "has_archive": false,
+      "is_flash": false,
+      "images": [
+        "desktop_01.jpg"
+      ],
+      "links": [
+        {
+          "url": "http://www.oldgames.sk/en/mag/level-28/page/98/",
+          "target": "_blank",
+          "label": "Old Magazine Spread"
+        },
+        {
+          "url": "http://www.cdaccess.com/html/pc/trivchal.htm",
+          "target": "_blank",
+          "label": "Old Details"
+        }
+      ],
+      "awards": [
+        {
+          "award_id": 4,
+          "award_name": "MONITOR",
+          "award_long_name": "Monitor Award",
+          "award_result": "",
+          "award_category": "",
+          "link": "",
+          "pdf": ""
+        }
+      ]
+    }
+  },
+  "tourismireland": {
+    "windows": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg"
+      ],
+      "awards": [
+        {
+          "award_id": 11,
+          "award_name": "One Show Interactive",
+          "award_long_name": "One Show Interactive",
+          "award_result": "Merit",
+          "award_category": "",
+          "link": "http://www.oneclub.org/#olb=/_ajax/archive/?action=arc_work%26value=2628",
+          "pdf": "pdf/tourismireland-oneshow.pdf"
+        },
+        {
+          "award_id": 12,
+          "award_name": "LIA",
+          "award_long_name": "London International Advertising",
+          "award_result": "Finalist",
+          "award_category": "Interactive Banner",
+          "link": "http://2008.liaawards.com/2004/finalists/finalists/interactive/i29.html",
+          "pdf": "pdf/tourismireland-liaa.pdf"
+        },
+        {
+          "award_id": 13,
+          "award_name": "Creative Showcase",
+          "award_long_name": "Creative Showcase",
+          "award_result": "1st Runner Up",
+          "award_category": "",
+          "link": "http://www.creativeshowcase.net/campaigns/window-on-ireland",
+          "pdf": "pdf/tourismireland-creativeshowcase.pdf"
+        }
+      ]
+    }
+  },
+  "turner": {
+    "atimevr": {
+      "has_archive": false,
+      "is_flash": false,
+      "links": [
+        {
+          "url": "http://unlock.cartoonnetwork.co.uk/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "smartphone_01.jpg",
+        "smartphone_02.jpg"
+      ]
+    }
+  },
+  "unilever": {
+    "heartbrand": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_00.jpg",
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg"
+      ]
+    },
+    "kidsfun": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg"
+      ]
+    }
+  },
+  "universalpictures": {
+    "badneighbourspb": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "http://www.badneighboursphotobomb.co.uk/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg",
+        "desktop_08.jpg",
+        "desktop_09.jpg",
+        "smartphone_01.jpg",
+        "smartphone_02.jpg",
+        "smartphone_03.jpg",
+        "smartphone_04.jpg",
+        "smartphone_05.jpg",
+        "smartphone_06.jpg"
+      ]
+    },
+    "mbb": {
+      "has_archive": false,
+      "links": [
+        {
+          "url": "http://mrsbrowngetsdigital.com/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg",
+        "desktop_08.jpg",
+        "desktop_09.jpg",
+        "desktop_10.jpg",
+        "smartphone_01.jpg",
+        "smartphone_02.jpg",
+        "smartphone_03.jpg"
+      ]
+    },
+    "dadsarmy": {
+      "has_archive": true,
+      "links": [
+        {
+          "url": "http://www.dadsarmy-nightwatch.com",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg"
+      ]
+    }
+  },
+  "ups": {
+    "widget": {
+      "has_archive": true,
+      "is_flash": true,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg"
+      ],
+      "awards": [
+        {
+          "award_id": 5,
+          "award_name": "NMA",
+          "award_long_name": "New Media Age Effectiveness",
+          "award_result": "Winner",
+          "award_category": "Business to Business",
+          "link": "",
+          "pdf": "pdf/ups-nma.pdf"
+        },
+        {
+          "award_id": 6,
+          "award_name": "IAA",
+          "award_long_name": "Innovative Advertising Awards",
+          "award_result": "Finalist",
+          "award_category": "Best Integrated Campaign",
+          "link": "",
+          "pdf": "pdf/ups-iaa.pdf"
+        }
+      ]
+    }
+  },
+  "vocalink": {
+    "nomophobia": {
+      "has_archive": false,
+      "images": [
+        "desktop_01.jpg",
+        "desktop_02.jpg",
+        "desktop_03.jpg",
+        "desktop_04.jpg",
+        "desktop_05.jpg",
+        "desktop_06.jpg",
+        "desktop_07.jpg",
+        "desktop_08.jpg",
+        "desktop_09.jpg"
+      ]
+    }
+  }
+}

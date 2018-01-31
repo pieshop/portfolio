@@ -1,0 +1,14 @@
+[
+    {
+        "type": "swf",
+        "id": "unit1",
+        "url": "/media/prototype/alico/metlife/common/media/alico-financial-model.swf",
+        "base": "/media/prototype/alico/metlife/common/media/",
+        "width": "100%",
+        "height": "720",
+        "bgcolor": "#FFFFFF",
+        "flashvars": {
+            "configPath": "../settings/config.xml"
+        }
+    }
+]

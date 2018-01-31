@@ -1,0 +1,10 @@
+[
+    {
+      "type" : "swf",
+        "id":      "unit1",
+        "url":     "/media/game/msn/kittycaper/kitty.swf",
+        "width":   "750",
+        "height":  "400",
+        "bgcolor": "#000000"
+    }
+]

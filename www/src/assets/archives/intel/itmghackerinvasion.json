@@ -1,0 +1,21 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/game/intel/hackerinvasion/hackerinvasion.swf",
+        "base":      "/media/game/intel/hackerinvasion/",
+        "width":     "550",
+        "height":    "480",
+        "bgcolor":   "#FFFFFF",
+        "flashvars": {
+            "language":   "eng",
+            "path":       "/portfolio/media/game/intel/hackerinvasion/",
+            "serverType": "Intel_Itanium_2_server",
+            "soundOn":    "true",
+            "gameTitle":  "Hacker Invasion Game",
+            "loadingTxt": "Loading",
+            "prefix":     "",
+            "tracking":   "off"
+        }
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/web/unilever/kidsfun/flash/media/Wrapper.swf",
+        "base":      "/media/web/unilever/kidsfun/flash/",
+        "width":     "100%",
+        "height":    "610",
+        "bgcolor":   "#000000",
+        "flashvars": {
+            "wwwroot":      "/portfolio/media/web/unilever/kidsfun/",
+            "approot":      "/portfolio/media/web/unilever/kidsfun/flash/",
+            "languageroot": "/portfolio/media/web/unilever/kidsfun/en-gb/flash/",
+            "videoroot":    "/portfolio/media/web/unilever/kidsfun/en-gb/flash/",
+            "configURL":    "settings/config.xml",
+            "language":     "en-gb",
+            "sectionid":    "home"
+        }
+    }
+]

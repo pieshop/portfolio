@@ -1,0 +1,16 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/game/intel/ceo/ceo.swf",
+        "base":      "/media/game/intel/ceo/",
+        "width":     "637",
+        "height":    "397",
+        "bgcolor":   "#FFFFFF",
+        "wmode":     "transparent",
+        "flashvars": {
+            "lang": "eng",
+            "path": "/portfolio/media/game/intel/ceo/"
+        }
+    }
+]

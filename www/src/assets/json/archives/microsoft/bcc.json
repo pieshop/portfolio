@@ -1,0 +1,10 @@
+[
+    {
+        "type"   : "swf",
+        "id"     : "unit1",
+        "url"    : "/media/olm/microsoft/bcc/media/Application.swf",
+        "width"  : "787",
+        "height" : "300",
+        "bgcolor": "#C3BCB6"
+    }
+]

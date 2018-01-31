@@ -1,0 +1,26 @@
+[
+    {
+      "type" : "swf",
+        "id":      "unit1",
+        "url":     "/media/web/magnum/senses/compassnav.swf",
+        "width":   "777",
+        "height":  "556",
+        "bgcolor": "#5d200b"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit2",
+        "url":     "/media/web/magnum/senses/instantWin.swf",
+        "width":   "777",
+        "height":  "600",
+        "bgcolor": "#5d200b"
+    },
+    {
+      "type" : "swf",
+        "id":      "unit3",
+        "url":     "/media/web/magnum/senses/guidebook.swf",
+        "width":   "460",
+        "height":  "340",
+        "bgcolor": "#5d200b"
+    }
+]

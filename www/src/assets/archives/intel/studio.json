@@ -1,0 +1,80 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/web/intel/proudgallery/flash/common/media/jukebox.swf",
+        "base":      "/media/web/intel/proudgallery/",
+        "width":     "598",
+        "height":    "545",
+        "wmode":     "transparent",
+        "bgcolor":   "#000000",
+        "flashvars": {
+            "wwwroot":      "",
+            "approot":      "flash/common/",
+            "languageroot": "flash/uk_en/flash/",
+            "settings":     "settings/",
+            "application":  "jukebox",
+            "language":     "uk_en",
+            "standalone":   "true"
+        }
+    },
+    {
+      "type" : "swf",
+        "id":        "unit2",
+        "url":       "/media/web/intel/proudgallery/flash/common/media/widget.swf",
+        "base":      "/media/web/intel/proudgallery/",
+        "width":     "260",
+        "height":    "310",
+        "wmode":     "transparent",
+        "bgcolor":   "#000000",
+        "flashvars": {
+            "wwwroot":      "",
+            "approot":      "flash/common/",
+            "languageroot": "flash/uk_en/flash/",
+            "settings":     "settings/",
+            "application":  "widget",
+            "language":     "uk_en",
+            "onIntel":      "true",
+            "bandID":       "9d785299-c59f-4b73-8afc-51de7c1006e2"
+        }
+    },
+    {
+      "type" : "swf",
+        "id":        "unit3",
+        "url":       "/media/web/intel/proudgallery/flash/common/media/masterclassplayer.swf",
+        "base":      "/media/web/intel/proudgallery/",
+        "width":     "300",
+        "height":    "325",
+        "wmode":     "transparent",
+        "bgcolor":   "#000000",
+        "flashvars": {
+            "wwwroot":      "",
+            "approot":      "flash/common/",
+            "languageroot": "flash/uk_en/flash/",
+            "settings":     "settings/",
+            "application":  "masterclassplayer",
+            "language":     "uk_en"
+        }
+    },
+    {
+      "type" : "swf",
+        "id":        "unit4",
+        "url":       "/media/web/intel/proudgallery/flash/common/media/mp3player.swf",
+        "base":      "/media/web/intel/proudgallery/",
+        "width":     "460",
+        "height":    "160",
+        "wmode":     "transparent",
+        "bgcolor":   "#000000",
+        "flashvars": {
+            "wwwroot":      "",
+            "approot":      "flash/common/",
+            "languageroot": "flash/uk_en/flash/",
+            "settings":     "settings/",
+            "application":  "mp3player",
+            "language":     "uk_en",
+            "BandName":     "The Band",
+            "TrackPath":    "Uploads/Tracks/",
+            "Tracks":       "Track 01|band01track1.mp3|Track 02|band01track2.mp3"
+        }
+    }
+]

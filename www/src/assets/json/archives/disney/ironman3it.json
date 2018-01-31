@@ -1,0 +1,20 @@
+[
+    {
+        "type"   : "swf",
+        "id"     : "unit1",
+        "url"    : "/media/olm/disney/ironman3it/ironman-mpu.swf",
+        "width"  : "400",
+        "height" : "350",
+        "wmode"  : "transparent",
+        "bgcolor": "#FFFFFF"
+    },
+    {
+        "type"   : "swf",
+        "id"     : "unit2",
+        "url"    : "/media/olm/disney/ironman3it/ironman-masthead.swf",
+        "width"  : "970",
+        "height" : "250",
+        "wmode"  : "transparent",
+        "bgcolor": "#FFFFFF"
+    }
+]

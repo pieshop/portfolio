@@ -1,0 +1,11 @@
+[
+    {
+      "type" : "swf",
+        "id":      "unit1",
+        "url":     "/media/olm/msn/videowall/application_300x250_v3.swf",
+        "base":    "/media/olm/msn/videowall/",
+        "width":   "300",
+        "height":  "256",
+        "bgcolor": "#000000"
+    }
+]

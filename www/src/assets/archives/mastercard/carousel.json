@@ -1,0 +1,16 @@
+[
+    {
+      "type" : "swf",
+        "id":        "unit1",
+        "url":       "/media/web/mastercard/carousel/common/media/Preloader.swf",
+        "base":      "/media/web/mastercard/carousel/common/media/",
+        "width":     "987",
+        "height":    "307",
+        "bgcolor":   "#FFFFFF",
+        "flashvars": {
+            "configPath": "../settings/config.xml",
+            "language":   "en-gb",
+            "mainswfURL": "mcar-carousel.swf"
+        }
+    }
+]

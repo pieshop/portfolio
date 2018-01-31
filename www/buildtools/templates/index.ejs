@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=ngGw27PWBy">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=ngGw27PWBy">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=ngGw27PWBy">
+    <link rel="manifest" href="/manifest.json?v=ngGw27PWBy">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=ngGw27PWBy" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon.ico?v=ngGw27PWBy">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta charset="utf-8">
+    <title><%= htmlWebpackPlugin.options.title || 'Webpack App' %></title>
+    <% if (htmlWebpackPlugin.options.baseHref) { %>
+    <base href="<%= htmlWebpackPlugin.options.baseHref %>">
+    <% } else { %>
+    <base href="{base_url}">
+    <% } %>
+    <meta name="google-site-verification" content="kwBXoOqecDqy3SnxoLBCnOJOXFu0mHaebo9ayzv5qss"/>
+    <meta name="msvalidate.01" content="650365136434BECE5180675AA6F40379"/>
+    <!--<meta name="theme-color" content="#189b96" />-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Stephen Hamilton"/>
+    <meta name="Description" content="Portfolio website for London based interactive developer Stephen Hamilton."/>
+    <meta name="Keywords"
+          content="Stephen Hamilton, london, developer, html5, css3, jquery, flash, uk, designer, multimedia, mobile"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <!--<link rel="manifest" href="/manifest.json">-->
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+    <script type="application/ld+json">
+        {
+            "@context" : "http://schema.org",
+            "@type" : "WebSite",
+            "name" : "Stephen Hamilton's Portfolio",
+            "alternateName" : "Stephen Hamilton",
+            "url" : "{base_url}"
+        }
+    </script>
+</head>
+<body>
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <noscript><strong>Javascript</strong> is unavailable.</noscript>
+
+    <div id='app'></div>
+    <%= htmlWebpackPlugin.files.webpackManifest %>
+    <% for (var key in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" defer></script>
+    <% } %>
+    <% if (htmlWebpackPlugin.options.googleAnalytics) { %>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src   = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        <% if (htmlWebpackPlugin.options.googleAnalytics.trackingId) { %> ga('create', '<%= htmlWebpackPlugin.options.googleAnalytics.trackingId %>', 'auto'); <% } else {
+            throw new Error("html-webpack-template requires googleAnalytics.trackingId attribute");
+        } %>
+        <% if (htmlWebpackPlugin.options.googleAnalytics.pageViewOnLoad) { %> ga('send', 'pageview'); <% } %>
+    </script>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,11 @@
+[
+    {
+      "type" : "swf",
+        "id":      "unit1",
+        "url":     "/media/game/nesquik/plus/nesquikPlus.swf",
+        "base":    "/media/game/nesquik/plus/",
+        "width":   "700",
+        "height":  "400",
+        "bgcolor": "#FFFFFF"
+    }
+]
