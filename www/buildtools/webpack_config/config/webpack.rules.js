@@ -36,7 +36,6 @@ exports.transpileJavaScript = () => ({
               ],
             ],
             plugins: [
-              'react-hot-loader/babel',
               'react-html-attrs',
               'transform-class-properties',
               'transform-object-rest-spread',
@@ -48,11 +47,11 @@ exports.transpileJavaScript = () => ({
   },
 });
 
-exports.extractCss = ({ isProduction = false }) => ({
+exports.extractCss = ({ cssOut = 'css', isProduction = false }) => ({
   plugins: [
     new MiniCssExtractPlugin({
-      filename: isProduction ? 'css/[name].[contenthash:8].css' : 'css/[name].css',
-      chunkFilename: isProduction ? 'css/[name].[contenthash:8].css' : 'css/[name].css',
+      filename: isProduction ? cssOut + '/[name].[contenthash:8].css' : cssOut + '/[name].css',
+      chunkFilename: isProduction ? cssOut + '/[name].[id].[contenthash:8].css' : cssOut + '/[name].[id].css',
       allChunks: true,
     }),
   ],
@@ -84,6 +83,12 @@ exports.compileSCSS = ({ extract = true, isProduction = true, sourceMap = true }
             },
           },
           {
+            loader: 'resolve-url-loader',
+            options: {
+              sourceMap: sourceMap,
+            },
+          },
+          {
             loader: 'sass-loader',
             options: { sourceMap: sourceMap },
           },
@@ -93,32 +98,28 @@ exports.compileSCSS = ({ extract = true, isProduction = true, sourceMap = true }
   },
 });
 
-exports.loadStaticImageAssets = ({ name, publicPath }) => ({
+exports.loadStaticImageAssets = ({ name, context, publicPath }) => ({
   module: {
     rules: [
       {
-        test: /\.(jpg|jpeg|png|gif)$/,
+        test: /\.(jpg|jpeg|png|gif|svg)$/,
         use: {
           loader: 'file-loader',
-          options: { name, publicPath },
-          // loader : 'url-loader',
-          // options: { limit: 8000, name : `${relativePath}[name].[hash].[ext]`, },
+          options: { name, context, publicPath },
         },
       },
     ],
   },
 });
 
-exports.loadStaticFontAssets = ({ name, publicPath }) => ({
+exports.loadStaticFontAssets = ({ name, context, publicPath }) => ({
   module: {
     rules: [
       {
-        test: /\.(ttf|eot|woff|woff2|svg)$/,
+        test: /\.(ttf|otf|eot|woff|woff2)$/,
         use: {
           loader: 'file-loader',
-          options: { name, publicPath },
-          // loader : 'url-loader',
-          // options: { limit: 8000, name : `${relativePath}[name].[hash].[ext]`, },
+          options: { name, context, publicPath },
         },
       },
     ],

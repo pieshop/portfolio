@@ -13,13 +13,13 @@ import { cleanDir } from './lib/fs';
  * Cleans up the output (build) directory.
  */
 function clean() {
-    return Promise.all([
-        cleanDir('dev/*', {
-            nosort: true,
-            dot: true,
-            ignore: ['dev/.git'],
-        }),
-    ]);
+  return Promise.all([
+    cleanDir('dev/*', {
+      nosort: true,
+      dot: true,
+      ignore: ['dev/.git'],
+    }),
+  ]);
 }
 
 export default clean;

@@ -1,57 +1,58 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const PATHS = require('./constants/paths');
-const PROJECT = require('./constants/project');
-const {main, optimise, rules, plugins} = require('./config/index');
+const { main, optimise, rules, plugins } = require('./config/index');
 
-/**
- * Based off:
- * https://github.com/Tomekmularczyk/react-starter/tree/master/config
- */
-module.exports = (options = {}) => {
-  const TARGET = options.target;
-  const REPLACE_OPTIONS = options.replace_options;
-  const ENV = 'production';
-  const PUBLIC_PATH = options.cdn;
-  const CSS_PUBLIC_PATH = '../';
+module.exports = ({ paths, project, replace_options }) => {
+  const PATHS = paths;
+  const PROJECT = project;
+  const PUBLIC_PATH = '';
+  const REPLACE_OPTIONS = replace_options;
   const isProduction = true;
-  const outputDir = PATHS.dist;
-
-  // console.log('ENV', ENV, '\nOUTPUT_DIR', outputDir, '\nREPLACE_OPTIONS', REPLACE_OPTIONS);
-
   const copyPaths = [
-    { from: PATHS.src + '/assets/json/archives/', to: outputDir + '/assets/json/archives/' },
-    { from: PATHS.src + '/images/', to: outputDir + '/images/' },
-    { from: PATHS.src + '/offline/', to: outputDir + '/offline/' },
-    { from: PATHS.src + '/sitemap/', to: outputDir + '/sitemap/' },
-    { from: PATHS.src + '/*.{ico,txt,xml,json,png,svg,html}', to: outputDir + '/', flatten: true },
-    { from: PATHS.src + '/.htaccess', to: outputDir + '/' },
+    { from: PATHS.src + '/assets/json/archives/', to: PATHS.dist + '/assets/json/archives/' },
+    { from: PATHS.src + '/images/', to: PATHS.dist + '/images/' },
+    { from: PATHS.src + '/offline/', to: PATHS.dist + '/offline/' },
+    { from: PATHS.src + '/sitemap/', to: PATHS.dist + '/sitemap/' },
+    { from: PATHS.src + '/*.{ico,txt,xml,json,png,svg,html}', to: PATHS.dist + '/', flatten: true },
+    { from: PATHS.src + '/.htaccess', to: PATHS.dist + '/' },
   ];
-  const copyOptions = { debug: 'warning', ignore: [], copyUnmodified: true };  // 'warning', 'info', 'debug'
+  const copyOptions = { debug: 'warning', ignore: [], copyUnmodified: true }; // 'warning', 'info', 'debug'
+  const cleanPaths = [PATHS.dist];
+  const cleanOptions = { root: PATHS.projectRoot, verbose: true, exclude: ['language'] };
+  const assetName = '[path][name].[ext]';
+
+  const environmentVars = {
+    __SERVICE_WORKER__: JSON.stringify(PROJECT.serviceworker),
+  };
 
   return merge([
-    main.generateSourceMaps('source-map'),
     main.setProductionMode(),
-    main.setEntries({ app: [PATHS.entryFile] }),
-    main.setOutput({ pathToDirectory: outputDir, publicPath: PUBLIC_PATH, isProduction }),
+    main.setEntries({ main: [PATHS.entryFile] }),
+    main.setOutput({
+      jsOut: PATHS.jsOut,
+      pathToDirectory: PATHS.dist,
+      publicPath: PUBLIC_PATH,
+      isProduction,
+    }),
     main.resolveDependencies({ aliases: {}, src: PATHS.src + '/js' }),
     main.setPerformance(),
     main.setStats({}),
 
     plugins.enableScopeHoisting(),
 
-    optimise.createInlineManifestChunk(),
-    optimise.createVendorChunk(),
+    optimise.createVendorChunk(PROJECT.vendorName),
+    optimise.createInlineManifestChunk(PROJECT.manifestName), // must come after createVendorChunk
 
-    rules.loadStaticImageAssets({ name: PATHS.images, publicPath: CSS_PUBLIC_PATH }),
-    rules.loadStaticFontAssets({ name: PATHS.fonts, publicPath: CSS_PUBLIC_PATH }),
+    rules.loadStaticImageAssets({ name: assetName, context: PATHS.src, publicPath: '../' }),
+    rules.loadStaticFontAssets({ name: assetName, context: PATHS.src, publicPath: '../' }),
+
     rules.replaceConfigOptions(REPLACE_OPTIONS),
 
     rules.eslintPre(),
     rules.transpileJavaScript(),
     optimise.minifyJS({ sourceMap: true }),
 
-    rules.extractCss({ isProduction }),
+    rules.extractCss({ cssOut: PATHS.cssOut, isProduction }),
     rules.compileSCSS({ extract: true, isProduction, sourceMap: true }),
     optimise.minifyCSS({ sourceMap: true }),
 
@@ -60,22 +61,37 @@ module.exports = (options = {}) => {
       alias: { TweenMax: PATHS.nodeDir + '/gsap/src/uncompressed/TweenMax.js' },
     }),
 
-    plugins.define({ env: ENV, opts: { __SERVICE_WORKER__: true } }),
-    plugins.cleanDirectory({ directory: PATHS.dev, projectRoot: PATHS.projectRoot }),
+    plugins.cleanDirectory({ cleanPaths, cleanOptions }),
     plugins.copy({ copyPaths, copyOptions }),
+
+    plugins.hashModuleIDs(),
+
+    plugins.define({ env: 'production', opts: environmentVars }),
 
     plugins.generateHTML({
       title: PROJECT.title,
-      pathToTemplate: PATHS.templateDir + '/index.ejs',
-      baseHref: '//www.stephenhamilton.co.uk',
-      opts: { cdn: 'https://cdn.stephenhamilton.co.uk' },
+      template: PATHS.templateDir + '/index.ejs',
+      filename: 'index.html',
+      opts: {
+        baseHref: PROJECT.baseHref,
+        devServer: PUBLIC_PATH,
+        cdn: PROJECT.cdn,
+      },
     }),
-    plugins.setExtraPlugins([
-      new webpack.HashedModuleIdsPlugin(),
-      new webpack.ProvidePlugin({ React: 'react' }),
-    ]),
-    plugins.addServiceWorker({ entry: PATHS.src + '/sw.js' }),
-    // plugins.inlineManifest(), // this isn't working atm - don't use it !
+    plugins.generateDistSourceMaps({
+      exclude: new RegExp(PROJECT.vendorName + '|' + PROJECT.manifestName),
+    }),
+    // plugins.inlineManifest(),
     // plugins.runWebpackBundleAnalyzer(),
+
+    PROJECT.serviceworker && plugins.addServiceWorker({ entry: PATHS.src + '/sw.js' }),
   ]);
 };
+
+//     plugins.generateHTML({
+//       title: PROJECT.title,
+//       pathToTemplate: PATHS.templateDir + '/index.ejs',
+//       baseHref: '//www.stephenhamilton.co.uk',
+//       opts: { cdn: 'https://cdn.stephenhamilton.co.uk' },
+//     }),
+

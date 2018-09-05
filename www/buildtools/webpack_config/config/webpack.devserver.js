@@ -1,17 +1,15 @@
 /* eslint-disable spaced-comment */
-const PROJECT = require('../constants/project');
-const PATHS = require('../constants/paths');
 
 /****************************************
  *         D  E  V    S  E  R  V  E  R
  ***************************************/
-exports.setDevServer = () => ({
+exports.setDevServer = ({ open, host, contentBase, port }) => ({
   devServer: {
-    // host: PROJECT.devserverHost,
-    open: true,
-    contentBase: PATHS.src,
+    host,
+    open,
+    contentBase,
     historyApiFallback: true,
-    port: PROJECT.devserverPort,
+    port,
     hot: true,
     inline: true,
     compress: true,
@@ -25,6 +23,12 @@ exports.setDevServer = () => ({
       timings: true,
       version: false,
       warnings: false,
+    },
+    // CORS :: https://github.com/webpack/webpack-dev-server/issues/533
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
     },
   },
 });

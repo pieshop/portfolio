@@ -1,5 +1,4 @@
 /* eslint-disable spaced-comment */
-const path = require('path');
 /****************************************
  *         D  E  V  T  O  O  L
  ***************************************/
@@ -28,16 +27,16 @@ exports.setProductionMode = () => ({
 /****************************************
  *         O  U  T  P  U  T
  ***************************************/
-exports.setOutput = ({ pathToDirectory, publicPath, isProduction = false }) => {
+exports.setOutput = ({ jsOut = 'js', pathToDirectory, publicPath, isProduction = false }) => {
   // remove [chunkhash] with webpack-dev-server - https://github.com/webpack/webpack/issues/2393
-  const filename = isProduction ? 'js/[name].[chunkhash:8].js' : 'js/[name].js';
-  const chunkFilename = isProduction ? 'js/[name].[chunkhash:8].js' : 'js/[name].js';
+  const filename = isProduction ? jsOut + '/[name].[chunkhash:8].js' : jsOut + '/[name].js';
+  const chunkFilename = isProduction ? jsOut + '/[name].[chunkhash:8].js' : jsOut + '/[name].js';
   return {
     output: {
-      filename,
       path: pathToDirectory,
-      chunkFilename: chunkFilename,
       publicPath: publicPath,
+      filename,
+      chunkFilename,
     },
   };
 };
@@ -97,6 +96,7 @@ exports.setStats = ({
   modules = true,
   reasons = true,
   warnings = false,
+  colors = true,
 }) => ({
   stats: {
     errors,
@@ -104,6 +104,6 @@ exports.setStats = ({
     modules,
     reasons,
     warnings,
+    colors,
   },
 });
-

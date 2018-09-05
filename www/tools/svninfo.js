@@ -15,7 +15,7 @@ const cfg = require(CONFIG_DIR + '/app_config.js')();
 const src = path.resolve('.', cfg.app);
 
 function svninfo() {
-  const env = process.argv[3].split('=')[1] || 'dev';
+  const env = process.argv[4].split('=')[1] || 'dev';
 
   return new Promise((resolve, reject) => {
     // svn_info(src, 'HEAD', (err, info) => {

@@ -9,22 +9,27 @@ const safeParser = require('postcss-safe-parser');
  *
  *         todo : sort this bit out : no inlining
  ************************************************/
-exports.createInlineManifestChunk = () => ({
+exports.createInlineManifestChunk = (name) => ({
   optimization: {
-    // runtimeChunk: 'single', // || true
     runtimeChunk: {
-      name: 'webpackManifest',
+      name,
     },
   },
 });
 
-exports.createVendorChunk = () => ({
+exports.nameModuleIDs = (val) => ({
+  optimization: {
+    namedModules: val,
+  },
+});
+
+exports.createVendorChunk = (name) => ({
   optimization: {
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
+          name,
           enforce: true,
           chunks: 'all',
         },

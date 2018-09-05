@@ -9,7 +9,7 @@ const CONFIG_DIR = path.resolve(__dirname, '../buildtools/config/');
 const cfg = require(CONFIG_DIR + '/app_config.js')();
 
 function sync() {
-  const env = process.argv[3].split('=')[1] || 'dev';
+  const env = process.argv[4].split('=')[1] || 'dev';
   console.log('sync env = ', env);
   let src,
     dest,
@@ -19,7 +19,6 @@ function sync() {
 
   switch (env) {
     case 'dev':
-    case 'stage':
       src = path.resolve('.', cfg[env]);
       dest = path.resolve('.', cfg.rsync[env].dest);
       host = cfg.rsync[env].host || '';
@@ -36,8 +35,7 @@ function sync() {
         sync_opts.ssh = true;
       }
       return Promise.all([createSync(sync_opts)]);
-      break;
-    case 'stage_nas': {
+    case 'stage': {
       src = path.resolve('.', cfg[env]);
       dest = path.resolve('.', cfg.rsync[env].dest);
       host = cfg.rsync[env].host || '';

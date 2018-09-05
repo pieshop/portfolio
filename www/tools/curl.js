@@ -13,34 +13,34 @@ const TEMPLATE_DIR = path.resolve(__dirname, '../buildtools/templates/');
 const cfg = require(CONFIG_DIR + '/app_config.js')();
 
 function curl() {
-    const p1 = createRequest(
-        { url: cfg.env.dev.api_base + '/sitemap.xml', verbose: true },
-        fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dev.xml')
-    );
-    const p2 = createRequest(
-        { url: cfg.env.stage.api_base + '/sitemap.xml', verbose: true },
-        fs.createWriteStream(TEMPLATE_DIR + '/sitemap/stage.xml')
-    );
-    const p3 = createRequest(
-        { url: cfg.env.dist.api_base + '/sitemap.xml', verbose: true },
-        fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dist.xml')
-    );
-    return Promise.all([p1, p2, p3]);
+  const p1 = createRequest(
+    { url: cfg.env.dev.api_base + '/sitemap.xml', verbose: true },
+    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dev.xml')
+  );
+  const p2 = createRequest(
+    { url: cfg.env.stage.api_base + '/sitemap.xml', verbose: true },
+    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/stage.xml')
+  );
+  const p3 = createRequest(
+    { url: cfg.env.dist.api_base + '/sitemap.xml', verbose: true },
+    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dist.xml')
+  );
+  return Promise.all([p1, p2, p3]);
 }
 
 function createRequest(options, file) {
-    return new Promise((resolve, reject) => {
-        curlr.request(options, (err, data) => {
-            if (err) {
-                // failed
-                console.error(err);
-                reject('error', err);
-            } else {
-                file.write(data);
-                resolve(data);
-            }
-        });
+  return new Promise((resolve, reject) => {
+    curlr.request(options, (err, data) => {
+      if (err) {
+        // failed
+        console.error(err);
+        reject('error', err);
+      } else {
+        file.write(data);
+        resolve(data);
+      }
     });
+  });
 }
 
 export default curl;

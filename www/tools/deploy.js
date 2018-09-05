@@ -6,11 +6,11 @@ import update from './update';
 import sync from './sync';
 
 async function deploy() {
-    // await run(clean);
-    // await run(criticalCSS);
-    await run(svninfo);
-    await run(update);
-    run(sync);
+  // await run(clean);
+  // await run(criticalCSS);
+  // await run(svninfo);
+  await run(update);
+  run(sync);
 }
 
 export default deploy;

@@ -11,6 +11,8 @@ const PROJECT = {
   devserverURL: 'http://' + DEVSERVER_HOST + ':' + DEVSERVER_PORT,
   devServer: 'webpack-dev-server/client?http://' + DEVSERVER_HOST + ':' + DEVSERVER_PORT,
   browserSyncPort: BROWSERSYNC_PORT,
+  manifestName: 'manifest',
+  vendorName: 'vendor',
 };
 
 module.exports = PROJECT;
