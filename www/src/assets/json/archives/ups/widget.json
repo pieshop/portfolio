@@ -1,12 +1,18 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/web/ups/widget/flash/media/wrapper.swf",
-        "base":      "/media/web/ups/widget/",
-        "width":"670",
-        "height":"500",
-        "bgcolor":"#000000",
-        "flashvars":{"wwwroot":"","approot":"flash/","languageroot":"en-gb/flash/","configURL":"settings/config.xml","language":"en-gb"}
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/ups/widget/flash/media/wrapper.swf",
+    "base": "/media/web/ups/widget/",
+    "width": "670",
+    "height": "500",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "wwwroot": "",
+      "approot": "flash/",
+      "languageroot": "en-gb/flash/",
+      "configURL": "settings/config.xml",
+      "language": "en-gb"
     }
+  }
 ]

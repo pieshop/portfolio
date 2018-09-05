@@ -1,14 +1,14 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/web/msn/searchsupremo/MSN_vsq_welcome.swf",
-        "base":      "/media/web/msn/searchsupremo/",
-        "width":     "950",
-        "height":    "676",
-        "bgcolor":   "#17318c",
-        "flashvars": {
-            "externalVars": "dictionaryURL=xml/flash_welcome_dictionary.xml"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/msn/searchsupremo/MSN_vsq_welcome.swf",
+    "base": "/media/web/msn/searchsupremo/",
+    "width": "950",
+    "height": "676",
+    "bgcolor": "#17318c",
+    "flashvars": {
+      "externalVars": "dictionaryURL=xml/flash_welcome_dictionary.xml"
     }
+  }
 ]

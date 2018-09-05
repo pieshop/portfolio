@@ -1,30 +1,55 @@
 /**
  * Created by stephenhamilton on 24/02/2017.
  */
-import React from 'react';
+import React, { Component } from 'react';
 
-const ItemImage = ({style, media_path, media_name_3x, media_name_2x, media_name_1x, media_name, alt, is_desktop}) => {
+export default class ItemImage extends Component {
+  constructor() {
+    super();
+  }
+
+  componentDidMount() {
+    TweenMax.to(this.item_ref, 0.3, { opacity: 1, ease: Power1.easeIn });
+  }
+
+  // Render using TweenMax
+  render() {
+    const {
+      width = 500,
+      height = 500,
+      style,
+      media_path,
+      media_name_3x,
+      media_name_2x,
+      media_name_1x,
+      media_name,
+      alt,
+      is_desktop,
+    } = this.props;
+
+    const paddingbottom = (height / width) * 100;
+    const thumb_style = { opacity: 0, height: 0, paddingBottom: paddingbottom + '%' };
+    const srcSet = is_desktop
+      ? `${media_path}${media_name_3x} 1024w, ${media_path}${media_name_2x} 768w, ${media_path}${media_name_1x} 480w`
+      : '';
+    const sizes = is_desktop
+      ? '(max-width: 480px)  100vw, (max-width: 768px)  100vw, (max-width: 1024px) 100vw, 100vw'
+      : '';
+    const src = is_desktop ? `${media_path}${media_name_1x}` : `${media_path}${media_name}`;
     return (
-        <div class={style}>
-            <div class="thumbnail">
-                {is_desktop ? (
-                        <img class="img-fluid img-thumbnail" crossOrigin="anonymous" alt={alt}
-                             srcSet={`${media_path}${media_name_3x} 1024w,
-                                          ${media_path}${media_name_2x} 768w,
-                                          ${media_path}${media_name_1x} 480w`}
-                             src={`${media_path}${media_name_1x}`}
-                             sizes="
-                                    (max-width: 480px)  100vw,
-                                    (max-width: 768px)  100vw,
-                                    (max-width: 1024px) 100vw,
-                                    100vw"
-                        />
-                    ) : (
-                        <img class="img-fluid img-thumbnail" crossOrigin="anonymous" alt={alt}
-                             src={`${media_path}${media_name}`}/>
-                    )}
-            </div>
+      <div class={style}>
+        <div class="thumbnail" ref={(item) => (this.item_ref = item)} style={thumb_style}>
+          <img
+            width={width}
+            height={height}
+            class="img-fluid img-thumbnail"
+            alt={alt}
+            srcSet={srcSet}
+            src={src}
+            sizes={sizes}
+          />
         </div>
+      </div>
     );
-};
-export default ItemImage;
+  }
+}

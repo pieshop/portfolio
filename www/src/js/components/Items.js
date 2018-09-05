@@ -1,31 +1,32 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CategoryItem from 'components/CategoryItem';
+import Helmet from 'react-helmet/es/Helmet';
 
 export default class Items extends Component {
-    render() {
-        return (
-            <div class="main_region">
-                <ul class="list list-unstyled">
-                    <div class="category_region">
-                        <div class="row">
-                            {this.props.items.map(this.renderItem)}
-                        </div>
-                    </div>
-                </ul>
-            </div>
-        );
-    }
+  render() {
+    const { selectedCategoryMetaData } = this.props;
+    const { label, description } = selectedCategoryMetaData;
+    return (
+      <div class="main_region">
+        <Helmet>
+          <title>{label + ' Portfolio Items'}</title>
+          <meta name="Description" content={description} />
+        </Helmet>
+        <ul class="list list-unstyled">
+          <div class="category_region">
+            <div class="row">{this.props.items.map(this.renderItem)}</div>
+          </div>
+        </ul>
+      </div>
+    );
+  }
 
-    renderItem(data, index) {
-        return <CategoryItem
-            key={data.id}
-            {...data}
-            index={index}
-        />;
-    }
+  renderItem(data, index) {
+    return <CategoryItem key={data.id} {...data} index={index} />;
+  }
 }
 
 Items.propTypes = {
-    items: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
 };

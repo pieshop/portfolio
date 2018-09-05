@@ -1,17 +1,17 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":"/media/game/intel/vprocompetition/flash/media/Application.swf",
-        "base":"/media/game/intel/vprocompetition/flash/",
-        "width":"800",
-        "height":"635",
-        "bgcolor":"#FFFFFF",
-        "flashvars":{
-          "approot":"",
-          "configfile":"settings/config.xml",
-          "language":"ENG",
-          "tracking":"off"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/game/intel/vprocompetition/flash/media/Application.swf",
+    "base": "/media/game/intel/vprocompetition/flash/",
+    "width": "800",
+    "height": "635",
+    "bgcolor": "#FFFFFF",
+    "flashvars": {
+      "approot": "",
+      "configfile": "settings/config.xml",
+      "language": "ENG",
+      "tracking": "off"
     }
+  }
 ]

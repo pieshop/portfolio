@@ -1,18 +1,18 @@
 [
-    {
-        "type"     : "swf",
-        "id"       : "unit1",
-        "url"      : "/media/web/microsoft/dynamics/flash/media/wrapper.swf",
-        "base"     : "/media/web/microsoft/dynamics/",
-        "width"    : "700",
-        "height"   : "500",
-        "bgcolor"  : "#000000",
-        "flashvars": {
-            "wwwroot"     : "flash/",
-            "approot"     : "flash/",
-            "languageroot": "en-gb/flash/",
-            "configURL"   : "settings/config.xml",
-            "language"    : "en-gb"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/microsoft/dynamics/flash/media/wrapper.swf",
+    "base": "/media/web/microsoft/dynamics/",
+    "width": "700",
+    "height": "500",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "wwwroot": "flash/",
+      "approot": "flash/",
+      "languageroot": "en-gb/flash/",
+      "configURL": "settings/config.xml",
+      "language": "en-gb"
     }
+  }
 ]

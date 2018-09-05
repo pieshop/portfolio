@@ -1,27 +1,27 @@
 [
-    {
-        "type"   : "swf",
-        "id"     : "unit1",
-        "url"    : "/media/olm/microsoft/diver/mpu_336x280.swf",
-        "width"  : "336",
-        "height" : "280",
-        "bgcolor": "#000000"
-    },
-    {
-        "type"   : "swf",
-        "id"     : "unit2",
-        "url"    : "/media/olm/microsoft/diver/diver_teaser.swf",
-        "width"  : "380",
-        "height" : "325",
-        "bgcolor": "#000000"
-    },
-    {
-        "type"   : "swf",
-        "id"     : "unit3",
-        "url"    : "/media/olm/microsoft/diver/eyeblaster.swf",
-        "width"  : "780",
-        "height" : "500",
-        "wmode"  : "transparent",
-        "bgcolor": "#000000"
-    }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/olm/microsoft/diver/mpu_336x280.swf",
+    "width": "336",
+    "height": "280",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "unit2",
+    "url": "/media/olm/microsoft/diver/diver_teaser.swf",
+    "width": "380",
+    "height": "325",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "unit3",
+    "url": "/media/olm/microsoft/diver/eyeblaster.swf",
+    "width": "780",
+    "height": "500",
+    "wmode": "transparent",
+    "bgcolor": "#000000"
+  }
 ]

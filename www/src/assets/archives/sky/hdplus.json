@@ -1,21 +1,21 @@
 [
-    {
-      "type" : "swf",
-        "id":      "unit1",
-        "url":     "/media/olm/sky/promotion/application.swf",
-        "base":    "/media/olm/sky/promotion/",
-        "width":   "723",
-        "height":  "432",
-        "bgcolor": "#000000"
-    },
-    {
-      "type" : "swf",
-        "id":      "unit2",
-        "url":     "/media/olm/sky/carousel/SkyPlusHD_ProjectWhite_500x250_preload.swf",
-        "base":    "/media/olm/sky/carousel/",
-        "width":   "500",
-        "height":  "250",
-        "wmode":   "transparent",
-        "bgcolor": "#FFFFFF"
-    }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/olm/sky/promotion/application.swf",
+    "base": "/media/olm/sky/promotion/",
+    "width": "723",
+    "height": "432",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "unit2",
+    "url": "/media/olm/sky/carousel/SkyPlusHD_ProjectWhite_500x250_preload.swf",
+    "base": "/media/olm/sky/carousel/",
+    "width": "500",
+    "height": "250",
+    "wmode": "transparent",
+    "bgcolor": "#FFFFFF"
+  }
 ]

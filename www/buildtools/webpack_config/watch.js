@@ -1,78 +1,68 @@
-'use strict';
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const PATHS = require('./constants/paths');
+const PROJECT = require('./constants/project');
+const {server, main, optimise, rules, plugins} = require('./config/index');
+
 /**
- * React HMR :
- * https://webpack.js.org/guides/hmr-react/
- * https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/30
+ * Based off:
+ * https://github.com/Tomekmularczyk/react-starter/tree/master/config
  */
-const webpackMerge      = require('webpack-merge');
-const path              = require('path');
-const webpack           = require('webpack');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+module.exports = (options = {}) => {
+  const TARGET = options.target;
+  const REPLACE_OPTIONS = options.replace_options;
+  const ENV = 'development';
+  const PUBLIC_PATH = '/';
+  const CSS_PUBLIC_PATH = '/';
+  const isProduction = false;
 
-const _base = require('./base');
+  // console.log('ENV', ENV, '\nOUTPUT_DIR', PATHS.dist, '\nREPLACE_OPTIONS', REPLACE_OPTIONS);
 
-module.exports = function (options) {
-    const CONTENT_BASE     = 'src';
-    const DEVSERVER_PORT   = 3000;
-    const BROWSERSYNC_PORT = 4000;
-    const ROOT_DIR         = path.resolve(__dirname, '../../');
-    const NODE_DIR         = ROOT_DIR + '/' + 'node_modules';
-    const SRC_DIR          = ROOT_DIR + '/' + CONTENT_BASE;
-    const LIBS_DIR         = SRC_DIR + '/' + 'js/libs';
+  return merge([
+    server.setDevServer(),
+    main.generateSourceMaps('eval'),
+    main.setDevMode(),
+    main.setEntries({
+      app: [
+        'react-hot-loader/patch',
+        PROJECT.devServer,
+        'webpack/hot/only-dev-server',
+        PATHS.entryFile,
+      ],
+    }),
+    main.setOutput({ pathToDirectory: PATHS.root, publicPath: PUBLIC_PATH, isProduction }),
+    main.resolveDependencies({ aliases: {}, src: PATHS.src + '/js' }),
+    main.setPerformance(),
+    main.setStats({}),
 
-    const base = _base.defaults(options);
-    _base.addVendorsShortcuts(_base, base, NODE_DIR, LIBS_DIR);
+    optimise.createVendorChunk(),
 
-    return webpackMerge(base, {
-        entry    : {
-            app: [
-                'react-hot-loader/patch',
-                'webpack-dev-server/client?http://localhost:'+DEVSERVER_PORT,
-                'webpack/hot/only-dev-server',
-                SRC_DIR + '/js/index.js'
-            ]
-        },
-        devServer: {
-            open              : true,
-            contentBase       : CONTENT_BASE,
-            historyApiFallback: true,
-            port              : DEVSERVER_PORT,
-            hot               : true,
-            inline            : true,
-            compress          : true,
-            stats             : {
-                assets    : false,
-                children  : false,
-                chunks    : false,
-                hash      : false,
-                modules   : false,
-                publicPath: false,
-                timings   : true,
-                version   : false,
-                warnings  : false
-            }
-        },
-        plugins  : [
-            new webpack.HotModuleReplacementPlugin(),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'vendor', // all node_modules split to vendor
-                minChunks(module, count) {
-                    const context = module.context;
-                    return context && context.indexOf('node_modules') >= 0;
-                },
-            }),
-            // new BrowserSyncPlugin(
-            //     {
-            //         host : 'localhost',
-            //         port : BROWSERSYNC_PORT,
-            //         // proxy the Webpack Dev Server endpoint (which should be serving on http://localhost:4000/) through BrowserSync
-            //         proxy: 'http://localhost:'+DEVSERVER_PORT+'/',
-            //     },
-            //     {
-            //         // prevent BrowserSync from reloading the page and let Webpack Dev Server take care of this
-            //         reload: false,
-            //     }
-            // )
-        ]
-    });
+    rules.loadStaticImageAssets({ name: PATHS.images, publicPath: CSS_PUBLIC_PATH }),
+    rules.loadStaticFontAssets({ name: PATHS.fonts, publicPath: CSS_PUBLIC_PATH }),
+
+    rules.replaceConfigOptions(REPLACE_OPTIONS),
+
+    rules.eslintPre(),
+    rules.transpileJavaScript(),
+
+    rules.compileSCSS({ extract: false, isProduction, sourceMap: true  }),
+
+    main.addVendorShortcut({
+      name: 'TweenMax',
+      alias: { TweenMax: PATHS.nodeDir + '/gsap/src/uncompressed/TweenMax.js' },
+    }),
+
+    plugins.define({ env: ENV, opts: { __SERVICE_WORKER__: false } }),
+    plugins.generateHTML({
+      title: PROJECT.title,
+      pathToTemplate: PATHS.templateDir + '/index_watch.ejs',
+      baseHref: '//localhost:' + PROJECT.devserverPort,
+    }),
+    plugins.setExtraPlugins([
+      new webpack.NamedModulesPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.ProvidePlugin({ React: 'react' }),
+    ]),
+
+  ]);
 };

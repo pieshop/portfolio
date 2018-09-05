@@ -1,6 +1,7 @@
-# Portfolio frontend
+# portfolio
+Personal Portfolio
 
-Using React, Redux, ES6
+## Important Links
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 

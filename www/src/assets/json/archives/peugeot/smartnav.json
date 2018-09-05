@@ -1,10 +1,10 @@
 [
-    {
-      "type" : "swf",
-        "id":      "unit1",
-        "url":     "/media/web/peugeot/smartnav/peugeotSmartNav.swf",
-        "width":   "773",
-        "height":  "485",
-        "bgcolor": "#000000"
-    }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/peugeot/smartnav/peugeotSmartNav.swf",
+    "width": "773",
+    "height": "485",
+    "bgcolor": "#000000"
+  }
 ]

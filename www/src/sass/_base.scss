@@ -13,8 +13,8 @@ $item__awards--default: $grey_dark;
 $item__awards--hover: $grey_dark2;
 
 @mixin dashed_line($size, $clr:$grey_dark) {
-  border-top:     $size dashed $clr;
-  margin-top:     0.5em;
+  border-top: $size dashed $clr;
+  margin-top: 0.5em;
   padding-bottom: 0.5em;
-  height:         1px;
+  height: 1px;
 }

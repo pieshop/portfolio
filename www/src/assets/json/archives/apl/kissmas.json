@@ -1,0 +1,11 @@
+[
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/apl/kissmas.swf",
+    "base": "/media/web/apl/",
+    "width": "360",
+    "height": "480",
+    "bgcolor": "#FFFFFF"
+  }
+]

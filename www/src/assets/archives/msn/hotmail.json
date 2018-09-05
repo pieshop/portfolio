@@ -1,51 +1,51 @@
 [
-    {
-      "type" : "swf",
-        "id":      "unit1",
-        "url":     "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_otp_i_06.swf",
-        "width":   "500",
-        "height":  "300",
-        "wmode":   "transparent",
-        "bgcolor": "#000000"
-    },
-    {
-      "type" : "swf",
-        "id":      "unit2",
-        "url":     "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_flower_300x250_07.swf",
-        "width":   "300",
-        "height":  "250",
-        "bgcolor": "#000000"
-    },
-    {
-      "type" : "swf",
-        "id":      "unit3",
-        "url":     "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_inbox_300x250_01.swf",
-        "width":   "300",
-        "height":  "250",
-        "bgcolor": "#000000"
-    },
-    {
-      "type" : "swf",
-        "id":      "unit4",
-        "url":     "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_flower_728x90_01.swf",
-        "width":   "728",
-        "height":  "90",
-        "bgcolor": "#000000"
-    },
-    {
-      "type" : "swf",
-        "id":      "unit5",
-        "url":     "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_inbox_728x90_01.swf",
-        "width":   "728",
-        "height":  "90",
-        "bgcolor": "#000000"
-    },
-    {
-      "type" : "swf",
-        "id":      "unit6",
-        "url":     "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_flower_160x600_04.swf",
-        "width":   "160",
-        "height":  "600",
-        "bgcolor": "#000000"
-    }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_otp_i_06.swf",
+    "width": "500",
+    "height": "300",
+    "wmode": "transparent",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "unit2",
+    "url": "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_flower_300x250_07.swf",
+    "width": "300",
+    "height": "250",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "unit3",
+    "url": "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_inbox_300x250_01.swf",
+    "width": "300",
+    "height": "250",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "unit4",
+    "url": "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_flower_728x90_01.swf",
+    "width": "728",
+    "height": "90",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "unit5",
+    "url": "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_inbox_728x90_01.swf",
+    "width": "728",
+    "height": "90",
+    "bgcolor": "#000000"
+  },
+  {
+    "type": "swf",
+    "id": "unit6",
+    "url": "/media/olm/msn/hotmail/msn_hotmail_uk_bfly_flower_160x600_04.swf",
+    "width": "160",
+    "height": "600",
+    "bgcolor": "#000000"
+  }
 ]

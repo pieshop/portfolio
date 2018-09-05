@@ -1,11 +1,11 @@
 [
-    {
-              "type" : "swf",
-        "id":      "unit1",
-        "url":     "/media/web/birdseye/birdseye.swf",
-        "base":    "/media/web/birdseye/",
-        "width":   "544",
-        "height":  "256",
-        "bgcolor": "#000000"
-    }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/birdseye/birdseye.swf",
+    "base": "/media/web/birdseye/",
+    "width": "544",
+    "height": "256",
+    "bgcolor": "#000000"
+  }
 ]

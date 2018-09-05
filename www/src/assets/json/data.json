@@ -4,22 +4,20 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.png",
-        "desktop_03.jpg"
+        { "id": "desktop_01.jpg", "width": 984, "height": 766 },
+        { "id": "desktop_02.png", "width": 984, "height": 766 },
+        { "id": "desktop_03.jpg", "width": 1023, "height": 614 }
       ],
-      "pdfs": [
-        "output.pdf"
-      ]
+      "pdfs": ["output.pdf"]
     }
   },
   "anirog": {
     "variousgames": {
       "has_archive": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "commodore_user.png"
+        { "id": "desktop_01.jpg", "width": 800, "height": 418 },
+        { "id": "desktop_02.jpg", "width": 708, "height": 630 },
+        { "id": "commodore_user.png", "width": 908, "height": 1167 }
       ],
       "links": [
         {
@@ -46,7 +44,7 @@
     }
   },
   "apl": {
-    "various": {
+    "kissmas": {
       "has_archive": true,
       "is_flash": true,
       "images": []
@@ -57,14 +55,53 @@
       "has_archive": false,
       "is_flash": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg",
-        "desktop_08.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 640 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 640 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 640 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 640 },
+        { "id": "desktop_07.jpg", "width": 1024, "height": 640 },
+        { "id": "desktop_08.jpg", "width": 1024, "height": 640 }
+      ]
+    },
+    "nextstepbullying": {
+      "has_archive": false,
+      "is_flash": false,
+      "images": [
+        { "id": "desktop_01.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 847 }
+      ],
+      "links": [
+        {
+          "url": "https://www.bbc.co.uk/cbbc/games/the-next-step-take-it-to-the-top-stand-up-to-bullying",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ]
+    },
+    "nextstep_v2": {
+      "has_archive": false,
+      "is_flash": false,
+      "images": [
+        { "id": "desktop_01.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 847 }
+      ]
+    },
+    "nextstep_v3": {
+      "has_archive": false,
+      "is_flash": false,
+      "images": [
+        { "id": "desktop_01.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 847 }
       ],
       "links": [
         {
@@ -73,18 +110,32 @@
           "label": "Live"
         }
       ]
+    },
+    "horriblehistories": {
+      "has_archive": false,
+      "is_flash": false,
+      "images": [
+        { "id": "desktop_01.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_07.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_08.jpg", "width": 1024, "height": 847 }
+      ]
     }
   },
   "betgenius": {
     "variousolm": {
       "has_archive": false,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg",
-        "olm_05.jpg",
-        "olm_06.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 },
+        { "id": "olm_03.jpg", "width": 300, "height": 250 },
+        { "id": "olm_04.jpg", "width": 728, "height": 90 },
+        { "id": "olm_05.jpg", "width": 728, "height": 90 },
+        { "id": "olm_06.jpg", "width": 468, "height": 60 }
       ]
     }
   },
@@ -92,16 +143,15 @@
     "continent": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ],
+      "images": [{ "id": "desktop_01.jpg", "width": 972, "height": 1471 }],
       "awards": [
         {
           "award_name": "CONNECTIONS",
           "award_long_name": "Marketing Connections Awards",
           "award_result": "WINNER",
           "award_category": "Best use of the internet for customer communications (consumer)",
-          "link": "http://www.campaignlive.co.uk/article/71862/connections-2000---marketing-awards-best-use-internet-customer-communications-consumer",
+          "link":
+            "http://www.campaignlive.co.uk/article/71862/connections-2000---marketing-awards-best-use-internet-customer-communications-consumer",
           "pdf": "pdf/captain_birdseye_connections2000.pdf"
         },
         {
@@ -134,10 +184,10 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 937 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 937 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 937 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 937 }
       ]
     },
     "bentenrepack": {
@@ -151,10 +201,10 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 936 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 936 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 695 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 695 }
       ]
     },
     "unlock2": {
@@ -167,15 +217,15 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg",
-        "desktop_08.jpg",
-        "desktop_09.jpg"
+        { "id": "desktop_01.jpg", "width": 965, "height": 1099 },
+        { "id": "desktop_02.jpg", "width": 965, "height": 1099 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 681 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 681 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 681 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 681 },
+        { "id": "desktop_07.jpg", "width": 1024, "height": 681 },
+        { "id": "desktop_08.jpg", "width": 1024, "height": 681 },
+        { "id": "desktop_09.jpg", "width": 1024, "height": 681 }
       ]
     },
     "unlock2repack": {
@@ -183,16 +233,38 @@
       "is_flash": true,
       "links": [
         {
-          "url": "http://www.cartoonnetwork.co.uk/show/ben-10-omniverse/games/ben-10-alien-unlock-2",
+          "url":
+            "http://www.cartoonnetwork.co.uk/show/ben-10-omniverse/games/ben-10-alien-unlock-2",
           "target": "_blank",
           "label": "Live"
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 936 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 936 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 651 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 651 }
+      ]
+    }
+  },
+  "dcthompson": {
+    "beanlender": {
+      "has_archive": false,
+      "is_flash": false,
+      "images": [
+        { "id": "desktop_01.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 847 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 847 }
+      ],
+      "links": [
+        {
+          "url": "https://www.beano.com/games/return-to-lender",
+          "target": "_blank",
+          "label": "Live"
+        }
       ]
     }
   },
@@ -208,62 +280,62 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg"
+        { "id": "desktop_01.jpg", "width": 1136, "height": 1069 },
+        { "id": "desktop_02.jpg", "width": 1136, "height": 1069 },
+        { "id": "desktop_03.jpg", "width": 1136, "height": 1069 },
+        { "id": "desktop_04.jpg", "width": 1140, "height": 1072 }
       ]
     },
     "capamerads": {
       "has_archive": true,
       "is_dark_background": false,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg",
-        "olm_05.jpg",
-        "olm_06.jpg"
+        { "id": "olm_01.jpg", "width": 500, "height": 500 },
+        { "id": "olm_02.jpg", "width": 500, "height": 500 },
+        { "id": "olm_03.jpg", "width": 500, "height": 500 },
+        { "id": "olm_04.jpg", "width": 500, "height": 500 },
+        { "id": "olm_05.jpg", "width": 500, "height": 500 },
+        { "id": "olm_06.jpg", "width": 500, "height": 500 }
       ]
     },
     "cfuf": {
       "has_archive": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg",
-        "desktop_08.jpg",
-        "smartphone.jpg"
+        { "id": "desktop_01.jpg", "width": 992, "height": 1128 },
+        { "id": "desktop_02.jpg", "width": 992, "height": 1128 },
+        { "id": "desktop_03.jpg", "width": 992, "height": 1128 },
+        { "id": "desktop_04.jpg", "width": 992, "height": 1128 },
+        { "id": "desktop_05.jpg", "width": 992, "height": 1128 },
+        { "id": "desktop_06.jpg", "width": 992, "height": 1128 },
+        { "id": "desktop_06.jpg", "width": 992, "height": 1128 },
+        { "id": "desktop_06.jpg", "width": 992, "height": 1128 },
+        { "id": "smartphone.jpg", "width": 320, "height": 571 }
       ]
     },
     "dorybanner": {
       "has_archive": true,
       "is_dark_background": false,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg",
-        "olm_05.jpg",
-        "olm_06.jpg"
+        { "id": "olm_01.jpg", "width": 500, "height": 500 },
+        { "id": "olm_02.jpg", "width": 500, "height": 500 },
+        { "id": "olm_03.jpg", "width": 500, "height": 500 },
+        { "id": "olm_04.jpg", "width": 500, "height": 500 },
+        { "id": "olm_05.jpg", "width": 500, "height": 500 },
+        { "id": "olm_06.jpg", "width": 500, "height": 500 }
       ]
     },
     "epicmickey": {
       "has_archive": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 1008, "height": 897 },
+        { "id": "desktop_02.jpg", "width": 1008, "height": 897 }
       ]
     },
     "fandf": {
       "has_archive": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 1147, "height": 1057 },
+        { "id": "desktop_02.jpg", "width": 1147, "height": 1175 }
       ]
     },
     "gotg": {
@@ -277,33 +349,33 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg"
+        { "id": "desktop_01.jpg", "width": 976, "height": 541 },
+        { "id": "desktop_02.jpg", "width": 976, "height": 541 },
+        { "id": "desktop_03.jpg", "width": 976, "height": 541 },
+        { "id": "desktop_04.jpg", "width": 976, "height": 541 },
+        { "id": "desktop_05.jpg", "width": 976, "height": 541 },
+        { "id": "desktop_06.jpg", "width": 976, "height": 961 }
       ]
     },
     "grootdance": {
       "has_archive": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg"
+        { "id": "desktop_01.jpg", "width": 1585, "height": 1315 },
+        { "id": "desktop_02.jpg", "width": 1585, "height": 1315 },
+        { "id": "desktop_03.jpg", "width": 1585, "height": 1315 },
+        { "id": "desktop_04.jpg", "width": 1585, "height": 1315 },
+        { "id": "desktop_05.jpg", "width": 1585, "height": 1315 },
+        { "id": "desktop_06.jpg", "width": 1585, "height": 1315 }
       ]
     },
     "ironman3it": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg"
+        { "id": "olm_01.jpg", "width": 400, "height": 350 },
+        { "id": "olm_02.jpg", "width": 400, "height": 350 },
+        { "id": "olm_03.jpg", "width": 970, "height": 250 },
+        { "id": "olm_04.jpg", "width": 970, "height": 250 }
       ]
     },
     "monstermatch": {
@@ -316,69 +388,69 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg"
+        { "id": "desktop_01.jpg", "width": 960, "height": 640 },
+        { "id": "desktop_02.jpg", "width": 960, "height": 640 },
+        { "id": "desktop_03.jpg", "width": 960, "height": 640 }
       ]
     },
     "planes": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg"
+        { "id": "olm_011.jpg", "width": 300, "height": 250 },
+        { "id": "olm_012.jpg", "width": 300, "height": 250 },
+        { "id": "olm_013.jpg", "width": 300, "height": 250 }
       ]
     },
     "stm2012": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg"
+        { "id": "desktop_01.jpg", "width": 1278, "height": 973 },
+        { "id": "desktop_02.jpg", "width": 1278, "height": 973 },
+        { "id": "desktop_03.jpg", "width": 1278, "height": 973 },
+        { "id": "desktop_04.jpg", "width": 1278, "height": 973 },
+        { "id": "desktop_05.jpg", "width": 1278, "height": 973 }
       ]
     },
     "stm2013": {
       "has_archive": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg"
+        { "id": "desktop_01.jpg", "width": 1391, "height": 914 },
+        { "id": "desktop_02.jpg", "width": 1391, "height": 914 },
+        { "id": "desktop_03.jpg", "width": 1391, "height": 914 },
+        { "id": "desktop_04.jpg", "width": 1391, "height": 914 },
+        { "id": "desktop_05.jpg", "width": 1391, "height": 914 },
+        { "id": "desktop_06.jpg", "width": 1391, "height": 914 },
+        { "id": "desktop_07.jpg", "width": 871, "height": 798 }
       ]
     },
     "stm2014": {
       "has_archive": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg",
-        "desktop_08.jpg",
-        "desktop_09.jpg",
-        "desktop_10.jpg"
+        { "id": "desktop_01.jpg", "width": 1056, "height": 942 },
+        { "id": "desktop_02.jpg", "width": 1056, "height": 942 },
+        { "id": "desktop_03.jpg", "width": 1056, "height": 942 },
+        { "id": "desktop_04.jpg", "width": 1056, "height": 942 },
+        { "id": "desktop_05.jpg", "width": 1056, "height": 942 },
+        { "id": "desktop_06.jpg", "width": 1056, "height": 942 },
+        { "id": "desktop_07.jpg", "width": 1056, "height": 942 },
+        { "id": "desktop_08.jpg", "width": 1056, "height": 942 },
+        { "id": "desktop_09.jpg", "width": 1056, "height": 942 },
+        { "id": "desktop_10.jpg", "width": 1056, "height": 942 }
       ]
     },
     "starwarsrogue": {
       "has_archive": true,
       "is_dark_background": false,
       "images": [
-        "olm_011.jpg",
-        "olm_012.jpg",
-        "olm_013.jpg",
-        "olm_041.jpg",
-        "olm_042.jpg",
-        "olm_043.jpg",
-        "olm_044.jpg"
+        { "id": "olm_011.jpg", "width": 500, "height": 500 },
+        { "id": "olm_012.jpg", "width": 500, "height": 500 },
+        { "id": "olm_013.jpg", "width": 500, "height": 500 },
+        { "id": "olm_041.jpg", "width": 500, "height": 500 },
+        { "id": "olm_042.jpg", "width": 500, "height": 500 },
+        { "id": "olm_043.jpg", "width": 500, "height": 500 },
+        { "id": "olm_044.jpg", "width": 500, "height": 500 }
       ]
     },
     "tbpf": {
@@ -391,39 +463,39 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg"
+        { "id": "desktop_01.jpg", "width": 1600, "height": 1070 },
+        { "id": "desktop_02.jpg", "width": 1600, "height": 1070 },
+        { "id": "desktop_03.jpg", "width": 1600, "height": 1070 },
+        { "id": "desktop_04.jpg", "width": 1600, "height": 1070 },
+        { "id": "desktop_05.jpg", "width": 1600, "height": 1070 },
+        { "id": "desktop_06.jpg", "width": 1600, "height": 1070 }
       ]
     },
     "tomorrowlandrich": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg",
-        "olm_05.jpg",
-        "olm_06.jpg",
-        "olm_07.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 },
+        { "id": "olm_03.jpg", "width": 300, "height": 250 },
+        { "id": "olm_04.jpg", "width": 300, "height": 250 },
+        { "id": "olm_05.jpg", "width": 300, "height": 250 },
+        { "id": "olm_06.jpg", "width": 300, "height": 250 },
+        { "id": "olm_07.jpg", "width": 300, "height": 250 }
       ]
     },
     "zootopia": {
       "has_archive": true,
       "is_dark_background": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg",
-        "olm_05.jpg",
-        "olm_06.jpg",
-        "olm_07.jpg",
-        "olm_08.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 600 },
+        { "id": "olm_02.jpg", "width": 300, "height": 600 },
+        { "id": "olm_03.jpg", "width": 300, "height": 600 },
+        { "id": "olm_04.jpg", "width": 300, "height": 600 },
+        { "id": "olm_05.jpg", "width": 300, "height": 600 },
+        { "id": "olm_06.jpg", "width": 300, "height": 600 },
+        { "id": "olm_07.jpg", "width": 300, "height": 600 },
+        { "id": "olm_08.jpg", "width": 300, "height": 600 }
       ]
     }
   },
@@ -432,8 +504,8 @@
       "has_archive": false,
       "is_flash": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 780, "height": 600 },
+        { "id": "desktop_02.jpg", "width": 972, "height": 661 }
       ],
       "awards": [
         {
@@ -460,22 +532,19 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_2002ss.jpg",
-        "desktop_2003ss.jpg",
-        "desktop_2004ss.jpg"
+        { "id": "desktop_2002ss.jpg", "width": 800, "height": 600 },
+        { "id": "desktop_2003ss.jpg", "width": 1024, "height": 768 },
+        { "id": "desktop_2004ss.jpg", "width": 1024, "height": 768 }
       ]
     },
     "f1interactivecar": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 759, "height": 566 },
+        { "id": "desktop_02.jpg", "width": 759, "height": 566 }
       ],
-      "swfs": [
-        "intro.swf",
-        "car_spin.swf"
-      ],
+      "swfs": ["intro.swf", "car_spin.swf"],
       "swfs_data": {
         "intro": {
           "width": "759",
@@ -494,81 +563,73 @@
     "gameon2008": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 998, "height": 385 }]
     },
     "gameon2010": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 998, "height": 385 }]
     },
     "iip": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 1024, "height": 759 }]
     },
     "insidethegameparticles": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 543 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 543 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 543 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 543 }
       ]
     },
     "insidethegamepathfinding": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 615 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 615 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 615 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 615 }
       ]
     },
     "itmgceo": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 551, "height": 343 }]
     },
     "itmgdynamicduo": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 550, "height": 480 },
+        { "id": "desktop_02.jpg", "width": 550, "height": 480 }
       ]
     },
     "itmghackerinvasion": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 550, "height": 480 },
+        { "id": "desktop_02.jpg", "width": 550, "height": 480 }
       ]
     },
     "itmgpcmeltdown": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 550, "height": 480 },
+        { "id": "desktop_02.jpg", "width": 550, "height": 480 }
       ]
     },
     "studio": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 598, "height": 545 },
+        { "id": "desktop_02.jpg", "width": 260, "height": 310 }
       ],
       "awards": [
         {
@@ -576,7 +637,7 @@
           "award_name": "BIMA",
           "award_long_name": "British Interactive Media Association",
           "award_result": "Winner",
-          "award_category": "B2C Measurement &amp; Results",
+          "award_category": "B2C Measurement & Results",
           "link": "http://www.bima.co.uk/bima-award/020E131703/bima-awards-2008/view-shortlist/81/",
           "pdf": "pdf/intelstudio-bima.pdf"
         }
@@ -585,12 +646,18 @@
     "vprocompetition": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 750, "height": 512 }]
     }
   },
   "jollywise": {
+    "miscellaneous2018": {
+      "has_archive": false,
+      "images": []
+    },
+    "miscellaneous2017": {
+      "has_archive": false,
+      "images": []
+    },
     "miscellaneous2016": {
       "has_archive": false,
       "images": []
@@ -615,9 +682,7 @@
   "kraft": {
     "prototype": {
       "has_archive": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 322, "height": 482 }]
     }
   },
   "louboutin": {
@@ -625,9 +690,9 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg"
+        { "id": "desktop_01.jpg", "width": 824, "height": 492 },
+        { "id": "desktop_02.jpg", "width": 824, "height": 492 },
+        { "id": "desktop_03.jpg", "width": 824, "height": 492 }
       ]
     }
   },
@@ -635,9 +700,7 @@
     "senses": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 800, "height": 574 }]
     }
   },
   "mastercard": {
@@ -645,8 +708,8 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 987, "height": 307 },
+        { "id": "desktop_02.jpg", "width": 987, "height": 307 }
       ]
     }
   },
@@ -654,42 +717,34 @@
     "bcc": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "olm_01.jpg"
-      ]
+      "images": [{ "id": "olm_01.jpg", "width": 787, "height": 300 }]
     },
     "diver": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg"
+        { "id": "olm_01.jpg", "width": 336, "height": 280 },
+        { "id": "olm_01.jpg", "width": 777, "height": 487 }
       ]
     },
     "dynamics": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 700, "height": 500 }]
     }
   },
   "mini": {
     "avengers": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 800, "height": 494 }]
     }
   },
   "mrm": {
     "works": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 960, "height": 600 }]
     }
   },
   "msn": {
@@ -697,22 +752,22 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 },
+        { "id": "olm_03.jpg", "width": 500, "height": 300 }
       ]
     },
     "kittycaper": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 531 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 531 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 531 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 531 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 531 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 531 },
+        { "id": "desktop_07.jpg", "width": 1024, "height": 531 }
       ],
       "awards": [
         {
@@ -748,11 +803,11 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.png"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 532 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 532 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 532 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 532 },
+        { "id": "desktop_05.png", "width": 1024, "height": 1450 }
       ],
       "awards": [
         {
@@ -769,7 +824,7 @@
           "award_name": "BIMA",
           "award_long_name": "British Interactive Media Association",
           "award_result": "Finalist",
-          "award_category": "B2C Measurement &amp; Results",
+          "award_category": "B2C Measurement & Results",
           "link": "http://www.bima.co.uk/bima-award/020E131703/bima-awards-2008/view-shortlist/53/",
           "pdf": "pdf/msn-minimise-bima.pdf"
         }
@@ -779,16 +834,14 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 950, "height": 700 },
+        { "id": "desktop_02.jpg", "width": 500, "height": 384 }
       ]
     },
     "searchsupremo": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ],
+      "images": [{ "id": "desktop_01.jpg", "width": 963, "height": 687 }],
       "awards": [
         {
           "award_id": 7,
@@ -805,8 +858,8 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 900, "height": 550 },
+        { "id": "desktop_02.jpg", "width": 900, "height": 550 }
       ],
       "awards": [
         {
@@ -823,53 +876,49 @@
     "videowall": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 956, "height": 534 }]
     }
   },
   "natwest": {
     "advantagegold": {
       "has_archive": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 690, "height": 500 },
+        { "id": "desktop_02.jpg", "width": 690, "height": 500 }
       ]
     },
     "ag": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg"
+        { "id": "olm_01.jpg", "width": 502, "height": 374 },
+        { "id": "olm_02.jpg", "width": 160, "height": 140 },
+        { "id": "olm_03.jpg", "width": 468, "height": 60 }
       ]
     }
   },
   "nesquik": {
     "hopalong": {
-      "has_archive": true,
-      "is_flash": true,
+      "has_archive": false,
+      "is_flash": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 608, "height": 416 },
+        { "id": "desktop_02.jpg", "width": 608, "height": 416 }
       ]
     },
     "plus": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 700, "height": 400 },
+        { "id": "desktop_02.jpg", "width": 700, "height": 400 }
       ]
     }
   },
   "nickelodeon": {
     "chimpquiz": {
       "has_archive": false,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 956, "height": 1065 }]
     },
     "nickleap": {
       "has_archive": false,
@@ -886,16 +935,16 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg",
-        "desktop_08.jpg",
-        "desktop_09.jpg",
-        "desktop_10.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 776 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 776 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 776 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 776 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 776 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 776 },
+        { "id": "desktop_07.jpg", "width": 1024, "height": 776 },
+        { "id": "desktop_08.jpg", "width": 1024, "height": 776 },
+        { "id": "desktop_09.jpg", "width": 1024, "height": 776 },
+        { "id": "desktop_10.jpg", "width": 1024, "height": 776 }
       ],
       "awards": [
         {
@@ -904,7 +953,7 @@
           "award_long_name": "Lovies",
           "award_result": "Bronze",
           "award_category": "Schools and Education",
-          "link": "http://winners.lovieawards.eu/share/?y=2015&a=215",
+          "link": "http://bit.ly/2nPvhsn",
           "pdf": "pdf/nickelodeon-nickleap-lovie.pdf"
         }
       ]
@@ -915,8 +964,9 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 742, "height": 428 },
+        { "id": "desktop_03.jpg", "width": 742, "height": 428 },
+        { "id": "desktop_02.jpg", "width": 972, "height": 1336 }
       ]
     }
   },
@@ -924,21 +974,19 @@
     "smartnav": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ]
+      "images": [{ "id": "desktop_01.jpg", "width": 773, "height": 485 }]
     }
   },
   "royalmail": {
     "tistheseason": {
       "has_archive": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg",
-        "olm_05.jpg",
-        "olm_06.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 },
+        { "id": "olm_03.jpg", "width": 300, "height": 250 },
+        { "id": "olm_04.jpg", "width": 300, "height": 250 },
+        { "id": "olm_05.jpg", "width": 300, "height": 250 },
+        { "id": "olm_06.jpg", "width": 300, "height": 250 }
       ]
     }
   },
@@ -946,11 +994,10 @@
     "monstersuniversity": {
       "has_archive": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "smartphone_05.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 883 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 883 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 883 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 883 }
       ]
     }
   },
@@ -958,9 +1005,9 @@
     "donation": {
       "has_archive": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 }
       ]
     },
     "imagine2030": {
@@ -973,8 +1020,8 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 1140, "height": 1174 },
+        { "id": "desktop_02.jpg", "width": 1153, "height": 1362 }
       ]
     }
   },
@@ -983,18 +1030,18 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 640, "height": 360 },
+        { "id": "olm_03.jpg", "width": 300, "height": 250 },
+        { "id": "olm_04.jpg", "width": 640, "height": 360 }
       ]
     },
     "hdplus": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg"
+        { "id": "olm_01.jpg", "width": 723, "height": 432 },
+        { "id": "olm_02.jpg", "width": 500, "height": 250 }
       ]
     },
     "keyhole": {
@@ -1008,44 +1055,44 @@
         }
       ],
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 727, "height": 89 },
+        { "id": "olm_03.jpg", "width": 300, "height": 250 },
+        { "id": "olm_04.jpg", "width": 1042, "height": 968 }
       ]
     },
     "movies": {
       "has_archive": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg",
-        "olm_05.jpg",
-        "olm_06.jpg",
-        "olm_07.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 },
+        { "id": "olm_03.jpg", "width": 300, "height": 250 },
+        { "id": "olm_04.jpg", "width": 300, "height": 250 },
+        { "id": "olm_05.jpg", "width": 300, "height": 250 },
+        { "id": "olm_06.jpg", "width": 300, "height": 250 },
+        { "id": "olm_07.jpg", "width": 300, "height": 250 }
       ]
     },
     "rcc": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg",
-        "olm_05.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 },
+        { "id": "olm_03.jpg", "width": 300, "height": 250 },
+        { "id": "olm_04.jpg", "width": 300, "height": 250 },
+        { "id": "olm_05.jpg", "width": 300, "height": 250 }
       ]
     },
     "tbyd": {
       "has_archive": true,
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg",
-        "olm_05.jpg",
-        "olm_06.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 },
+        { "id": "olm_03.jpg", "width": 300, "height": 250 },
+        { "id": "olm_04.jpg", "width": 300, "height": 250 },
+        { "id": "olm_05.jpg", "width": 300, "height": 250 },
+        { "id": "olm_06.jpg", "width": 300, "height": 250 }
       ]
     }
   },
@@ -1060,10 +1107,10 @@
         }
       ],
       "images": [
-        "olm_01.jpg",
-        "olm_02.jpg",
-        "olm_03.jpg",
-        "olm_04.jpg"
+        { "id": "olm_01.jpg", "width": 300, "height": 250 },
+        { "id": "olm_02.jpg", "width": 300, "height": 250 },
+        { "id": "olm_03.jpg", "width": 300, "height": 250 },
+        { "id": "olm_04.jpg", "width": 300, "height": 250 }
       ]
     },
     "tinypopartpad": {
@@ -1077,11 +1124,11 @@
       ],
       "is_dark_background": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg"
+        { "id": "desktop_01.jpg", "width": 901, "height": 676 },
+        { "id": "desktop_02.jpg", "width": 901, "height": 676 },
+        { "id": "desktop_03.jpg", "width": 901, "height": 676 },
+        { "id": "desktop_04.jpg", "width": 901, "height": 676 },
+        { "id": "desktop_05.jpg", "width": 901, "height": 676 }
       ]
     },
     "tinypoptv": {
@@ -1095,11 +1142,11 @@
       ],
       "is_dark_background": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg"
+        { "id": "desktop_01.jpg", "width": 640, "height": 360 },
+        { "id": "desktop_02.jpg", "width": 640, "height": 360 },
+        { "id": "desktop_03.jpg", "width": 640, "height": 360 },
+        { "id": "desktop_04.jpg", "width": 640, "height": 360 },
+        { "id": "desktop_05.jpg", "width": 640, "height": 360 }
       ]
     }
   },
@@ -1107,9 +1154,7 @@
     "challenge": {
       "has_archive": false,
       "is_flash": false,
-      "images": [
-        "desktop_01.jpg"
-      ],
+      "images": [{ "id": "desktop_01.jpg", "width": 972, "height": 810 }],
       "links": [
         {
           "url": "http://www.oldgames.sk/en/mag/level-28/page/98/",
@@ -1139,9 +1184,7 @@
     "windows": {
       "has_archive": true,
       "is_flash": true,
-      "images": [
-        "desktop_01.jpg"
-      ],
+      "images": [{ "id": "desktop_01.jpg", "width": 548, "height": 596 }],
       "awards": [
         {
           "award_id": 11,
@@ -1185,10 +1228,62 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "smartphone_01.jpg",
-        "smartphone_02.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 839 },
+        { "id": "smartphone_01.jpg", "width": 322, "height": 570 },
+        { "id": "smartphone_02.jpg", "width": 322, "height": 570 }
+      ]
+    },
+    "potw": {
+      "has_archive": false,
+      "is_flash": false,
+      "links": [
+        {
+          "url": "http://www.boomerangtv.co.uk/animals",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        { "id": "desktop_01.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 839 }
+      ]
+    },
+    "knockknock": {
+      "has_archive": false,
+      "is_flash": false,
+      "links": [
+        {
+          "url": "http://www.boomerangtv.co.uk/shows/knock-knock-boom-boom",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        { "id": "desktop_01.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 839 }
+      ]
+    },
+    "letscreate": {
+      "has_archive": false,
+      "is_flash": false,
+      "links": [
+        {
+          "url": "http://www.boomerangtv.co.uk/lets-create",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "images": [
+        { "id": "desktop_01.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 839 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 839 }
       ]
     }
   },
@@ -1197,19 +1292,19 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_00.jpg",
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg"
+        { "id": "desktop_00.jpg", "width": 972, "height": 945 },
+        { "id": "desktop_01.jpg", "width": 980, "height": 610 },
+        { "id": "desktop_02.jpg", "width": 980, "height": 610 },
+        { "id": "desktop_03.jpg", "width": 980, "height": 610 }
       ]
     },
     "kidsfun": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg"
+        { "id": "desktop_01.jpg", "width": 980, "height": 610 },
+        { "id": "desktop_02.jpg", "width": 980, "height": 610 },
+        { "id": "desktop_03.jpg", "width": 980, "height": 610 }
       ]
     }
   },
@@ -1224,21 +1319,21 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg",
-        "desktop_08.jpg",
-        "desktop_09.jpg",
-        "smartphone_01.jpg",
-        "smartphone_02.jpg",
-        "smartphone_03.jpg",
-        "smartphone_04.jpg",
-        "smartphone_05.jpg",
-        "smartphone_06.jpg"
+        { "id": "desktop_01.jpg", "width": 928, "height": 798 },
+        { "id": "desktop_02.jpg", "width": 928, "height": 798 },
+        { "id": "desktop_03.jpg", "width": 928, "height": 798 },
+        { "id": "desktop_04.jpg", "width": 928, "height": 798 },
+        { "id": "desktop_05.jpg", "width": 928, "height": 798 },
+        { "id": "desktop_06.jpg", "width": 928, "height": 798 },
+        { "id": "desktop_07.jpg", "width": 928, "height": 798 },
+        { "id": "desktop_08.jpg", "width": 928, "height": 798 },
+        { "id": "desktop_09.jpg", "width": 928, "height": 798 },
+        { "id": "smartphone_01.jpg", "width": 320, "height": 571 },
+        { "id": "smartphone_02.jpg", "width": 320, "height": 571 },
+        { "id": "smartphone_03.jpg", "width": 320, "height": 571 },
+        { "id": "smartphone_04.jpg", "width": 320, "height": 571 },
+        { "id": "smartphone_05.jpg", "width": 320, "height": 571 },
+        { "id": "smartphone_06.jpg", "width": 320, "height": 571 }
       ]
     },
     "mbb": {
@@ -1251,19 +1346,19 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg",
-        "desktop_08.jpg",
-        "desktop_09.jpg",
-        "desktop_10.jpg",
-        "smartphone_01.jpg",
-        "smartphone_02.jpg",
-        "smartphone_03.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 1205 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 1205 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 1205 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 1205 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 1205 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 1205 },
+        { "id": "desktop_07.jpg", "width": 1024, "height": 770 },
+        { "id": "desktop_08.jpg", "width": 1024, "height": 770 },
+        { "id": "desktop_09.jpg", "width": 1024, "height": 770 },
+        { "id": "desktop_10.jpg", "width": 1024, "height": 770 },
+        { "id": "smartphone_01.jpg", "width": 320, "height": 573 },
+        { "id": "smartphone_02.jpg", "width": 320, "height": 573 },
+        { "id": "smartphone_03.jpg", "width": 320, "height": 573 }
       ]
     },
     "dadsarmy": {
@@ -1276,11 +1371,11 @@
         }
       ],
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 651 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 651 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 651 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 651 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 580 }
       ]
     }
   },
@@ -1289,8 +1384,8 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg"
+        { "id": "desktop_01.jpg", "width": 670, "height": 500 },
+        { "id": "desktop_02.jpg", "width": 670, "height": 500 }
       ],
       "awards": [
         {
@@ -1318,15 +1413,15 @@
     "nomophobia": {
       "has_archive": false,
       "images": [
-        "desktop_01.jpg",
-        "desktop_02.jpg",
-        "desktop_03.jpg",
-        "desktop_04.jpg",
-        "desktop_05.jpg",
-        "desktop_06.jpg",
-        "desktop_07.jpg",
-        "desktop_08.jpg",
-        "desktop_09.jpg"
+        { "id": "desktop_01.jpg", "width": 1024, "height": 964 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 964 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 964 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 964 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 964 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 964 },
+        { "id": "desktop_07.jpg", "width": 1024, "height": 964 },
+        { "id": "desktop_08.jpg", "width": 1024, "height": 964 },
+        { "id": "desktop_09.jpg", "width": 1024, "height": 964 }
       ]
     }
   }

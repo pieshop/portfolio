@@ -1,20 +1,20 @@
 [
-    {
-              "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/web/cartoonnetwork/bentenrepack/uk/preloader.swf",
-        "base":      "/media/web/cartoonnetwork/bentenrepack/uk/",
-        "width":     "944",
-        "height":    "640",
-        "wmode":     "transparent",
-        "bgcolor":   "#000000",
-        "flashvars": {
-            "string_configPath":   "xml/config.xml",
-            "string_targetSWF":    "launcher.swf",
-            "string_locale":       "uk",
-            "string_startSection": "HOME",
-            "string_preventCache": "true",
-            "string_initialLoad":  "true"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/cartoonnetwork/bentenrepack/uk/preloader.swf",
+    "base": "/media/web/cartoonnetwork/bentenrepack/uk/",
+    "width": "944",
+    "height": "640",
+    "wmode": "transparent",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "string_configPath": "xml/config.xml",
+      "string_targetSWF": "launcher.swf",
+      "string_locale": "uk",
+      "string_startSection": "HOME",
+      "string_preventCache": "true",
+      "string_initialLoad": "true"
     }
+  }
 ]

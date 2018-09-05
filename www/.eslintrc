@@ -1,34 +1,40 @@
 {
   "extends": [
     "eslint:recommended",
-    "google"
+    "google",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
   ],
   "parser": "babel-eslint",
   "env": {
     "browser": true,
     "node": true,
     "commonjs":true,
-    "es6":true,
-    "jquery":true,
-    "amd":true
+    "es6":true
   },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
-      "modules": true
+      "modules": true,
+      "arrowFunctions": true,
+      "restParams": true,
+      "experimentalObjectRestSpread": true
     }
   },
   "settings": {
     "import/resolver": "webpack"
   },
   "rules": {
+    "prettier/prettier": "error",
     // Additional, per-project rules...
     "max-len": [ 1,
       {
         "code": 260,
-        "tabWidth": 4,
+        "tabWidth": 2,
         "ignoreComments": true,
         "ignoreUrls": true
       }

@@ -1,19 +1,19 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/web/intel/gameon2008/common/media/wrapper.swf",
-        "base":      "/media/web/intel/gameon2008/",
-        "width":     "100%",
-        "height":    "385",
-        "wmode":     "transparent",
-        "bgcolor":   "#000000",
-        "flashvars": {
-            "wwwroot":      "",
-            "approot":      "common/",
-            "languageroot": "uk_en/flash/",
-            "settings":     "settings/",
-            "language":     "uk_en"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/intel/gameon2008/common/media/wrapper.swf",
+    "base": "/media/web/intel/gameon2008/",
+    "width": "100%",
+    "height": "385",
+    "wmode": "transparent",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "wwwroot": "",
+      "approot": "common/",
+      "languageroot": "uk_en/flash/",
+      "settings": "settings/",
+      "language": "uk_en"
     }
+  }
 ]

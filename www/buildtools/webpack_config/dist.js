@@ -1,82 +1,81 @@
-'use strict';
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const PATHS = require('./constants/paths');
+const PROJECT = require('./constants/project');
+const {main, optimise, rules, plugins} = require('./config/index');
 
-const webpackMerge                = require('webpack-merge');
-const path                        = require('path');
-const webpack                     = require('webpack');
-const HtmlWebpackPlugin           = require('html-webpack-plugin');
-const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
-const _base                       = require('./base');
+/**
+ * Based off:
+ * https://github.com/Tomekmularczyk/react-starter/tree/master/config
+ */
+module.exports = (options = {}) => {
+  const TARGET = options.target;
+  const REPLACE_OPTIONS = options.replace_options;
+  const ENV = 'production';
+  const PUBLIC_PATH = options.cdn;
+  const CSS_PUBLIC_PATH = '../';
+  const isProduction = true;
+  const outputDir = PATHS.dist;
 
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+  // console.log('ENV', ENV, '\nOUTPUT_DIR', outputDir, '\nREPLACE_OPTIONS', REPLACE_OPTIONS);
 
-module.exports = function (options) {
-    const CONTENT_BASE = 'src';
-    const ROOT_DIR     = path.resolve(__dirname, '../../');
-    const NODE_DIR     = ROOT_DIR + '/' + 'node_modules';
-    const SRC_DIR      = ROOT_DIR + '/' + CONTENT_BASE;
-    const PUBLIC_PATH  = options.cdn;
-    const TEMPLATE_DIR = ROOT_DIR + '/' + 'buildtools/templates';
+  const copyPaths = [
+    { from: PATHS.src + '/assets/json/archives/', to: outputDir + '/assets/json/archives/' },
+    { from: PATHS.src + '/images/', to: outputDir + '/images/' },
+    { from: PATHS.src + '/offline/', to: outputDir + '/offline/' },
+    { from: PATHS.src + '/sitemap/', to: outputDir + '/sitemap/' },
+    { from: PATHS.src + '/*.{ico,txt,xml,json,png,svg,html}', to: outputDir + '/', flatten: true },
+    { from: PATHS.src + '/.htaccess', to: outputDir + '/' },
+  ];
+  const copyOptions = { debug: 'warning', ignore: [], copyUnmodified: true };  // 'warning', 'info', 'debug'
 
-    const base = _base.defaults(options);
-    _base.addVendorShortcut(base, 'TweenMax', NODE_DIR + '/gsap/src/uncompressed/TweenMax.js');
+  return merge([
+    main.generateSourceMaps('source-map'),
+    main.setProductionMode(),
+    main.setEntries({ app: [PATHS.entryFile] }),
+    main.setOutput({ pathToDirectory: outputDir, publicPath: PUBLIC_PATH, isProduction }),
+    main.resolveDependencies({ aliases: {}, src: PATHS.src + '/js' }),
+    main.setPerformance(),
+    main.setStats({}),
 
-    return webpackMerge(base, {
-        entry  : {
-            app: [SRC_DIR + '/js/index.js']
-        },
-        output : {
-            publicPath: PUBLIC_PATH
-        },
-        plugins: [
-            new webpack.optimize.UglifyJsPlugin({
-                sourceMap: true,
-                beautify : false,
-                compress : {
-                    warnings    : false,
-                    unused      : true,
-                    dead_code   : true,
-                    drop_console: false
-                },
-                mangle   : true
-            }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'vendor', // all node_modules split to vendor
-                minChunks(module, count) {
-                    const context = module.context;
-                    return context && context.indexOf('node_modules') >= 0 || context.indexOf('libs') >= 0;
-                },
-            }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'manifest'
-            }),
-            new HtmlWebpackPlugin({
-                title          : 'Portfolio',
-                template       : TEMPLATE_DIR + '/index.ejs',
-                filename       : 'index.html',
-                inject         : false,
-                googleAnalytics: {
-                    trackingId    : 'UA-551725-1',
-                    pageViewOnLoad: true
-                },
-                baseHref       : '//www.stephenhamilton.co.uk'
-            }),
-            new InlineManifestWebpackPlugin({
-                name: 'webpackManifest'
-            }),
-            new ServiceWorkerWebpackPlugin({
-                entry   : SRC_DIR + '/sw.js',
-                excludes: [
-                    '*.xml',
-                    '*.txt',
-                    '.htaccess',
-                    '**/*.map',
-                    '*.html',
-                    '**/*.xsl',
-                    'sw.js',
-                    '**/.DS_Store',
-                    'node_modules'
-                ]
-            })
-        ]
-    });
+    plugins.enableScopeHoisting(),
+
+    optimise.createInlineManifestChunk(),
+    optimise.createVendorChunk(),
+
+    rules.loadStaticImageAssets({ name: PATHS.images, publicPath: CSS_PUBLIC_PATH }),
+    rules.loadStaticFontAssets({ name: PATHS.fonts, publicPath: CSS_PUBLIC_PATH }),
+    rules.replaceConfigOptions(REPLACE_OPTIONS),
+
+    rules.eslintPre(),
+    rules.transpileJavaScript(),
+    optimise.minifyJS({ sourceMap: true }),
+
+    rules.extractCss({ isProduction }),
+    rules.compileSCSS({ extract: true, isProduction, sourceMap: true }),
+    optimise.minifyCSS({ sourceMap: true }),
+
+    main.addVendorShortcut({
+      name: 'TweenMax',
+      alias: { TweenMax: PATHS.nodeDir + '/gsap/src/uncompressed/TweenMax.js' },
+    }),
+
+    plugins.define({ env: ENV, opts: { __SERVICE_WORKER__: true } }),
+    plugins.cleanDirectory({ directory: PATHS.dev, projectRoot: PATHS.projectRoot }),
+    plugins.copy({ copyPaths, copyOptions }),
+
+    plugins.generateHTML({
+      title: PROJECT.title,
+      pathToTemplate: PATHS.templateDir + '/index.ejs',
+      baseHref: '//www.stephenhamilton.co.uk',
+      opts: { cdn: 'https://cdn.stephenhamilton.co.uk' },
+    }),
+    plugins.setExtraPlugins([
+      new webpack.HashedModuleIdsPlugin(),
+      new webpack.ProvidePlugin({ React: 'react' }),
+    ]),
+    plugins.addServiceWorker({ entry: PATHS.src + '/sw.js' }),
+    // plugins.inlineManifest(), // this isn't working atm - don't use it !
+    // plugins.runWebpackBundleAnalyzer(),
+  ]);
 };

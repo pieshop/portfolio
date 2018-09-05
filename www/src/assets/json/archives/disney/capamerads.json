@@ -1,57 +1,56 @@
 [
-    {
-        "type": "iframe",
-        "id": "contentiframe0",
-        "url": "/media/olm/disney/capamerads/cloudy/970x250/deploy/",
-        "width": "970px",
-        "height": "250px",
-        "frameborder": "0",
-        "style": "width:100%;height:250px"
-    },
-    {
-        "type": "iframe",
-        "id": "contentiframe1",
-        "url": "/media/olm/disney/capamerads/cloudy/300x600/deploy/",
-        "width": "300px",
-        "height": "600px",
-        "frameborder": "0",
-        "style": "width:100%;height:600px"
-    },
-    {
-        "type": "iframe",
-        "id": "contentiframe2",
-        "url": "/media/olm/disney/capamerads/cloudy/300x250/deploy/",
-        "width": "300px",
-        "height": "250px",
-        "frameborder": "0",
-        "style": "width:100%;height:250px"
-    },
-    {
-        "type": "iframe",
-        "id": "contentiframe4",
-        "url": "/media/olm/disney/capamerads/shield/970x250/deploy/",
-        "width": "970px",
-        "height": "250px",
-        "frameborder": "0",
-        "style": "width:100%;height:250px"
-    },
-    {
-        "type": "iframe",
-        "id": "contentiframe5",
-        "url": "/media/olm/disney/capamerads/shield/300x600/deploy/",
-        "width": "300px",
-        "height": "600px",
-        "frameborder": "0",
-        "style": "width:100%;height:600px"
-    },
-    {
-        "type": "iframe",
-        "id": "contentiframe6",
-        "url": "/media/olm/disney/capamerads/shield/300x250/deploy/",
-        "width": "300px",
-        "height": "250px",
-        "frameborder": "0",
-        "style": "width:100%;height:250px"
-    }
+  {
+    "type": "iframe",
+    "id": "contentiframe0",
+    "url": "/media/olm/disney/capamerads/cloudy/970x250/deploy/",
+    "width": "970px",
+    "height": "250px",
+    "frameborder": "0",
+    "style": "width:100%;height:250px"
+  },
+  {
+    "type": "iframe",
+    "id": "contentiframe1",
+    "url": "/media/olm/disney/capamerads/cloudy/300x600/deploy/",
+    "width": "300px",
+    "height": "600px",
+    "frameborder": "0",
+    "style": "width:100%;height:600px"
+  },
+  {
+    "type": "iframe",
+    "id": "contentiframe2",
+    "url": "/media/olm/disney/capamerads/cloudy/300x250/deploy/",
+    "width": "300px",
+    "height": "250px",
+    "frameborder": "0",
+    "style": "width:100%;height:250px"
+  },
+  {
+    "type": "iframe",
+    "id": "contentiframe4",
+    "url": "/media/olm/disney/capamerads/shield/970x250/deploy/",
+    "width": "970px",
+    "height": "250px",
+    "frameborder": "0",
+    "style": "width:100%;height:250px"
+  },
+  {
+    "type": "iframe",
+    "id": "contentiframe5",
+    "url": "/media/olm/disney/capamerads/shield/300x600/deploy/",
+    "width": "300px",
+    "height": "600px",
+    "frameborder": "0",
+    "style": "width:100%;height:600px"
+  },
+  {
+    "type": "iframe",
+    "id": "contentiframe6",
+    "url": "/media/olm/disney/capamerads/shield/300x250/deploy/",
+    "width": "300px",
+    "height": "250px",
+    "frameborder": "0",
+    "style": "width:100%;height:250px"
+  }
 ]
-

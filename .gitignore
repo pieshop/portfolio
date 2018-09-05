@@ -28,6 +28,11 @@ Temporary Items
 .apdisk
 
 .idea/
+_api/
+_www/
+www/dist/
+www/stage/
+www/stage_nas/
 www/src/BingSiteAuth.xml
 www/src/google6acd2b3e4bad34ba.html
 www/src/y_key_80c280816d539335.html

@@ -3,19 +3,28 @@
  * https://github.com/kriasoft/react-starter-kit
  * https://github.com/kriasoft/nodejs-api-starter
  */
-var curlr     = require('curlrequest');
-var fs        = require('fs');
+var curlr = require('curlrequest');
+var fs = require('fs');
 const replace = require('replace');
-const path    = require('path');
+const path = require('path');
 
-const CONFIG_DIR   = path.resolve(__dirname, '../buildtools/config/');
+const CONFIG_DIR = path.resolve(__dirname, '../buildtools/config/');
 const TEMPLATE_DIR = path.resolve(__dirname, '../buildtools/templates/');
-const cfg          = require(CONFIG_DIR + '/app_config.js')();
+const cfg = require(CONFIG_DIR + '/app_config.js')();
 
 function curl() {
-    const p1 = createRequest({url: cfg.env.dev.api_base + '/sitemap.xml', verbose: true}, fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dev.xml'));
-    const p2 = createRequest({url: cfg.env.stage.api_base + '/sitemap.xml', verbose: true}, fs.createWriteStream(TEMPLATE_DIR + '/sitemap/stage.xml'));
-    const p3 = createRequest({url: cfg.env.dist.api_base + '/sitemap.xml', verbose: true}, fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dist.xml'));
+    const p1 = createRequest(
+        { url: cfg.env.dev.api_base + '/sitemap.xml', verbose: true },
+        fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dev.xml')
+    );
+    const p2 = createRequest(
+        { url: cfg.env.stage.api_base + '/sitemap.xml', verbose: true },
+        fs.createWriteStream(TEMPLATE_DIR + '/sitemap/stage.xml')
+    );
+    const p3 = createRequest(
+        { url: cfg.env.dist.api_base + '/sitemap.xml', verbose: true },
+        fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dist.xml')
+    );
     return Promise.all([p1, p2, p3]);
 }
 

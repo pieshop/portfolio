@@ -1,11 +1,11 @@
 [
-    {
-      "type" : "swf",
-        "id":      "unit1",
-        "url":     "/media/web/mini/avengers.swf",
-        "base":    "/media/web/mini/",
-        "width":   "800",
-        "height":  "600",
-        "bgcolor": "#000000"
-    }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/mini/avengers.swf",
+    "base": "/media/web/mini/",
+    "width": "800",
+    "height": "600",
+    "bgcolor": "#000000"
+  }
 ]

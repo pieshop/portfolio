@@ -1,15 +1,15 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/game/intel/particles/common/media/int-insidethegame-particles.swf",
-        "base":      "/media/game/intel/particles/common/media/",
-        "width":     "100%",
-        "height":    "505",
-        "wmode":     "transparent",
-        "bgcolor":   "#FFFFFF",
-        "flashvars": {
-            "language": "en-gb"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/game/intel/particles/common/media/int-insidethegame-particles.swf",
+    "base": "/media/game/intel/particles/common/media/",
+    "width": "100%",
+    "height": "505",
+    "wmode": "transparent",
+    "bgcolor": "#FFFFFF",
+    "flashvars": {
+      "language": "en-gb"
     }
+  }
 ]

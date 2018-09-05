@@ -1,19 +1,19 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/game/msn/searchladder/common/media/wrapper.swf",
-        "base":      "/media/game/msn/searchladder/",
-        "width":     "950",
-        "height":    "700",
-        "bgcolor":   "#000000",
-        "flashvars": {
-            "wwwroot":           "",
-            "approot":           "common/",
-            "languageroot":      "en-gb/flash/",
-            "settings":          "settings/",
-            "language":          "en-gb",
-            "ForceInstructions": "undefined"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/game/msn/searchladder/common/media/wrapper.swf",
+    "base": "/media/game/msn/searchladder/",
+    "width": "950",
+    "height": "700",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "wwwroot": "",
+      "approot": "common/",
+      "languageroot": "en-gb/flash/",
+      "settings": "settings/",
+      "language": "en-gb",
+      "ForceInstructions": "undefined"
     }
+  }
 ]

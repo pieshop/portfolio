@@ -1,38 +1,39 @@
+//@import "~bootstrap/scss/bootstrap";
 @import 'base';
 @import 'fonts';
 
 html {
-  position:   relative;
+  position: relative;
   min-height: 100%;
-  overflow:   -moz-scrollbars-vertical;
+  overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
 }
 
 body {
-  margin-bottom:    $footer_height;
-  background-image: url("../images/tile.png");
+  margin-bottom: $footer_height;
+  background-image: url('../images/site/tile.png');
 }
 
 .navbar-text > a {
-  color:           inherit;
+  color: inherit;
   text-decoration: none;
 }
 
 .loading {
-  position:   fixed;
-  top:        0;
-  left:       0;
-  width:      100%;
-  height:     100%;
-  background: url("../images/ajax-loader.gif") no-repeat center center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/site/ajax-loader.gif') no-repeat center center;
 }
 
 header {
   width: 100%;
   .page-header {
     padding-bottom: 9px;
-    margin:         40px 0 20px;
-    border-bottom:  0;
+    margin: 40px 0 20px;
+    border-bottom: 0;
   }
   nav {
     min-height: 56px;
@@ -44,9 +45,9 @@ header {
     padding-right: 0.5rem;
   }
   button {
-    cursor:        pointer;
-    &.filter{
-      width:60px;
+    cursor: pointer;
+    &.filter {
+      width: 60px;
     }
   }
 }
@@ -59,57 +60,62 @@ header {
   //transition: 2.3s
   //transition-delay: 1s
   &.appear {
-    opacity:    0.01;
+    opacity: 0.01;
     visibility: hidden;
   }
   &.appear-active {
-    opacity:    1;
+    opacity: 1;
     visibility: visible;
-    transition: opacity .3s ease-in;
+    transition: opacity 0.3s ease-in;
   }
   &.enter {
-    opacity:    0.01;
+    opacity: 0.01;
     visibility: hidden;
   }
   &.enter-active {
-    opacity:    1;
+    opacity: 1;
     visibility: visible;
-    transition: opacity .3s ease-in;
+    transition: opacity 0.3s ease-in;
   }
   &.leave {
-    opacity:    1;
+    opacity: 1;
     visibility: visible;
   }
   &.leave-active {
-    opacity:    0.01;
+    opacity: 0.01;
     visibility: hidden;
-    transition: opacity .3s ease-in;
+    transition: opacity 0.3s ease-in;
   }
 }
 
 .list {
-
 }
 
 .list__item {
   &--subtle_shadow {
-    border:           1px solid #c4c4c4;
-    box-shadow:       2px 2px 1px 1px #dddddd;
+    border: 1px solid #c4c4c4;
+    box-shadow: 2px 2px 1px 1px #dddddd;
     background-color: $white;
   }
 }
 
 .item__thumbnail {
   position: relative;
+  &--placeholder {
+    background: #ffffff;
+    height: 0;
+    padding-bottom: 100%;
+  }
   .thumb {
-    padding:          20px;
     background-color: $grey_light;
+    height: 0;
+    padding-bottom: 100%;
   }
   img {
     box-shadow: #000 0em 0em 0em;
-    transition: opacity .2s ease-in-out;
-    max-width:  100%;
-    height:     auto;
+    //transition: opacity 0.2s ease-in-out;
+    //max-width: 100%;
+    //height: auto;
   }
   img:hover {
     opacity: 0.5;
@@ -120,14 +126,14 @@ header {
 }
 
 .item__decoration {
-  position:   relative;
+  position: relative;
   border-top: solid 1px $grey_dark;
   .decoration {
-    position:   absolute;
-    background: url("../images/sprites.png") 0 0;
-    height:     12px;
-    width:      44px;
-    bottom:     -1%;
+    position: absolute;
+    background: url('../images/site/sprites.png') 0 0;
+    height: 12px;
+    width: 44px;
+    bottom: -1%;
     &__left {
       left: 0;
     }
@@ -140,16 +146,16 @@ header {
 .item__caption {
   margin-top: 20px;
   dt.project-title {
-    min-height:  68px;
+    min-height: 68px;
     line-height: 1.2em;
-    padding:     0 5px;
-    color:       $font_dark;
+    padding: 0 5px;
+    color: $font_dark;
   }
   dd {
     background-color: $grey_light;
-    border-top:       solid 1px $grey_dark;
-    border-bottom:    solid 1px $grey_dark;
-    color:            $font_light;
+    border-top: solid 1px $grey_dark;
+    border-bottom: solid 1px $grey_dark;
+    color: $font_light;
     &.client {
       font-size: 0.8em;
     }
@@ -160,11 +166,11 @@ header {
 }
 
 .item__awards {
-  border:       0;
+  border: 0;
   padding-left: 5px;
   .icon-star {
-    cursor:    pointer;
-    color:     $item__awards--default;
+    cursor: pointer;
+    color: $item__awards--default;
     font-size: 1em;
     &:hover {
       color: $item__awards--hover;
@@ -207,12 +213,13 @@ header {
 }
 
 .item__media {
-  padding-left:   0;
+  padding-left: 0;
   padding-bottom: 10px;
+  &--placeholder {
+    //background: #ffffff;
+  }
   .thumbnail {
-    padding-bottom: 20px;
-    max-width:      1024px;
-    margin:         0 auto;
+    //background-color: $grey_light;
   }
   .swf_outer {
     //height:700px;
@@ -224,10 +231,10 @@ header {
 }
 
 .aboutme {
-  img {
-    max-width: 100%;
-    height:    auto;
-  }
+  //img {
+  //  max-width: 100%;
+  //  height: auto;
+  //}
   .page-header {
     margin: 0 0 20px;
   }
@@ -238,25 +245,50 @@ header {
 }
 
 /////////////////////////////////////////////////////////
+// LAZY LOAD STYLES
+/////////////////////////////////////////////////////////
+.spinner-container {
+  width: 100%;
+  height: auto;
+  max-width: 100%; /* responsive image */
+  max-height: 100%; /* responsive image */
+}
+.center-spinner {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}
+
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 5.5s ease-in;
+}
+/////////////////////////////////////////////////////////
 // FOOTER
 /////////////////////////////////////////////////////////
 footer {
-  position:    absolute;
-  bottom:      0;
-  width:       100%;
-  height:      $footer_height;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer_height;
   line-height: 60px;
   ul.nav {
     background-color: $white;
   }
   .seperator {
-    clear:            both;
+    clear: both;
     background-color: $grey_med;
-    height:           4px;
-    border-top:       solid 1px $grey_dark;
-    border-bottom:    solid 1px $grey_dark;
+    height: 4px;
+    border-top: solid 1px $grey_dark;
+    border-bottom: solid 1px $grey_dark;
     /*USE border-box http://css-tricks.com/box-sizing/*/
-    box-sizing:       border-box;
+    box-sizing: border-box;
   }
   .credit {
     font-size: 0.8em;
@@ -268,10 +300,10 @@ footer {
 /* http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height
 **********************/
 .dropdown-menu {
-  left:       50%;
-  right:      auto;
+  left: 50%;
+  right: auto;
   text-align: center;
-  transform:  translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
 /////////////////////////////////////////////////////////
@@ -291,11 +323,11 @@ footer {
   dd.year {
     font-size: 1.1em !important;
   }
-  .aboutme {
-    img {
-      margin-bottom: 20px;
-    }
-  }
+  //.aboutme {
+  //  img {
+  //    margin-bottom: 20px;
+  //  }
+  //}
 }
 
 /* Small */
@@ -312,11 +344,11 @@ footer {
   dd.year {
     font-size: 1em !important;
   }
-  .aboutme {
-    img {
-      margin-bottom: 20px;
-    }
-  }
+  //.aboutme {
+  //  img {
+  //    margin-bottom: 20px;
+  //  }
+  //}
 }
 
 /* Medium */
@@ -333,11 +365,11 @@ footer {
   dd.year {
     font-size: 0.8em !important;
   }
-  .aboutme {
-    img {
-      margin-bottom: 20px;
-    }
-  }
+  //.aboutme {
+  //  img {
+  //    margin-bottom: 20px;
+  //  }
+  //}
 }
 
 /* Large */
@@ -349,4 +381,3 @@ footer {
     font-size: 0.9em;
   }
 }
-

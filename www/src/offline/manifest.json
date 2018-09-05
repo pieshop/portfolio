@@ -1,0 +1,21 @@
+{
+  "short_name": "Portfolio",
+  "name": "Portfolio",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png?v=ngGw27PWBy",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png?v=ngGw27PWBy",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#189b96",
+  "background_color": "#2196F3",
+  "start_url": "/all/allyears",
+  "display": "standalone",
+  "orientation": "portrait"
+}

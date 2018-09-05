@@ -1,28 +1,28 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/olm/sky/keyhole/sports/sky_keyhole_leaderboard.swf",
-        "width":     "728",
-        "height":    "90",
-        "wmode":     "transparent",
-        "bgcolor":   "#000000",
-        "flashvars": {
-            "X_OFFSET": "50",
-            "Y_OFFSET": "20"
-        }
-    },
-    {
-      "type" : "swf",
-        "id":        "unit2",
-        "url":       "/media/olm/sky/keyhole/sports/sky_keyhole_mpu_leader.swf",
-        "width":     "300",
-        "height":    "250",
-        "wmode":     "transparent",
-        "bgcolor":   "#000000",
-        "flashvars": {
-            "X_OFFSET": "260",
-            "Y_OFFSET": "150"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/olm/sky/keyhole/sports/sky_keyhole_leaderboard.swf",
+    "width": "728",
+    "height": "90",
+    "wmode": "transparent",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "X_OFFSET": "50",
+      "Y_OFFSET": "20"
     }
+  },
+  {
+    "type": "swf",
+    "id": "unit2",
+    "url": "/media/olm/sky/keyhole/sports/sky_keyhole_mpu_leader.swf",
+    "width": "300",
+    "height": "250",
+    "wmode": "transparent",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "X_OFFSET": "260",
+      "Y_OFFSET": "150"
+    }
+  }
 ]

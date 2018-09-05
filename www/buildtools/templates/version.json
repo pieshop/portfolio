@@ -1,5 +1,5 @@
 {
-    "rev" : "{rev}",
-    "auth": "{author}",
-    "date": "{date}"
+  "rev": "{rev}",
+  "auth": "{author}",
+  "date": "{date}"
 }

@@ -1,14 +1,14 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/web/mrm/common/media/mrm-works-videoplayer.swf",
-        "base":      "/media/web/mrm/common/media/",
-        "width":     "960",
-        "height":    "600",
-        "bgcolor":   "#FFFFFF",
-        "flashvars": {
-            "language": "en-gb"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/mrm/common/media/mrm-works-videoplayer.swf",
+    "base": "/media/web/mrm/common/media/",
+    "width": "960",
+    "height": "600",
+    "bgcolor": "#FFFFFF",
+    "flashvars": {
+      "language": "en-gb"
     }
+  }
 ]

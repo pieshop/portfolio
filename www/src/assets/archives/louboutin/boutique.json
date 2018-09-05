@@ -1,14 +1,14 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/web/christianlouboutin/homePage.swf",
-        "base":      "/media/web/christianlouboutin/",
-        "width":     "824",
-        "height":    "492",
-        "bgcolor":   "#000000",
-        "flashvars": {
-            "externalVars": "langID=en%26countryID=gb%26seasonID=aw%26yearID=2005"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/christianlouboutin/homePage.swf",
+    "base": "/media/web/christianlouboutin/",
+    "width": "824",
+    "height": "492",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "externalVars": "langID=en%26countryID=gb%26seasonID=aw%26yearID=2005"
     }
+  }
 ]

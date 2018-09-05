@@ -1,21 +1,21 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/game/intel/vpro/minigames/vpro/vpro.swf",
-        "base":      "/media/game/intel/vpro/",
-        "width":     "550",
-        "height":    "480",
-        "bgcolor":   "#000000",
-        "flashvars": {
-            "language":   "eng",
-            "path":       "/portfolio/media/game/intel/vpro/",
-            "serverType": "Intel_Itanium_2_server",
-            "soundOn":    "true",
-            "gameTitle":  "PC Meltdown",
-            "loadingTxt": "Loading",
-            "prefix":     "",
-            "tracking":   "off"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/game/intel/vpro/minigames/vpro/vpro.swf",
+    "base": "/media/game/intel/vpro/",
+    "width": "550",
+    "height": "480",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "language": "eng",
+      "path": "/portfolio/media/game/intel/vpro/",
+      "serverType": "Intel_Itanium_2_server",
+      "soundOn": "true",
+      "gameTitle": "PC Meltdown",
+      "loadingTxt": "Loading",
+      "prefix": "",
+      "tracking": "off"
     }
+  }
 ]

@@ -23,3 +23,8 @@ dist - creates dist folder with minified modules
 
 frontend/default/index.php : is generated from dev/en_GB/index_template.html, with php vars replacing script paths '../'
 frontend/language_select/index.php : is not part of build process
+
+
+
+## HMR :
+https://www.toptal.com/javascript/hot-module-replacement-in-redux?utm_campaign=Social+Media&utm_source=topt.al#setup

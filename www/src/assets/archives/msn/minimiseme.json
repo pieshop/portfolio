@@ -1,12 +1,12 @@
 [
-    {
-      "type" : "swf",
-        "id":      "unit1",
-        "url":     "/media/web/msn/minimiseme/swfs/avatar_builder.swf",
-        "base":    "/media/web/msn/minimiseme/",
-        "width":   "100%",
-        "height":  "518",
-        "wmode":   "transparent",
-        "bgcolor": "#8bb9d1"
-    }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/msn/minimiseme/swfs/avatar_builder.swf",
+    "base": "/media/web/msn/minimiseme/",
+    "width": "100%",
+    "height": "518",
+    "wmode": "transparent",
+    "bgcolor": "#8bb9d1"
+  }
 ]

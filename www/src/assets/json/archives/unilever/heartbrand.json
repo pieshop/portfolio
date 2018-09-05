@@ -1,19 +1,19 @@
 [
-    {
-      "type" : "swf",
-        "id":        "unit1",
-        "url":       "/media/web/unilever/heartbrand/flash/media/wrapper.swf",
-        "base":      "/media/web/unilever/heartbrand/flash/media/",
-        "width":     "100%",
-        "height":    "610",
-        "bgcolor":   "#000000",
-        "flashvars": {
-            "wwwroot":      "/portfolio/media/web/unilever/heartbrand/",
-            "approot":      "/portfolio/media/web/unilever/heartbrand/flash/",
-            "languageroot": "/portfolio/media/web/unilever/heartbrand/en-gb/flash/",
-            "configURL":    "settings/config.xml",
-            "language":     "en-gb",
-            "sectionid":    "home"
-        }
+  {
+    "type": "swf",
+    "id": "unit1",
+    "url": "/media/web/unilever/heartbrand/flash/media/wrapper.swf",
+    "base": "/media/web/unilever/heartbrand/flash/media/",
+    "width": "100%",
+    "height": "610",
+    "bgcolor": "#000000",
+    "flashvars": {
+      "wwwroot": "/portfolio/media/web/unilever/heartbrand/",
+      "approot": "/portfolio/media/web/unilever/heartbrand/flash/",
+      "languageroot": "/portfolio/media/web/unilever/heartbrand/en-gb/flash/",
+      "configURL": "settings/config.xml",
+      "language": "en-gb",
+      "sectionid": "home"
     }
+  }
 ]
