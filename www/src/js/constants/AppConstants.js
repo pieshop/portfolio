@@ -9,6 +9,11 @@ export const IMAGE = 'IMAGE';
 export const PDF = 'PDF';
 export const SWF = 'SWF';
 
+export const IMAGE_DESKTOP = 'DESKTOP';
+export const IMAGE_SMARTPHONE = 'SMARTPHONE';
+export const IMAGE_OLM = 'OLM';
+export const IMAGE_OTHER = 'OTHER';
+
 let BASE_URL = 'http://mini.portfolio';
 let BASE_API_URL = 'http://mini.api/api/v2';
 let BASE_ASSETS_URL = 'http://mini.assets/portfolio';

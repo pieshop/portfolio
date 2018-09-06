@@ -1,6 +1,6 @@
 const base = require(`./project`);
 const specific = {
-  compressed : false,
+  compression : false,
   serviceworker : false,
   baseHref: '//mini.portfolio',
   cdn: '',

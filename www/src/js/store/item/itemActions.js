@@ -5,6 +5,9 @@ import { fetchArchiveItemService, fetchItemService } from 'services/portfolio';
 
 import { getLocalClientData } from 'store/localdata/localDataReducer';
 import { getHasItem, getItem } from 'store/item/itemReducer';
+import ItemImageDesktop from '../../components/item/ItemImageDesktop';
+import ItemImageOLM from '../../components/item/ItemImageOLM';
+import React from 'react';
 
 export const ITEM_INVALIDATE = 'item.ITEM_INVALIDATE';
 export const ITEM_SELECT = 'item.ITEM_SELECT';
@@ -91,10 +94,19 @@ const _parseMedia = (json, localData) => {
     let is_smartphone = media_name.indexOf('smartphone') !== -1;
     let is_olm = media_name.indexOf('olm') !== -1;
 
+    const image_type = is_desktop
+      ? constants.IMAGE_DESKTOP
+      : is_smartphone
+        ? constants.IMAGE_SMARTPHONE
+        : is_olm
+          ? constants.IMAGE_OLM
+          : constants.IMAGE_OTHER;
+
     o.id = id;
     o.media_path = media_path;
     o.media_name = media_name;
     o.media_type = media_type;
+    o.image_type = image_type;
     o.is_image = is_image;
     o.is_pdf = is_pdf;
     o.is_swf = is_swf;
@@ -106,10 +118,24 @@ const _parseMedia = (json, localData) => {
     o.alt = 'image_' + client_id + '_' + entry_id;
 
     if (media_type === constants.IMAGE) {
-      o.media_name_1x = id + '-480.' + file_type;
-      o.media_name_2x = id + '-768.' + file_type;
-      o.media_name_3x = id + '-1024.' + file_type;
+      switch (image_type) {
+        case constants.IMAGE_DESKTOP:
+          o.media_name_1x = id + '-480.' + file_type;
+          o.media_name_2x = id + '-768.' + file_type;
+          o.media_name_3x = id + '-1024.' + file_type;
+          break;
+        case constants.IMAGE_SMARTPHONE:
+          o.media_name_1x = id + '-480.' + file_type;
+          o.media_name_2x = id + '-768.' + file_type;
+          o.media_name_3x = id + '-1024.' + file_type;
+          break;
+        case constants.IMAGE_OLM:
+          o.media_name_1x = id + '-512.' + file_type;
+          o.media_name_2x = id + '-1024.' + file_type;
+          break;
+      }
     }
+
     if (media_type === constants.SWF) {
       o.swf_data = localData.swfs_data[id];
       o.swf_data.id = id;

@@ -26,7 +26,6 @@ export default class CategoryItemImage extends Component {
           width="350"
           height="350"
           class="img-fluid img-thumbnail"
-          // crossOrigin="anonymous"
           alt={title}
           srcSet={srcSet}
           src={thumb_path + 'thumb_1x.jpg'}

@@ -2,12 +2,14 @@
  * Created by stephenhamilton on 24/02/2017.
  */
 import React, { Component } from 'react';
-import ItemImage from 'components/item/ItemImage';
 import ItemPDF from 'components/item/ItemPDF';
 import ItemSWF from 'components/item/ItemSWF';
 import * as constants from 'constants/AppConstants';
 import LazyLoad from 'react-lazyload';
 import ItemImagePlaceholder from './ItemImagePlaceholder';
+import ItemImageDesktop from './ItemImageDesktop';
+import ItemImageOLM from './ItemImageOLM';
+import ItemImageSmartphone from 'components/item/ItemImageSmartphone';
 
 export default class ItemMediaList extends Component {
   constructor() {
@@ -18,9 +20,6 @@ export default class ItemMediaList extends Component {
   render() {
     let { mediaItems } = this.props;
     mediaItems = mediaItems || [];
-
-    // console.log('ItemMediaList.render', mediaItems);
-
     return (
       <div class="item__media">
         <div class="row">{mediaItems.map(this.renderItem)}</div>
@@ -29,12 +28,16 @@ export default class ItemMediaList extends Component {
   }
 
   renderItem(data) {
-    const style = this.getStyle(data);
-    // console.log('ItemMediaList.renderItem', data);
+    console.log('ItemMediaList.renderItem', data);
+    return this.getMedia(data, this.getStyle(data));
+  }
+
+  getMedia(data, style) {
     let fragment = null;
-    const { width = 500, height = 500 } = data;
     switch (data.media_type) {
-      case constants.IMAGE:
+      case constants.IMAGE: {
+        const { width = 500, height = 500 } = data;
+        const img = this.getImage(data, style);
         fragment = (
           <LazyLoad
             key={data.id}
@@ -50,10 +53,11 @@ export default class ItemMediaList extends Component {
             debounce={300}
             once
           >
-            <ItemImage key={data.id} style={style} {...data} />
+            {img}
           </LazyLoad>
         );
-        break;
+        return fragment;
+      }
       case constants.PDF:
         fragment = <ItemPDF key={data.id} style={style} {...data} />;
         break;
@@ -61,6 +65,22 @@ export default class ItemMediaList extends Component {
         fragment = <ItemSWF key={data.id} style={style} {...data} />;
         break;
       default:
+    }
+    return fragment;
+  }
+
+  getImage(data, style) {
+    let fragment = null;
+    switch (data.image_type) {
+      case constants.IMAGE_DESKTOP:
+        fragment = <ItemImageDesktop key={data.id} style={style} {...data} />;
+        break;
+      case constants.IMAGE_SMARTPHONE:
+        fragment = <ItemImageSmartphone key={data.id} style={style} {...data} />;
+        break;
+      case constants.IMAGE_OLM:
+        fragment = <ItemImageOLM key={data.id} style={style} {...data} />;
+        break;
     }
     return fragment;
   }

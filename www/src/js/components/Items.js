@@ -23,6 +23,7 @@ export default class Items extends Component {
   }
 
   renderItem(data, index) {
+    // console.log('renderItem', data);
     return <CategoryItem key={data.id} {...data} index={index} />;
   }
 }

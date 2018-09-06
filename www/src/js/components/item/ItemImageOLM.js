@@ -29,13 +29,11 @@ export default class ItemImage extends Component {
 
     const paddingbottom = (height / width) * 100;
     const thumb_style = { opacity: 0, height: 0, paddingBottom: paddingbottom + '%' };
-    const srcSet = is_desktop
-      ? `${media_path}${media_name_3x} 1024w, ${media_path}${media_name_2x} 768w, ${media_path}${media_name_1x} 480w`
-      : '';
-    const sizes = is_desktop
-      ? '(max-width: 480px)  100vw, (max-width: 768px)  100vw, (max-width: 1024px) 100vw, 100vw'
-      : '';
-    const src = is_desktop ? `${media_path}${media_name_1x}` : `${media_path}${media_name}`;
+    const srcSet = `${media_path}${media_name_2x} 2x, ${media_path}${media_name_1x} 1x`;
+    // const sizes = is_desktop
+    //   ? '(max-width: 480px)  100vw, (max-width: 768px)  100vw, (max-width: 1024px) 100vw, 100vw'
+    //   : '';
+    const src = `${media_path}${media_name_1x}`;
     return (
       <div class={style}>
         <div class="thumbnail" ref={(item) => (this.item_ref = item)} style={thumb_style}>
@@ -46,7 +44,7 @@ export default class ItemImage extends Component {
             alt={alt}
             srcSet={srcSet}
             src={src}
-            sizes={sizes}
+            // sizes={sizes}
           />
         </div>
       </div>

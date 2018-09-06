@@ -6,6 +6,7 @@ module.exports = ({ paths, project, replace_options }) => {
   const PATHS = paths;
   const PROJECT = project;
   const PUBLIC_PATH = '';
+  const COMPRESSION = PROJECT.compression;
   const REPLACE_OPTIONS = replace_options;
   const isProduction = true;
   const copyPaths = [
@@ -87,11 +88,4 @@ module.exports = ({ paths, project, replace_options }) => {
     PROJECT.serviceworker && plugins.addServiceWorker({ entry: PATHS.src + '/sw.js' }),
   ]);
 };
-
-//     plugins.generateHTML({
-//       title: PROJECT.title,
-//       pathToTemplate: PATHS.templateDir + '/index.ejs',
-//       baseHref: '//www.stephenhamilton.co.uk',
-//       opts: { cdn: 'https://cdn.stephenhamilton.co.uk' },
-//     }),
 

@@ -130,12 +130,12 @@
     "variousolm": {
       "has_archive": false,
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 300, "height": 250 },
-        { "id": "olm_03.jpg", "width": 300, "height": 250 },
-        { "id": "olm_04.jpg", "width": 728, "height": 90 },
-        { "id": "olm_05.jpg", "width": 728, "height": 90 },
-        { "id": "olm_06.jpg", "width": 468, "height": 60 }
+        { "id": "olm_01.jpg", "width": 512, "height": 426 },
+        { "id": "olm_02.jpg", "width": 512, "height": 426 },
+        { "id": "olm_03.jpg", "width": 512, "height": 426 },
+        { "id": "olm_04.jpg", "width": 512, "height": 426 },
+        { "id": "olm_05.jpg", "width": 512, "height": 426 },
+        { "id": "olm_06.jpg", "width": 512, "height": 426 }
       ]
     }
   },
@@ -290,12 +290,12 @@
       "has_archive": true,
       "is_dark_background": false,
       "images": [
-        { "id": "olm_01.jpg", "width": 500, "height": 500 },
-        { "id": "olm_02.jpg", "width": 500, "height": 500 },
-        { "id": "olm_03.jpg", "width": 500, "height": 500 },
-        { "id": "olm_04.jpg", "width": 500, "height": 500 },
-        { "id": "olm_05.jpg", "width": 500, "height": 500 },
-        { "id": "olm_06.jpg", "width": 500, "height": 500 }
+        { "id": "olm_01.jpg", "width": 512, "height": 512 },
+        { "id": "olm_02.jpg", "width": 512, "height": 512 },
+        { "id": "olm_03.jpg", "width": 512, "height": 512 },
+        { "id": "olm_04.jpg", "width": 512, "height": 512 },
+        { "id": "olm_05.jpg", "width": 512, "height": 512 },
+        { "id": "olm_06.jpg", "width": 512, "height": 512 }
       ]
     },
     "cfuf": {
@@ -316,12 +316,12 @@
       "has_archive": true,
       "is_dark_background": false,
       "images": [
-        { "id": "olm_01.jpg", "width": 500, "height": 500 },
-        { "id": "olm_02.jpg", "width": 500, "height": 500 },
-        { "id": "olm_03.jpg", "width": 500, "height": 500 },
-        { "id": "olm_04.jpg", "width": 500, "height": 500 },
-        { "id": "olm_05.jpg", "width": 500, "height": 500 },
-        { "id": "olm_06.jpg", "width": 500, "height": 500 }
+        { "id": "olm_01.jpg", "width": 512, "height": 512 },
+        { "id": "olm_02.jpg", "width": 512, "height": 512 },
+        { "id": "olm_03.jpg", "width": 512, "height": 512 },
+        { "id": "olm_04.jpg", "width": 512, "height": 512 },
+        { "id": "olm_05.jpg", "width": 512, "height": 512 },
+        { "id": "olm_06.jpg", "width": 512, "height": 512 }
       ]
     },
     "epicmickey": {
@@ -360,22 +360,25 @@
     "grootdance": {
       "has_archive": true,
       "images": [
-        { "id": "desktop_01.jpg", "width": 1585, "height": 1315 },
-        { "id": "desktop_02.jpg", "width": 1585, "height": 1315 },
-        { "id": "desktop_03.jpg", "width": 1585, "height": 1315 },
-        { "id": "desktop_04.jpg", "width": 1585, "height": 1315 },
-        { "id": "desktop_05.jpg", "width": 1585, "height": 1315 },
-        { "id": "desktop_06.jpg", "width": 1585, "height": 1315 }
+        { "id": "desktop_01.jpg", "width": 1024, "height": 850 },
+        { "id": "desktop_02.jpg", "width": 1024, "height": 850 },
+        { "id": "desktop_03.jpg", "width": 1024, "height": 850 },
+        { "id": "desktop_04.jpg", "width": 1024, "height": 850 },
+        { "id": "desktop_05.jpg", "width": 1024, "height": 850 },
+        { "id": "desktop_06.jpg", "width": 1024, "height": 850 }
       ]
     },
     "ironman3it": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 400, "height": 350 },
-        { "id": "olm_02.jpg", "width": 400, "height": 350 },
-        { "id": "olm_03.jpg", "width": 970, "height": 250 },
-        { "id": "olm_04.jpg", "width": 970, "height": 250 }
+        { "id": "olm_01.jpg", "width": 512, "height": 447 },
+        { "id": "olm_02.jpg", "width": 512, "height": 447 },
+        { "id": "olm_03.jpg", "width": 512, "height": 447 },
+        { "id": "olm_04.jpg", "width": 512, "height": 447 },
+        { "id": "olm_05.jpg", "width": 512, "height": 447 },
+        { "id": "olm_06.jpg", "width": 512, "height": 447 },
+        { "id": "olm_07.jpg", "width": 512, "height": 447 }
       ]
     },
     "monstermatch": {
@@ -397,9 +400,16 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        { "id": "olm_011.jpg", "width": 300, "height": 250 },
-        { "id": "olm_012.jpg", "width": 300, "height": 250 },
-        { "id": "olm_013.jpg", "width": 300, "height": 250 }
+        { "id": "olm_01.jpg", "width": 512, "height": 426 },
+        { "id": "olm_02.jpg", "width": 512, "height": 426 },
+        { "id": "olm_03.jpg", "width": 512, "height": 426 },
+        { "id": "olm_04.jpg", "width": 512, "height": 426 },
+        { "id": "olm_05.jpg", "width": 512, "height": 426 },
+        { "id": "olm_06.jpg", "width": 512, "height": 427 },
+        { "id": "olm_07.jpg", "width": 512, "height": 427 },
+        { "id": "olm_08.jpg", "width": 512, "height": 427 },
+        { "id": "olm_09.jpg", "width": 512, "height": 427 },
+        { "id": "olm_10.jpg", "width": 512, "height": 427 }
       ]
     },
     "stm2012": {
@@ -444,13 +454,18 @@
       "has_archive": true,
       "is_dark_background": false,
       "images": [
-        { "id": "olm_011.jpg", "width": 500, "height": 500 },
-        { "id": "olm_012.jpg", "width": 500, "height": 500 },
-        { "id": "olm_013.jpg", "width": 500, "height": 500 },
-        { "id": "olm_041.jpg", "width": 500, "height": 500 },
-        { "id": "olm_042.jpg", "width": 500, "height": 500 },
-        { "id": "olm_043.jpg", "width": 500, "height": 500 },
-        { "id": "olm_044.jpg", "width": 500, "height": 500 }
+        { "id": "olm_01.jpg", "width": 512, "height": 512 },
+        { "id": "olm_02.jpg", "width": 512, "height": 512 },
+        { "id": "olm_03.jpg", "width": 512, "height": 512 },
+        { "id": "olm_10.jpg", "width": 512, "height": 512 },
+        { "id": "olm_04.jpg", "width": 512, "height": 512 },
+        { "id": "olm_05.jpg", "width": 512, "height": 512 },
+        { "id": "olm_06.jpg", "width": 512, "height": 512 },
+        { "id": "olm_10.jpg", "width": 512, "height": 512 },
+        { "id": "olm_07.jpg", "width": 512, "height": 512 },
+        { "id": "olm_08.jpg", "width": 512, "height": 512 },
+        { "id": "olm_09.jpg", "width": 512, "height": 512 },
+        { "id": "olm_10.jpg", "width": 512, "height": 512 }
       ]
     },
     "tbpf": {
@@ -475,27 +490,25 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 300, "height": 250 },
-        { "id": "olm_03.jpg", "width": 300, "height": 250 },
-        { "id": "olm_04.jpg", "width": 300, "height": 250 },
-        { "id": "olm_05.jpg", "width": 300, "height": 250 },
-        { "id": "olm_06.jpg", "width": 300, "height": 250 },
-        { "id": "olm_07.jpg", "width": 300, "height": 250 }
+        { "id": "olm_01.jpg", "width": 512, "height": 426 },
+        { "id": "olm_02.jpg", "width": 512, "height": 426 },
+        { "id": "olm_03.jpg", "width": 512, "height": 426 },
+        { "id": "olm_04.jpg", "width": 512, "height": 426 },
+        { "id": "olm_05.jpg", "width": 512, "height": 426 },
+        { "id": "olm_06.jpg", "width": 512, "height": 426 }
       ]
     },
     "zootopia": {
       "has_archive": true,
       "is_dark_background": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 600 },
-        { "id": "olm_02.jpg", "width": 300, "height": 600 },
-        { "id": "olm_03.jpg", "width": 300, "height": 600 },
-        { "id": "olm_04.jpg", "width": 300, "height": 600 },
-        { "id": "olm_05.jpg", "width": 300, "height": 600 },
-        { "id": "olm_06.jpg", "width": 300, "height": 600 },
-        { "id": "olm_07.jpg", "width": 300, "height": 600 },
-        { "id": "olm_08.jpg", "width": 300, "height": 600 }
+        { "id": "olm_01.jpg", "width": 512, "height": 427 },
+        { "id": "olm_02.jpg", "width": 512, "height": 427 },
+        { "id": "olm_03.jpg", "width": 512, "height": 427 },
+        { "id": "olm_04.jpg", "width": 512, "height": 427 },
+        { "id": "olm_05.jpg", "width": 512, "height": 427 },
+        { "id": "olm_06.jpg", "width": 512, "height": 427 },
+        { "id": "olm_07.jpg", "width": 512, "height": 427 }
       ]
     }
   },
@@ -981,12 +994,22 @@
     "tistheseason": {
       "has_archive": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 300, "height": 250 },
-        { "id": "olm_03.jpg", "width": 300, "height": 250 },
-        { "id": "olm_04.jpg", "width": 300, "height": 250 },
-        { "id": "olm_05.jpg", "width": 300, "height": 250 },
-        { "id": "olm_06.jpg", "width": 300, "height": 250 }
+        { "id": "olm_01.jpg", "width": 512, "height": 427 },
+        { "id": "olm_02.jpg", "width": 512, "height": 427 },
+        { "id": "olm_03.jpg", "width": 512, "height": 427 },
+        { "id": "olm_04.jpg", "width": 512, "height": 427 },
+        { "id": "olm_05.jpg", "width": 512, "height": 427 },
+        { "id": "olm_06.jpg", "width": 512, "height": 427 },
+        { "id": "olm_07.jpg", "width": 512, "height": 427 },
+        { "id": "olm_08.jpg", "width": 512, "height": 427 },
+        { "id": "olm_09.jpg", "width": 512, "height": 427 },
+        { "id": "olm_10.jpg", "width": 512, "height": 427 },
+        { "id": "olm_06.jpg", "width": 512, "height": 427 },
+        { "id": "olm_12.jpg", "width": 512, "height": 427 },
+        { "id": "olm_13.jpg", "width": 512, "height": 427 },
+        { "id": "olm_14.jpg", "width": 512, "height": 427 },
+        { "id": "olm_15.jpg", "width": 512, "height": 427 },
+        { "id": "olm_06.jpg", "width": 512, "height": 427 }
       ]
     }
   },
@@ -1005,9 +1028,11 @@
     "donation": {
       "has_archive": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 300, "height": 250 }
+        { "id": "olm_01.jpg", "width": 512, "height": 427 },
+        { "id": "olm_02.jpg", "width": 512, "height": 427 },
+        { "id": "olm_03.jpg", "width": 512, "height": 427 },
+        { "id": "olm_04.jpg", "width": 512, "height": 427 },
+        { "id": "olm_05.jpg", "width": 512, "height": 427 }
       ]
     },
     "imagine2030": {
@@ -1040,8 +1065,15 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 723, "height": 432 },
-        { "id": "olm_02.jpg", "width": 500, "height": 250 }
+        { "id": "olm_01.png", "width": 512, "height": 306 },
+        { "id": "olm_02.png", "width": 512, "height": 306 },
+        { "id": "olm_03.png", "width": 512, "height": 306 },
+        { "id": "olm_04.png", "width": 512, "height": 256 },
+        { "id": "olm_05.png", "width": 512, "height": 256 },
+        { "id": "olm_06.png", "width": 512, "height": 256 },
+        { "id": "olm_07.png", "width": 512, "height": 256 },
+        { "id": "olm_08.png", "width": 512, "height": 256 },
+        { "id": "olm_09.png", "width": 512, "height": 256 }
       ]
     },
     "keyhole": {
@@ -1064,35 +1096,39 @@
     "movies": {
       "has_archive": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 300, "height": 250 },
-        { "id": "olm_03.jpg", "width": 300, "height": 250 },
-        { "id": "olm_04.jpg", "width": 300, "height": 250 },
-        { "id": "olm_05.jpg", "width": 300, "height": 250 },
-        { "id": "olm_06.jpg", "width": 300, "height": 250 },
-        { "id": "olm_07.jpg", "width": 300, "height": 250 }
+        { "id": "olm_01.jpg", "width": 512, "height": 427 },
+        { "id": "olm_02.jpg", "width": 512, "height": 427 },
+        { "id": "olm_03.jpg", "width": 512, "height": 427 },
+        { "id": "olm_04.jpg", "width": 512, "height": 427 },
+        { "id": "olm_05.jpg", "width": 512, "height": 427 },
+        { "id": "olm_06.jpg", "width": 512, "height": 427 },
+        { "id": "olm_07.jpg", "width": 512, "height": 427 },
+        { "id": "olm_08.jpg", "width": 512, "height": 427 }
       ]
     },
     "rcc": {
       "has_archive": true,
       "is_flash": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 300, "height": 250 },
-        { "id": "olm_03.jpg", "width": 300, "height": 250 },
-        { "id": "olm_04.jpg", "width": 300, "height": 250 },
-        { "id": "olm_05.jpg", "width": 300, "height": 250 }
+        { "id": "olm_01.jpg", "width": 512, "height": 426 },
+        { "id": "olm_02.jpg", "width": 512, "height": 426 },
+        { "id": "olm_03.jpg", "width": 512, "height": 426 },
+        { "id": "olm_04.jpg", "width": 512, "height": 426 },
+        { "id": "olm_05.jpg", "width": 512, "height": 426 },
+        { "id": "olm_06.jpg", "width": 512, "height": 426 },
+        { "id": "olm_07.jpg", "width": 512, "height": 426 },
+        { "id": "olm_08.jpg", "width": 512, "height": 426 }
       ]
     },
     "tbyd": {
       "has_archive": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 300, "height": 250 },
-        { "id": "olm_03.jpg", "width": 300, "height": 250 },
-        { "id": "olm_04.jpg", "width": 300, "height": 250 },
-        { "id": "olm_05.jpg", "width": 300, "height": 250 },
-        { "id": "olm_06.jpg", "width": 300, "height": 250 }
+        { "id": "olm_01.jpg", "width": 512, "height": 427 },
+        { "id": "olm_02.jpg", "width": 512, "height": 427 },
+        { "id": "olm_03.jpg", "width": 512, "height": 427 },
+        { "id": "olm_04.jpg", "width": 512, "height": 427 },
+        { "id": "olm_05.jpg", "width": 512, "height": 427 },
+        { "id": "olm_06.jpg", "width": 512, "height": 427 }
       ]
     }
   },

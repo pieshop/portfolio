@@ -1,6 +1,6 @@
 const base = require(`./project`);
 const specific = {
-  compressed : false,
+  compression : false,
   serviceworker : false,
   baseHref: '//stage.stephenhamilton.co.uk',
   cdn: 'https://cdn.stephenhamilton.co.uk',
