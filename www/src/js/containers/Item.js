@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchItemIfNeeded, selectItem } from 'store/item/itemActions';
-import { getItemData } from 'store/item/itemReducer';
+import { getItemData } from 'store/item/itemSelectors';
 import ItemOverview from 'components/item/ItemOverview';
 import ItemDetails from 'components/item/ItemDetails';
 import ItemAwards from 'components/item/ItemAwards';

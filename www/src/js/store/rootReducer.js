@@ -7,14 +7,14 @@ import localData from 'store/localdata/localDataReducer';
 import React from 'react';
 
 const rootReducer = combineReducers({
-  selectedCategory: selectedCategory,
-  selectedYear: selectedYear,
+  selectedCategory,
+  selectedYear,
   filtered: toggledFilter,
-  selectedItem: selectedItem,
-  localData: localData,
+  selectedItem,
+  localData,
   itemsByCategory: items,
   itemsByID: item,
-  categories: categories,
+  categories,
 });
 
 export default rootReducer;

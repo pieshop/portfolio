@@ -249,7 +249,7 @@
     }
   }
 
-  /* Perform Flash Player and SWF version matching; static publishing only
+  /* Perform Flash Player and MEDIA_SWF version matching; static publishing only
      */
   function matchVersions() {
     var rl = regObjArr.length;
@@ -263,7 +263,7 @@
           var obj = getElementById(id);
           if (obj) {
             if (hasPlayerVersion(regObjArr[i].swfVersion) && !(ua.wk && ua.wk < 312)) {
-              // Flash Player version >= published SWF version: Houston, we have a match!
+              // Flash Player version >= published MEDIA_SWF version: Houston, we have a match!
               setVisibility(id, true);
               if (cb) {
                 cbObj.success = true;
@@ -294,7 +294,7 @@
               }
               showExpressInstall(att, par, id, cb);
             } else {
-              // Flash Player and SWF version mismatch or an older Webkit engine that ignores the HTML object element's nested param elements: display fallback content instead of SWF
+              // Flash Player and MEDIA_SWF version mismatch or an older Webkit engine that ignores the HTML object element's nested param elements: display fallback content instead of MEDIA_SWF
               displayFbContent(obj);
               if (cb) {
                 cb(cbObj);
@@ -302,7 +302,7 @@
             }
           }
         } else {
-          // if no Flash Player is installed or the fp version cannot be detected we let the HTML object element do its job (either show a SWF or fallback content)
+          // if no Flash Player is installed or the fp version cannot be detected we let the HTML object element do its job (either show a MEDIA_SWF or fallback content)
           setVisibility(id, true);
           if (cb) {
             var o = getObjectById(id); // test whether there is an HTML object element or not
@@ -409,8 +409,8 @@
       } else {
         par.flashvars = fv;
       }
-      // IE only: when a SWF is loading (AND: not available in cache) wait for the readyState of the object element to become 4 before removing it,
-      // because you cannot properly cancel a loading SWF file without breaking browser load references, also obj.onreadystatechange doesn't work
+      // IE only: when a MEDIA_SWF is loading (AND: not available in cache) wait for the readyState of the object element to become 4 before removing it,
+      // because you cannot properly cancel a loading MEDIA_SWF file without breaking browser load references, also obj.onreadystatechange doesn't work
       if (ua.ie && obj.readyState != 4) {
         var newObj = createElement('div');
         replaceElemIdStr += 'SWFObjectNew';
@@ -427,8 +427,8 @@
      */
   function displayFbContent(obj) {
     if (ua.ie && obj.readyState != 4) {
-      // IE only: when a SWF is loading (AND: not available in cache) wait for the readyState of the object element to become 4 before removing it,
-      // because you cannot properly cancel a loading SWF file without breaking browser load references, also obj.onreadystatechange doesn't work
+      // IE only: when a MEDIA_SWF is loading (AND: not available in cache) wait for the readyState of the object element to become 4 before removing it,
+      // because you cannot properly cancel a loading MEDIA_SWF file without breaking browser load references, also obj.onreadystatechange doesn't work
       obj.style.display = 'none';
       var el = createElement('div');
       obj.parentNode.insertBefore(el, obj); // insert placeholder div that will be replaced by the fallback content
@@ -471,7 +471,7 @@
     return div.firstChild;
   }
 
-  /* Cross-browser dynamic SWF creation
+  /* Cross-browser dynamic MEDIA_SWF creation
      */
   function createSWF(attObj, parObj, id) {
     var r,
@@ -542,8 +542,8 @@
     el.appendChild(p);
   }
 
-  /* Cross-browser SWF removal
-     - Especially needed to safely and completely remove a SWF in Internet Explorer
+  /* Cross-browser MEDIA_SWF removal
+     - Especially needed to safely and completely remove a MEDIA_SWF in Internet Explorer
      */
   function removeSWF(id) {
     var obj = getElementById(id);
@@ -609,7 +609,7 @@
     listenersArr[listenersArr.length] = [target, eventType, fn];
   }
 
-  /* Flash Player and SWF content version matching
+  /* Flash Player and MEDIA_SWF content version matching
      */
   function hasPlayerVersion(rv) {
     rv += ''; //Coerce number to string, if needed.
@@ -793,7 +793,7 @@
             }
           }
           if (hasPlayerVersion(swfVersionStr)) {
-            // create SWF
+            // create MEDIA_SWF
             var obj = createSWF(att, par, replaceElemIdStr);
             if (att.id == id) {
               setVisibility(id, true);

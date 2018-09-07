@@ -1,12 +1,11 @@
 import swfobject from 'swfobject';
 import * as constants from 'constants/AppConstants';
+import * as fileTypes from 'utils/fileTypes';
 
 import { fetchArchiveItemService, fetchItemService } from 'services/portfolio';
 
 import { getLocalClientData } from 'store/localdata/localDataReducer';
-import { getHasItem, getItem } from 'store/item/itemReducer';
-import ItemImageDesktop from '../../components/item/ItemImageDesktop';
-import ItemImageOLM from '../../components/item/ItemImageOLM';
+import { getHasItem, getItem } from 'store/item/itemSelectors';
 import React from 'react';
 
 export const ITEM_INVALIDATE = 'item.ITEM_INVALIDATE';
@@ -46,107 +45,72 @@ const receiveItem = (id, item, archiveItem) => {
   };
 };
 
-const isObject = (obj) => {
+const _isObject = (obj) => {
   return obj === Object(obj);
 };
 
+const getMediaNames = (id, name, media_type, image_type, file_type) => {
+  let o = {};
+  if (media_type === fileTypes.MEDIA_IMAGE) {
+    o.media_name = name;
+    switch (image_type) {
+      case fileTypes.IMAGE_DESKTOP:
+        o.media_name_1x = id + '-480.' + file_type;
+        o.media_name_2x = id + '-768.' + file_type;
+        o.media_name_3x = id + '-1024.' + file_type;
+        break;
+      case fileTypes.IMAGE_SMARTPHONE:
+        o.media_name_1x = id + '-480.' + file_type;
+        o.media_name_2x = id + '-768.' + file_type;
+        o.media_name_3x = id + '-1024.' + file_type;
+        break;
+      case fileTypes.IMAGE_OLM:
+        o.media_name_1x = id + '-512.' + file_type;
+        o.media_name_2x = id + '-1024.' + file_type;
+        break;
+    }
+  } else {
+    o.media_name = name;
+  }
+
+  return o;
+};
+
 const _parseMedia = (json, localData) => {
-  const { client_id, entry_id, is_dark_background, images, pdfs, swfs } = json;
-  let media_path = constants.get_image_path({ client_id: client_id, entry_id: entry_id });
-
-  let ary = [].concat(images);
-  if (pdfs) {
-    ary = ary.concat(pdfs);
-  }
-  if (swfs) {
-    ary = ary.concat(swfs);
-  }
-
-  let is_single_item = ary.length === 1;
-
+  const { client_id, entry_id, is_dark_background, images = [], pdfs = [], swfs = [] } = json;
+  const media_path = constants.get_image_path({ client_id: client_id, entry_id: entry_id });
+  const ary = [...images, ...pdfs, ...swfs];
+  const is_single_item = ary.length === 1;
+  const is_single_desktop = ary.length === 1;
+  let i = 0;
   let lst = ary.map((obj) => {
+    // let oo = { images: { desktop: [], smartphone: [], olm: [] }, pdfs: [], swfs: [] };
     let o = {};
-    let media_name;
-    if (isObject(obj)) {
-      media_name = obj.id;
-      o.width = obj.width;
-      o.height = obj.height;
-    } else {
-      media_name = obj;
-    }
-    let ary = media_name.split('.');
-    let id = ary[0];
-    let file_type = ary[1];
-
-    let is_image = file_type === 'jpg' || file_type === 'png';
-    let is_pdf = file_type === 'pdf';
-    let is_swf = file_type === 'swf';
-    let media_type = constants.IMAGE;
-    if (file_type === 'jpg' || file_type === 'png') {
-      media_type = constants.IMAGE;
-    } else if (file_type === 'pdf') {
-      media_type = constants.PDF;
-    } else if (file_type === 'swf') {
-      media_type = constants.SWF;
-    }
-
-    let is_desktop = media_name.indexOf('desktop') !== -1;
-    let is_smartphone = media_name.indexOf('smartphone') !== -1;
-    let is_olm = media_name.indexOf('olm') !== -1;
-
-    const image_type = is_desktop
-      ? constants.IMAGE_DESKTOP
-      : is_smartphone
-        ? constants.IMAGE_SMARTPHONE
-        : is_olm
-          ? constants.IMAGE_OLM
-          : constants.IMAGE_OTHER;
-
-    o.id = id;
-    o.media_path = media_path;
-    o.media_name = media_name;
+    i++;
+    const media_name = _isObject(obj) ? obj.id : obj;
+    const { width, height } = obj;
+    const splitNameArray = media_name.split('.');
+    const [id, file_type] = splitNameArray;
+    const media_type = fileTypes.getMediaType(file_type);
+    const image_type = fileTypes.getImageTypeFromName(media_name);
+    const alt = file_type + '_' + client_id + '_' + entry_id;
+    o.id = id + i;
     o.media_type = media_type;
-    o.image_type = image_type;
-    o.is_image = is_image;
-    o.is_pdf = is_pdf;
-    o.is_swf = is_swf;
-    o.is_dark_background = is_dark_background;
-    o.is_desktop = is_desktop;
-    o.is_single_item = is_single_item;
-    o.is_smartphone = is_smartphone;
-    o.is_olm = is_olm;
-    o.alt = 'image_' + client_id + '_' + entry_id;
+    // prettier-ignore
+    o.media_info = { alt, width, height, media_path, file_type, image_type, is_dark_background, is_single_item };
+    o.media_names = getMediaNames(id, media_name, media_type, image_type, file_type);
 
-    if (media_type === constants.IMAGE) {
-      switch (image_type) {
-        case constants.IMAGE_DESKTOP:
-          o.media_name_1x = id + '-480.' + file_type;
-          o.media_name_2x = id + '-768.' + file_type;
-          o.media_name_3x = id + '-1024.' + file_type;
-          break;
-        case constants.IMAGE_SMARTPHONE:
-          o.media_name_1x = id + '-480.' + file_type;
-          o.media_name_2x = id + '-768.' + file_type;
-          o.media_name_3x = id + '-1024.' + file_type;
-          break;
-        case constants.IMAGE_OLM:
-          o.media_name_1x = id + '-512.' + file_type;
-          o.media_name_2x = id + '-1024.' + file_type;
-          break;
-      }
-    }
-
-    if (media_type === constants.SWF) {
+    if (media_type === fileTypes.MEDIA_SWF) {
       o.swf_data = localData.swfs_data[id];
       o.swf_data.id = id;
       o.swf_data.url = media_path + media_name;
     }
-    // console.log('o', o);
     return o;
   });
-  // console.log('parseMedia', lst);
+  console.log('>>>> parseMedia', lst);
   return lst;
 };
+
 const _parseAwards = (awards = []) => {
   //award_name, award_long_name, award_result, award_category, link, pdf
   for (const o of awards) {
@@ -155,6 +119,7 @@ const _parseAwards = (awards = []) => {
   }
   return awards;
 };
+
 const parseItem = (json, id, clients) => {
   let user_has_flash = swfobject.hasFlashPlayerVersion('9.0.18');
   // console.log('user_has_flash', user_has_flash);
@@ -191,6 +156,7 @@ const parseItem = (json, id, clients) => {
   json.media_items = _parseMedia(json, localData);
   return json;
 };
+
 const _cssToObj = (css) => {
   let obj = {};
   let s = css
@@ -205,6 +171,7 @@ const _cssToObj = (css) => {
   }
   return obj;
 };
+
 const parseArchiveItem = (json, id, clients) => {
   // console.log('parseArchiveItem', json, id);
   if (!json) {
@@ -216,13 +183,14 @@ const parseArchiveItem = (json, id, clients) => {
     if (o.base) {
       o.base = baseAssetsPath + o.base;
     }
-    o.media_type = o.type === 'swf' ? constants.SWF : constants.IFRAME;
+    o.media_type = o.type === 'swf' ? fileTypes.MEDIA_SWF : constants.IFRAME;
     if (o.style) {
       o.inline_style = _cssToObj(o.style);
     }
     return o;
   });
 };
+
 const fetchItem = (state, id, client_id) => {
   let hasArchive = false;
   const clients = getLocalClientData(state);

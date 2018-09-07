@@ -14,10 +14,15 @@ export default class ItemImageSmartphone extends Component {
 
   // Render using TweenMax
   render() {
-    const { width = 500, height = 500, style, media_path, media_name, alt } = this.props;
-
-    const paddingbottom = (height / width) * 100;
-    const thumb_style = { opacity: 0, height: 0, paddingBottom: paddingbottom + '%' };
+    const { style, media_info, media_names } = this.props;
+    const { width = 500, height = 500, alt, media_path } = media_info;
+    const { media_name } = media_names;
+    const thumb_style = {
+      opacity: 0,
+      height: 0,
+      marginBottom: '10px',
+      paddingBottom: (height / width) * 100 + '%',
+    };
     const src = `${media_path}${media_name}`;
     return (
       <div class={style}>

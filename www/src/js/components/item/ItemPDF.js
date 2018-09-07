@@ -3,8 +3,10 @@
  */
 import React from 'react';
 
-const ItemPDF = ({ media_path, media_name, style }) => {
-  console.log('ItemPDF', media_name, media_path);
+const ItemPDF = ({ media_info, media_names, style }) => {
+  const { media_path } = media_info;
+  const { media_name } = media_names;
+  // console.log('ItemPDF', media_name, media_path);
   return (
     <div class={style}>
       <div class="thumbnail">

@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import ItemPDF from 'components/item/ItemPDF';
 import ItemSWF from 'components/item/ItemSWF';
 import * as constants from 'constants/AppConstants';
+import * as fileTypes from 'utils/fileTypes';
 import LazyLoad from 'react-lazyload';
 import ItemImagePlaceholder from './ItemImagePlaceholder';
 import ItemImageDesktop from './ItemImageDesktop';
@@ -18,8 +19,7 @@ export default class ItemMediaList extends Component {
   }
 
   render() {
-    let { mediaItems } = this.props;
-    mediaItems = mediaItems || [];
+    let { mediaItems = [] } = this.props;
     return (
       <div class="item__media">
         <div class="row">{mediaItems.map(this.renderItem)}</div>
@@ -27,29 +27,30 @@ export default class ItemMediaList extends Component {
     );
   }
 
+  renderItems() {
+    let { mediaItems = [] } = this.props;
+    mediaItems.map(this.renderItem);
+    // console.log('ItemMediaList.renderItem', data);
+  }
+
   renderItem(data) {
-    console.log('ItemMediaList.renderItem', data);
-    return this.getMedia(data, this.getStyle(data));
+    // console.log('ItemMediaList.renderItem', data);
+    return this.getMedia(data, this.getStyle(data.media_info));
   }
 
   getMedia(data, style) {
     let fragment = null;
-    switch (data.media_type) {
-      case constants.IMAGE: {
-        const { width = 500, height = 500 } = data;
+    const { media_type, media_info } = data;
+    const { width = 500, height = 500 } = media_info;
+    switch (media_type) {
+      case fileTypes.MEDIA_IMAGE: {
+        const { id } = data;
         const img = this.getImage(data, style);
         fragment = (
           <LazyLoad
-            key={data.id}
+            key={id}
             height={height}
-            placeholder={
-              <ItemImagePlaceholder
-                is_responsive={data.is_desktop}
-                style={style}
-                width={width}
-                height={height}
-              />
-            }
+            placeholder={<ItemImagePlaceholder style={style} width={width} height={height} />}
             debounce={300}
             once
           >
@@ -58,10 +59,10 @@ export default class ItemMediaList extends Component {
         );
         return fragment;
       }
-      case constants.PDF:
+      case fileTypes.MEDIA_PDF:
         fragment = <ItemPDF key={data.id} style={style} {...data} />;
         break;
-      case constants.SWF:
+      case fileTypes.MEDIA_SWF:
         fragment = <ItemSWF key={data.id} style={style} {...data} />;
         break;
       default:
@@ -71,14 +72,14 @@ export default class ItemMediaList extends Component {
 
   getImage(data, style) {
     let fragment = null;
-    switch (data.image_type) {
-      case constants.IMAGE_DESKTOP:
+    switch (data.media_info.image_type) {
+      case fileTypes.IMAGE_DESKTOP:
         fragment = <ItemImageDesktop key={data.id} style={style} {...data} />;
         break;
-      case constants.IMAGE_SMARTPHONE:
+      case fileTypes.IMAGE_SMARTPHONE:
         fragment = <ItemImageSmartphone key={data.id} style={style} {...data} />;
         break;
-      case constants.IMAGE_OLM:
+      case fileTypes.IMAGE_OLM:
         fragment = <ItemImageOLM key={data.id} style={style} {...data} />;
         break;
     }
@@ -86,18 +87,18 @@ export default class ItemMediaList extends Component {
   }
 
   getStyle(data) {
-    const { is_desktop, is_olm, is_smartphone, is_single_item } = data;
+    const { image_type, is_single_item } = data;
     let styl = '';
-    if (is_desktop) {
+    if (image_type === fileTypes.IMAGE_DESKTOP) {
       styl = 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 text-center';
     }
     if (is_single_item) {
       styl = 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center';
     }
-    if (is_olm) {
+    if (image_type === fileTypes.IMAGE_OLM) {
       styl = 'col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center';
     }
-    if (is_smartphone) {
+    if (image_type === fileTypes.IMAGE_SMARTPHONE) {
       styl = 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center';
     }
     return styl;

@@ -7,9 +7,9 @@ import {
   selectCategory,
   selectYear,
 } from 'store/items/itemsActions';
-import { getItems, getSelectedState } from 'store/items/itemsReducer';
+import { getItems, getSelectedState } from 'store/items/itemsSelectors';
 import Items from 'components/Items';
-import { getSelectedCategoryMetaData } from 'store/categories/categoriesReducer';
+import { getSelectedCategoryMetaData } from 'store/categories/categoriesSelectors';
 
 class Categories extends Component {
   constructor(props) {

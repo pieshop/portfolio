@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getIsFetching } from 'store/items/itemsReducer';
+import { getIsFetching } from 'store/items/itemsSelectors';
 
 class Loader extends Component {
   constructor(props) {

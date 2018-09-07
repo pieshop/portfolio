@@ -1055,10 +1055,13 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 640, "height": 360 },
-        { "id": "olm_03.jpg", "width": 300, "height": 250 },
-        { "id": "olm_04.jpg", "width": 640, "height": 360 }
+        { "id": "olm_01.jpg", "width": 512, "height": 427 },
+        { "id": "olm_02.jpg", "width": 512, "height": 427 },
+        { "id": "olm_03.jpg", "width": 512, "height": 427 },
+        { "id": "olm_04.jpg", "width": 512, "height": 427 },
+        { "id": "olm_05.jpg", "width": 512, "height": 288 },
+        { "id": "olm_06.jpg", "width": 512, "height": 288 },
+        { "id": "olm_07.jpg", "width": 512, "height": 288 }
       ]
     },
     "hdplus": {
@@ -1077,20 +1080,14 @@
       ]
     },
     "keyhole": {
-      "has_archive": true,
+      "has_archive": false,
       "is_flash": true,
       "links": [
-        {
-          "url": "http://www.flashtalking.com/skyKeyhole/",
-          "target": "_blank",
-          "label": "Flashtalking"
-        }
       ],
       "images": [
-        { "id": "olm_01.jpg", "width": 300, "height": 250 },
-        { "id": "olm_02.jpg", "width": 727, "height": 89 },
-        { "id": "olm_03.jpg", "width": 300, "height": 250 },
-        { "id": "olm_04.jpg", "width": 1042, "height": 968 }
+        { "id": "desktop_01.jpg", "width": 768, "height": 713 },
+        { "id": "olm_01.jpg", "width": 512, "height": 427 },
+        { "id": "olm_02.jpg", "width": 512, "height": 63 }
       ]
     },
     "movies": {
@@ -1420,8 +1417,16 @@
       "has_archive": true,
       "is_flash": true,
       "images": [
-        { "id": "desktop_01.jpg", "width": 670, "height": 500 },
-        { "id": "desktop_02.jpg", "width": 670, "height": 500 }
+        { "id": "desktop_01.jpg", "width": 768, "height": 573 },
+        { "id": "desktop_02.jpg", "width": 768, "height": 573 },
+        { "id": "desktop_03.jpg", "width": 768, "height": 573 },
+        { "id": "desktop_04.jpg", "width": 768, "height": 573 },
+        { "id": "desktop_05.jpg", "width": 768, "height": 573 },
+        { "id": "desktop_06.jpg", "width": 768, "height": 573 },
+        { "id": "desktop_07.jpg", "width": 768, "height": 573 },
+        { "id": "desktop_08.jpg", "width": 768, "height": 573 },
+        { "id": "desktop_09.jpg", "width": 768, "height": 573 },
+        { "id": "desktop_10.jpg", "width": 768, "height": 573 }
       ],
       "awards": [
         {

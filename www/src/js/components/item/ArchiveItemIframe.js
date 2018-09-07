@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-const ArchiveItemIframe = ({ id, url, frameborder, inline_style, height, width, is_desktop }) => {
+const ArchiveItemIframe = ({ id, url, frameborder, inline_style, height, width }) => {
   // console.log('inline_style', inline_style);
   return (
     <div class="row">

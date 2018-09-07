@@ -4,8 +4,8 @@ import NavBarLink from 'components/NavBarLink';
 import * as constants from 'constants/AppConstants';
 import { connect } from 'react-redux';
 import { fetchAvailableCategories } from 'store/categories/categoriesActions';
-import { getFilteredState, getSelectedState, getYears } from 'store/items/itemsReducer';
-import { getAvailableCategories } from 'store/categories/categoriesReducer';
+import { getFilteredState, getSelectedState, getYears } from 'store/items/itemsSelectors';
+import { getAvailableCategories } from 'store/categories/categoriesSelectors';
 import { toggleFilter } from 'store/items/itemsActions';
 
 class NavBar extends Component {

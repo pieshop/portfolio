@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import ArchiveItemIframe from 'components/item/ArchiveItemIframe';
 import ArchiveItemSWF from 'components/item/ArchiveItemSWF';
 import * as constants from 'constants/AppConstants';
-
+import * as fileTypes from 'utils/fileTypes';
 export default class ArchiveItemMediaList extends Component {
   constructor() {
     super();
@@ -51,7 +51,7 @@ export default class ArchiveItemMediaList extends Component {
       case constants.IFRAME:
         fragment = <ArchiveItemIframe key={data.id} {...data} />;
         break;
-      case constants.SWF:
+      case fileTypes.MEDIA_SWF:
         fragment = <ArchiveItemSWF key={data.id} {...data} />;
         break;
       default:

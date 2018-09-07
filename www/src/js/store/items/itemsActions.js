@@ -2,7 +2,7 @@ import { fetchCategoryItemsService } from 'services/portfolio';
 import { get_summary_thumb_path, get_thumb_path } from 'constants/AppConstants';
 
 import { getLocalClientData } from 'store/localdata/localDataReducer';
-import { getHasCategoryItems, getItemsByCategory } from 'store/items/itemsReducer';
+import { getHasCategoryItems, getItemsByCategory } from 'store/items/itemsSelectors';
 
 export const ITEMS_REQUEST = 'items.ITEMS_REQUEST';
 export const ITEMS_RECEIVE = 'items.ITEMS_RECEIVE';
@@ -80,6 +80,7 @@ const parseItems = (json, category, clients) => {
   });
   return json;
 };
+
 const fetchItems = (state, category) => {
   const clients = getLocalClientData(state);
   const isFiltered = false; // default to using unfiltered, as Im filtering in frontend now

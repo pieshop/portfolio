@@ -14,21 +14,15 @@ export default class ItemImage extends Component {
 
   // Render using TweenMax
   render() {
-    const {
-      width = 500,
-      height = 500,
-      style,
-      media_path,
-      media_name_3x,
-      media_name_2x,
-      media_name_1x,
-      media_name,
-      alt,
-      is_desktop,
-    } = this.props;
-
-    const paddingbottom = (height / width) * 100;
-    const thumb_style = { opacity: 0, height: 0, paddingBottom: paddingbottom + '%' };
+    const { style, media_info, media_names } = this.props;
+    const { width = 500, height = 500, alt, media_path } = media_info;
+    const { media_name_2x, media_name_1x } = media_names;
+    const thumb_style = {
+      opacity: 0,
+      height: 0,
+      marginBottom: '10px',
+      paddingBottom: (height / width) * 100 + '%',
+    };
     const srcSet = `${media_path}${media_name_2x} 2x, ${media_path}${media_name_1x} 1x`;
     // const sizes = is_desktop
     //   ? '(max-width: 480px)  100vw, (max-width: 768px)  100vw, (max-width: 1024px) 100vw, 100vw'
