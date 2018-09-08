@@ -20,7 +20,7 @@ const store = configureStore();
 
 console.log('>> NODE_ENV = ', process.env.NODE_ENV, '| __SERVICE_WORKER__ = ', __SERVICE_WORKER__);
 
-const doRender = (Component) => {
+const doRender = (Component = App) => {
   render(
     <AppContainer warnings={false}>
       <Provider store={store}>
@@ -60,7 +60,8 @@ if (process.env.NODE_ENV === 'production') {
   /**
    * HMR : https://github.com/webpack/webpack-dev-server/issues/100
    */
-  if (module.hot) {
-    module.hot.accept();
-  }
+  module.hot.accept('./App.js', () => {
+    const NextRootContainer = require('./App.js').default;
+    doRender(NextRootContainer);
+  });
 }

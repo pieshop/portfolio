@@ -74,7 +74,6 @@ class NavBar extends Component {
   }
 
   renderItem(data) {
-    // console.log('NavBar.renderItem', data);
     return (
       <NavBarLink
         key={data.category_name}
@@ -95,27 +94,20 @@ class NavBar extends Component {
   }
 
   handleFilterToggleClick(e) {
-    // const {selectedCategory, selectedYear} = this.props;
-    // console.log('NavBar.handleFilterToggleClick', selectedCategory, selectedYear);
-    // NavActions.toggleFilter();
-    // const is_filtered = CategoryStore.getIsFiltered();
-    // NavActions.fetchCategoryItems({category_id: selectedCategory, year_id: selectedYear, is_filtered: is_filtered});
     this.props.toggleFilter();
     this.toggleCollapse();
   }
 
   handleNavBarClick(e) {
     if (this.hasClass(e.currentTarget, 'disabled')) {
-      /*
-             *  Cancel click if button has disabled class
-             */
+      /* Cancel click if button has disabled class */
       e.preventDefault();
       return;
     }
     const { selectedCategory } = this.props;
-    if (selectedCategory === constants.DEFAULT_CATEGORY) {
-      // NavActions.reset();
-    }
+    // if (selectedCategory === constants.DEFAULT_CATEGORY) {
+    // NavActions.reset();
+    // }
     this.toggleCollapse();
   }
 }

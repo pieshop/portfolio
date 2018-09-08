@@ -58,7 +58,7 @@ export const getImageTypeFromName = (name) => {
       ? IMAGE_SMARTPHONE
       : is_olm
         ? IMAGE_OLM
-        : IMAGE_NONE;
+        : IMAGE_DESKTOP;
   return returnType;
 };
 

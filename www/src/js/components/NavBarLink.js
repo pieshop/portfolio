@@ -11,23 +11,21 @@ export default class NavBarLink extends Component {
   }
 
   render() {
-    const to =
-      this.props.to.indexOf('{year}') !== -1
-        ? this.props.to.replace('{year}', this.props.selectedYear)
-        : this.props.to;
-    const clz = this.props.is_active ? '' : 'disabled';
+    const { is_active, category_name, category_label, linkClick, to, selectedYear } = this.props;
+    const goto = to.indexOf('{year}') !== -1 ? to.replace('{year}', selectedYear) : to;
+    const clz = is_active ? '' : 'disabled';
     return (
       <li class="nav-item">
         <NavLink
-          to={to}
+          to={goto}
           isActive={this.checkActive}
           exact={false}
           activeClassName="active"
           class={'nav-link ' + clz}
-          data-id={this.props.category_name}
-          onClick={this.props.linkClick}
+          data-id={category_name}
+          onClick={linkClick}
         >
-          {this.props.category_label}
+          {category_label}
         </NavLink>
       </li>
     );

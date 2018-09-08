@@ -10,26 +10,21 @@ export default class ItemSWF extends Component {
   }
 
   componentDidMount() {
-    // console.log('ItemSWF.componentDidMount', this.props);
     const { swf_data } = this.props;
-    let flashvars = swf_data.flashvars || {};
+    const { id, flashvars = {}, url } = swf_data;
+    const { width, height, bgcolor, base, wmode = 'direct', scale = 'noscale' } = swf_data;
     let params = {};
-    params.bgcolor = swf_data.bgcolor;
+    params.bgcolor = bgcolor;
     params.menu = 'true';
-    if (swf_data.base) {
-      params.base = swf_data.base;
+    if (base) {
+      params.base = base;
     }
-    params.wmode = swf_data.wmode || 'direct'; // window, direct, opaque, transparent, gpu
-    params.scale = swf_data.scale ? swf_data.scale : 'noscale'; // default, showall, noborder, exactfit, noscale
-
-    let width = swf_data.width;
-    let height = swf_data.height;
-    // let width = '100%';
-    // let height = '100%';
+    params.wmode = wmode; // window, direct, opaque, transparent, gpu
+    params.scale = scale; // default, showall, noborder, exactfit, noscale
     try {
       swfobject.embedSWF(
-        swf_data.url,
-        swf_data.id,
+        url,
+        id,
         width,
         height,
         '6',

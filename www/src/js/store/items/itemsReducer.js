@@ -57,7 +57,7 @@ const items = (
       nextState.items = action.items;
       nextState.activeCategories = action.activeCategories;
       nextState.years = action.years;
-      nextState.lastUpdated = action.lastUpdated;
+      nextState.lastUpdated = action.receivedAt;
       return { ...state, ...nextState };
     default:
       return state;

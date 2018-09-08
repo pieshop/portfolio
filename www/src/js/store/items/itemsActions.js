@@ -3,6 +3,7 @@ import { get_summary_thumb_path, get_thumb_path } from 'constants/AppConstants';
 
 import { getLocalClientData } from 'store/localdata/localDataReducer';
 import { getHasCategoryItems, getItemsByCategory } from 'store/items/itemsSelectors';
+import { shouldUpdateItems } from '../../utils/dateValidation';
 
 export const ITEMS_REQUEST = 'items.ITEMS_REQUEST';
 export const ITEMS_RECEIVE = 'items.ITEMS_RECEIVE';
@@ -102,6 +103,8 @@ const shouldFetchItems = (state, category) => {
     const items = getItemsByCategory(state);
     if (items.isFetching) {
       return false;
+    } else if (shouldUpdateItems(items.lastUpdated)) {
+      return true;
     } else {
       return items.didInvalidate;
     }

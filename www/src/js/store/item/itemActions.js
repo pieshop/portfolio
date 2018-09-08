@@ -7,6 +7,7 @@ import { fetchArchiveItemService, fetchItemService } from 'services/portfolio';
 import { getLocalClientData } from 'store/localdata/localDataReducer';
 import { getHasItem, getItem } from 'store/item/itemSelectors';
 import React from 'react';
+import { shouldUpdateItem } from '../../utils/dateValidation';
 
 export const ITEM_INVALIDATE = 'item.ITEM_INVALIDATE';
 export const ITEM_SELECT = 'item.ITEM_SELECT';
@@ -76,39 +77,78 @@ const getMediaNames = (id, name, media_type, image_type, file_type) => {
   return o;
 };
 
+const _parseMediaItem = (props) => {
+  // prettier-ignore
+  const { obj, ind, media_path, client_id, entry_id, is_dark_background, localData, is_single_item } = props;
+  let o = {};
+  const media_name = _isObject(obj) ? obj.id : obj;
+  const { width, height } = obj;
+  const splitNameArray = media_name.split('.');
+  const [id, file_type] = splitNameArray;
+  const media_type = fileTypes.getMediaType(file_type);
+  const image_type = fileTypes.getImageTypeFromName(media_name);
+  const alt = file_type + '_' + client_id + '_' + entry_id;
+
+  o.media_type = media_type;
+  // prettier-ignore
+  o.media_info = { alt, width, height, media_path, file_type, image_type, is_dark_background, is_single_item };
+  if (media_type === fileTypes.MEDIA_SWF) {
+    o.id = id;
+    o.swf_data = localData.swfs_data[id];
+    o.swf_data.id = id;
+    o.swf_data.url = media_path + media_name;
+  } else {
+    o.id = id + ind;
+    o.media_names = getMediaNames(id, media_name, media_type, image_type, file_type);
+  }
+  // console.log('>>>> o', o);
+  return o;
+};
+
+const _checkForSingle = (arr) => {
+  if (arr.length === 1) {
+    arr[0].media_info.is_single_item = true;
+  }
+};
+
 const _parseMedia = (json, localData) => {
   const { client_id, entry_id, is_dark_background, images = [], pdfs = [], swfs = [] } = json;
   const media_path = constants.get_image_path({ client_id: client_id, entry_id: entry_id });
   const ary = [...images, ...pdfs, ...swfs];
   const is_single_item = ary.length === 1;
-  const is_single_desktop = ary.length === 1;
-  let i = 0;
-  let lst = ary.map((obj) => {
-    // let oo = { images: { desktop: [], smartphone: [], olm: [] }, pdfs: [], swfs: [] };
-    let o = {};
-    i++;
-    const media_name = _isObject(obj) ? obj.id : obj;
-    const { width, height } = obj;
-    const splitNameArray = media_name.split('.');
-    const [id, file_type] = splitNameArray;
-    const media_type = fileTypes.getMediaType(file_type);
-    const image_type = fileTypes.getImageTypeFromName(media_name);
-    const alt = file_type + '_' + client_id + '_' + entry_id;
-    o.id = id + i;
-    o.media_type = media_type;
-    // prettier-ignore
-    o.media_info = { alt, width, height, media_path, file_type, image_type, is_dark_background, is_single_item };
-    o.media_names = getMediaNames(id, media_name, media_type, image_type, file_type);
-
-    if (media_type === fileTypes.MEDIA_SWF) {
-      o.swf_data = localData.swfs_data[id];
-      o.swf_data.id = id;
-      o.swf_data.url = media_path + media_name;
-    }
-    return o;
-  });
-  console.log('>>>> parseMedia', lst);
-  return lst;
+  const media = ary.reduce(
+    (acc, obj, ind) => {
+      // prettier-ignore
+      const o = _parseMediaItem({ obj, ind, media_path, client_id, entry_id, is_dark_background, localData, is_single_item });
+      switch (o.media_type) {
+        case fileTypes.MEDIA_IMAGE: {
+          const { image_type } = o.media_info;
+          if (image_type === fileTypes.IMAGE_DESKTOP) {
+            acc.images.desktop.push(o);
+          } else if (image_type === fileTypes.IMAGE_OLM) {
+            acc.images.olm.push(o);
+          } else if (image_type === fileTypes.IMAGE_SMARTPHONE) {
+            acc.images.smartphone.push(o);
+          }
+          return acc;
+        }
+        case fileTypes.MEDIA_PDF:
+          acc.pdfs.push(o);
+          break;
+        case fileTypes.MEDIA_SWF:
+          acc.swfs.push(o);
+          break;
+      }
+      return acc;
+    },
+    { images: { desktop: [], olm: [], smartphone: [] }, pdfs: [], swfs: [] }
+  );
+  // _checkForSingle(media.pdfs);
+  // _checkForSingle(media.swfs);
+  // _checkForSingle(media.images.desktop);
+  // _checkForSingle(media.images.olm);
+  // _checkForSingle(media.images.smartphone);
+  return media;
 };
 
 const _parseAwards = (awards = []) => {
@@ -122,7 +162,7 @@ const _parseAwards = (awards = []) => {
 
 const parseItem = (json, id, clients) => {
   let user_has_flash = swfobject.hasFlashPlayerVersion('9.0.18');
-  // console.log('user_has_flash', user_has_flash);
+  // console.log('parseItem', json, 'user_has_flash', user_has_flash);
 
   const client_id = json.client_id;
   const localData = clients[client_id][id];
@@ -227,11 +267,12 @@ const fetchItem = (state, id, client_id) => {
 };
 
 const shouldFetchItem = (state, id) => {
-  // console.log('shouldFetchItem', id);
   if (getHasItem(state)) {
     const item = getItem(state);
     if (item.isFetching) {
       return false;
+    } else if (shouldUpdateItem(item.lastUpdated)) {
+      return true;
     } else {
       return item.didInvalidate;
     }

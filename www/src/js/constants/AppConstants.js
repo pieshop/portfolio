@@ -84,3 +84,22 @@ export const get_summary_thumb_path = () => {
 export const get_archive_path = ({ client_id, entry_id }) => {
   return '/assets/json/archives/' + client_id + '/' + entry_id + '.json';
 };
+
+export const defaultCategories = [
+  {
+    category_id: -1,
+    category_name: 'about',
+    category_label: 'About',
+    category_description: 'All my portfolio items (uncategorised).',
+    to: '/about',
+    is_active: true,
+  },
+  {
+    category_id: 0,
+    category_name: 'all',
+    category_label: 'All',
+    category_description: 'A brief summary of me.',
+    to: '/all/{year}',
+    is_active: true,
+  },
+];

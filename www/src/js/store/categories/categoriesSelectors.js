@@ -2,9 +2,11 @@
  * Return state.categories.available, with is_active set via active_categories_by_year
  */
 import { getSelectedCategory } from 'store/items/itemsSelectors';
+
 export const getAvailableCategories = (state) => {
   const selectedYear = state.selectedYear;
-  const active_categories_by_year = state.categories.activeByYear[selectedYear];
+  const active_categories_by_year =
+    state.categories.activeByYear && state.categories.activeByYear[selectedYear];
   // console.log('selectedYear', selectedYear, 'activeByYear', active_categories_by_year);
   if (active_categories_by_year) {
     return state.categories.available.map((o, i) => {
@@ -36,4 +38,8 @@ export const getSelectedCategoryMetaData = (state) => {
     },
     { label: '', description: '' }
   );
+};
+
+export const getCategoriesLastUpdated = (state) => {
+  return state.categories.lastUpdated;
 };

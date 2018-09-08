@@ -15,7 +15,7 @@ export default class ItemImage extends Component {
   // Render using TweenMax
   render() {
     const { style, media_info, media_names } = this.props;
-    const { width = 500, height = 500, alt, media_path } = media_info;
+    const { width = 500, height = 500, alt, media_path, is_single_item } = media_info;
     const { media_name_3x, media_name_2x, media_name_1x } = media_names;
     const thumb_style = {
       opacity: 0,
@@ -23,6 +23,7 @@ export default class ItemImage extends Component {
       marginBottom: '10px',
       paddingBottom: (height / width) * 100 + '%',
     };
+
     const srcSet = `${media_path}${media_name_3x} 1024w, ${media_path}${media_name_2x} 768w, ${media_path}${media_name_1x} 480w`;
     const sizes =
       '(max-width: 480px)  100vw, (max-width: 768px)  100vw, (max-width: 1024px) 100vw, 100vw';

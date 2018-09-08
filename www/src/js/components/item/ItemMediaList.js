@@ -4,7 +4,6 @@
 import React, { Component } from 'react';
 import ItemPDF from 'components/item/ItemPDF';
 import ItemSWF from 'components/item/ItemSWF';
-import * as constants from 'constants/AppConstants';
 import * as fileTypes from 'utils/fileTypes';
 import LazyLoad from 'react-lazyload';
 import ItemImagePlaceholder from './ItemImagePlaceholder';
@@ -19,18 +18,28 @@ export default class ItemMediaList extends Component {
   }
 
   render() {
-    let { mediaItems = [] } = this.props;
+    const { mediaItems = [] } = this.props;
+    const { images = {}, pdfs = [], swfs = [] } = mediaItems;
+    // console.log('ItemMediaList', images, pdfs, swfs);
     return (
       <div class="item__media">
-        <div class="row">{mediaItems.map(this.renderItem)}</div>
+        {images && <div class="row">{this.renderImages(images)}</div>}
+        {pdfs.length > 0 && <div class="row">{pdfs.map(this.renderItem)}</div>}
+        {swfs.length > 0 && <div class="row">{swfs.map(this.renderItem)}</div>}
       </div>
     );
   }
 
-  renderItems() {
-    let { mediaItems = [] } = this.props;
-    mediaItems.map(this.renderItem);
-    // console.log('ItemMediaList.renderItem', data);
+  renderImages(images) {
+    const { desktop = [], olm = [], smartphone = [] } = images;
+    const fragment = (
+      <React.Fragment>
+        {desktop.map(this.renderItem)}
+        {olm.map(this.renderItem)}
+        {smartphone.map(this.renderItem)}
+      </React.Fragment>
+    );
+    return fragment;
   }
 
   renderItem(data) {
@@ -92,14 +101,14 @@ export default class ItemMediaList extends Component {
     if (image_type === fileTypes.IMAGE_DESKTOP) {
       styl = 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 text-center';
     }
-    if (is_single_item) {
-      styl = 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center';
-    }
     if (image_type === fileTypes.IMAGE_OLM) {
       styl = 'col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 text-center';
     }
     if (image_type === fileTypes.IMAGE_SMARTPHONE) {
       styl = 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center';
+    }
+    if (is_single_item) {
+      styl = 'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center';
     }
     return styl;
   }

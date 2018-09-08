@@ -1,35 +1,25 @@
 import { CATEGORIES_RECEIVE, CATEGORIES_REQUEST } from 'store/categories/categoriesActions';
 
 const initState = {
-  available: [
-    {
-      category_id: 1,
-      category_name: 'about',
-      category_label: 'About',
-      category_description: 'All my portfolio items (uncategorised).',
-      to: '/about',
-      is_active: true,
-    },
-    {
-      category_id: 2,
-      category_name: 'all',
-      category_label: 'All',
-      category_description: 'A brief summary of me.',
-      to: '/all/{year}',
-      is_active: true,
-    },
-  ],
+  available: [],
   activeByYear: {},
+  lastUpdated: '',
 };
 
 const reducer = (state = initState, action) => {
   let nextState = {};
   switch (action.type) {
-    case CATEGORIES_RECEIVE:
     case CATEGORIES_REQUEST:
+      return { ...state, ...nextState };
+    case CATEGORIES_RECEIVE:
       if (action.categories) {
         nextState.activeByYear = action.activeByYear;
-        nextState.available = state.available.concat(action.categories);
+        nextState.available = action.categories;
+        nextState.lastUpdated = action.receivedAt;
+        /*
+         *  Merge arrays then dedupe
+        */
+        // nextState.available = joinWithoutDupes(state.available, action.categories);
         return { ...state, ...nextState };
       } else {
         return state;
@@ -39,3 +29,10 @@ const reducer = (state = initState, action) => {
   }
 };
 export default reducer;
+
+// Join Without Dupes.
+const joinWithoutDupes = (A = [], B = []) => {
+  const a = new Set(A.map((x) => x.category_name));
+  const b = new Set(B.map((x) => x.category_name));
+  return [...A.filter((x) => !b.has(x.category_name)), ...B.filter((x) => !a.has(x.category_name))];
+};
