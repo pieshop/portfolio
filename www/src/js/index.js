@@ -1,6 +1,4 @@
-/**
- * Created by stephenhamilton on 24/02/2017.
- */
+/* global __DEV__:false, __SERVICE_WORKER__:false */
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';

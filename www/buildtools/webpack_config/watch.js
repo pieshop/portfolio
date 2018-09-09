@@ -12,6 +12,7 @@ module.exports = ({ paths, project, replace_options }) => {
   const assetName = '[path][name].[ext]';
 
   const environmentVars = {
+    __DEV__: JSON.stringify(true),
     __SERVICE_WORKER__: JSON.stringify(false),
   };
 

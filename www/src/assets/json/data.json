@@ -737,7 +737,7 @@
       "is_flash": true,
       "images": [
         { "id": "olm_01.jpg", "width": 336, "height": 280 },
-        { "id": "olm_01.jpg", "width": 777, "height": 487 }
+        { "id": "olm_02.jpg", "width": 777, "height": 487 }
       ]
     },
     "dynamics": {
