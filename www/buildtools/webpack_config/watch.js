@@ -2,19 +2,16 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const { server, main, optimise, rules, plugins } = require('./config/index');
 
-module.exports = ({ paths, project, replace_options }) => {
+module.exports = ({ paths, project, environment, replace_options }) => {
   const PATHS = paths;
   const PROJECT = project;
   const PUBLIC_PATH = PROJECT.devserverURL + '/';
   const COMPRESSION = PROJECT.compression;
   const REPLACE_OPTIONS = replace_options;
-  const isProduction = false;
   const assetName = '[path][name].[ext]';
 
-  const environmentVars = {
-    __DEV__: JSON.stringify(true),
-    __SERVICE_WORKER__: JSON.stringify(false),
-  };
+  const { env, environmentVars } = environment;
+  const isProduction = env === 'production';
 
   return merge([
     server.setDevServer({
@@ -50,19 +47,14 @@ module.exports = ({ paths, project, replace_options }) => {
 
     rules.compileSCSS({ extract: false, isProduction, sourceMap: true }),
 
-    // main.addVendorShortcut({
-    //   name: 'TweenMax',
-    //   alias: { TweenMax: PATHS.nodeDir + '/gsap/src/uncompressed/TweenMax.js' },
-    // }),
-
-    plugins.define({ env: 'development', opts: environmentVars }),
+    plugins.define({ env, opts: environmentVars }),
     plugins.generateHTML({
       title: PROJECT.title,
       template: PATHS.templateDir + '/index_watch.ejs',
       filename: 'index.html',
       writeToDisk: false,
       opts: {
-        devServer: PUBLIC_PATH,
+        baseHref: PROJECT.baseHref,
       },
     }),
     // plugins.writeHTMLtoDisk({ outputPath: PATHS.htmlOutPath }),

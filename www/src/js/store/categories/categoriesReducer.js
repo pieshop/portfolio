@@ -6,7 +6,7 @@ import {
   FILTER_TOGGLE,
   METADATA_UPDATE,
 } from 'store/categories/categoriesActions';
-import * as constants from '../../constants/AppConstants';
+import * as constants from 'constants/AppConstants';
 
 const initState = {
   available: [],

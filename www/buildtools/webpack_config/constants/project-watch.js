@@ -1,10 +1,10 @@
 const base = require(`./project`);
 const specific = {
   compression : false,
-  environment : 'production',
+  environment : 'development',
   googleanalytics : false,
   serviceworker : false,
-  baseHref: '//mini.portfolio',
+  baseHref: '//' + base.devserverHost + ':' + base.devserverPort,
   cdn: '',
 };
 const merged = {...base, ...specific};

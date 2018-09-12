@@ -1,16 +1,18 @@
+/* global __GA__:false */
 // https://github.com/react-ga/react-ga/issues/122
 import { ANALYTICS_ID } from 'constants/AppConstants';
-import ReactGA from 'react-ga';
+import * as ReactGA from 'react-ga';
 import React, { Component } from 'react';
 
 export default class Analytics extends Component {
   constructor(props) {
     super(props);
-    const debug = process.env.NODE_ENV === 'development';
-    ReactGA.initialize(ANALYTICS_ID, { debug: false });
-    if (debug) {
-      ReactGA.ga('set', 'sendHitTask', null);
+    if (__GA__) {
+      ReactGA.initialize(ANALYTICS_ID, { debug: false });
     }
+    // if (debug) {
+    //   ReactGA.ga('set', 'sendHitTask', null);
+    // }
   }
 
   componentDidMount() {
@@ -30,8 +32,10 @@ export default class Analytics extends Component {
 
   sendPageChange(pathname, search = '') {
     const page = pathname + search;
-    ReactGA.set({ page });
-    ReactGA.pageview(page);
+    if (__GA__) {
+      ReactGA.set({ page });
+      ReactGA.pageview(page);
+    }
   }
 
   render() {

@@ -5,6 +5,8 @@ import {
 import { shouldUpdateCategories } from '../../utils/dateValidation';
 import { getAvailableCategories, getCategoriesLastUpdated } from './categoriesSelectors';
 import { defaultCategories } from '../../constants/AppConstants';
+import { fetchItemsIfNeeded } from 'store/items/itemsActions';
+import { getSelectedState } from 'store/categories/categoriesSelectors';
 
 export const CATEGORIES_REQUEST = 'categories.CATEGORIES_REQUEST';
 export const CATEGORIES_RECEIVE = 'categories.CATEGORIES_RECEIVE';
@@ -15,7 +17,7 @@ export const YEAR_SELECT = 'categories.YEAR_SELECT';
 export const FILTER_TOGGLE = 'categories.FILTER_TOGGLE';
 export const CATEGORY_INVALIDATE = 'items.CATEGORY_INVALIDATE';
 
-const _selectCategory = (category) => {
+const categorySelect = (category) => {
   return {
     type: CATEGORY_SELECT,
     category,
@@ -33,22 +35,20 @@ const updateMetaData = (state) => {
     },
     { label: '', description: '' }
   );
-  console.log('updateMetaData', metadata);
   return {
     type: METADATA_UPDATE,
     metadata,
   };
 };
 
-export const selectYear = (year) => {
-  // console.log('selectYear',year);
+export const yearSelect = (year) => {
   return {
     type: YEAR_SELECT,
     year,
   };
 };
 
-export const toggleFilter = () => {
+export const filterToggle = () => {
   return {
     type: FILTER_TOGGLE,
   };
@@ -122,7 +122,22 @@ export const fetchAvailableCategories = () => {
 
 export const selectCategory = (category) => {
   return (dispatch, getState) => {
-    dispatch(_selectCategory(category));
+    dispatch(categorySelect(category));
     dispatch(updateMetaData(getState()));
+    dispatch(fetchItemsIfNeeded(getSelectedState(getState())));
+  };
+};
+
+export const selectYear = (year) => {
+  return (dispatch, getState) => {
+    dispatch(yearSelect(year));
+    dispatch(fetchItemsIfNeeded(getSelectedState(getState())));
+  };
+};
+
+export const toggleFilter = () => {
+  return (dispatch, getState) => {
+    dispatch(filterToggle());
+    dispatch(fetchItemsIfNeeded(getSelectedState(getState())));
   };
 };

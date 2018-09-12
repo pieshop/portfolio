@@ -1,4 +1,4 @@
-/* global __DEV__:false, __SERVICE_WORKER__:false */
+/* global __WATCH__:false, __SERVICE_WORKER__:false, __GA__:false */
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './../sass/main.scss';
@@ -8,6 +8,7 @@ import configureStore from './store/configureStore';
 import { render } from 'react-dom';
 import { get_config } from 'constants/AppConstants';
 import { createBrowserHistory } from 'history';
+import prettyLog from 'utils/prettyLog';
 import App from './App';
 
 get_config();
@@ -15,7 +16,21 @@ get_config();
 const history = createBrowserHistory();
 const store = configureStore(history);
 
-console.log('>> NODE_ENV = ', process.env.NODE_ENV, '| __SERVICE_WORKER__ = ', __SERVICE_WORKER__);
+const logInfo = () => {
+  prettyLog.add([
+    {
+      key: 'Info',
+      value: [
+        { key: 'Node Env:', value: process.env.NODE_ENV },
+        { key: 'Service Worker:', value: __SERVICE_WORKER__ },
+        { key: 'Google Analytics:', value: __GA__ },
+      ],
+    },
+  ]);
+  prettyLog.print();
+};
+
+logInfo();
 
 const doRender = (Component = App) => {
   render(
@@ -55,8 +70,10 @@ if (process.env.NODE_ENV === 'production') {
   /**
    * HMR : https://github.com/webpack/webpack-dev-server/issues/100
    */
-  module.hot.accept('./App.js', () => {
-    const NextRootContainer = require('./App.js').default;
-    doRender(NextRootContainer);
-  });
+  if (__WATCH__) {
+    module.hot.accept('./App.js', () => {
+      const NextRootContainer = require('./App.js').default;
+      doRender(NextRootContainer);
+    });
+  }
 }

@@ -1,3 +1,5 @@
+import * as constants from 'constants/AppConstants';
+
 import { fetchCategoryItemsService } from 'services/portfolio';
 import { get_summary_thumb_path, get_thumb_path } from 'constants/AppConstants';
 
@@ -83,11 +85,11 @@ const shouldFetchItems = (state, category) => {
   }
 };
 
-export const fetchItemsIfNeeded = (category, year) => {
-  // console.log('fetchItemsIfNeeded',category, year);
+export const fetchItemsIfNeeded = ({ selectedCategory, selectedYear }) => {
   return (dispatch, getState) => {
-    if (shouldFetchItems(getState(), category)) {
-      dispatch(fetchItems(getState(), category));
+    const isValidCategory = selectedCategory !== constants.CATEGORY_ABOUT;
+    if (isValidCategory && shouldFetchItems(getState(), selectedCategory)) {
+      dispatch(fetchItems(getState(), selectedCategory));
     }
   };
 };

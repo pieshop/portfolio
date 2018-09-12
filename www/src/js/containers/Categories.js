@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchItemsIfNeeded } from 'store/items/itemsActions';
 
 import { getItems } from 'store/items/itemsSelectors';
-import { invalidateCategory, selectCategory, selectYear } from 'store/categories/categoriesActions';
+import { selectCategory, selectYear } from 'store/categories/categoriesActions';
 import {
   getSelectedCategoryMetaData,
   getSelectedState,
@@ -22,7 +21,7 @@ class Categories extends Component {
     // console.log('** Categories.componentDidMount', category_id, year_id);
     this.props.selectCategory(category_id);
     this.props.selectYear(year_id);
-    this.props.fetchItemsIfNeeded(category_id, year_id);
+    // this.props.fetchItemsIfNeeded(category_id, year_id);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -35,14 +34,6 @@ class Categories extends Component {
     if (year_id !== next_year_id) {
       // console.log('** Categories.componentWillReceiveProps', year_id, next_year_id);
       this.props.selectYear(next_year_id);
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.selectedCategory !== prevProps.selectedCategory) {
-      // console.log('** Categories.componentDidUpdate');
-      const { selectedCategory, selectedYear } = this.props;
-      this.props.fetchItemsIfNeeded(selectedCategory, selectedYear);
     }
   }
 
@@ -76,9 +67,6 @@ const mapDispatchToProps = (dispatch) => {
     },
     selectYear: (year_id) => {
       dispatch(selectYear(year_id));
-    },
-    fetchItemsIfNeeded: (category_id, year_id) => {
-      dispatch(fetchItemsIfNeeded(category_id, year_id));
     },
   };
 };

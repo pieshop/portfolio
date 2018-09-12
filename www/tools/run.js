@@ -11,16 +11,24 @@ function format(time) {
   return time.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
 }
 
-function run(fn, options) {
+function run(fn, options = {}) {
+  const envMap = { local: 'dev', stage: 'stage', live: 'dist' };
+  const target = process.argv[3].split('=')[1] || 'local';
+  options.env = envMap[target];
+
   const task = typeof fn.default === 'undefined' ? fn : fn.default;
   const start = new Date();
-  console.info(`[${format(start)}] Starting '${task.name}${options ? ` (${options})` : ''}'...`);
+  console.info(
+    `[${format(start)}] Starting '${task.name}${options ? ` (${JSON.stringify(options)})` : ''}'...`
+  );
   return task(options).then(
     (resolution) => {
       const end = new Date();
       const time = end.getTime() - start.getTime();
       console.info(
-        `[${format(end)}] Finished '${task.name}${options ? ` (${options})` : ''}' after ${time} ms`
+        `[${format(end)}] Finished '${task.name}${
+          options ? ` (${JSON.stringify(options)})` : ''
+        }' after ${time} ms`
       );
       return resolution;
     },

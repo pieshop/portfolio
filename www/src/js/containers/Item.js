@@ -2,7 +2,7 @@ import { TweenLite } from 'gsap/TweenLite';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchItemIfNeeded, selectItem } from 'store/item/itemActions';
+import { selectItem } from 'store/item/itemActions';
 import { getItemData } from 'store/item/itemSelectors';
 import ItemOverview from 'components/item/ItemOverview';
 import ItemDetails from 'components/item/ItemDetails';
@@ -22,8 +22,7 @@ class Item extends Component {
     const { params } = this.props.match;
     const { category_id, client_id, entry_id } = params;
     // console.log('** Item.componentDidMount', category_id, client_id, entry_id);
-    this.props.selectItem(entry_id);
-    this.props.fetchItemIfNeeded(entry_id, client_id);
+    this.props.selectItem({ client_id, entry_id });
   }
 
   render() {
@@ -68,11 +67,8 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    selectItem: (entry_id) => {
-      dispatch(selectItem(entry_id));
-    },
-    fetchItemIfNeeded: (entry_id, client_id) => {
-      dispatch(fetchItemIfNeeded(entry_id, client_id));
+    selectItem: (opts) => {
+      dispatch(selectItem(opts));
     },
   };
 };

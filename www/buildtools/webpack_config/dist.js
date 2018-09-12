@@ -2,13 +2,12 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const { main, optimise, rules, plugins } = require('./config/index');
 
-module.exports = ({ paths, project, replace_options }) => {
+module.exports = ({ paths, project, environment, replace_options, cdn }) => {
   const PATHS = paths;
   const PROJECT = project;
-  const PUBLIC_PATH = '';
+  const PUBLIC_PATH = cdn;
   const COMPRESSION = PROJECT.compression;
   const REPLACE_OPTIONS = replace_options;
-  const isProduction = true;
   const copyPaths = [
     { from: PATHS.src + '/assets/json/archives/', to: PATHS.dist + '/assets/json/archives/' },
     { from: PATHS.src + '/images/', to: PATHS.dist + '/images/' },
@@ -22,10 +21,8 @@ module.exports = ({ paths, project, replace_options }) => {
   const cleanOptions = { root: PATHS.projectRoot, verbose: true, exclude: ['language'] };
   const assetName = '[path][name].[ext]';
 
-  const environmentVars = {
-    __DEV__: JSON.stringify(false),
-    __SERVICE_WORKER__: JSON.stringify(PROJECT.serviceworker),
-  };
+  const { env, environmentVars } = environment;
+  const isProduction = env === 'production';
 
   return merge([
     main.setProductionMode(),
@@ -58,17 +55,12 @@ module.exports = ({ paths, project, replace_options }) => {
     rules.compileSCSS({ extract: true, isProduction, sourceMap: true }),
     optimise.minifyCSS({ sourceMap: true }),
 
-    // main.addVendorShortcut({
-    //   name: 'TweenMax',
-    //   alias: { TweenMax: PATHS.nodeDir + '/gsap/src/uncompressed/TweenMax.js' },
-    // }),
-
     plugins.cleanDirectory({ cleanPaths, cleanOptions }),
     plugins.copy({ copyPaths, copyOptions }),
 
     plugins.hashModuleIDs(),
 
-    plugins.define({ env: 'production', opts: environmentVars }),
+    plugins.define({ env, opts: environmentVars }),
 
     plugins.generateHTML({
       title: PROJECT.title,
@@ -76,7 +68,6 @@ module.exports = ({ paths, project, replace_options }) => {
       filename: 'index.html',
       opts: {
         baseHref: PROJECT.baseHref,
-        devServer: PUBLIC_PATH,
         cdn: PROJECT.cdn,
       },
     }),

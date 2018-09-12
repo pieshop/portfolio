@@ -1,15 +1,21 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import Analytics from 'Analytics';
 import About from '../containers/About';
 import Item from '../containers/Item';
 import Categories from '../containers/Categories';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+const AnalyticsTracker = () => {
+  return <Route component={Analytics} />;
+  // return null;
+};
+
 const Routes = (
   <React.Fragment>
     <Header />
-    {/*<AnalyticsTracker />*/}
+    <AnalyticsTracker />
     <Switch>
       <Route path="/about" component={About} />
       <Redirect exact from="/" to="/about" />

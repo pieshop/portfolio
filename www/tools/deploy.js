@@ -5,12 +5,12 @@ import svninfo from './svninfo';
 import update from './update';
 import sync from './sync';
 
-async function deploy() {
+async function deploy(options) {
   // await run(clean);
   // await run(criticalCSS);
   // await run(svninfo);
-  await run(update);
-  run(sync);
+  await run(update, options);
+  run(sync, options);
 }
 
 export default deploy;

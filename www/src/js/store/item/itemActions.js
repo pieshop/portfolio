@@ -8,7 +8,6 @@ import { getLocalClientData } from 'store/localdata/localDataReducer';
 import { getHasItem, getItem } from 'store/item/itemSelectors';
 import React from 'react';
 import { shouldUpdateItem } from '../../utils/dateValidation';
-import { selectCategory } from '../categories/categoriesActions';
 
 export const ITEM_INVALIDATE = 'item.ITEM_INVALIDATE';
 export const ITEM_SELECT = 'item.ITEM_SELECT';
@@ -22,7 +21,7 @@ export const invalidateItem = (id) => {
   };
 };
 
-export const selectItem = (id) => {
+const itemSelect = (id) => {
   return {
     type: ITEM_SELECT,
     id,
@@ -162,12 +161,12 @@ const _parseAwards = (awards = []) => {
   }, []);
 };
 
-const parseItem = (json, id, clients) => {
+const parseItem = ({ json, entry_id, clients }) => {
   let user_has_flash = swfobject.hasFlashPlayerVersion('9.0.18');
   // console.log('parseItem', json, 'user_has_flash', user_has_flash);
 
   const client_id = json.client_id;
-  const localData = { ...clients[client_id][id] };
+  const localData = { ...clients[client_id][entry_id] };
 
   json.is_flash = localData.is_flash || false;
   json.is_dark_background = localData.is_dark_background || false;
@@ -214,8 +213,8 @@ const _cssToObj = (css) => {
   return obj;
 };
 
-const parseArchiveItem = (json, id, clients) => {
-  // console.log('parseArchiveItem', json, id);
+const parseArchiveItem = ({ json, entry_id, clients }) => {
+  // console.log('parseArchiveItem', json, entry_id);
   if (!json) {
     return {};
   }
@@ -233,23 +232,23 @@ const parseArchiveItem = (json, id, clients) => {
   });
 };
 
-const fetchItem = (state, id, client_id) => {
+const fetchItem = ({ state, client_id, entry_id }) => {
   let hasArchive = false;
   const clients = getLocalClientData(state);
   /*
      *  TODO : Catch errors and show error page
     */
 
-  if (clients[client_id] && clients[client_id][id]) {
-    hasArchive = clients[client_id][id].has_archive;
+  if (clients[client_id] && clients[client_id][entry_id]) {
+    hasArchive = clients[client_id][entry_id].has_archive;
   }
-  // console.log('fetchItem', id, '| hasArchive', hasArchive);
-  let promises = [fetchItemService({ entry_id: id })];
+  // console.log('fetchItem', entry_id, '| hasArchive', hasArchive);
+  let promises = [fetchItemService({ entry_id })];
   if (hasArchive) {
-    promises.push(fetchArchiveItemService({ client_id: client_id, entry_id: id }));
+    promises.push(fetchArchiveItemService({ client_id, entry_id }));
   }
   return (dispatch) => {
-    dispatch(requestItem(id));
+    dispatch(requestItem(entry_id));
     Promise.all(promises)
       .then((results) => {
         const itemResult = results[0];
@@ -260,9 +259,9 @@ const fetchItem = (state, id, client_id) => {
 
         dispatch(
           receiveItem(
-            id,
-            parseItem(itemResult, id, clients),
-            parseArchiveItem(archiveItemResult, id, clients)
+            entry_id,
+            parseItem({ json: itemResult, entry_id, clients }),
+            parseArchiveItem({ json: archiveItemResult, entry_id, clients })
           )
         );
       })
@@ -272,7 +271,7 @@ const fetchItem = (state, id, client_id) => {
   };
 };
 
-const shouldFetchItem = (state, id) => {
+const shouldFetchItem = ({ state, entry_id }) => {
   if (getHasItem(state)) {
     const item = getItem(state);
     if (item.isFetching) {
@@ -287,14 +286,21 @@ const shouldFetchItem = (state, id) => {
   }
 };
 
-export const fetchItemIfNeeded = (id, client_id) => {
-  // console.log('fetchItemIfNeeded', client_id, id);
+export const fetchItemIfNeeded = ({ client_id, entry_id }) => {
+  // console.log('fetchItemIfNeeded', client_id, entry_id);
   return (dispatch, getState) => {
     const state = getState();
-    if (shouldFetchItem(state, id)) {
-      dispatch(fetchItem(state, id, client_id));
+    if (shouldFetchItem({ state, entry_id })) {
+      dispatch(fetchItem({ state, client_id, entry_id }));
       // } else {
       //   dispatch(selectCategory(getItem(state).item.category));
     }
+  };
+};
+
+export const selectItem = ({ client_id, entry_id }) => {
+  return (dispatch, getState) => {
+    dispatch(itemSelect(entry_id));
+    dispatch(fetchItemIfNeeded({ client_id, entry_id }));
   };
 };

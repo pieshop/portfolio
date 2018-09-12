@@ -1,3 +1,4 @@
+/* global __WATCH__:false, __SERVICE_WORKER__:false */
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import reduxfreezeMiddleware from 'redux-freeze';
@@ -45,7 +46,7 @@ const configureStore = (history) => {
     loggerMiddleware,
     localStorageMiddleware,
   ];
-  if (__DEV__) {
+  if (__WATCH__) {
     middlewares.unshift(reduxfreezeMiddleware);
   }
 
@@ -58,7 +59,7 @@ const configureStore = (history) => {
     composeWithDevTools(applyMiddleware(...middlewares))
   );
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (__WATCH__) {
     if (module.hot) {
       module.hot.accept('./rootReducer', () => {
         const nextRootReducer = require('./rootReducer').default;

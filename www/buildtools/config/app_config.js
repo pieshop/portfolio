@@ -94,7 +94,7 @@ module.exports = function() {
           { search: '{analytics_domain}', replace: '' },
         ],
       },
-      dev: {
+      local: {
         multiple: [
           { search: '{base_url}', replace: MINI_BASE },
           { search: '{api_base}', replace: MINI_API },
@@ -112,7 +112,7 @@ module.exports = function() {
           { search: '{analytics_domain}', replace: '' },
         ],
       },
-      dist: {
+      live: {
         multiple: [
           { search: '{base_url}', replace: DIST_BASE },
           { search: '{api_base}', replace: DIST_API },

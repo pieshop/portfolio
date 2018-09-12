@@ -12,8 +12,8 @@ const CONFIG_DIR = path.resolve(__dirname, '../buildtools/config/');
 const TEMPLATE_DIR = path.resolve(__dirname, '../buildtools/templates/');
 const cfg = require(CONFIG_DIR + '/app_config.js')();
 
-function update() {
-  const env = process.argv[4].split('=')[1] || 'dev';
+function update(options) {
+  const env = options.env;
   let src = TEMPLATE_DIR + '/robots.txt';
   let dest = path.resolve('.', cfg[env] + '/robots.txt');
   let pattern = '{loc}';

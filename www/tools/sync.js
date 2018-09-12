@@ -8,14 +8,14 @@ const rsync = require('rsyncwrapper');
 const CONFIG_DIR = path.resolve(__dirname, '../buildtools/config/');
 const cfg = require(CONFIG_DIR + '/app_config.js')();
 
-function sync() {
-  const env = process.argv[4].split('=')[1] || 'dev';
-  console.log('sync env = ', env);
-  let src,
-    dest,
-    host = '';
+function sync(options) {
+  const env = options.env;
+  let src = '';
+  let dest = '';
+  let host = '';
   let ssh = false;
   let sync_opts = {};
+  let sync_opts_js_css = {};
 
   switch (env) {
     case 'dev':
@@ -39,26 +39,10 @@ function sync() {
       src = path.resolve('.', cfg[env]);
       dest = path.resolve('.', cfg.rsync[env].dest);
       host = cfg.rsync[env].host || '';
-      sync_opts = {
-        src: src + '/',
-        dest: dest,
-        host: host,
-        ssh: true,
-        recursive: true,
-        args: ['--verbose', '--compress', '--archive'],
-        exclude: ['.DS_Store', '.svn', '*.php', 'php', '.htaccess'],
-      };
+      sync_opts = getOptions([src + '/'], dest, host);
       const sync_app = createSync(sync_opts);
       dest = path.resolve('.', cfg.rsync[env].assets);
-      let sync_opts_js_css = {
-        src: [src + '/js', src + '/css'],
-        dest: dest + '/',
-        host: host,
-        ssh: true,
-        recursive: true,
-        args: ['--verbose', '--compress', '--archive'],
-        exclude: ['.DS_Store', '.svn', '*.php', 'php', '.htaccess'],
-      };
+      sync_opts_js_css = getOptions([src + '/js', src + '/css'], dest + '/', host);
       const sync_js_css = createSync(sync_opts_js_css);
       return Promise.all([sync_app, sync_js_css]);
     }
@@ -66,32 +50,28 @@ function sync() {
       src = path.resolve('.', cfg[env]);
       dest = path.resolve('.', cfg.rsync[env].dest);
       host = cfg.rsync[env].host || '';
-      sync_opts = {
-        src: src + '/',
-        dest: dest,
-        host: host,
-        ssh: true,
-        recursive: true,
-        args: ['--verbose', '--compress', '--archive'],
-        exclude: ['.DS_Store', '.svn', '*.php', 'php', '.htaccess'],
-      };
+      sync_opts = getOptions([src + '/'], dest, host);
       const sync_app = createSync(sync_opts);
       dest = path.resolve('.', cfg.rsync[env].assets);
-      let sync_opts_js_css = {
-        src: [src + '/js', src + '/css'],
-        dest: dest + '/',
-        host: host,
-        ssh: true,
-        recursive: true,
-        args: ['--verbose', '--compress', '--archive'],
-        exclude: ['.DS_Store', '.svn', '*.php', 'php', '.htaccess'],
-      };
+      sync_opts_js_css = getOptions([src + '/js', src + '/css'], dest + '/', host);
       const sync_js_css = createSync(sync_opts_js_css);
       return Promise.all([sync_app, sync_js_css]);
     }
     default:
       return Promise.resolve();
   }
+}
+
+function getOptions(src, dest, host) {
+  return {
+    src: src,
+    dest: dest,
+    host: host,
+    ssh: true,
+    recursive: true,
+    args: ['--verbose', '--compress', '--archive'],
+    exclude: ['.DS_Store', '.svn', '*.php', 'php', '.htaccess'],
+  };
 }
 
 function createSync(sync_opts) {

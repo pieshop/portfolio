@@ -42,7 +42,7 @@ export default class CategoryItem extends Component {
                 height={350}
                 placeholder={<Placeholder is_responsive={is_responsive} />}
                 debounce={100}
-                once
+                once={true}
               >
                 <CategoryItemImage
                   key={id}

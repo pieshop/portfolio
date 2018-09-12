@@ -15,9 +15,9 @@
     <meta charset="utf-8">
     <title><%= htmlWebpackPlugin.options.title || 'Webpack App' %></title>
     <% if (htmlWebpackPlugin.options.baseHref) { %>
-    <base href="<%= htmlWebpackPlugin.options.baseHref %>">
+        <base href="<%= htmlWebpackPlugin.options.baseHref %>">
     <% } else { %>
-    <base href="{base_url}">
+        <base href="{base_url}">
     <% } %>
     <meta name="google-site-verification" content="kwBXoOqecDqy3SnxoLBCnOJOXFu0mHaebo9ayzv5qss"/>
     <meta name="msvalidate.01" content="650365136434BECE5180675AA6F40379"/>
@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     <% for (var css in htmlWebpackPlugin.files.css) { %>
-    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+        <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
     <% } %>
     <script type="application/ld+json">
         {
@@ -38,6 +38,7 @@
             "alternateName" : "Stephen Hamilton",
             "url" : "{base_url}"
         }
+
     </script>
 </head>
 <body>
@@ -49,12 +50,9 @@
 
     <div id='modal-root'></div>
     <div id='app-root'></div>
+    <%= htmlWebpackPlugin.files.webpackManifest %>
     <% for (var key in htmlWebpackPlugin.files.chunks) { %>
-    <%if (key === 'manifest') { %>
-        <script><%= compilation.assets[htmlWebpackPlugin.files.chunks[key].entry].source() %></script>
-    <% } else { %>
         <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" defer></script>
-    <% } %>
     <% } %>
 </body>
 </html>
