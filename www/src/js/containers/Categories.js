@@ -29,18 +29,18 @@ class Categories extends Component {
     const { category_id, year_id } = this.props.match.params;
     const { category_id: next_category_id, year_id: next_year_id } = nextProps.match.params;
     if (category_id !== next_category_id) {
-      console.log('** Categories.componentWillReceiveProps', category_id, next_category_id);
+      // console.log('** Categories.componentWillReceiveProps', category_id, next_category_id);
       this.props.selectCategory(next_category_id);
     }
     if (year_id !== next_year_id) {
-      console.log('** Categories.componentWillReceiveProps', year_id, next_year_id);
+      // console.log('** Categories.componentWillReceiveProps', year_id, next_year_id);
       this.props.selectYear(next_year_id);
     }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.selectedCategory !== prevProps.selectedCategory) {
-      console.log('** Categories.componentDidUpdate');
+      // console.log('** Categories.componentDidUpdate');
       const { selectedCategory, selectedYear } = this.props;
       this.props.fetchItemsIfNeeded(selectedCategory, selectedYear);
     }

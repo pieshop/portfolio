@@ -64,7 +64,7 @@ class NavBar extends Component {
             {drop_is_active && (
               <button
                 type="button"
-                class="btn btn-sm btn-primbase_urlary navbar-btn filter"
+                class="btn btn-sm btn-primary navbar-btn filter"
                 data-toggle="tooltip"
                 data-placement="left"
                 title=""
