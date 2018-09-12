@@ -2,7 +2,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './../sass/main.scss';
-import 'TweenMax';
 import 'babel-polyfill';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';

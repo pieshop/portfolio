@@ -85,16 +85,15 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-react-html-attrs": "^2.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "better-react-spinkit": "^2.0.4",
+    "better-react-spinkit": "github:HaikuTeam/better-react-spinkit",
     "bootstrap": "^4.1.2",
     "connected-react-router": "^4.4.1",
     "core-js": "^2.5.7",
     "critical": "^1.3.4",
     "cssnano": "^4.0.3",
-    "gsap": "^2.0.1",
+    "gsap": "^2.0.2",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.10",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -110,7 +109,8 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "rimraf": "^2.6.2",
-    "superagent": "^3.8.3"
+    "superagent": "^3.8.3",
+    "swfobject-amd": "^2.3.1"
   },
   "babel": {
     "presets": [

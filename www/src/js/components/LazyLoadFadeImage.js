@@ -1,6 +1,7 @@
 /**
  * Created by stephenhamilton on 24/02/2017.
  */
+import { TweenLite } from 'gsap/TweenLite';
 import React, { Component } from 'react';
 // import { CSSTransition } from 'react-transition-group';
 // const Fade = ({ children, ...props }) => (
@@ -20,7 +21,7 @@ export default class LazyLoadFadeImage extends Component {
     if (this.item_ref) {
       // const delay = this.props.index / 50;
       const delay = 0;
-      TweenMax.to(this.item_ref, 0.3, { opacity: 1, delay: delay, ease: Power1.easeIn });
+      TweenLite.to(this.item_ref, 0.3, { opacity: 1, delay: delay, ease: Power1.easeIn });
     }
   }
 

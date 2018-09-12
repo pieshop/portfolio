@@ -1,4 +1,4 @@
-import swfobject from 'swfobject';
+import swfobject from 'swfobject-amd';
 import * as constants from 'constants/AppConstants';
 import * as fileTypes from 'utils/fileTypes';
 

@@ -11,9 +11,7 @@ export default function ItemImagePlaceholder({ style, width = 350, height = 350 
     <div class={style}>
       <div class="item__media--placeholder" style={placeholder_style}>
         <div className="spinner-container">
-          <div className="center-spinner">
-            <Wave color="#ccc" size={60} />
-          </div>
+          <div className="center-spinner">{<Wave color="#ccc" size={60} />}</div>
         </div>
       </div>
     </div>

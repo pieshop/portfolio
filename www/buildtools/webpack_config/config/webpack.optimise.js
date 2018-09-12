@@ -28,7 +28,8 @@ exports.createVendorChunk = (name) => ({
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/]/,
+          // test: /[\\/]node_modules[\\/]/,
+          test: /node_modules|libs/,
           name,
           enforce: true,
           chunks: 'all',

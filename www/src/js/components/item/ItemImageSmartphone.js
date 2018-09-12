@@ -1,6 +1,7 @@
 /**
  * Created by stephenhamilton on 24/02/2017.
  */
+import { TweenLite } from 'gsap/TweenLite';
 import React, { Component } from 'react';
 
 export default class ItemImageSmartphone extends Component {
@@ -9,7 +10,7 @@ export default class ItemImageSmartphone extends Component {
   }
 
   componentDidMount() {
-    TweenMax.to(this.item_ref, 0.3, { opacity: 1, ease: Power1.easeIn });
+    TweenLite.to(this.item_ref, 0.3, { opacity: 1, ease: Power1.easeIn });
   }
 
   // Render using TweenMax

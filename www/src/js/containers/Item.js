@@ -1,3 +1,4 @@
+import { TweenLite } from 'gsap/TweenLite';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -17,7 +18,7 @@ class Item extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    TweenMax.to(this.item_ref, 0.3, { opacity: 1, ease: Power1.easeIn });
+    TweenLite.to(this.item_ref, 0.3, { opacity: 1, ease: Power1.easeIn });
     const { params } = this.props.match;
     const { category_id, client_id, entry_id } = params;
     // console.log('** Item.componentDidMount', category_id, client_id, entry_id);

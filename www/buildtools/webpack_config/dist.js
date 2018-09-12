@@ -58,10 +58,10 @@ module.exports = ({ paths, project, replace_options }) => {
     rules.compileSCSS({ extract: true, isProduction, sourceMap: true }),
     optimise.minifyCSS({ sourceMap: true }),
 
-    main.addVendorShortcut({
-      name: 'TweenMax',
-      alias: { TweenMax: PATHS.nodeDir + '/gsap/src/uncompressed/TweenMax.js' },
-    }),
+    // main.addVendorShortcut({
+    //   name: 'TweenMax',
+    //   alias: { TweenMax: PATHS.nodeDir + '/gsap/src/uncompressed/TweenMax.js' },
+    // }),
 
     plugins.cleanDirectory({ cleanPaths, cleanOptions }),
     plugins.copy({ copyPaths, copyOptions }),
@@ -84,9 +84,10 @@ module.exports = ({ paths, project, replace_options }) => {
       exclude: new RegExp(PROJECT.vendorName + '|' + PROJECT.manifestName),
     }),
     // plugins.inlineManifest(),
-    // plugins.runWebpackBundleAnalyzer(),
 
     PROJECT.serviceworker && plugins.addServiceWorker({ entry: PATHS.src + '/sw.js' }),
+
+    // plugins.runWebpackBundleAnalyzer(),
   ]);
 };
 

@@ -50,10 +50,10 @@ module.exports = ({ paths, project, replace_options }) => {
 
     rules.compileSCSS({ extract: false, isProduction, sourceMap: true }),
 
-    main.addVendorShortcut({
-      name: 'TweenMax',
-      alias: { TweenMax: PATHS.nodeDir + '/gsap/src/uncompressed/TweenMax.js' },
-    }),
+    // main.addVendorShortcut({
+    //   name: 'TweenMax',
+    //   alias: { TweenMax: PATHS.nodeDir + '/gsap/src/uncompressed/TweenMax.js' },
+    // }),
 
     plugins.define({ env: 'development', opts: environmentVars }),
     plugins.generateHTML({

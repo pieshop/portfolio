@@ -2,7 +2,7 @@
  * Created by stephenhamilton on 24/02/2017.
  */
 import React, { Component } from 'react';
-import swfobject from 'swfobject';
+import swfobject from 'swfobject-amd';
 
 export default class ItemSWF extends Component {
   constructor() {

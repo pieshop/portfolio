@@ -1,6 +1,8 @@
 /**
  * Created by stephenhamilton on 24/02/2017.
  */
+import { TweenLite } from 'gsap/TweenLite';
+import { CSSPlugin } from 'gsap/CSSPlugin';
 import React, { Component } from 'react';
 import { DEFAULT_YEAR, get_base_assets_path } from 'constants/AppConstants';
 import { connect } from 'react-redux';
@@ -12,7 +14,8 @@ class About extends Component {
   componentDidMount() {
     this.props.selectCategory('about');
     this.props.selectYear(DEFAULT_YEAR);
-    TweenMax.to(this.item_ref, 0.3, { opacity: 1, ease: Power1.easeIn });
+    const plugins = [CSSPlugin]; // stop treeshaking :https://greensock.com/docs/NPMUsage
+    TweenLite.to(this.item_ref, 0.3, { opacity: 1, ease: Power1.easeIn });
   }
 
   render() {

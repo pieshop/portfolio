@@ -65,7 +65,7 @@
   },
   "globals": {
     "Modernizr": false,
-    "TweenMax": false,
+    "TweenLite": false,
     "Power1": false,
     "Power2": false
   }
