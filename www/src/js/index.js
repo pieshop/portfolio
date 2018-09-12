@@ -1,7 +1,7 @@
 /* global __WATCH__:false, __SERVICE_WORKER__:false, __GA__:false */
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import './../sass/main.scss';
+import '../scss/main.scss';
 import 'babel-polyfill';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';

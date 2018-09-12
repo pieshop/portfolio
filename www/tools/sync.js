@@ -18,7 +18,7 @@ function sync(options) {
   let sync_opts_js_css = {};
 
   switch (env) {
-    case 'dev':
+    case 'local':
       src = path.resolve('.', cfg[env]);
       dest = path.resolve('.', cfg.rsync[env].dest);
       host = cfg.rsync[env].host || '';
@@ -42,18 +42,26 @@ function sync(options) {
       sync_opts = getOptions([src + '/'], dest, host);
       const sync_app = createSync(sync_opts);
       dest = path.resolve('.', cfg.rsync[env].assets);
-      sync_opts_js_css = getOptions([src + '/js', src + '/css'], dest + '/', host);
+      sync_opts_js_css = getOptions(
+        [src + '/js', src + '/css', src + '/fonts', src + '/assets/json'],
+        dest + '/',
+        host
+      );
       const sync_js_css = createSync(sync_opts_js_css);
       return Promise.all([sync_app, sync_js_css]);
     }
-    case 'dist': {
+    case 'live': {
       src = path.resolve('.', cfg[env]);
       dest = path.resolve('.', cfg.rsync[env].dest);
       host = cfg.rsync[env].host || '';
       sync_opts = getOptions([src + '/'], dest, host);
       const sync_app = createSync(sync_opts);
       dest = path.resolve('.', cfg.rsync[env].assets);
-      sync_opts_js_css = getOptions([src + '/js', src + '/css'], dest + '/', host);
+      sync_opts_js_css = getOptions(
+        [src + '/js', src + '/css', src + '/fonts', src + '/assets/json'],
+        dest + '/',
+        host
+      );
       const sync_js_css = createSync(sync_opts_js_css);
       return Promise.all([sync_app, sync_js_css]);
     }

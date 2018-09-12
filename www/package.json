@@ -17,7 +17,7 @@
     "deploy_dev": "babel-node tools/run deploy --env.target=local",
     "deploy_stage": "babel-node tools/run deploy --env.target=stage",
     "deploy_dist": "babel-node tools/run deploy --env.target=live",
-    "update_sitemap_templates": "babel-node tools/run curl",
+    "update_sitemap_templates": "babel-node tools/run curl --env.target=loca",
     "critical_dev": "babel-node tools/run critical --env.target=local",
     "critical_stage": "babel-node tools/run critical --env.target=stage",
     "critical_dist": "babel-node tools/run critical --env.target=live",

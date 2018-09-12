@@ -12,9 +12,8 @@ function format(time) {
 }
 
 function run(fn, options = {}) {
-  const envMap = { local: 'dev', stage: 'stage', live: 'dist' };
   const target = process.argv[3].split('=')[1] || 'local';
-  options.env = envMap[target];
+  options.env = target;
 
   const task = typeof fn.default === 'undefined' ? fn : fn.default;
   const start = new Date();

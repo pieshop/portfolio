@@ -38,254 +38,260 @@
 		<changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.stephenhamilton.co.uk/all/jollywise/miscellaneous2017</loc>
+		<priority>0.63</priority>
+		<lastmod>2018-09-03T00:00:00+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.stephenhamilton.co.uk/all/jollywise/miscellaneous2016</loc>
-		<priority>0.62</priority>
+		<priority>0.6</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/sky/movies</loc>
-		<priority>0.59</priority>
+		<priority>0.56</priority>
 		<lastmod>2017-02-22T16:40:14+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/sky/tbyd</loc>
-		<priority>0.59</priority>
+		<priority>0.56</priority>
 		<lastmod>2017-02-22T16:41:41+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/royalmail/tistheseason</loc>
-		<priority>0.59</priority>
+		<priority>0.56</priority>
 		<lastmod>2017-02-22T16:40:26+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/jollywise/miscellaneous2015</loc>
-		<priority>0.59</priority>
+		<priority>0.56</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/jollywise/miscellaneous2014</loc>
-		<priority>0.55</priority>
+		<priority>0.53</priority>
 		<lastmod>2017-02-15T14:56:46+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/sony/playstationstore</loc>
-		<priority>0.52</priority>
+		<priority>0.49</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/jollywise/miscellaneous2013</loc>
-		<priority>0.52</priority>
+		<priority>0.49</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/jollywise/miscellaneous2012</loc>
-		<priority>0.48</priority>
+		<priority>0.46</priority>
 		<lastmod>2017-02-15T15:05:19+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/betgenius/variousolm</loc>
-		<priority>0.44</priority>
+		<priority>0.42</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/iip</loc>
-		<priority>0.41</priority>
+		<priority>0.39</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/gameon2010</loc>
-		<priority>0.41</priority>
+		<priority>0.39</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/alico/metlife</loc>
-		<priority>0.41</priority>
+		<priority>0.39</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/mastercard/carousel</loc>
-		<priority>0.37</priority>
+		<priority>0.35</priority>
 		<lastmod>2017-02-08T14:43:03+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/insidethegamepathfinding</loc>
-		<priority>0.37</priority>
+		<priority>0.35</priority>
 		<lastmod>2017-02-08T14:43:06+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/insidethegameparticles</loc>
-		<priority>0.37</priority>
+		<priority>0.35</priority>
 		<lastmod>2017-02-08T14:43:10+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/mrm/works</loc>
-		<priority>0.37</priority>
+		<priority>0.35</priority>
 		<lastmod>2017-02-08T14:43:15+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/sky/hdplus</loc>
-		<priority>0.37</priority>
+		<priority>0.35</priority>
 		<lastmod>2017-02-08T14:27:25+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/sky/rcc</loc>
-		<priority>0.37</priority>
+		<priority>0.35</priority>
 		<lastmod>2017-02-09T18:28:19+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/gameon2008</loc>
-		<priority>0.33</priority>
+		<priority>0.32</priority>
 		<lastmod>2017-02-14T19:04:24+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/studio</loc>
-		<priority>0.33</priority>
+		<priority>0.32</priority>
 		<lastmod>2017-02-09T17:57:03+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/msn/minimiseme</loc>
-		<priority>0.33</priority>
+		<priority>0.32</priority>
 		<lastmod>2017-02-09T13:34:46+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/sky/hd</loc>
-		<priority>0.33</priority>
+		<priority>0.32</priority>
 		<lastmod>2017-02-09T18:22:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/msn/videowall</loc>
-		<priority>0.33</priority>
+		<priority>0.32</priority>
 		<lastmod>2017-02-17T14:01:40+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/microsoft/dynamics</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-14T19:55:40+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/msn/videoviral</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-09T18:43:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/ups/widget</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-09T18:35:53+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/unilever/heartbrand</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-15T10:44:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/unilever/kidsfun</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-14T19:49:10+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/msn/searchladder</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-14T20:05:25+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/itmgdynamicduo</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-09T19:03:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/itmgpcmeltdown</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-09T19:00:52+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/sky/keyhole</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-09T18:33:06+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/microsoft/bcc</loc>
-		<priority>0.29</priority>
+		<priority>0.28</priority>
 		<lastmod>2017-02-14T19:59:56+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/vprocompetition</loc>
-		<priority>0.26</priority>
+		<priority>0.25</priority>
 		<lastmod>2017-02-17T14:17:13+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/itmghackerinvasion</loc>
-		<priority>0.26</priority>
+		<priority>0.25</priority>
 		<lastmod>2017-02-09T19:10:33+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/intel/itmgceo</loc>
-		<priority>0.26</priority>
+		<priority>0.25</priority>
 		<lastmod>2017-02-17T14:20:54+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/louboutin/boutique</loc>
-		<priority>0.22</priority>
+		<priority>0.21</priority>
 		<lastmod>2017-02-14T12:35:19+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/magnum/senses</loc>
-		<priority>0.22</priority>
+		<priority>0.21</priority>
 		<lastmod>2017-02-17T14:08:47+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/msn/searchsupremo</loc>
-		<priority>0.22</priority>
+		<priority>0.21</priority>
 		<lastmod>2017-02-09T19:23:06+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/msn/kittycaper</loc>
-		<priority>0.22</priority>
+		<priority>0.21</priority>
 		<lastmod>2017-02-09T19:19:31+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/peugeot/smartnav</loc>
-		<priority>0.22</priority>
+		<priority>0.21</priority>
 		<lastmod>2017-02-17T14:05:41+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
@@ -315,19 +321,19 @@
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/hp/f1interactivecar</loc>
-		<priority>0.15</priority>
+		<priority>0.14</priority>
 		<lastmod>2017-02-16T11:13:49+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/microsoft/diver</loc>
-		<priority>0.15</priority>
+		<priority>0.14</priority>
 		<lastmod>2017-02-14T19:31:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/tourismireland/windows</loc>
-		<priority>0.15</priority>
+		<priority>0.14</priority>
 		<lastmod>2017-02-14T13:36:01+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
@@ -345,7 +351,7 @@
   </url>
   <url>
     <loc>https://www.stephenhamilton.co.uk/all/nesquik/hopalong</loc>
-		<priority>0.08</priority>
+		<priority>0.07</priority>
 		<lastmod>2017-02-14T13:55:40+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>

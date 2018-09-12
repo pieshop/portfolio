@@ -30,7 +30,7 @@ function update(options) {
 }
 
 function createCopyAndReplace(src, dest, regex, replacement) {
-  // console.log('createCopyAndReplace', src, dest, regex, replacement);
+  // console.info('createCopyAndReplace', src, dest, regex, replacement);
   return new Promise((resolve, reject) => {
     copyFile(src, dest)
       .then((results) => {
@@ -41,6 +41,7 @@ function createCopyAndReplace(src, dest, regex, replacement) {
           recursive: false,
           silent: true,
         });
+        console.info('Copied', dest);
         resolve(results);
       })
       .catch((message) => {

@@ -14,16 +14,16 @@ const cfg = require(CONFIG_DIR + '/app_config.js')();
 
 function curl() {
   const p1 = createRequest(
-    { url: cfg.env.dev.api_base + '/sitemap.xml', verbose: true },
-    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dev.xml')
+    { url: cfg.env.local.api_base + '/sitemap.xml', verbose: true },
+    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/local.xml')
   );
   const p2 = createRequest(
     { url: cfg.env.stage.api_base + '/sitemap.xml', verbose: true },
     fs.createWriteStream(TEMPLATE_DIR + '/sitemap/stage.xml')
   );
   const p3 = createRequest(
-    { url: cfg.env.dist.api_base + '/sitemap.xml', verbose: true },
-    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/dist.xml')
+    { url: cfg.env.live.api_base + '/sitemap.xml', verbose: true },
+    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/live.xml')
   );
   return Promise.all([p1, p2, p3]);
 }
@@ -38,6 +38,7 @@ function createRequest(options, file) {
       } else {
         file.write(data);
         resolve(data);
+        console.info('Generated ', options.url);
       }
     });
   });

@@ -65,7 +65,7 @@ export const fetchArchiveItemService = (opts) => {
   let url = get_archive_path({ client_id: client_id, entry_id: entry_id });
   return new Promise((resolve, reject) => {
     request.get(url).end((err, response) => {
-      // console.log('getArchiveItem',err,response);
+      console.log('getArchiveItem', err, response);
       if (err) {
         // reject(err);
         reject(null);

@@ -9,6 +9,7 @@ export const IFRAME = 'IFRAME';
 let BASE_URL = 'http://mini.portfolio';
 let BASE_API_URL = 'http://mini.api/api/v2';
 let BASE_ASSETS_URL = 'http://mini.assets/portfolio';
+let BASE_DATA_URL = '';
 export let ANALYTICS_ID = 'http://mini.assets/portfolio';
 export let ANALYTICS_DOMAIN = 'http://mini.assets/portfolio';
 
@@ -21,6 +22,7 @@ export const get_config = () => {
   BASE_URL = config_data.base_url;
   BASE_API_URL = config_data.api_base;
   BASE_ASSETS_URL = config_data.assets_base;
+  BASE_DATA_URL = config_data.data_base;
   ANALYTICS_ID = config_data.analytics_id;
   ANALYTICS_DOMAIN = config_data.analytics_domain;
 };
@@ -82,7 +84,9 @@ export const get_summary_thumb_path = () => {
 };
 
 export const get_archive_path = ({ client_id, entry_id }) => {
-  return '/assets/json/archives/' + client_id + '/' + entry_id + '.json';
+  // return BASE_DATA_URL + `/assets/json/archives/${client_id}/${entry_id}.json`;
+  return BASE_DATA_URL + `/${client_id}/${entry_id}.json`;
+  // return '/assets/json/archives/' + client_id + '/' + entry_id + '.json';
 };
 
 export const defaultCategories = [
