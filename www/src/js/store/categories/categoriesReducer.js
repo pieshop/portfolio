@@ -4,6 +4,7 @@ import {
   YEAR_SELECT,
   CATEGORY_SELECT,
   FILTER_TOGGLE,
+  METADATA_UPDATE,
 } from 'store/categories/categoriesActions';
 import * as constants from '../../constants/AppConstants';
 
@@ -13,10 +14,21 @@ const initState = {
   lastUpdated: '',
 };
 
+const initMetaDataState = { label: '', description: '' };
+
 export const selectedCategory = (state = constants.DEFAULT_CATEGORY, action) => {
   switch (action.type) {
     case CATEGORY_SELECT:
       return action.category;
+    default:
+      return state;
+  }
+};
+
+export const selectedCategoryMetaData = (state = initMetaDataState, action) => {
+  switch (action.type) {
+    case METADATA_UPDATE:
+      return action.metadata;
     default:
       return state;
   }
@@ -31,7 +43,7 @@ export const selectedYear = (state = constants.DEFAULT_YEAR, action) => {
   }
 };
 
-export const toggledFilter = (state = constants.DEFAULT_FILTER, action) => {
+export const filtered = (state = constants.DEFAULT_FILTER, action) => {
   switch (action.type) {
     case FILTER_TOGGLE:
       return !state;
@@ -61,13 +73,13 @@ const reducer = (state = initState, action) => {
     case YEAR_SELECT:
       nextState.available = state.available.map((o, i) => {
         const category_name = o.category_name;
-        let isActive = false;
+        let is_active = false;
         if (action.year === 'allyears' || category_name === 'about' || category_name === 'all') {
-          isActive = true;
+          is_active = true;
         } else {
-          isActive = state.activeByYear[category_name] === true;
+          is_active = state.activeByYear[category_name] === true;
         }
-        return { ...o, is_active: isActive };
+        return { ...o, is_active };
       });
       return { ...state, ...nextState };
     default:

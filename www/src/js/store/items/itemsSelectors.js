@@ -1,12 +1,17 @@
-import * as constants from '../../constants/AppConstants';
+import * as constants from 'constants/AppConstants';
+import {
+  getSelectedCategory,
+  getSelectedYear,
+  getFilteredState,
+} from 'store/categories/categoriesSelectors';
 
 export const getHasCategoryItems = (state) => {
-  const selectedCategory = state.selectedCategory;
+  const selectedCategory = getSelectedCategory(state);
   return state.itemsByCategory[selectedCategory] ? true : false;
 };
 
 export const getIsFetching = (state) => {
-  const selectedCategory = state.selectedCategory;
+  const selectedCategory = getSelectedCategory(state);
   if (selectedCategory === constants.CATEGORY_ABOUT) {
     return false;
   } else {
@@ -17,7 +22,7 @@ export const getIsFetching = (state) => {
 };
 
 export const getItemsByCategory = (state) => {
-  const selectedCategory = state.selectedCategory;
+  const selectedCategory = getSelectedCategory(state);
   // console.log('getItemsByCategory', selectedCategory, state.itemsByCategory);
   return (
     state.itemsByCategory[selectedCategory] || {
@@ -33,8 +38,8 @@ export const getItemsByCategory = (state) => {
  * Gets category items and then filters on selectedYear and filtered
  */
 export const getItemsByYear = (state) => {
-  let selectedYear = state.selectedYear;
-  let filtered = state.filtered;
+  let selectedYear = getSelectedYear(state);
+  let filtered = getFilteredState(state);
   // console.log('getItemsByYear', selectedYear, filtered);
   const itemsByCategory = getItemsByCategory(state).items;
   if (selectedYear === constants.ALL_YEARS) {

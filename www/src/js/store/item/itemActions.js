@@ -292,9 +292,9 @@ export const fetchItemIfNeeded = (id, client_id) => {
   return (dispatch, getState) => {
     const state = getState();
     if (shouldFetchItem(state, id)) {
-      return dispatch(fetchItem(state, id, client_id));
+      dispatch(fetchItem(state, id, client_id));
       // } else {
-      //   return dispatch(selectCategory(getItem(state).item.category));
+      //   dispatch(selectCategory(getItem(state).item.category));
     }
   };
 };

@@ -2,8 +2,9 @@ import { combineReducers } from 'redux';
 import items from 'store/items/itemsReducer';
 import categories, {
   selectedCategory,
+  selectedCategoryMetaData,
   selectedYear,
-  toggledFilter,
+  filtered,
 } from 'store/categories/categoriesReducer';
 import item, { selectedItem } from 'store/item/itemReducer';
 import localData from 'store/localdata/localDataReducer';
@@ -12,8 +13,9 @@ import React from 'react';
 
 const rootReducer = combineReducers({
   selectedCategory,
+  selectedCategoryMetaData,
   selectedYear,
-  filtered: toggledFilter,
+  filtered,
   selectedItem,
   localData,
   itemsByCategory: items,

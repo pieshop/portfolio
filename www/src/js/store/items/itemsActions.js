@@ -87,7 +87,7 @@ export const fetchItemsIfNeeded = (category, year) => {
   // console.log('fetchItemsIfNeeded',category, year);
   return (dispatch, getState) => {
     if (shouldFetchItems(getState(), category)) {
-      return dispatch(fetchItems(getState(), category));
+      dispatch(fetchItems(getState(), category));
     }
   };
 };

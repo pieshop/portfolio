@@ -1,11 +1,17 @@
+export const getSelectedItem = (state) => {
+  return state.selectedItem;
+};
+
+export const getItemsByID = (state) => {
+  return state.itemsByID;
+};
+
 export const getHasItem = (state) => {
-  const selectedItem = state.selectedItem;
-  return state.itemsByID[selectedItem] ? true : false;
+  return getItemsByID(state)[getSelectedItem(state)] ? true : false;
 };
 
 export const getItem = (state) => {
-  const selectedItem = state.selectedItem;
-  return state.itemsByID[selectedItem] || { isFetching: true, item: {} };
+  return getItemsByID(state)[getSelectedItem(state)] || { isFetching: true, item: {} };
 };
 
 export const getItemData = (state) => {

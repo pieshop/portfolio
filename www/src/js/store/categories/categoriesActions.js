@@ -3,21 +3,40 @@ import {
   fetchAvailableCategoriesService,
 } from 'services/portfolio';
 import { shouldUpdateCategories } from '../../utils/dateValidation';
-import { getCategoriesLastUpdated } from './categoriesSelectors';
+import { getAvailableCategories, getCategoriesLastUpdated } from './categoriesSelectors';
 import { defaultCategories } from '../../constants/AppConstants';
 
 export const CATEGORIES_REQUEST = 'categories.CATEGORIES_REQUEST';
 export const CATEGORIES_RECEIVE = 'categories.CATEGORIES_RECEIVE';
 
 export const CATEGORY_SELECT = 'categories.CATEGORY_SELECT';
+export const METADATA_UPDATE = 'categories.METADATA_UPDATE';
 export const YEAR_SELECT = 'categories.YEAR_SELECT';
 export const FILTER_TOGGLE = 'categories.FILTER_TOGGLE';
 export const CATEGORY_INVALIDATE = 'items.CATEGORY_INVALIDATE';
 
-export const selectCategory = (category) => {
+const _selectCategory = (category) => {
   return {
     type: CATEGORY_SELECT,
     category,
+  };
+};
+
+const updateMetaData = (state) => {
+  const metadata = getAvailableCategories(state).reduce(
+    (obj, item, index) => {
+      if (item.category_name === state.selectedCategory) {
+        obj.label = item.category_label;
+        obj.description = item.category_description;
+      }
+      return obj;
+    },
+    { label: '', description: '' }
+  );
+  console.log('updateMetaData', metadata);
+  return {
+    type: METADATA_UPDATE,
+    metadata,
   };
 };
 
@@ -74,7 +93,6 @@ const fetchCategories = (state) => {
       fetchAllActiveCategoriesByYearService({ isFiltered }),
     ])
       .then((results) => {
-        // dispatch(receiveCategories(parseCategories(results[0]), results[1]));
         dispatch(
           receiveCategories({
             categories: parseCategories(results[0]),
@@ -95,9 +113,16 @@ const shouldFetchCategories = (state) => {
 
 export const fetchAvailableCategories = () => {
   return (dispatch, getState) => {
-    // return dispatch(fetchCategories(getState()));
     if (shouldFetchCategories(getState())) {
-      return dispatch(fetchCategories(getState()));
+      dispatch(fetchCategories(getState()));
+      dispatch(updateMetaData(getState()));
     }
+  };
+};
+
+export const selectCategory = (category) => {
+  return (dispatch, getState) => {
+    dispatch(_selectCategory(category));
+    dispatch(updateMetaData(getState()));
   };
 };
