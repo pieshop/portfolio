@@ -36,3 +36,9 @@ https://github.com/BlazeUI/blaze
     <!-- <link rel="preload" as="style" href="https://cdn.stephenhamilton.co.uk/portfolio/css/vendor.ce5a27890b41ebbc7f88d773a2905ff5.css" onload="this.rel='stylesheet'"> -->
     
     <!-- <link rel="preload" as="style" href="https://cdn.stephenhamilton.co.uk/portfolio/css/app.0bc516e1f5ad9c1fbe65a9ac467f0d4b.css" onload="this.rel='stylesheet'"> -->
+
+
+10/09/2018
+
+FIX ME:
+• go direct to single item and nav isnt showing year dropdopwn

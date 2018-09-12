@@ -7,39 +7,6 @@ import { shouldUpdateItems } from '../../utils/dateValidation';
 
 export const ITEMS_REQUEST = 'items.ITEMS_REQUEST';
 export const ITEMS_RECEIVE = 'items.ITEMS_RECEIVE';
-export const CATEGORY_SELECT = 'items.CATEGORY_SELECT';
-export const YEAR_SELECT = 'items.YEAR_SELECT';
-export const FILTER_TOGGLE = 'items.FILTER_TOGGLE';
-export const CATEGORY_INVALIDATE = 'items.CATEGORY_INVALIDATE';
-
-export const selectCategory = (category) => {
-  // console.log('selectCategory',category);
-  return {
-    type: CATEGORY_SELECT,
-    category,
-  };
-};
-
-export const selectYear = (year) => {
-  // console.log('selectYear',year);
-  return {
-    type: YEAR_SELECT,
-    year,
-  };
-};
-
-export const toggleFilter = () => {
-  return {
-    type: FILTER_TOGGLE,
-  };
-};
-
-export const invalidateCategory = (category) => {
-  return {
-    type: CATEGORY_INVALIDATE,
-    category,
-  };
-};
 
 const requestItems = (category) => {
   return {
@@ -61,7 +28,8 @@ const receiveItems = (category, json) => {
 };
 
 const parseItems = (json, category, clients) => {
-  json.entries = json.entries.map((o, i) => {
+  json.entries = json.entries.map((obj, i) => {
+    let o = { ...obj };
     const { client_id, entry_id } = o;
     o.to = '/' + category + '/' + client_id + '/' + entry_id;
     o.is_responsive = !!o.is_responsive; // convert 1/0 to true/false
@@ -72,10 +40,12 @@ const parseItems = (json, category, clients) => {
       : get_thumb_path({ client_id: client_id, entry_id: entry_id });
     const itemLocalData = clients[client_id] && clients[client_id][entry_id];
     if (itemLocalData && itemLocalData.awards) {
-      o.awards = itemLocalData.awards.map((award) => {
-        award.id = award.award_name;
-        return award;
-      });
+      o.awards = itemLocalData.awards.reduce((acc, val, i) => {
+        let o = { ...val };
+        o.id = 'award_' + i;
+        acc.push(o);
+        return acc;
+      }, []);
     }
     return o;
   });

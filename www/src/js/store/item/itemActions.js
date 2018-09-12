@@ -8,6 +8,7 @@ import { getLocalClientData } from 'store/localdata/localDataReducer';
 import { getHasItem, getItem } from 'store/item/itemSelectors';
 import React from 'react';
 import { shouldUpdateItem } from '../../utils/dateValidation';
+import { selectCategory } from '../categories/categoriesActions';
 
 export const ITEM_INVALIDATE = 'item.ITEM_INVALIDATE';
 export const ITEM_SELECT = 'item.ITEM_SELECT';
@@ -152,12 +153,13 @@ const _parseMedia = (json, localData) => {
 };
 
 const _parseAwards = (awards = []) => {
-  //award_name, award_long_name, award_result, award_category, link, pdf
-  for (const o of awards) {
+  return awards.reduce((acc, val, i) => {
+    let o = { ...val };
     o.hasLink = o.link !== '' || o.pdf !== '';
     o.hasAwardCategory = o.award_category !== '';
-  }
-  return awards;
+    acc.push(o);
+    return acc;
+  }, []);
 };
 
 const parseItem = (json, id, clients) => {
@@ -165,7 +167,7 @@ const parseItem = (json, id, clients) => {
   // console.log('parseItem', json, 'user_has_flash', user_has_flash);
 
   const client_id = json.client_id;
-  const localData = clients[client_id][id];
+  const localData = { ...clients[client_id][id] };
 
   json.is_flash = localData.is_flash || false;
   json.is_dark_background = localData.is_dark_background || false;
@@ -252,6 +254,10 @@ const fetchItem = (state, id, client_id) => {
       .then((results) => {
         const itemResult = results[0];
         const archiveItemResult = hasArchive ? results[1] : null;
+
+        // const cats = itemResult.category.split(',');
+        // dispatch(selectCategory(cats[0]));
+
         dispatch(
           receiveItem(
             id,
@@ -284,8 +290,11 @@ const shouldFetchItem = (state, id) => {
 export const fetchItemIfNeeded = (id, client_id) => {
   // console.log('fetchItemIfNeeded', client_id, id);
   return (dispatch, getState) => {
-    if (shouldFetchItem(getState(), id)) {
-      return dispatch(fetchItem(getState(), id, client_id));
+    const state = getState();
+    if (shouldFetchItem(state, id)) {
+      return dispatch(fetchItem(state, id, client_id));
+      // } else {
+      //   return dispatch(selectCategory(getItem(state).item.category));
     }
   };
 };

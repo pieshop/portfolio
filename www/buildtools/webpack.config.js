@@ -14,6 +14,7 @@ function buildConfig(target, buildtype) {
   const replace_options = app_config.replace_options[buildtype];
 
   console.log('Building to ', paths.projectRoot);
+  // console.log('replace_options ', replace_options);
 
   const type = buildtype === 'watch' ? 'watch' : 'dist';
   const conf = require('./webpack_config/' + type)({

@@ -1,30 +1,28 @@
 /* global __DEV__:false, __SERVICE_WORKER__:false */
 import React from 'react';
-import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 import 'bootstrap/dist/css/bootstrap.css';
 import './../sass/main.scss';
 import 'TweenMax';
-import { get_config } from 'constants/AppConstants';
-import App from './App';
 import 'babel-polyfill';
-
-import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+import { render } from 'react-dom';
+import { get_config } from 'constants/AppConstants';
+import { createBrowserHistory } from 'history';
+import App from './App';
 
 get_config();
 
-const store = configureStore();
+const history = createBrowserHistory();
+const store = configureStore(history);
 
 console.log('>> NODE_ENV = ', process.env.NODE_ENV, '| __SERVICE_WORKER__ = ', __SERVICE_WORKER__);
 
 const doRender = (Component = App) => {
   render(
-    <AppContainer warnings={false}>
-      <Provider store={store}>
-        <Component store={store} />
-      </Provider>
-    </AppContainer>,
+    <Provider store={store}>
+      <Component history={history} />
+    </Provider>,
     document.getElementById('app-root')
   );
 };

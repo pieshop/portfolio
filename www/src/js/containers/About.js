@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { DEFAULT_YEAR, get_base_assets_path } from 'constants/AppConstants';
 import { connect } from 'react-redux';
 import Utils from 'utils/Utils';
-import { selectCategory, selectYear } from 'store/items/itemsActions';
+import { selectCategory, selectYear } from 'store/categories/categoriesActions';
 import Helmet from 'react-helmet/es/Helmet';
 
 class About extends Component {

@@ -1,9 +1,43 @@
-import { CATEGORIES_RECEIVE, CATEGORIES_REQUEST } from 'store/categories/categoriesActions';
+import {
+  CATEGORIES_RECEIVE,
+  CATEGORIES_REQUEST,
+  YEAR_SELECT,
+  CATEGORY_SELECT,
+  FILTER_TOGGLE,
+} from 'store/categories/categoriesActions';
+import * as constants from '../../constants/AppConstants';
 
 const initState = {
   available: [],
   activeByYear: {},
   lastUpdated: '',
+};
+
+export const selectedCategory = (state = constants.DEFAULT_CATEGORY, action) => {
+  switch (action.type) {
+    case CATEGORY_SELECT:
+      return action.category;
+    default:
+      return state;
+  }
+};
+
+export const selectedYear = (state = constants.DEFAULT_YEAR, action) => {
+  switch (action.type) {
+    case YEAR_SELECT:
+      return action.year;
+    default:
+      return state;
+  }
+};
+
+export const toggledFilter = (state = constants.DEFAULT_FILTER, action) => {
+  switch (action.type) {
+    case FILTER_TOGGLE:
+      return !state;
+    default:
+      return state;
+  }
 };
 
 const reducer = (state = initState, action) => {
@@ -24,6 +58,18 @@ const reducer = (state = initState, action) => {
       } else {
         return state;
       }
+    case YEAR_SELECT:
+      nextState.available = state.available.map((o, i) => {
+        const category_name = o.category_name;
+        let isActive = false;
+        if (action.year === 'allyears' || category_name === 'about' || category_name === 'all') {
+          isActive = true;
+        } else {
+          isActive = state.activeByYear[category_name] === true;
+        }
+        return { ...o, is_active: isActive };
+      });
+      return { ...state, ...nextState };
     default:
       return state;
   }

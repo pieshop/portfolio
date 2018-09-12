@@ -1,8 +1,10 @@
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
+import reduxfreezeMiddleware from 'redux-freeze';
 import { applyMiddleware, createStore } from 'redux';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from 'store/rootReducer';
-import { defaultCategories } from '../constants/AppConstants';
 
 /**
  * Add all the state in local storage
@@ -30,24 +32,30 @@ const reHydrateStore = () => {
   }
 };
 
-const configureStore = () => {
+const configureStore = (history) => {
   const loggerMiddleware = createLogger({
     collapsed: true,
     duration: true,
     timestamp: true,
   });
 
+  const middlewares = [
+    routerMiddleware(history),
+    thunkMiddleware,
+    loggerMiddleware,
+    localStorageMiddleware,
+  ];
+  if (__DEV__) {
+    middlewares.unshift(reduxfreezeMiddleware);
+  }
+
   const initialState = reHydrateStore();
   console.log('reHydrateStore ', initialState);
 
   const store = createStore(
-    rootReducer,
+    connectRouter(history)(rootReducer), // new root reducer with router state
     initialState,
-    applyMiddleware(
-      thunkMiddleware, // lets us dispatch() functions
-      loggerMiddleware, // lets us log actions
-      localStorageMiddleware
-    )
+    composeWithDevTools(applyMiddleware(...middlewares))
   );
 
   if (process.env.NODE_ENV !== 'production') {

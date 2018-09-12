@@ -7,7 +7,6 @@ import { NavLink } from 'react-router-dom';
 export default class NavBarLink extends Component {
   constructor(props) {
     super(props);
-    this.checkActive = this.checkActive.bind(this);
   }
 
   render() {
@@ -18,8 +17,11 @@ export default class NavBarLink extends Component {
       <li class="nav-item">
         <NavLink
           to={goto}
-          isActive={this.checkActive}
+          isActive={(match, location) =>
+            location.pathname.split('/')[1] === this.props.category_name
+          }
           exact={false}
+          // activeStyle={{ color: 'red' }}
           activeClassName="active"
           class={'nav-link ' + clz}
           data-id={category_name}
@@ -29,11 +31,5 @@ export default class NavBarLink extends Component {
         </NavLink>
       </li>
     );
-  }
-
-  checkActive(match, location) {
-    const cat = location.pathname.split('/')[1];
-    // console.log('checkActive', match, location, this.props.category_name, cat);
-    return cat === this.props.category_name;
   }
 }

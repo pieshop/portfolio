@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { fetchItemsIfNeeded } from 'store/items/itemsActions';
+
+import { getItems } from 'store/items/itemsSelectors';
+import { invalidateCategory, selectCategory, selectYear } from 'store/categories/categoriesActions';
 import {
-  fetchItemsIfNeeded,
-  invalidateCategory,
-  selectCategory,
-  selectYear,
-} from 'store/items/itemsActions';
-import { getItems, getSelectedState } from 'store/items/itemsSelectors';
+  getSelectedCategoryMetaData,
+  getSelectedState,
+} from 'store/categories/categoriesSelectors';
 import Items from 'components/Items';
-import { getSelectedCategoryMetaData } from 'store/categories/categoriesSelectors';
 
 class Categories extends Component {
   constructor(props) {
@@ -29,18 +29,18 @@ class Categories extends Component {
     const { category_id, year_id } = this.props.match.params;
     const { category_id: next_category_id, year_id: next_year_id } = nextProps.match.params;
     if (category_id !== next_category_id) {
-      // console.log('** Categories.componentWillReceiveProps', category_id, next_category_id);
+      console.log('** Categories.componentWillReceiveProps', category_id, next_category_id);
       this.props.selectCategory(next_category_id);
     }
     if (year_id !== next_year_id) {
-      // console.log('** Categories.componentWillReceiveProps', year_id, next_year_id);
+      console.log('** Categories.componentWillReceiveProps', year_id, next_year_id);
       this.props.selectYear(next_year_id);
     }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.selectedCategory !== prevProps.selectedCategory) {
-      // console.log('** Categories.componentDidUpdate');
+      console.log('** Categories.componentDidUpdate');
       const { selectedCategory, selectedYear } = this.props;
       this.props.fetchItemsIfNeeded(selectedCategory, selectedYear);
     }

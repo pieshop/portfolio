@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import items, { selectedCategory, selectedYear, toggledFilter } from 'store/items/itemsReducer';
-import categories from 'store/categories/categoriesReducer';
+import items from 'store/items/itemsReducer';
+import categories, {
+  selectedCategory,
+  selectedYear,
+  toggledFilter,
+} from 'store/categories/categoriesReducer';
 import item, { selectedItem } from 'store/item/itemReducer';
 import localData from 'store/localdata/localDataReducer';
 

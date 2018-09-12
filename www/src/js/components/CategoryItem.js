@@ -75,6 +75,7 @@ export default class CategoryItem extends Component {
     );
   }
   renderAward(data, index) {
+    // console.log('renderAward', data);
     return <CategoryItemAward key={data.id} {...data} index={index} />;
   }
 }

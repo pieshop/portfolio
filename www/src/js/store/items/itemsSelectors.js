@@ -1,21 +1,5 @@
 import * as constants from '../../constants/AppConstants';
 
-export const getSelectedCategory = (state) => {
-  return state.selectedCategory;
-};
-
-export const getSelectedYear = (state) => {
-  return state.selectedYear;
-};
-
-export const getFilteredState = (state) => {
-  return state.filtered;
-};
-
-export const getSelectedState = (state) => {
-  return { selectedCategory: state.selectedCategory, selectedYear: state.selectedYear };
-};
-
 export const getHasCategoryItems = (state) => {
   const selectedCategory = state.selectedCategory;
   return state.itemsByCategory[selectedCategory] ? true : false;
