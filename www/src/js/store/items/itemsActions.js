@@ -1,14 +1,22 @@
 import * as constants from 'constants/AppConstants';
+import { get_summary_thumb_path, get_thumb_path } from 'constants/AppConstants';
 
 import { fetchCategoryItemsService } from 'services/portfolio';
-import { get_summary_thumb_path, get_thumb_path } from 'constants/AppConstants';
 
 import { getLocalClientData } from 'store/localdata/localDataReducer';
 import { getHasCategoryItems, getItemsByCategory } from 'store/items/itemsSelectors';
 import { shouldUpdateItems } from '../../utils/dateValidation';
 
+export const ITEMS_INVALIDATE = 'items.ITEMS_INVALIDATE';
 export const ITEMS_REQUEST = 'items.ITEMS_REQUEST';
 export const ITEMS_RECEIVE = 'items.ITEMS_RECEIVE';
+
+export const invalidateCategory = (id) => {
+  return {
+    type: ITEMS_INVALIDATE,
+    id,
+  };
+};
 
 const requestItems = (category) => {
   return {
@@ -65,6 +73,7 @@ const fetchItems = (state, category) => {
       })
       .catch((message) => {
         console.error(message);
+        dispatch(invalidateCategory(category));
       });
   };
 };
@@ -74,7 +83,7 @@ const shouldFetchItems = (state, category) => {
   if (getHasCategoryItems(state)) {
     const items = getItemsByCategory(state);
     if (items.isFetching) {
-      return false;
+      return true; // TODO : testing refetch if fetching is true
     } else if (shouldUpdateItems(items.lastUpdated)) {
       return true;
     } else {

@@ -7,6 +7,7 @@ import { getAvailableCategories, getCategoriesLastUpdated } from './categoriesSe
 import { defaultCategories } from '../../constants/AppConstants';
 import { fetchItemsIfNeeded } from 'store/items/itemsActions';
 import { getSelectedState } from 'store/categories/categoriesSelectors';
+import { invalidateItem } from 'store/item/itemActions';
 
 export const CATEGORIES_REQUEST = 'categories.CATEGORIES_REQUEST';
 export const CATEGORIES_RECEIVE = 'categories.CATEGORIES_RECEIVE';
@@ -15,7 +16,7 @@ export const CATEGORY_SELECT = 'categories.CATEGORY_SELECT';
 export const METADATA_UPDATE = 'categories.METADATA_UPDATE';
 export const YEAR_SELECT = 'categories.YEAR_SELECT';
 export const FILTER_TOGGLE = 'categories.FILTER_TOGGLE';
-export const CATEGORY_INVALIDATE = 'items.CATEGORY_INVALIDATE';
+export const CATEGORIES_INVALIDATE = 'items.CATEGORIES_INVALIDATE';
 
 const categorySelect = (category) => {
   return {
@@ -54,10 +55,9 @@ export const filterToggle = () => {
   };
 };
 
-export const invalidateCategory = (category) => {
+export const invalidateCategories = () => {
   return {
-    type: CATEGORY_INVALIDATE,
-    category,
+    type: CATEGORIES_INVALIDATE,
   };
 };
 
@@ -102,6 +102,7 @@ const fetchCategories = (state) => {
       })
       .catch((message) => {
         console.error(message);
+        dispatch(invalidateCategories());
       });
   };
 };

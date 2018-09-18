@@ -58,7 +58,14 @@ function sync(options) {
       const sync_app = createSync(sync_opts);
       dest = path.resolve('.', cfg.rsync[env].assets);
       sync_opts_js_css = getOptions(
-        [src + '/js', src + '/css', src + '/fonts', src + '/assets/json'],
+        [
+          src + '/js',
+          src + '/css',
+          src + '/fonts',
+          src + '/assets/json',
+          src + '/workbox',
+          src + '/index.html',
+        ],
         dest + '/',
         host
       );

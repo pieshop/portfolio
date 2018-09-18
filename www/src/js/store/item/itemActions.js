@@ -267,6 +267,7 @@ const fetchItem = ({ state, client_id, entry_id }) => {
       })
       .catch((message) => {
         console.error(message);
+        dispatch(invalidateItem(entry_id));
       });
   };
 };

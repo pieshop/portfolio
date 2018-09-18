@@ -1,148 +1,122 @@
-/* global self, caches, fetch, URL, Response */
-// @flow weak
-/* eslint-disable no-console */
 
-'use strict';
-const VERSION = '025';
-const DEBUG = false;
-const { assets } = global.serviceWorkerOption;
+/**
+ * Code above injected by webpack plugin addServiceWorker
+ */
+const TEST = '{VERSION}';
+const VERSION = 'v1.0.65';
+const ASSET_CACHE_VERSION = 'v1.0.0';
 
-let config = {
-  version: 'portfolio-offline_v' + VERSION,
-  staticCacheItems: [...assets, './'],
-  cachePathPattern: /^\/(?:(20[0-9]{2}|about|css|images|js|api|jpg)\/(.+)?)?$/,
-  offlineImage:
-    '<svg role="img" aria-labelledby="offline-title"' +
-    ' viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">' +
-    '<title id="offline-title">Offline</title>' +
-    '<g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z"/>' +
-    '<text fill="#9B9B9B" font-family="Times New Roman,Times,serif" font-size="72" font-weight="bold">' +
-    '<tspan x="93" y="172">offline</tspan></text></g></svg>',
-  offlinePage: '/offline/',
-};
+workbox.setConfig({ debug: true });
+workbox.core.setLogLevel(workbox.core.LOG_LEVELS.debug);
 
-config.staticCacheItems = config.staticCacheItems.map((path) => {
-  return new URL(path, global.location).toString();
+workbox.core.setCacheNameDetails({
+  prefix: 'portfolio',
+  suffix: VERSION,
+  precache: 'precache',
+  runtime: 'runtime',
 });
 
-function cacheName(key, opts) {
-  let cn = `${opts.version}-${key}`;
-  return cn;
-}
+workbox.skipWaiting();
+workbox.clientsClaim();
 
-function addToCache(cacheKey, request, response) {
-  if (DEBUG) {
-    console.log('[SW] addToCache ', cacheKey, ' | request ', request, ' | response ', response);
-  }
-  if (response.ok) {
-    if (DEBUG) {
-      console.log('[SW] addToCache ', cacheKey, ' | url ', response.url);
-    }
-    let copy = response.clone();
-    global.caches.open(cacheKey).then((cache) => {
-      cache.put(request, copy);
-    });
-  } else {
-    if (DEBUG) {
-      console.log('[SW] addToCache FAILED ', cacheKey, ' | url ', response.url);
-    }
-  }
-  return response;
-}
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
 
-function fetchFromCache(event) {
-  return global.caches.match(event.request).then((response) => {
-    if (!response) {
-      throw Error(`${event.request.url} not found in cache`);
-    }
-    if (DEBUG) {
-      console.log('[SW] fetchFromCache ', event.request, ' | response ', response);
-    }
-    return response;
-  });
-}
+workbox.precaching.suppressWarnings();
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-function offlineResponse(resourceType, opts) {
-  if (resourceType === 'image') {
-    return new Response(opts.offlineImage, { headers: { 'Content-Type': 'image/svg+xml' } });
-  } else if (resourceType === 'content') {
-    return global.caches.match(opts.offlinePage);
-  }
-  return undefined;
-}
-
-self.addEventListener('install', (event) => {
-  function onInstall(event, opts) {
-    let cacheKey = cacheName('static', opts);
-    return global.caches.open(cacheKey).then((cache) => cache.addAll(opts.staticCacheItems));
-  }
-
-  event.waitUntil(onInstall(event, config).then(() => self.skipWaiting()));
+const version = self.__precacheManifest.find((o) => {
+  return o.url === 'https://cdn.stephenhamilton.co.uk/portfolio/version.json';
 });
+console.log('version', version.revision);
 
-self.addEventListener('activate', (event) => {
-  function onActivate(event, opts) {
-    return global.caches.keys().then((cacheKeys) => {
-      let oldCacheKeys = cacheKeys.filter((key) => key.indexOf(opts.version) !== 0);
-      let deletePromises = oldCacheKeys.map((oldKey) => global.caches.delete(oldKey));
-      return Promise.all(deletePromises);
-    });
+workbox.precaching.precache([
+  {
+    url: '/index.html',
+    revision: version.revision,
   }
+]);
 
-  event.waitUntil(onActivate(event, config).then(() => self.clients.claim()));
-});
+workbox.googleAnalytics.initialize();
 
-self.addEventListener('fetch', (event) => {
-  function shouldHandleFetch(event, opts) {
-    let request = event.request;
-    let url = new URL(request.url);
-    let criteria = {
-      // matchesPathPattern: opts.cachePathPattern.test(url.pathname),
-      isGETRequest: request.method === 'GET',
-      isFromMyOrigin: url.host.indexOf('stephenhamilton') !== -1, // assets, api and www
-    };
-    let failingCriteria = Object.keys(criteria).filter((criteriaKey) => !criteria[criteriaKey]);
-    return !failingCriteria.length;
-  }
+workbox.routing.registerNavigationRoute('/index.html', {});
 
-  function onFetch(event, opts) {
-    let request = event.request;
-    let acceptHeader = request.headers.get('Accept');
-    let resourceType = 'static';
-    let cacheKey;
+// workbox.routing.registerRoute(
+//   /about/,
+//   workbox.strategies.networkFirst({
+//     networkTimeoutSeconds: 3,
+//     cacheName: 'pages-cache-' + ASSET_CACHE_VERSION,
+//     plugins: [
+//       new workbox.expiration.Plugin({
+//         maxEntries: 1,
+//         maxAgeSeconds: 5 * 60, // 5 minutes
+//       }),
+//     ],
+//   }),
+//   'GET'
+// );
 
-    if (acceptHeader.indexOf('text/html') !== -1) {
-      resourceType = 'content';
-    } else if (acceptHeader.indexOf('image') !== -1) {
-      resourceType = 'image';
-    } else if (acceptHeader.indexOf('json') !== -1) {
-      resourceType = 'api';
-    } else if (request.url.indexOf('pdf') !== -1) {
-      resourceType = 'pdf';
-    }
-    // if (DEBUG) {
-    //     console.log('[SW] resourceType ', resourceType, 'request ', request);
-    // }
-    cacheKey = cacheName(resourceType, opts);
+// const FALLBACK_IMAGE_URL = '/images/fallback.png';
+// const imagesHandler = workbox.strategies.cacheFirst();
+// workbox.routing.registerRoute(/^https:\/\/cdn.stephenhamilton\.co\.uk.*.(?:png|jpg|svg)$/, ({event}) => {
+//   return imagesHandler.handle({event})
+//     .catch(() => caches.match(FALLBACK_IMAGE_URL));
+// });
 
-    if (resourceType === 'content') {
-      event.respondWith(
-        fetch(request)
-          .then((response) => addToCache(cacheKey, request, response))
-          .catch(() => fetchFromCache(event))
-          .catch(() => offlineResponse(resourceType, opts))
-      );
-    } else {
-      event.respondWith(
-        fetchFromCache(event)
-          .catch(() => fetch(request))
-          .then((response) => addToCache(cacheKey, request, response))
-          .catch(() => offlineResponse(resourceType, opts))
-      );
-    }
-  }
+workbox.routing.registerRoute(
+  /^https:\/\/cdn.stephenhamilton\.co\.uk.*.(?:png|jpg|svg)$/,
+  workbox.strategies.cacheFirst({
+    cacheName: 'images-cache-' + ASSET_CACHE_VERSION,
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        // purgeOnQuotaError: true,
+      }),
+    ],
+  }),
+  'GET'
+);
 
-  if (shouldHandleFetch(event, config)) {
-    onFetch(event, config);
-  }
-});
+workbox.routing.registerRoute(
+  /^https:\/\/cdn.stephenhamilton\.co\.uk.*.(?:gif)$/,
+  workbox.strategies.staleWhileRevalidate({ cacheName: 'images-cache-' + ASSET_CACHE_VERSION, plugins: [] }),
+  'GET'
+);
+workbox.routing.registerRoute(
+  /^https:\/\/cdn.stephenhamilton\.co\.uk.*.(?:json)$/,
+  workbox.strategies.cacheFirst({ cacheName: 'json-cache-' + ASSET_CACHE_VERSION, plugins: [] }),
+  'GET'
+);
+workbox.routing.registerRoute(
+  /^https:\/\/api.stephenhamilton\.co\.uk.*$/,
+  workbox.strategies.staleWhileRevalidate({ cacheName: 'api-cache-' + ASSET_CACHE_VERSION, plugins: [] }),
+  'GET'
+);
+
+
+/**
+ * OFFLINE
+ * https://github.com/GoogleChrome/workbox/issues/438
+ *
+ */
+// var networkFirstHandler = workbox.strategies.networkFirst({
+//   cacheName: 'default',
+//   plugins: [
+//     new workbox.expiration.Plugin({
+//       maxEntries: 10
+//     }),
+//     new workbox.cacheableResponse.Plugin({
+//       statuses: [200]
+//     })
+//   ]
+// });
+//
+// const matcher = ({event}) => event.request.mode === 'navigate';
+// const handler = (args) => networkFirstHandler.handle(args).then((response) => (!response) ? caches.match('/offline.html') : response);
+//
+// workbox.routing.registerRoute(matcher, handler);

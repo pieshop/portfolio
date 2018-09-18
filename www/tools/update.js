@@ -14,6 +14,8 @@ const cfg = require(CONFIG_DIR + '/app_config.js')();
 
 function update(options) {
   const env = options.env;
+  const VERSION = JSON.stringify(require('../package.json').version);
+
   let src = TEMPLATE_DIR + '/robots.txt';
   let dest = path.resolve('.', cfg[env] + '/robots.txt');
   let pattern = '{loc}';
@@ -27,6 +29,14 @@ function update(options) {
   const p2 = createCopyAndReplace(src, dest, pattern, replacement);
 
   return Promise.all([p1, p2]);
+
+  // src = path.resolve(__dirname, '../src/sw.js');
+  // dest = path.resolve('.', cfg[env] + '/sw.js');
+  // pattern = '{version}';
+  // replacement = VERSION;
+  // const p3 = createCopyAndReplace(src, dest, pattern, replacement);
+  //
+  // return Promise.all([p1, p2, p3]);
 }
 
 function createCopyAndReplace(src, dest, regex, replacement) {

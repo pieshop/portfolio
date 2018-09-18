@@ -29,8 +29,8 @@ exports.setProductionMode = () => ({
  ***************************************/
 exports.setOutput = ({ jsOut = 'js', pathToDirectory, publicPath, isProduction = false }) => {
   // remove [chunkhash] with webpack-dev-server - https://github.com/webpack/webpack/issues/2393
-  const filename = isProduction ? jsOut + '/[name].[chunkhash:8].js' : jsOut + '/[name].js';
-  const chunkFilename = isProduction ? jsOut + '/[name].[chunkhash:8].js' : jsOut + '/[name].js';
+  const filename = isProduction ? jsOut + '/[name].[contenthash].js' : jsOut + '/[name].js';
+  const chunkFilename = isProduction ? jsOut + '/[name].[contenthash].js' : jsOut + '/[name].js';
   return {
     output: {
       path: pathToDirectory,

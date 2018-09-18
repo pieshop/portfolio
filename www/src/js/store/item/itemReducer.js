@@ -17,6 +17,7 @@ const item = (state = { isFetching: false, didInvalidate: false, item: {} }, act
   let nextState = {};
   switch (action.type) {
     case ITEM_INVALIDATE:
+      nextState.isFetching = false;
       nextState.didInvalidate = true;
       return { ...state, ...nextState };
     case ITEM_REQUEST:

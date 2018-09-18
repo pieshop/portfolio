@@ -33,6 +33,7 @@ export default class ItemImage extends Component {
       <div class={style}>
         <div class="thumbnail" ref={(item) => (this.item_ref = item)} style={thumb_style}>
           <img
+            crossorigin="anonymous"
             width={width}
             height={height}
             class="img-fluid img-thumbnail"

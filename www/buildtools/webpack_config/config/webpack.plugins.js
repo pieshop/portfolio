@@ -6,8 +6,9 @@ const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
-const ServiceWorkerWebpackPlugin  = require("serviceworker-webpack-plugin");
-
+const VersionFile = require('webpack-version-file-plugin');
+const {InjectManifest} = require('workbox-webpack-plugin');
+const {GenerateSW} = require('workbox-webpack-plugin');
 /****************************************
  *         P  L  U  G  I  N  S
  ***************************************/
@@ -136,24 +137,53 @@ exports.provideReact = () => ({
   ],
 });
 
+exports.createVersionFile = ({ packageFile, template, outputFile }) => ({
+  plugins: [
+    new VersionFile({ packageFile, template, outputFile })
+  ],
+});
 /****************************************
  *         S E R V I C E   W O R K E R
  ***************************************/
-exports.addServiceWorker = ({ entry }) => ({
+// exports.addServiceWorker = ({ entry, publicPath }) => ({
+//   plugins: [
+//     new WorkboxPlugin.InjectManifest({
+//       swSrc: entry,
+//     })
+//   ]
+// });
+exports.addServiceWorker = ({ entry, name = 'sw.js' }) => ({
   plugins: [
-    new ServiceWorkerWebpackPlugin({
-      entry,
-      excludes: [
-        "*.xml",
-        "*.txt",
-        ".htaccess",
-        "**/*.map",
-        "*.html",
-        "**/*.xsl",
-        "sw.js",
-        "**/.DS_Store",
-        "node_modules"
-      ]
+    new InjectManifest({
+      swSrc: entry + name,
+      swDest: name,
+      importWorkboxFrom: 'local',
+      importsDirectory: 'workbox',
+      // include: [/index.html/, /\.js$/, /\.css$/, /\.jpg$/, /\.png$/, /\.woff$/, /\.ttf$/],
+      // exclude: [/\.DS_Store$/, /\.txt/, /y_key_80c280816d539335.html/, /google6acd2b3e4bad34ba.html/],
+      include: [/\.js$/, /\.css$/, /\.jpg$/, /\.png$/, /\.woff$/, /\.ttf$/, /version.json/],
+      exclude: [/\.DS_Store$/, /\.txt/, /\..html$/],
+
+
+      // clientsClaim: true,
+      // skipWaiting: true,
+      // navigateFallback: '/index.html',
+      // navigateFallbackWhitelist: [/^\/about/, /^\/all/, /^\/olm/],
+      // runtimeCaching: [
+      //   // {  urlPattern: '/', handler: 'staleWhileRevalidate' },
+      //   // {  urlPattern: /(?:about|all|web|olm|game|responsive|app)$/, handler: 'networkFirst', options: { cacheName: 'pages-cache' } },
+      //   {  urlPattern: /about/, handler: 'networkFirst' },
+      //   {  urlPattern: /all/, handler: 'networkFirst' },
+      //   {  urlPattern: /web/, handler: 'networkFirst' },
+      //   {  urlPattern: /olm/, handler: 'networkFirst' },
+      //   {  urlPattern: /game/, handler: 'networkFirst' },
+      //   {  urlPattern: /responsive/, handler: 'networkFirst' },
+      //   {  urlPattern: /app/, handler: 'networkFirst' },
+      //   {  urlPattern: /^https:\/\/cdn.stephenhamilton\.co\.uk.*.(?:png|gif|jpg|svg)$/, handler: 'cacheFirst', options: { cacheName: 'images-cache' } },
+      //   {  urlPattern: /^https:\/\/cdn.stephenhamilton\.co\.uk.*.(?:json)$/, handler: 'cacheFirst', options: { cacheName: 'json-cache' } },
+      //   {  urlPattern: /^https:\/\/api.stephenhamilton\.co\.uk.*$/, handler: 'staleWhileRevalidate', options: { cacheName: 'api-cache' } },
+      // ],
+      // navigateFallbackBlacklist: [/admin/, /shop/],
     })
   ]
 });

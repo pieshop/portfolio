@@ -5,6 +5,7 @@ import {
   CATEGORY_SELECT,
   FILTER_TOGGLE,
   METADATA_UPDATE,
+  CATEGORIES_INVALIDATE,
 } from 'store/categories/categoriesActions';
 import * as constants from 'constants/AppConstants';
 
@@ -55,10 +56,18 @@ export const filtered = (state = constants.DEFAULT_FILTER, action) => {
 const reducer = (state = initState, action) => {
   let nextState = {};
   switch (action.type) {
+    case CATEGORIES_INVALIDATE:
+      nextState.isFetching = false;
+      nextState.didInvalidate = true;
+      return { ...state, ...nextState };
     case CATEGORIES_REQUEST:
+      nextState.isFetching = true;
+      nextState.didInvalidate = false;
       return { ...state, ...nextState };
     case CATEGORIES_RECEIVE:
+      nextState.isFetching = false;
       if (action.categories) {
+        nextState.didInvalidate = false;
         nextState.activeByYear = action.activeByYear;
         nextState.available = action.categories;
         nextState.lastUpdated = action.receivedAt;
@@ -68,7 +77,8 @@ const reducer = (state = initState, action) => {
         // nextState.available = joinWithoutDupes(state.available, action.categories);
         return { ...state, ...nextState };
       } else {
-        return state;
+        nextState.didInvalidate = true;
+        return { ...state, ...nextState };
       }
     case YEAR_SELECT:
       nextState.available = state.available.map((o, i) => {

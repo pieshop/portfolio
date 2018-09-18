@@ -51,14 +51,17 @@ if (process.env.NODE_ENV === 'production') {
    */
   if (__SERVICE_WORKER__) {
     if ('serviceWorker' in navigator) {
-      // console.log('Service worker available!');
-      const runtime = require('serviceworker-webpack-plugin/lib/runtime');
-
-      runtime.register().then((reg) => {
-        //     // console.log('Service worker registered!');
-      });
+      console.log('Service worker available!');
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then((registration) => {
+          console.info('SW registered: ', registration);
+        })
+        .catch((registrationError) => {
+          console.info('SW registration failed: ', registrationError);
+        });
     } else {
-      console.info('service worker not supported by browser.');
+      console.info('service worker not available.');
     }
   }
   doRender(App);

@@ -300,6 +300,9 @@ AddType text/vtt                            vtt
     <FilesMatch "\\.(x?html?|php)$">
         Header set Cache-Control "max-age=600, private, must-revalidate"
     </FilesMatch>
+    <FilesMatch "sw.js">
+       Header set Cache-Control "max-age=0, public, must-revalidate"
+    </FilesMatch>
     # Header unset ETag
     # Header unset Last-Modified
 </IfModule>
@@ -407,9 +410,9 @@ AddType text/vtt                            vtt
 
   ### Otherwise, if the requested file is not present on the server, serve the index file
   ### Note: the 3 following lines can be commented if you are using #! URLs
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule .* index.html [L]
+  # RewriteCond %{REQUEST_FILENAME} !-f
+  # RewriteCond %{REQUEST_FILENAME} !-d
+  # RewriteRule .* index.html [L]
   ###
   ### END SEO4Ajax
   ###

@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/apple-touch-icon.png?v=ngGw27PWBy">
-    <link rel="icon" type="image/png" sizes="32x32" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/favicon-32x32.png?v=ngGw27PWBy">
-    <link rel="icon" type="image/png" sizes="16x16" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/favicon-16x16.png?v=ngGw27PWBy">
-    <link rel="manifest" href="/offline/manifest.json?v=ngGw27PWBy">
-    <link rel="mask-icon" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/safari-pinned-tab.svg?v=ngGw27PWBy" color="#5bbad5">
-    <link rel="shortcut icon" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/favicon.ico?v=ngGw27PWBy">
+    <link crossorigin="anonymous" rel="apple-touch-icon" sizes="180x180" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/apple-touch-icon.png">
+    <link crossorigin="anonymous" rel="icon" type="image/png" sizes="32x32" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/favicon-32x32.png">
+    <link crossorigin="anonymous" rel="icon" type="image/png" sizes="16x16" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/favicon-16x16.png">
+    <link rel="manifest" href="/offline/manifest.json">
+    <link crossorigin="anonymous" rel="mask-icon" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/safari-pinned-tab.svg" color="#5bbad5">
+    <link crossorigin="anonymous" rel="shortcut icon" href="<%= htmlWebpackPlugin.options.cdn %>/portfolio/images/site/favicon.ico">
     <meta name="theme-color" content="#ffffff">
     <!-- Tell the browser it's a PWA -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     <% for (var css in htmlWebpackPlugin.files.css) { %>
-        <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+        <link crossorigin="anonymous" href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
     <% } %>
     <script type="application/ld+json">
         {
@@ -46,13 +46,13 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
         your browser</a> to improve your experience.</p>
     <![endif]-->
-    <noscript><strong>Javascript</strong> is unavailable.</noscript>
+    <!--<noscript><strong>Javascript</strong> is unavailable.</noscript>-->
 
     <div id='modal-root'></div>
     <div id='app-root'></div>
     <%= htmlWebpackPlugin.files.webpackManifest %>
     <% for (var key in htmlWebpackPlugin.files.chunks) { %>
-        <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" defer></script>
+        <script crossorigin="anonymous" src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" defer></script>
     <% } %>
 </body>
 </html>

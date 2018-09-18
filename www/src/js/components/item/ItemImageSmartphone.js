@@ -28,7 +28,14 @@ export default class ItemImageSmartphone extends Component {
     return (
       <div class={style}>
         <div class="thumbnail" ref={(item) => (this.item_ref = item)} style={thumb_style}>
-          <img width={width} height={height} class="img-fluid img-thumbnail" alt={alt} src={src} />
+          <img
+            crossorigin="anonymous"
+            width={width}
+            height={height}
+            class="img-fluid img-thumbnail"
+            alt={alt}
+            src={src}
+          />
         </div>
       </div>
     );

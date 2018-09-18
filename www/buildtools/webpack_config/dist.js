@@ -2,7 +2,12 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const { main, optimise, rules, plugins } = require('./config/index');
 
-module.exports = ({ paths, project, environment, replace_options, cdn }) => {
+module.exports = ({ paths, project, environment, replace_options }) => {
+  const VERSION = JSON.stringify(require('../../package.json').version);
+  const { env, cdn, environmentVars } = environment;
+  const isProduction = env === 'production';
+  // environmentVars.__VERSION__ = VERSION;
+
   const PATHS = paths;
   const PROJECT = project;
   const PUBLIC_PATH = cdn;
@@ -14,15 +19,13 @@ module.exports = ({ paths, project, environment, replace_options, cdn }) => {
     { from: PATHS.src + '/offline/', to: PATHS.dist + '/offline/' },
     { from: PATHS.src + '/sitemap/', to: PATHS.dist + '/sitemap/' },
     { from: PATHS.src + '/*.{ico,txt,xml,json,png,svg,html}', to: PATHS.dist + '/', flatten: true },
-    { from: PATHS.src + '/.htaccess', to: PATHS.dist + '/' },
+    // { from: PATHS.src + '/.htaccess', to: PATHS.dist + '/' },
+    { from: PATHS.src + '/version.json', to: PATHS.dist + '/version.json' },
   ];
   const copyOptions = { debug: 'warning', ignore: [], copyUnmodified: true }; // 'warning', 'info', 'debug'
   const cleanPaths = [PATHS.dist];
   const cleanOptions = { root: PATHS.projectRoot, verbose: true, exclude: ['language'] };
   const assetName = '[path][name].[ext]';
-
-  const { env, environmentVars } = environment;
-  const isProduction = env === 'production';
 
   return merge([
     main.setProductionMode(),
@@ -56,6 +59,7 @@ module.exports = ({ paths, project, environment, replace_options, cdn }) => {
     optimise.minifyCSS({ sourceMap: true }),
 
     plugins.cleanDirectory({ cleanPaths, cleanOptions }),
+    plugins.createVersionFile({ packageFile: PATHS.root + '/package.json', template: PATHS.templateDir + '/version.ejs', outputFile: PATHS.src + '/version.json' }),
     plugins.copy({ copyPaths, copyOptions }),
 
     plugins.hashModuleIDs(),
@@ -74,9 +78,10 @@ module.exports = ({ paths, project, environment, replace_options, cdn }) => {
     plugins.generateDistSourceMaps({
       exclude: new RegExp(PROJECT.vendorName + '|' + PROJECT.manifestName),
     }),
+
     // plugins.inlineManifest(),
 
-    PROJECT.serviceworker && plugins.addServiceWorker({ entry: PATHS.src + '/sw.js' }),
+    PROJECT.serviceworker && plugins.addServiceWorker({ entry: PATHS.src + '/', name: 'sw.js' }),
 
     // plugins.runWebpackBundleAnalyzer(),
   ]);

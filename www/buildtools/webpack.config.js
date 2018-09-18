@@ -18,19 +18,19 @@ function buildConfig(target, buildtype) {
   const configType = buildtype === 'watch' ? 'watch' : 'dist';
   const environment = {
     env: project.environment,
+    cdn: target === 'live' ? app_config.cdn + '/' : '',
     environmentVars: {
       __WATCH__: JSON.stringify(buildtype === 'watch'),
       __GA__: JSON.stringify(project.googleanalytics),
       __SERVICE_WORKER__: JSON.stringify(project.serviceworker),
     },
   };
-
+  console.log('environment = ', environment);
   const conf = require('./webpack_config/' + configType)({
     paths,
     project,
     replace_options,
     environment,
-    cdn: target === 'live' ? app_config.cdn : '',
   });
   // console.log('generated conf = ', conf);
   return conf;
