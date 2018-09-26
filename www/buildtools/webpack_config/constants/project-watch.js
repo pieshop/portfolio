@@ -1,5 +1,6 @@
 const base = require(`./project`);
 const specific = {
+  htmlTemplate: 'index_watch.ejs',
   compression : false,
   environment : 'development',
   googleanalytics : false,

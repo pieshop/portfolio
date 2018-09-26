@@ -300,9 +300,6 @@ AddType text/vtt                            vtt
     <FilesMatch "\\.(x?html?|php)$">
         Header set Cache-Control "max-age=600, private, must-revalidate"
     </FilesMatch>
-    <FilesMatch "sw.js">
-       Header set Cache-Control "max-age=0, public, must-revalidate"
-    </FilesMatch>
     # Header unset ETag
     # Header unset Last-Modified
 </IfModule>
@@ -470,15 +467,15 @@ AddType text/vtt                            vtt
 # subdomains for certain parts of your website.
 
 <IfModule mod_rewrite.c>
-    RewriteCond %{HTTPS} off
+    # RewriteCond %{HTTPS} off
     # First rewrite to HTTPS:
     # Don't put www. here. If it is already there it will be included, if not
     # the subsequent rule will catch it.
-    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    # RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     # Now, rewrite any request to the wrong domain to use www.
     # [NC] is a case-insensitive match
-    RewriteCond %{HTTP_HOST} !^www\. [NC]
-    RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    ## RewriteCond %{HTTP_HOST} !^www\. [NC]
+    # RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
    # RewriteCond %{HTTPS} !=on
    # RewriteCond %{HTTP_HOST} !^www\..+$ [NC]

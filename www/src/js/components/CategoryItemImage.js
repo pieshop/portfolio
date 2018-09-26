@@ -24,7 +24,7 @@ export default class CategoryItemImage extends Component {
       <div class="thumb text-center" ref={(item) => (this.item_ref = item)} style={opacity}>
         {/*<Placeholder is_responsive={is_responsive} />*/}
         <img
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
           width="350"
           height="350"
           class="img-fluid img-thumbnail"

@@ -50,7 +50,7 @@ const configureStore = (history) => {
     middlewares.unshift(reduxfreezeMiddleware);
   }
 
-  const initialState = reHydrateStore();
+  const initialState = __WATCH__ ? {} : reHydrateStore();
   console.log('reHydrateStore ', initialState);
 
   const store = createStore(

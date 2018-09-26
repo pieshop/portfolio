@@ -166,22 +166,22 @@ AddType text/vtt                            vtt
   # HTML, TXT, CSS, JavaScript, JSON, XML, HTC:
   <IfModule filter_module>
     FilterDeclare   COMPRESS
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/html
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/css
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/plain
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/xml
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/x-component
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/javascript
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/json
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/xml
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/xhtml+xml
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/rss+xml
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/atom+xml
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/vnd.ms-fontobject
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $image/svg+xml
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $image/x-icon
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/x-font-ttf
-    FilterProvider  COMPRESS  DEFLATE resp=Content-Type $font/opentype
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/html'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/css'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/plain'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/xml'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/x-component'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/javascript'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/json'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/xml'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/xhtml+xml'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/rss+xml'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/atom+xml'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/vnd.ms-fontobject'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'image/svg+xml'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'image/x-icon'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/x-font-ttf'"
+    FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'font/opentype'"
     FilterChain     COMPRESS
     FilterProtocol  COMPRESS  DEFLATE change=yes;byteranges=no
   </IfModule>
@@ -300,6 +300,9 @@ AddType text/vtt                            vtt
     <FilesMatch "\\.(x?html?|php)$">
         Header set Cache-Control "max-age=600, private, must-revalidate"
     </FilesMatch>
+    <FilesMatch "sw.js">
+        Header set Cache-Control "max-age=0, public, must-revalidate"
+    </FilesMatch>
     # Header unset ETag
     # Header unset Last-Modified
 </IfModule>
@@ -407,9 +410,9 @@ AddType text/vtt                            vtt
 
   ### Otherwise, if the requested file is not present on the server, serve the index file
   ### Note: the 3 following lines can be commented if you are using #! URLs
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule .* index.html [L]
+  # RewriteCond %{REQUEST_FILENAME} !-f
+  # RewriteCond %{REQUEST_FILENAME} !-d
+  # RewriteRule .* index.html [L]
   ###
   ### END SEO4Ajax
   ###
@@ -471,11 +474,11 @@ AddType text/vtt                            vtt
     # First rewrite to HTTPS:
     # Don't put www. here. If it is already there it will be included, if not
     # the subsequent rule will catch it.
-    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=302]
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     # Now, rewrite any request to the wrong domain to use www.
     # [NC] is a case-insensitive match
     RewriteCond %{HTTP_HOST} !^www\. [NC]
-    RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=302]
+    RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
    # RewriteCond %{HTTPS} !=on
    # RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
@@ -574,11 +577,11 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 # Block access to backup and source files. These files may be left by some
 # text/html editors and pose a great security danger, when anyone can access
 # them.
-<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist)|~)$">
-  Order allow,deny
-  Deny from all
-  Satisfy All
-</FilesMatch>
+# <FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist)|~)$">
+#   Order allow,deny
+#   Deny from all
+#   Satisfy All
+# </FilesMatch>
 
 # If your server is not already configured as such, the following directive
 # should be uncommented in order to set PHP's register_globals option to OFF.

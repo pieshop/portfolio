@@ -112,9 +112,17 @@ const _checkForSingle = (arr) => {
 };
 
 const _parseMedia = (json, localData) => {
-  const { client_id, entry_id, is_dark_background, images = [], pdfs = [], swfs = [] } = json;
+  const {
+    client_id,
+    entry_id,
+    is_dark_background,
+    images = [],
+    videos = [],
+    pdfs = [],
+    swfs = [],
+  } = json;
   const media_path = constants.get_image_path({ client_id: client_id, entry_id: entry_id });
-  const ary = [...images, ...pdfs, ...swfs];
+  const ary = [...images, ...videos, ...pdfs, ...swfs];
   const is_single_item = ary.length === 1;
   const media = ary.reduce(
     (acc, obj, ind) => {
@@ -138,16 +146,20 @@ const _parseMedia = (json, localData) => {
         case fileTypes.MEDIA_SWF:
           acc.swfs.push(o);
           break;
+        case fileTypes.MEDIA_VIDEO:
+          acc.videos.push(o);
+          break;
       }
       return acc;
     },
-    { images: { desktop: [], olm: [], smartphone: [] }, pdfs: [], swfs: [] }
+    { images: { desktop: [], olm: [], smartphone: [] }, pdfs: [], swfs: [], videos: [] }
   );
   // _checkForSingle(media.pdfs);
   // _checkForSingle(media.swfs);
   // _checkForSingle(media.images.desktop);
   // _checkForSingle(media.images.olm);
   // _checkForSingle(media.images.smartphone);
+  // console.log(media);
   return media;
 };
 
@@ -167,13 +179,14 @@ const parseItem = ({ json, entry_id, clients }) => {
 
   const client_id = json.client_id;
   const localData = { ...clients[client_id][entry_id] };
-
+  // console.log('parseItem localData', localData);
   json.is_flash = localData.is_flash || false;
   json.is_dark_background = localData.is_dark_background || false;
   json.links = localData.links || [];
   json.pdfs = localData.pdfs || [];
   json.swfs = localData.swfs || [];
   json.images = localData.images || [];
+  json.videos = localData.videos || [];
   json.awards = _parseAwards(localData.awards);
   if (localData.has_archive) {
     if (localData.is_flash && user_has_flash) {

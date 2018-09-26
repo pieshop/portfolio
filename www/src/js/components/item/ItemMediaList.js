@@ -10,6 +10,7 @@ import ItemImagePlaceholder from './ItemImagePlaceholder';
 import ItemImageDesktop from './ItemImageDesktop';
 import ItemImageOLM from './ItemImageOLM';
 import ItemImageSmartphone from 'components/item/ItemImageSmartphone';
+import ItemVIDEO from 'components/item/ItemVIDEO';
 
 export default class ItemMediaList extends Component {
   constructor() {
@@ -19,13 +20,14 @@ export default class ItemMediaList extends Component {
 
   render() {
     const { mediaItems = [] } = this.props;
-    const { images = {}, pdfs = [], swfs = [] } = mediaItems;
+    const { images = {}, pdfs = [], swfs = [], videos = [] } = mediaItems;
     // console.log('ItemMediaList', images, pdfs, swfs);
     return (
       <div class="item__media">
         {images && <div class="row">{this.renderImages(images)}</div>}
         {pdfs.length > 0 && <div class="row">{pdfs.map(this.renderItem)}</div>}
         {swfs.length > 0 && <div class="row">{swfs.map(this.renderItem)}</div>}
+        {videos.length > 0 && <div class="row">{videos.map(this.renderItem)}</div>}
       </div>
     );
   }
@@ -73,6 +75,9 @@ export default class ItemMediaList extends Component {
         break;
       case fileTypes.MEDIA_SWF:
         fragment = <ItemSWF key={data.id} style={style} {...data} />;
+        break;
+      case fileTypes.MEDIA_VIDEO:
+        fragment = <ItemVIDEO key={data.id} style={style} {...data} />;
         break;
       default:
     }

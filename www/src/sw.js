@@ -3,7 +3,7 @@
  * Code above injected by webpack plugin addServiceWorker
  */
 const TEST = '{VERSION}';
-const VERSION = 'v1.0.65';
+const VERSION = 'v1.0.66';
 const ASSET_CACHE_VERSION = 'v1.0.0';
 
 workbox.setConfig({ debug: true });
