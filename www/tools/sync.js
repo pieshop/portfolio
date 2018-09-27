@@ -41,14 +41,10 @@ function sync(options) {
       host = cfg.rsync[env].host || '';
       sync_opts = getOptions([src + '/'], dest, host);
       const sync_app = createSync(sync_opts);
-      // dest = path.resolve('.', cfg.rsync[env].assets);
-      // sync_opts_js_css = getOptions(
-      //   [src + '/js', src + '/css', src + '/fonts', src + '/assets/json', src + '/sourcemaps'],
-      //   dest + '/',
-      //   host
-      // );
-      // const sync_js_css = createSync(sync_opts_js_css);
-      return Promise.all([sync_app]);
+      dest = path.resolve('.', cfg.rsync[env].assets);
+      sync_opts_js_css = getOptions([src + '/assets/json'], dest + '/', host);
+      const sync_js_css = createSync(sync_opts_js_css);
+      return Promise.all([sync_app, sync_js_css]);
     }
     case 'live': {
       src = path.resolve('.', cfg[env]);

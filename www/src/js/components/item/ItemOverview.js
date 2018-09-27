@@ -59,6 +59,7 @@ const ItemOverview = ({
                           key={link.label}
                           class="btn btn-sm btn-success mr-2"
                           target="_blank"
+                          rel="noreferrer"
                           href={link.url}
                           title={link.label}
                         >
@@ -89,7 +90,7 @@ const ItemOverview = ({
         <div role="presentation" class="details-seperator" />
         <div class="card-body">
           <p class="text-right">
-            <a target="_blank" href={affiliation_url}>
+            <a target="_blank" rel="noreferrer" href={affiliation_url}>
               {affiliation}
             </a>{' '}
             {year}

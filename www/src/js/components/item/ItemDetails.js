@@ -71,7 +71,7 @@ export default class ItemDetails extends Component {
     let fragment = data.name;
     if (data.url) {
       fragment = (
-        <a class="p-1" key={data.name} href={data.url} target="_blank">
+        <a class="p-1" key={data.name} href={data.url} rel="noreferrer" target="_blank">
           {data.name}
         </a>
       );
