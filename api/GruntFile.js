@@ -24,11 +24,11 @@ module.exports = function (grunt) {
                 dest: '/Users/stephenhamilton/Sites/api.stephenhamilton.co.uk'
             },
             stage: {
-                host: 'stage',
-                dest: '/Users/stephenhamilton/Sites/api.stephenhamilton.co.uk'
+                host: 'ds1512_stephen',
+                dest: '/volume1/web/api.stephenhamilton.co.uk'
             },
             nas       : {
-                host: 'nas_stephen',
+                host: 'ds918_stephen',
                 dest: '/volume1/web/api.stephenhamilton.co.uk'
             }
         }
