@@ -8,7 +8,7 @@ import { getLocalClientData } from 'store/localdata/localDataReducer';
 import { getHasItem, getItem } from 'store/item/itemSelectors';
 import React from 'react';
 import { shouldUpdateItem } from '../../utils/dateValidation';
-
+import { push } from 'connected-react-router';
 export const ITEM_INVALIDATE = 'item.ITEM_INVALIDATE';
 export const ITEM_SELECT = 'item.ITEM_SELECT';
 export const ITEM_REQUEST = 'item.ITEM_REQUEST';
@@ -281,6 +281,7 @@ const fetchItem = ({ state, client_id, entry_id }) => {
       .catch((message) => {
         console.error(message);
         dispatch(invalidateItem(entry_id));
+        dispatch(push('/notfound'));
       });
   };
 };

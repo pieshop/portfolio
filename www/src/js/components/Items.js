@@ -11,6 +11,7 @@ export default class Items extends Component {
       <div class="main_region">
         <Helmet>
           <title>{label + ' Portfolio Items'}</title>
+          <description>{description}</description>
           <meta name="Description" content={description} />
         </Helmet>
         <ul class="list list-unstyled">

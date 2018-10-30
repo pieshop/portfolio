@@ -26,6 +26,9 @@ class About extends Component {
       <div class="main_region" ref={(item) => (this.item_ref = item)} style={opacity}>
         <Helmet>
           <title>About Me</title>
+          <description>
+            Portfolio website for London based interactive developer Stephen Hamilton
+          </description>
           <meta
             name="Description"
             content="Portfolio website for London based interactive developer Stephen Hamilton"

@@ -17,7 +17,7 @@ class Item extends Model
 			$data = self::parse_entry($o);
 			$result = self::jsonResponse($data, 200);
 		} catch (\Exception $e) {
-			$result = self::jsonResponse(['errorText' => $id . ' does not exist.'], 500);
+			$result = self::jsonResponse(['errorText' => $id . ' does not exist.'], 404);
 		}
 		return $result;
 	}

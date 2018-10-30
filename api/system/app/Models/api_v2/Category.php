@@ -72,7 +72,8 @@ class Category extends Model
 
 			$result = self::jsonResponse(['entries' => $items, 'years' => $years->years, 'active_categories' => $categories->active_categories], 200);
 		} else {
-			$result = self::jsonResponse(['entries' => []], 200);
+			$result = self::jsonResponse(['errorText' => 'Category has no entries'], 404);
+//			$result = self::jsonResponse(['entries' => []], 200);
 		}
 		return $result;
 	}

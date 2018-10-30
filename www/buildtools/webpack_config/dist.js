@@ -18,7 +18,7 @@ module.exports = ({ paths, project, environment, replace_options }) => {
     { from: PATHS.src + '/images/', to: PATHS.dist + '/images/' },
     { from: PATHS.src + '/offline/', to: PATHS.dist + '/offline/' },
     { from: PATHS.src + '/sitemap/', to: PATHS.dist + '/sitemap/' },
-    { from: PATHS.src + '/*.{ico,txt,xml,json,png,svg,html}', to: PATHS.dist + '/', flatten: true },
+    { from: PATHS.src + '/*.{ico,txt,xml,json,png,svg,html,php}', to: PATHS.dist + '/', flatten: true },
     // { from: PATHS.src + '/.htaccess', to: PATHS.dist + '/' },
     { from: PATHS.src + '/version.json', to: PATHS.dist + '/version.json' },
   ];

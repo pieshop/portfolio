@@ -8,6 +8,7 @@ import { defaultCategories } from '../../constants/AppConstants';
 import { fetchItemsIfNeeded } from 'store/items/itemsActions';
 import { getSelectedState } from 'store/categories/categoriesSelectors';
 import { invalidateItem } from 'store/item/itemActions';
+import { push } from 'connected-react-router';
 
 export const CATEGORIES_REQUEST = 'categories.CATEGORIES_REQUEST';
 export const CATEGORIES_RECEIVE = 'categories.CATEGORIES_RECEIVE';
@@ -103,6 +104,7 @@ const fetchCategories = (state) => {
       .catch((message) => {
         console.error(message);
         dispatch(invalidateCategories());
+        dispatch(push('/notfound'));
       });
   };
 };

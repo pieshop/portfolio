@@ -6,6 +6,7 @@ import { fetchCategoryItemsService } from 'services/portfolio';
 import { getLocalClientData } from 'store/localdata/localDataReducer';
 import { getHasCategoryItems, getItemsByCategory } from 'store/items/itemsSelectors';
 import { shouldUpdateItems } from '../../utils/dateValidation';
+import { push } from 'connected-react-router';
 
 export const ITEMS_INVALIDATE = 'items.ITEMS_INVALIDATE';
 export const ITEMS_REQUEST = 'items.ITEMS_REQUEST';
@@ -74,6 +75,7 @@ const fetchItems = (state, category) => {
       .catch((message) => {
         console.error(message);
         dispatch(invalidateCategory(category));
+        dispatch(push('/notfound'));
       });
   };
 };

@@ -4,6 +4,7 @@ import Analytics from 'Analytics';
 import About from '../containers/About';
 import Item from '../containers/Item';
 import Categories from '../containers/Categories';
+import PageNotFound from '../containers/PageNotFound';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -21,7 +22,9 @@ const Routes = (
       <Redirect exact from="/" to="/about" />
       <Route path="/:category_id/:client_id/:entry_id" component={Item} />
       <Route path="/:category_id/:year_id" component={Categories} />
-      <Redirect to="/about" />
+      {/*<Route component={PageNotFound} status={404} />*/}
+      <Route component={() => (window.location = '404.php')} />
+      {/*<Redirect to="/about" />*/}
     </Switch>
     <Footer />
   </React.Fragment>

@@ -5,6 +5,9 @@
 • Update NavLinks from hug project - better
 • Sort out critical
 
+Investigate
+https://react-static.js.org/
+
 **Lazy Load images**
 
 [Lazy Load Options](https://www.sitepoint.com/five-techniques-lazy-load-images-website-performance/)

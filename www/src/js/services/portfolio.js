@@ -51,7 +51,7 @@ export const fetchItemService = (opts) => {
   let url = get_item(opts);
   return new Promise((resolve, reject) => {
     request.get(url).end((err, response) => {
-      // console.log('fetchItemService',err,response);
+      console.log('fetchItemService', err, 'STATUS: ', response.error.status);
       if (err) {
         reject(err);
       }
