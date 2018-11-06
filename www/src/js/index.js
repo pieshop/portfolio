@@ -5,7 +5,7 @@ import '../scss/main.scss';
 import 'babel-polyfill';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
-import { render } from 'react-dom';
+import { render, unmountComponentAtNode } from 'react-dom';
 import { get_config } from 'constants/AppConstants';
 import { createBrowserHistory } from 'history';
 import prettyLog from 'utils/prettyLog';
@@ -15,6 +15,13 @@ get_config();
 
 const history = createBrowserHistory();
 const store = configureStore(history);
+
+window.pageNotFound = () => {
+  const element = getElement();
+  unmount(element);
+  element.parentNode.removeChild(element);
+  window.location = '404.php';
+};
 
 const logInfo = () => {
   prettyLog.add([
@@ -30,14 +37,31 @@ const logInfo = () => {
   prettyLog.print();
 };
 
-logInfo();
+const unmount = (element) => {
+  /**
+   * Destroy component
+   */
+  unmountComponentAtNode(element);
+};
+
+const getElement = () => {
+  let element = document.getElementById('app-root');
+  if (!element) {
+    element = document.createElement('div');
+    element.id = 'uploadImage';
+    document.body.appendChild(element);
+  }
+  return element;
+};
 
 const doRender = (Component = App) => {
+  logInfo();
+  const element = getElement();
   render(
     <Provider store={store}>
       <Component history={history} />
     </Provider>,
-    document.getElementById('app-root')
+    element
   );
 };
 

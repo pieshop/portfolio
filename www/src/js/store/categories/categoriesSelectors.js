@@ -19,7 +19,8 @@ export const getAvailableCategories = (state) => {
 };
 
 export const getActiveByYearCategories = (state) => {
-  return state.categories.activeByYear;
+  const year = getSelectedYear(state);
+  return state.categories.activeByYear[year] || {};
 };
 
 export const getSelectedCategoryMetaData = (state) => {

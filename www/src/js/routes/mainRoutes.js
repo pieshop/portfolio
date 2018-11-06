@@ -22,8 +22,8 @@ const Routes = (
       <Redirect exact from="/" to="/about" />
       <Route path="/:category_id/:client_id/:entry_id" component={Item} />
       <Route path="/:category_id/:year_id" component={Categories} />
-      {/*<Route component={PageNotFound} status={404} />*/}
-      <Route component={() => (window.location = '404.php')} />
+      <Route component={PageNotFound} />
+      {/*<Route component={() => (window.location = '404.php')} />*/}
       {/*<Redirect to="/about" />*/}
     </Switch>
     <Footer />

@@ -10,7 +10,15 @@ export default class NavBarLink extends Component {
   }
 
   render() {
-    const { is_active, category_name, category_label, linkClick, to, selectedYear } = this.props;
+    const {
+      is_active = false,
+      category_name,
+      category_label,
+      linkClick,
+      to,
+      selectedYear,
+    } = this.props;
+    // console.log('NavBarLink', category_name, is_active);
     const goto = to.indexOf('{year}') !== -1 ? to.replace('{year}', selectedYear) : to;
     const clz = is_active ? '' : 'disabled';
     return (

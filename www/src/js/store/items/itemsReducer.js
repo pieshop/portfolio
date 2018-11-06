@@ -3,7 +3,7 @@ import { ITEMS_INVALIDATE, ITEMS_RECEIVE, ITEMS_REQUEST } from 'store/items/item
 const initState = {};
 
 const items = (
-  state = { isFetching: false, didInvalidate: false, items: [], activeCategories: {}, years: [] },
+  state = { isFetching: false, didInvalidate: false, items: [], years: [] },
   action
 ) => {
   let nextState = {};
@@ -20,7 +20,6 @@ const items = (
       nextState.isFetching = false;
       nextState.didInvalidate = false;
       nextState.items = action.items;
-      nextState.activeCategories = action.activeCategories;
       nextState.years = action.years;
       nextState.lastUpdated = action.receivedAt;
       return { ...state, ...nextState };

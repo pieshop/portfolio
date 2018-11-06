@@ -1,0 +1,8 @@
+/buildtools/**
+dist/*
+node_modules/*
+**/node_modules/*
+/dev/js/libs/
+/dev/js/utils/webfontloader.js
+/dev/js/utils/quicksettings.js
+/dev/js/utils/shortcut.js

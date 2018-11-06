@@ -36,6 +36,7 @@ export const fetchAllActiveCategoriesByYearService = (opts) => {
 
 export const fetchCategoryItemsService = (opts) => {
   let url = get_category(opts);
+  // console.log('fetchCategoryItemsService', opts, url);
   return new Promise((resolve, reject) => {
     request.get(url).end((err, response) => {
       // console.log('fetchCategoryItemsService', err, response);

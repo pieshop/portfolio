@@ -27,12 +27,10 @@ const requestItems = (category) => {
 };
 
 const receiveItems = (category, json) => {
-  // console.log('receiveItems', category, json);
   return {
     type: ITEMS_RECEIVE,
     category,
     items: json.entries.map((entry) => entry),
-    activeCategories: json.active_categories || {},
     years: json.years || [],
     receivedAt: Date.now(),
   };
@@ -81,11 +79,12 @@ const fetchItems = (state, category) => {
 };
 
 const shouldFetchItems = (state, category) => {
-  // console.log('getHasCategoryItems', getHasCategoryItems(state, category));
+  // console.log('shouldFetchItems', getHasCategoryItems(state));
   if (getHasCategoryItems(state)) {
     const items = getItemsByCategory(state);
+    // console.log('items', items);
     if (items.isFetching) {
-      return true; // TODO : testing refetch if fetching is true
+      return false; // category fetch already in progress
     } else if (shouldUpdateItems(items.lastUpdated)) {
       return true;
     } else {
@@ -98,6 +97,7 @@ const shouldFetchItems = (state, category) => {
 
 export const fetchItemsIfNeeded = ({ selectedCategory, selectedYear }) => {
   return (dispatch, getState) => {
+    // console.log('fetchItemsIfNeeded', selectedCategory, selectedYear);
     const isValidCategory = selectedCategory !== constants.CATEGORY_ABOUT;
     if (isValidCategory && shouldFetchItems(getState(), selectedCategory)) {
       dispatch(fetchItems(getState(), selectedCategory));

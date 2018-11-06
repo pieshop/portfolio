@@ -6,8 +6,14 @@ export const DEFAULT_CATEGORY = 'about';
 export const DEFAULT_ITEM = 'grootdance';
 export const IFRAME = 'IFRAME';
 
+export const APP_START = 'APP_START';
+export const APP_START_COMPLETE = 'APP_START_COMPLETE';
+export const APP_SHUTDOWN = 'APP_SHUTDOWN';
+export const APP_SHUTDOWN_COMPLETE = 'APP_SHUTDOWN_COMPLETE';
+
 let BASE_URL = 'http://mini.portfolio';
-let BASE_API_URL = 'http://mini.api/api/v2';
+// let BASE_API_URL = 'http://mini.api/api/v2';
+let BASE_API_URL = 'http://pieshop.express:3000/api';
 let BASE_ASSETS_URL = 'http://mini.assets/portfolio';
 let BASE_DATA_URL = '';
 export let ANALYTICS_ID = 'http://mini.assets/portfolio';
@@ -37,14 +43,17 @@ export const get_base_assets_path = () => {
 
 export const get_all_active_categories_by_year = ({ isFiltered = true }) => {
   return isFiltered
-    ? BASE_API_URL + '/filtered_active_categories_by_year'
-    : BASE_API_URL + '/active_categories_by_year';
+    ? BASE_API_URL + '/filtered_active_categories'
+    : BASE_API_URL + '/active_categories';
 };
 export const get_categories = () => {
-  let url = BASE_API_URL + '/available_categories/{year}';
-  return url.replace('{year}', DEFAULT_YEAR);
+  let url = BASE_API_URL + '/available_categories';
+  return url;
 };
 
+/**
+ * Getting allyears category items - year filtering done on frontend
+ */
 export const get_category = ({
   isFiltered = true,
   category_id = DEFAULT_CATEGORY,

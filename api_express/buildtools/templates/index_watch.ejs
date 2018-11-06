@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/site/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/site/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/site/favicon-16x16.png">
+    <link rel="manifest" href="/offline/manifest.json">
+    <link rel="mask-icon" href="/images/site/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Tell the browser it's a PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Tell iOS it's a PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="utf-8">
+    <title><%= htmlWebpackPlugin.options.title || 'Webpack App' %></title>
+    <% if (htmlWebpackPlugin.options.baseHref) { %>
+    <base href="<%= htmlWebpackPlugin.options.baseHref %>">
+    <% } else { %>
+    <base href="{base_url}">
+    <% } %>
+    <meta name="google-site-verification" content="kwBXoOqecDqy3SnxoLBCnOJOXFu0mHaebo9ayzv5qss"/>
+    <meta name="msvalidate.01" content="650365136434BECE5180675AA6F40379"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Stephen Hamilton"/>
+    <meta name="Keywords"
+          content="Stephen Hamilton, london, developer, html5, css3, jquery, flash, uk, designer, multimedia, mobile"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+    <script type="application/ld+json">
+        {
+            "@context" : "http://schema.org",
+            "@type" : "WebSite",
+            "name" : "Stephen Hamilton's Portfolio",
+            "alternateName" : "Stephen Hamilton",
+            "url" : "{base_url}"
+        }
+    </script>
+</head>
+<body>
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <noscript><strong>Javascript</strong> is unavailable.</noscript>
+
+    <div id='modal-root'></div>
+    <div id='app-root'></div>
+    <%= htmlWebpackPlugin.files.webpackManifest %>
+    <% for (var key in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[key].entry %>" defer></script>
+    <% } %>
+</body>
+</html>

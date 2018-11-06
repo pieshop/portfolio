@@ -4,25 +4,18 @@ module.exports = function() {
   /**
    * configurable paths
    */
-
-  // const CDN = 'http://assets-6947.kxcdn.com/portfolio'; // KeyCDN
-  // const CDN = 'https://assets.b-cdn.net/portfolio'; // bunnycdn
   const USING_CDN = true;
   const CDN = 'https://cdn.stephenhamilton.co.uk/portfolio'; // bunnycdn using linked hostname with ssl
 
   const WATCH_BASE = 'http://mini.portfolio';
-  const WATCH_API = 'http://mini.api/api/v2';
+  const WATCH_API = 'http://localhost:3010/api';
   const WATCH_ASSETS = 'http://mini.assets/portfolio';
   const WATCH_DATA = '/assets/json/archives';
 
   const MINI_BASE = 'http://mini.portfolio';
-  const MINI_API = 'http://mini.api/api/v2';
+  const MINI_API = 'http://pieshop.express:3010/api';
   const MINI_ASSETS = 'http://mini.assets/portfolio';
   const MINI_DATA = '/assets/json/archives';
-
-  // const MINI_BASE   = 'http://dev.stephenhamilton.co.uk';
-  // const MINI_API    = 'http://api-stage.stephenhamilton.co.uk/api/v2';
-  // const MINI_ASSETS = 'http://assets-stage.stephenhamilton.co.uk/portfolio';
 
   const STAGE_BASE = 'https://stage.stephenhamilton.co.uk';
   const STAGE_API = 'https://api-stage.stephenhamilton.co.uk/api/v2';

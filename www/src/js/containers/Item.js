@@ -36,7 +36,6 @@ class Item extends Component {
       <div class="main_region">
         <Helmet>
           <title>{client_label + ' : ' + title}</title>
-          <description>{description}</description>
           <meta name="Description" content={description} />
         </Helmet>
         <div class="item" ref={(item) => (this.item_ref = item)} style={opacity}>

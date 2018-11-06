@@ -6,6 +6,7 @@ import {
   FILTER_TOGGLE,
   METADATA_UPDATE,
   CATEGORIES_INVALIDATE,
+  CATEGORY_UPDATE,
 } from 'store/categories/categoriesActions';
 import * as constants from 'constants/AppConstants';
 
@@ -64,12 +65,15 @@ const reducer = (state = initState, action) => {
       nextState.isFetching = true;
       nextState.didInvalidate = false;
       return { ...state, ...nextState };
-    case CATEGORIES_RECEIVE:
+    case CATEGORIES_RECEIVE: {
       nextState.isFetching = false;
+      const { selectedYear, activeByYear, categories } = action;
       if (action.categories) {
         nextState.didInvalidate = false;
-        nextState.activeByYear = action.activeByYear;
-        nextState.available = action.categories;
+        nextState.activeByYear = activeByYear;
+        // nextState.available = categories;
+        const activeCategories = activeByYear[selectedYear];
+        nextState.available = updateCategoryAvailabilty(activeCategories, categories, selectedYear);
         nextState.lastUpdated = action.receivedAt;
         /*
          *  Merge arrays then dedupe
@@ -80,24 +84,31 @@ const reducer = (state = initState, action) => {
         nextState.didInvalidate = true;
         return { ...state, ...nextState };
       }
-    case YEAR_SELECT:
-      nextState.available = state.available.map((o, i) => {
-        const category_name = o.category_name;
-        let is_active = false;
-        if (action.year === 'allyears' || category_name === 'about' || category_name === 'all') {
-          is_active = true;
-        } else {
-          is_active = state.activeByYear[category_name] === true;
-        }
-        return { ...o, is_active };
-      });
+    }
+    case CATEGORY_UPDATE: {
+      const { year, activeCategories } = action;
+      nextState.available = updateCategoryAvailabilty(activeCategories, state.available, year);
       return { ...state, ...nextState };
+    }
     default:
       return state;
   }
 };
 export default reducer;
 
+const updateCategoryAvailabilty = (activeCategories, available, year) => {
+  // console.log('updateCategoryAvailabilty', activeCategories, available);
+  return available.map((o, i) => {
+    const category_name = o.category_name;
+    let is_active = false;
+    if (year === 'allyears' || category_name === 'about' || category_name === 'all') {
+      is_active = true;
+    } else {
+      is_active = activeCategories[category_name] === true;
+    }
+    return { ...o, is_active };
+  });
+};
 // Join Without Dupes.
 const joinWithoutDupes = (A = [], B = []) => {
   const a = new Set(A.map((x) => x.category_name));

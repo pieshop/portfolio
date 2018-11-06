@@ -81,13 +81,14 @@ class NavBar extends Component {
   }
 
   renderItems() {
-    const { availableCategories, selectedCategory } = this.props;
+    const { availableCategories } = this.props;
+    // console.log('<><><><><>< NavBar.renderItems : availableCategories', availableCategories);
     return availableCategories.map((o, i) => {
-      return this.renderItem(o, selectedCategory);
+      return this.renderItem(o);
     });
   }
 
-  renderItem(data, selectedCategory) {
+  renderItem(data) {
     // console.log('<><><><><>< NavBar.renderItem : data', data, 'selectedCategory', selectedCategory);
     return (
       <NavBarLink

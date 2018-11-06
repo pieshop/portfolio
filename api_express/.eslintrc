@@ -1,0 +1,76 @@
+{
+    "extends": [
+        //        "eslint:recommended",
+        //        "google"
+        "prettier"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es6": true,
+        "jquery": true,
+        "amd": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            //            "jsx": true,
+            "modules": true,
+            "arrowFunctions": true,
+            "restParams": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "settings": {
+        "import/resolver": "webpack"
+    },
+    "rules": {
+        "prettier/prettier": "error"
+        // Additional, per-project rules...
+        //        "max-len": [ 1,
+        //            {
+        //                "code": 260,
+        //                "tabWidth": 4,
+        //                "ignoreComments": true,
+        //                "ignoreUrls": true
+        //            }
+        //        ],
+        //        "no-unused-vars": 0,
+        //        "no-undef": 0,
+        //        "key-spacing": 0,
+        //        "no-multi-spaces": 0,
+        //        "no-trailing-spaces": 0,
+        //        "spaced-comment": [0, "always"],
+        //        "valid-jsdoc": "off",
+        //        "comma-dangle": "off",
+        //        "comma-spacing": "off",
+        //        "padded-blocks": "off",
+        //        "one-var": "off",
+        //        "linebreak-style": "off",
+        //        "space-before-function-paren": [0, "always"],
+        //        "camelcase" : "off",
+        //        "no-console" : "off",
+        //        "new-cap" : "off",
+        //        "brace-style" : "off",
+        //        "object-curly-spacing" : "off",
+        //        "quotes" : "off",
+        //        "semi": 1,
+        //        "quote-props": [2, "consistent-as-needed"],
+        //        "require-jsdoc": [0, "never"],
+        //        "react/jsx-no-bind": "off",
+        //        "react/jsx-filename-extension": ["off", { "extensions": [".js", ".jsx"] }],
+        //        "react/prefer-stateless-function": "off"
+    },
+    "globals": {
+        "__ENV_IS_BBC__": false,
+        "__DEBUG__": false,
+        "__WATCH__": false,
+        "__SHORTCUTS_ENABLED__": false
+    }
+}

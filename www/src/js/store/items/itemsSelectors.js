@@ -29,7 +29,6 @@ export const getItemsByCategory = (state) => {
       isFetching: true,
       items: [],
       years: [],
-      activeCategories: {},
     }
   );
 };

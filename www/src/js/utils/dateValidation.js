@@ -6,8 +6,18 @@ const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
 const WEEK = 7 * DAY;
 
+const getTime = () => {
+  if (__WATCH__) {
+    console.log('Using 15 second before refetching categories');
+    return 15 * SECOND;
+  }
+  if (!__WATCH__) {
+    return 1 * DAY;
+  }
+};
+
 export const shouldUpdateItem = (lastUpdated) => {
-  const time = __WATCH__ ? 15 * SECOND : 1 * DAY;
+  const time = getTime();
   const stale = Date.now() - time;
   /**
    * should update if lastUpdated timestamp is stale time
@@ -16,7 +26,7 @@ export const shouldUpdateItem = (lastUpdated) => {
 };
 
 export const shouldUpdateItems = (lastUpdated) => {
-  const time = __WATCH__ ? 15 * SECOND : 1 * DAY;
+  const time = getTime();
   const stale = Date.now() - time;
   /**
    * should update if lastUpdated timestamp is stale time
@@ -25,7 +35,7 @@ export const shouldUpdateItems = (lastUpdated) => {
 };
 
 export const shouldUpdateCategories = (lastUpdated) => {
-  const time = __WATCH__ ? 15 * SECOND : 1 * DAY;
+  const time = getTime();
   const stale = Date.now() - time;
   return lastUpdated < stale;
 };
