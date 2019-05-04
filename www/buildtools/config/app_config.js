@@ -10,9 +10,13 @@ module.exports = function() {
   const USING_CDN = true;
   const CDN = 'https://cdn.stephenhamilton.co.uk/portfolio'; // bunnycdn using linked hostname with ssl
 
-  const WATCH_BASE = 'http://mini.portfolio';
-  const WATCH_API = 'http://mini.api/api/v2';
-  const WATCH_ASSETS = 'http://mini.assets/portfolio';
+  // const WATCH_BASE = 'http://mini.portfolio';
+  // const WATCH_API = 'http://mini.api/api/v2';
+  // const WATCH_ASSETS = 'http://mini.assets/portfolio';
+  // const WATCH_DATA = '/assets/json/archives';
+  const WATCH_BASE = 'https://stage.stephenhamilton.co.uk';
+  const WATCH_API = 'https://api-stage.stephenhamilton.co.uk/api/v2';
+  const WATCH_ASSETS = 'https://assets-stage.stephenhamilton.co.uk/portfolio';
   const WATCH_DATA = '/assets/json/archives';
 
   const MINI_BASE = 'http://mini.portfolio';
