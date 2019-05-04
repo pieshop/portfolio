@@ -13,12 +13,12 @@ export const APP_SHUTDOWN_COMPLETE = 'APP_SHUTDOWN_COMPLETE';
 
 let BASE_URL = 'http://mini.portfolio';
 // let BASE_API_URL = 'http://mini.api/api/v2';
-let BASE_API_URL = 'http://pieshop.express:3000/api';
+let BASE_API_URL = 'http://pieshop.express:3010/api';
+// let BASE_API_URL = 'http://localhost:3010/api';
 let BASE_ASSETS_URL = 'http://mini.assets/portfolio';
 let BASE_DATA_URL = '';
 export let ANALYTICS_ID = 'http://mini.assets/portfolio';
 export let ANALYTICS_DOMAIN = 'http://mini.assets/portfolio';
-
 export const get_localdata = () => {
   return require('../../assets/json/data.json');
 };

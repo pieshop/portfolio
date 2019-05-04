@@ -74,9 +74,10 @@ exports.getCategoryEntries = async (categoryId = 'all', yearId = 'allyears', fil
     queryString += 'AND a.entry_issummary = 0 ';
   }
   queryString += 'ORDER BY a.entry_year DESC, a.entry_week DESC';
+  console.log('queryString', queryString);
   try {
     const [rows] = await db.get().query(queryString, [categoryId, yearId]);
-
+    console.log('results', rows);
     /**
      * Get list of active years for category
      */
