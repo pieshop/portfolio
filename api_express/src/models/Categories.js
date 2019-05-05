@@ -77,7 +77,7 @@ exports.getCategoryEntries = async (categoryId = 'all', yearId = 'allyears', fil
   console.log('queryString', queryString);
   try {
     const [rows] = await db.get().query(queryString, [categoryId, yearId]);
-    console.log('results', rows);
+    // console.log('results', rows);
     /**
      * Get list of active years for category
      */
