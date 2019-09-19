@@ -263,23 +263,22 @@ AddType text/vtt                            vtt
     Options +FollowSymlinks
     RewriteEngine On
 
-    ### If the request comes from a bot, set a flag to proxy the request to SEO4Ajax
-    RewriteCond %{ENV:PROXY} !true
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{HTTP_USER_AGENT} (google|bot|spider|pinterest|crawler|archiver|flipboardproxy|mediapartners|facebookexternalhit|insights|quora|whatsapp|slurp) [NC,OR]
-    RewriteCond %{HTTP_USER_AGENT} !(SiteCheckerBot) [NC]
-    RewriteCond %{HTTP:from} .+
-    RewriteRule .* - [E=PROXY:true,E=REQUEST_PATH:%{REQUEST_URI}]
+    # ### If the request comes from a bot, set a flag to proxy the request to SEO4Ajax
+    # RewriteCond %{ENV:PROXY} !true
+    # RewriteCond %{REQUEST_FILENAME} !-f
+    # RewriteCond %{HTTP_USER_AGENT} (google|bot|spider|pinterest|crawler|archiver|flipboardproxy|mediapartners|facebookexternalhit|insights|quora|whatsapp|slurp) [NC,OR]
+    # RewriteCond %{HTTP:from} .+
+    # RewriteRule .* - [E=PROXY:true,E=REQUEST_PATH:%{REQUEST_URI}]
 
-    ### Uncomment the 4 following lines to support the _escaped_fragment_= parameter
+    ### Uncomment the 4 following lines to support the _escaped_fragment_= parameter (useful for testing purposes)
     # RewriteCond %{ENV:PROXY} !true
     # RewriteCond %{REQUEST_FILENAME} !-f
     # RewriteCond %{QUERY_STRING} _escaped_fragment_= [NC]
     # RewriteRule .* - [E=PROXY:true,E=REQUEST_PATH:%{REQUEST_URI}]
 
-    ### Proxy the request to SEO4Ajax
-    RewriteCond %{ENV:PROXY} true
-    RewriteRule ^(.*)$ http://api.seo4ajax.com/91ca4794e1a2e0be5741d7a5bb859c50%{ENV:REQUEST_PATH} [P,QSA,L]
+    # ### Proxy the request to SEO4Ajax
+    # RewriteCond %{ENV:PROXY} true
+    # RewriteRule ^(.*)$ http://api.seo4ajax.com/91ca4794e1a2e0be5741d7a5bb859c50%{ENV:REQUEST_PATH} [P,QSA,L]
 
     ### Otherwise, if the requested file is not present on the server, serve the index file
     # RewriteCond %{REQUEST_FILENAME} !-f
