@@ -23,7 +23,7 @@ const Routes = (
       <Route path="/:category_id/:client_id/:entry_id" component={Item} />
       <Route path="/:category_id/:year_id" component={Categories} />
       {/*<Route component={PageNotFound} />*/}
-      {/*<Route component={() => (window.location = '404.php')} />*/}
+      {/*<Route component={() => (window.location.href = '/404/')} />*/}
       <Redirect to="/about" />
     </Switch>
     <Footer />

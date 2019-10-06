@@ -8,8 +8,8 @@ module.exports = function() {
   const CDN = 'https://cdn.stephenhamilton.co.uk/portfolio'; // bunnycdn using linked hostname with ssl
 
   const WATCH_BASE = 'http://mini.portfolio';
-  // const WATCH_API = 'http://localhost:3010/api';
-  const WATCH_API = 'http://pieshop.express:3010/api';
+  const WATCH_API = 'http://localhost:3010/api';
+  // const WATCH_API = 'http://pieshop.express:3010/api';
   const WATCH_ASSETS = 'http://mini.assets/portfolio';
   const WATCH_DATA = '/assets/json/archives';
 
