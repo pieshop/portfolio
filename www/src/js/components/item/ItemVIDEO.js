@@ -8,8 +8,8 @@ const ItemVIDEO = ({ media_info, media_names, style }) => {
   const { media_name } = media_names;
   // console.log('ItemPDF', media_name, media_path);
   return (
-    <div class={style}>
-      <div class="thumbnail">
+    <div className={style}>
+      <div className="thumbnail">
         <video width={width} height={height} controls>
           <source src={media_path + media_name} type="video/mp4" />
           Your browser does not support the video tag.

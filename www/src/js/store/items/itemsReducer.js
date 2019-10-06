@@ -6,7 +6,7 @@ const items = (
   state = { isFetching: false, didInvalidate: false, items: [], activeCategories: {}, years: [] },
   action
 ) => {
-  let nextState = {};
+  const nextState = {};
   switch (action.type) {
     case ITEMS_INVALIDATE:
       nextState.isFetching = false;
@@ -30,7 +30,7 @@ const items = (
 };
 
 const reducer = (state = initState, action) => {
-  let nextState = {};
+  const nextState = {};
   switch (action.type) {
     case ITEMS_INVALIDATE:
     case ITEMS_RECEIVE:

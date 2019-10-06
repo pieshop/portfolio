@@ -51,7 +51,7 @@ const _isObject = (obj) => {
 };
 
 const getMediaNames = (id, name, media_type, image_type, file_type) => {
-  let o = {};
+  const o = {};
   if (media_type === fileTypes.MEDIA_IMAGE) {
     o.media_name = name;
     switch (image_type) {
@@ -80,7 +80,7 @@ const getMediaNames = (id, name, media_type, image_type, file_type) => {
 const _parseMediaItem = (props) => {
   // prettier-ignore
   const { obj, ind, media_path, client_id, entry_id, is_dark_background, localData, is_single_item } = props;
-  let o = {};
+  const o = {};
   const media_name = _isObject(obj) ? obj.id : obj;
   const { width, height } = obj;
   const splitNameArray = media_name.split('.');
@@ -165,7 +165,7 @@ const _parseMedia = (json, localData) => {
 
 const _parseAwards = (awards = []) => {
   return awards.reduce((acc, val, i) => {
-    let o = { ...val };
+    const o = { ...val };
     o.hasLink = o.link !== '' || o.pdf !== '';
     o.hasAwardCategory = o.award_category !== '';
     acc.push(o);
@@ -174,7 +174,7 @@ const _parseAwards = (awards = []) => {
 };
 
 const parseItem = ({ json, entry_id, clients }) => {
-  let user_has_flash = swfobject.hasFlashPlayerVersion('9.0.18');
+  const user_has_flash = swfobject.hasFlashPlayerVersion('9.0.18');
   // console.log('parseItem', json, 'user_has_flash', user_has_flash);
 
   const client_id = json.client_id;
@@ -212,8 +212,8 @@ const parseItem = ({ json, entry_id, clients }) => {
 };
 
 const _cssToObj = (css) => {
-  let obj = {};
-  let s = css
+  const obj = {};
+  const s = css
     .toLowerCase()
     .replace(/-(.)/g, (m, g) => {
       return g.toUpperCase();
@@ -249,14 +249,14 @@ const fetchItem = ({ state, client_id, entry_id }) => {
   let hasArchive = false;
   const clients = getLocalClientData(state);
   /*
-     *  TODO : Catch errors and show error page
-    */
+   *  TODO : Catch errors and show error page
+   */
 
   if (clients[client_id] && clients[client_id][entry_id]) {
     hasArchive = clients[client_id][entry_id].has_archive;
   }
   // console.log('fetchItem', entry_id, '| hasArchive', hasArchive);
-  let promises = [fetchItemService({ entry_id })];
+  const promises = [fetchItemService({ entry_id })];
   if (hasArchive) {
     promises.push(fetchArchiveItemService({ client_id, entry_id }));
   }

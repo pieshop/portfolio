@@ -10,9 +10,9 @@ export default class Header extends Component {
     // console.log('Loader.render', this.state.isVisible);
     return (
       <header>
-        <div class="page-header text-center">
+        <div className="page-header text-center">
           <h1>
-            Stephen Hamilton <small class="text-muted">Interactive Developer</small>
+            Stephen Hamilton <small className="text-muted">Interactive Developer</small>
           </h1>
         </div>
         <NavBar {...this.props} />

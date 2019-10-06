@@ -26,13 +26,13 @@ export default class ItemImageSmartphone extends Component {
     };
     const src = `${media_path}${media_name}`;
     return (
-      <div class={style}>
-        <div class="thumbnail" ref={(item) => (this.item_ref = item)} style={thumb_style}>
+      <div className={style}>
+        <div className="thumbnail" ref={(item) => (this.item_ref = item)} style={thumb_style}>
           <img
             crossOrigin="anonymous"
             width={width}
             height={height}
-            class="img-fluid img-thumbnail"
+            className="img-fluid img-thumbnail"
             alt={alt}
             src={src}
           />

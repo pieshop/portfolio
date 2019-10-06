@@ -42,9 +42,9 @@ class NavBar extends Component {
     const filter_text = filtered ? 'ON' : 'OFF';
 
     return (
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-light">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark bg-light">
         <button
-          class="navbar-toggler navbar-toggler-right"
+          className="navbar-toggler navbar-toggler-right"
           type="button"
           onClick={this.toggleCollapse}
           data-target=".navbar-collapse"
@@ -53,18 +53,18 @@ class NavBar extends Component {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon" />
+          <span className="navbar-toggler-icon" />
         </button>
-        <div class={'navbar-collapse ' + navClass}>
-          <ul class="navbar-nav mr-auto">{this.renderItems()}</ul>
-          <form class="form-inline my-2 my-lg-0">
+        <div className={'navbar-collapse ' + navClass}>
+          <ul className="navbar-nav mr-auto">{this.renderItems()}</ul>
+          <form className="form-inline my-2 my-lg-0">
             {drop_is_active && (
               <Dropdown category_id={selectedCategory} year_id={selectedYear} yearItems={years} />
             )}
             {drop_is_active && (
               <button
                 type="button"
-                class="btn btn-sm btn-primary navbar-btn filter"
+                className="btn btn-sm btn-primary navbar-btn filter"
                 data-toggle="tooltip"
                 data-placement="left"
                 title=""

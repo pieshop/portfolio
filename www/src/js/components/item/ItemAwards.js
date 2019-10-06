@@ -7,15 +7,15 @@ import ItemAward from 'components/item/ItemAward';
 
 const ItemAwards = ({ awards }) => {
   return (
-    <div class="item__awards">
-      <div class="card mb-3">
-        <div class="card-body block-header">
-          <h3 class="card-title">Awards</h3>
+    <div className="item__awards">
+      <div className="card mb-3">
+        <div className="card-body block-header">
+          <h3 className="card-title">Awards</h3>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <div class="card-deck w-100">
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item flex-column align-items-start">
+            <div className="d-flex w-100 justify-content-between">
+              <div className="card-deck w-100">
                 {awards.map((data, index) => {
                   return <ItemAward key={index} {...data} />;
                 })}

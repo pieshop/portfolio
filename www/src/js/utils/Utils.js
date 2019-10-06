@@ -1,13 +1,12 @@
-'use strict';
 /* eslint-disable no-unused-vars */
 
-let Utils = {
+const Utils = {
   convertIntToWords(n) {
     // http://stackoverflow.com/questions/14766951/convert-digits-into-words-with-javascript
     if (n === 0) {
       return 'zero';
     }
-    let a = [
+    const a = [
       '',
       'one',
       'two',
@@ -29,8 +28,19 @@ let Utils = {
       'eighteen',
       'nineteen',
     ];
-    let b = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-    let g = [
+    const b = [
+      '',
+      '',
+      'twenty',
+      'thirty',
+      'fourty',
+      'fifty',
+      'sixty',
+      'seventy',
+      'eighty',
+      'ninety',
+    ];
+    const g = [
       '',
       'thousand',
       'million',
@@ -43,16 +53,16 @@ let Utils = {
       'octillion',
       'nonillion',
     ];
-    let grp = function grp(n) {
+    const grp = function grp(n) {
       return ('000' + n).substr(-3);
     };
-    let rem = function rem(n) {
+    const rem = function rem(n) {
       return n.substr(0, n.length - 3);
     };
-    let fmt = function fmt(_ref) {
-      let h = _ref[0];
-      let t = _ref[1];
-      let o = _ref[2];
+    const fmt = function fmt(_ref) {
+      const h = _ref[0];
+      const t = _ref[1];
+      const o = _ref[2];
 
       return [
         Number(h) === 0 ? '' : a[h] + ' hundred ',
@@ -60,14 +70,14 @@ let Utils = {
         a[t + o] || a[o],
       ].join('');
     };
-    let cons = function cons(xs) {
+    const cons = function cons(xs) {
       return function(x) {
         return function(g) {
           return x ? [x, (g && ' ' + g) || '', ' ', xs].join('') : xs;
         };
       };
     };
-    let iter = function iter(str) {
+    const iter = function iter(str) {
       return function(i) {
         return function(x) {
           return function(r) {

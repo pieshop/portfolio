@@ -9,61 +9,61 @@ const Footer = (props) => {
   const year = new Date().getFullYear();
 
   return (
-    <footer class="footer">
-      <div class="container-fluid">
-        <div class="seperator" />
-        <ul class="nav nav-pills nav-fill">
-          <li class="nav-item">
+    <footer className="footer">
+      <div className="container-fluid">
+        <div className="seperator" />
+        <ul className="nav nav-pills nav-fill">
+          <li className="nav-item">
             <a
-              class="nav-link"
+              className="nav-link"
               href="mailto:stephenHamilton@mac.com?subject=CV request"
               data-toggle="tooltip"
               data-placement="top"
               title=""
               data-original-title="Request my cv"
             >
-              <span class="icon-mail" />
+              <span className="icon-mail" />
             </a>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <a
-              class="nav-link"
+              className="nav-link"
               href="http://twitter.com/shamiltonUK"
               data-toggle="tooltip"
               data-placement="top"
               title=""
               data-original-title="Twitter"
             >
-              <span class="icon-twitter-square" />
+              <span className="icon-twitter-square" />
             </a>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <a
-              class="nav-link"
+              className="nav-link"
               href="https://github.com/pieshop"
               data-toggle="tooltip"
               data-placement="top"
               title=""
               data-original-title="Github"
             >
-              <span class="icon-github" />
+              <span className="icon-github" />
             </a>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <a
-              class="nav-link"
+              className="nav-link"
               href="http://uk.linkedin.com/in/stephenhamilton"
               data-toggle="tooltip"
               data-placement="top"
               title=""
               data-original-title="Linkedin"
             >
-              <span class="icon-linkedin" />
+              <span className="icon-linkedin" />
             </a>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             <a
-              class="nav-link"
+              className="nav-link"
               href={sitemap_url}
               data-toggle="tooltip"
               data-placement="top"
@@ -71,14 +71,14 @@ const Footer = (props) => {
               target="_blank"
               data-original-title="Sitemap"
             >
-              <span class="icon-sitemap" />
+              <span className="icon-sitemap" />
             </a>
           </li>
         </ul>
-        <div class="seperator" />
-        <div class="row justify-content-center">
-          <div class="col-xs-2 text-center">
-            <span class="text-muted credit">© {year} Stephen Hamilton</span>
+        <div className="seperator" />
+        <div className="row justify-content-center">
+          <div className="col-xs-2 text-center">
+            <span className="text-muted credit">© {year} Stephen Hamilton</span>
           </div>
         </div>
       </div>

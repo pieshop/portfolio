@@ -23,11 +23,11 @@ export default class ItemMediaList extends Component {
     const { images = {}, pdfs = [], swfs = [], videos = [] } = mediaItems;
     // console.log('ItemMediaList', images, pdfs, swfs);
     return (
-      <div class="item__media">
-        {images && <div class="row">{this.renderImages(images)}</div>}
-        {pdfs.length > 0 && <div class="row">{pdfs.map(this.renderItem)}</div>}
-        {swfs.length > 0 && <div class="row">{swfs.map(this.renderItem)}</div>}
-        {videos.length > 0 && <div class="row">{videos.map(this.renderItem)}</div>}
+      <div className="item__media">
+        {images && <div className="row">{this.renderImages(images)}</div>}
+        {pdfs.length > 0 && <div className="row">{pdfs.map(this.renderItem)}</div>}
+        {swfs.length > 0 && <div className="row">{swfs.map(this.renderItem)}</div>}
+        {videos.length > 0 && <div className="row">{videos.map(this.renderItem)}</div>}
       </div>
     );
   }

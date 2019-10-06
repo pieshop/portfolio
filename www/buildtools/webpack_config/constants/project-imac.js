@@ -1,12 +1,16 @@
 const base = require(`./project`);
 const specific = {
   htmlTemplate: 'index_local.ejs',
-  compression : false,
   environment : 'production',
   googleanalytics : false,
   serviceworker : false,
-  baseHref: '//mini.portfolio',
+  baseHref: '//imac.portfolio',
   cdn: '',
+
+  isHashed: false,
+  dropConsole: false,
+  isVendorChunked: true,
+  isManifestInlined: true,
 };
 const merged = {...base, ...specific};
 module.exports = merged;

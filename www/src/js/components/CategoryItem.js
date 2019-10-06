@@ -27,12 +27,12 @@ export default class CategoryItem extends Component {
       awards,
     } = this.props;
     return (
-      <div class="item__container col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <li class="list__item--subtle_shadow">
+      <div className="item__container col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <li className="list__item--subtle_shadow">
           <article id={id}>
             <Link
               to={to}
-              class="item__thumbnail"
+              className="item__thumbnail"
               data-entryid={entry_id}
               data-clientid={client_id}
               title={title}
@@ -53,24 +53,24 @@ export default class CategoryItem extends Component {
               </LazyLoad>
             </Link>
 
-            <div class="item__decoration text-center">
-              <div class="decoration decoration__left" />
-              <div class="decoration decoration__right" />
+            <div className="item__decoration text-center">
+              <div className="decoration decoration__left" />
+              <div className="decoration decoration__right" />
             </div>
 
-            <div class="item__caption text-center">
-              <dl class="dl-vertical">
-                <dt class="project-title">{title}</dt>
-                <dd class="client">{client_label}</dd>
-                <dd class="year">
+            <div className="item__caption text-center">
+              <dl className="dl-vertical">
+                <dt className="project-title">{title}</dt>
+                <dd className="client">{client_label}</dd>
+                <dd className="year">
                   {year}
-                  {awards && <span class="item__awards">{awards.map(this.renderAward)}</span>}
+                  {awards && <span className="item__awards">{awards.map(this.renderAward)}</span>}
                 </dd>
               </dl>
             </div>
           </article>
         </li>
-        <div class="entry-spacer" />
+        <div className="entry-spacer" />
       </div>
     );
   }

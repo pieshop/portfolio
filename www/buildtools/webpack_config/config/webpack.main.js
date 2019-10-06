@@ -27,10 +27,10 @@ exports.setProductionMode = () => ({
 /****************************************
  *         O  U  T  P  U  T
  ***************************************/
-exports.setOutput = ({ jsOut = 'js', pathToDirectory, publicPath, isProduction = false }) => {
+exports.setOutput = ({ jsOut = 'js', pathToDirectory, publicPath, isHashed = false }) => {
   // remove [chunkhash] with webpack-dev-server - https://github.com/webpack/webpack/issues/2393
-  const filename = isProduction ? jsOut + '/[name].[contenthash].js' : jsOut + '/[name].js';
-  const chunkFilename = isProduction ? jsOut + '/[name].[contenthash].js' : jsOut + '/[name].js';
+  const filename = isHashed ? jsOut + '/[name].[chunkhash:8].js' : jsOut + '/[name].js';
+  const chunkFilename = isHashed ? jsOut + '/[name].[chunkhash:8].js' : jsOut + '/[name].js';
   return {
     output: {
       path: pathToDirectory,
@@ -88,16 +88,22 @@ exports.setPerformance = () => ({
 });
 
 /****************************************
+ *        E X T E R N A L S
+ ***************************************/
+exports.setExternals = (opts) => ({
+  externals: {
+    opts,
+  },
+});
+
+/****************************************
  *        S T A T S
  ***************************************/
-exports.setStats = ({
-  errors = true,
-  errorDetails = true,
-  modules = true,
-  reasons = true,
-  warnings = false,
-  colors = true,
-}) => ({
+exports.setStatsPreset = ({ type }) => ({
+  stats: type,
+});
+
+exports.setStats = ({ errors = true, errorDetails = true, modules = true, reasons = true, warnings = false, colors = true }) => ({
   stats: {
     errors,
     errorDetails,

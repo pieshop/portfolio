@@ -11,28 +11,28 @@ export default class ItemAwardModal extends Component {
     const style = open ? { display: 'block' } : {};
     return this.props.open ? (
       <div
-        class={'modal fade ' + visible}
+        className={'modal fade ' + visible}
         tabIndex="-1"
         role="dialog"
         aria-labelledby="largeModal"
         aria-hidden="false"
         style={style}
       >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title">{award_name}</h3>
+        <div className="modal-dialog modal-dialog-centered modal-lg">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h3 className="modal-title">{award_name}</h3>
               <button
                 onClick={() => this.props.onClose()}
                 type="button"
-                class="close"
+                className="close"
                 data-dismiss="modal"
                 aria-label="Close"
               >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <h4>{award_result}</h4>
               <div id="pdf">
                 <embed

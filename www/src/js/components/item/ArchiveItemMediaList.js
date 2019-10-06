@@ -18,7 +18,7 @@ export default class ArchiveItemMediaList extends Component {
 
     // console.log('ArchiveItemMediaList.render', mediaItems);
 
-    return <ul class="item__media">{mediaItems.map(this.renderItem)}</ul>;
+    return <ul className="item__media">{mediaItems.map(this.renderItem)}</ul>;
   }
 
   // getStyle(data) {

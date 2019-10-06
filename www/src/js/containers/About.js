@@ -21,9 +21,9 @@ class About extends Component {
   render() {
     const BASE_ASSETS_URL = get_base_assets_path();
     const opacity = { opacity: 0 };
-    let experience_years = Utils.convertIntToWords(new Date().getFullYear() - 1996);
+    const experience_years = Utils.convertIntToWords(new Date().getFullYear() - 1996);
     return (
-      <div class="main_region" ref={(item) => (this.item_ref = item)} style={opacity}>
+      <div className="main_region" ref={(item) => (this.item_ref = item)} style={opacity}>
         <Helmet>
           <title>About Me</title>
           <meta
@@ -31,21 +31,21 @@ class About extends Component {
             content="Portfolio website for London based interactive developer Stephen Hamilton"
           />
         </Helmet>
-        <div class="aboutme">
-          <div class="row">
-            <div class="col">
-              <div class="page-header">
+        <div className="aboutme">
+          <div className="row">
+            <div className="col">
+              <div className="page-header">
                 <h1>In a nut shell....</h1>
               </div>
             </div>
           </div>
 
-          <div class="row justify-content-around">
-            {/*<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center">*/}
+          <div className="row justify-content-around">
+            {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center">*/}
             {/*<img*/}
             {/*width="740"*/}
             {/*height="740"*/}
-            {/*class="img-fluid img-thumbnail"*/}
+            {/*className="img-fluid img-thumbnail"*/}
             {/*// crossOrigin="anonymous"*/}
             {/*alt="Profile image"*/}
             {/*srcSet={*/}
@@ -59,8 +59,8 @@ class About extends Component {
             {/*src={BASE_ASSETS_URL + '/images/about/profile_1x.jpg'}*/}
             {/*/>*/}
             {/*</div>*/}
-            {/*<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">*/}
-            <div class="col-md-12">
+            {/*<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">*/}
+            <div className="col-md-12">
               <img
                 crossOrigin="anonymous"
                 width="147"
@@ -69,7 +69,7 @@ class About extends Component {
                 alt="Profile image"
                 src={BASE_ASSETS_URL + '/images/about/profile.png'}
               />
-              <p class="lead">
+              <p className="lead">
                 I am a developer with <mark>{experience_years}</mark>
                 years experience (twelve years full-time agency) specialising in interactive
                 development using front-end technologies. I am also a creative problem-solver and
@@ -99,81 +99,87 @@ class About extends Component {
             </div>
           </div>
 
-          <div class="details-seperator" />
+          <div className="details-seperator" />
 
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Technologies</h3>
-              <p class="card-text mb-2 text-muted">
+          <div className="card">
+            <div className="card-body">
+              <h3 className="card-title">Technologies</h3>
+              <p className="card-text mb-2 text-muted">
                 Below is a selection of some of the languages, tools and frameworks I have used over
                 the years.
               </p>
             </div>
 
-            <div class="card-deck">
-              <div class="card card-inverse bg-info mb-3 text-center">
-                <div class="card-body">
-                  <h3 class="card-title text-white">SDKs, Frameworks, Libraries</h3>
+            <div className="card-deck">
+              <div className="card card-inverse bg-info mb-3 text-center">
+                <div className="card-body">
+                  <h3 className="card-title text-white">SDKs, Frameworks, Libraries</h3>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item list-group-item-info text-left">
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item list-group-item-info text-left">
                     React, Redux, Vue, Backbone, MarionetteJS, JQuery
                   </li>
-                  <li class="list-group-item list-group-item-info text-left">
+                  <li className="list-group-item list-group-item-info text-left">
                     JSX, SASS, LESS, Stylus, Bootstrap, Handlebars, Mustache
                   </li>
-                  <li class="list-group-item list-group-item-info text-left">
+                  <li className="list-group-item list-group-item-info text-left">
                     Babel, Webpack, Browserify, RequireJS
                   </li>
-                  <li class="list-group-item list-group-item-info text-left">RobotLegs, PureMVC</li>
-                  <li class="list-group-item list-group-item-info text-left">Laravel</li>
+                  <li className="list-group-item list-group-item-info text-left">
+                    RobotLegs, PureMVC
+                  </li>
+                  <li className="list-group-item list-group-item-info text-left">Laravel</li>
                 </ul>
               </div>
-              <div class="card card-inverse bg-info mb-3 text-center">
-                <div class="card-body">
-                  <h3 class="card-title text-white">Tools</h3>
+              <div className="card card-inverse bg-info mb-3 text-center">
+                <div className="card-body">
+                  <h3 className="card-title text-white">Tools</h3>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item list-group-item-info text-left">
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item list-group-item-info text-left">
                     IntelliJ, Webstorm, XCode, Android Studio, Eclipse, Unity
                   </li>
-                  <li class="list-group-item list-group-item-info text-left">Subversion, Git</li>
-                  <li class="list-group-item list-group-item-info text-left">
+                  <li className="list-group-item list-group-item-info text-left">
+                    Subversion, Git
+                  </li>
+                  <li className="list-group-item list-group-item-info text-left">
                     NPM, Grunt/Gulp, Yeoman, Bower, Ant, Bash
                   </li>
-                  <li class="list-group-item list-group-item-info text-left">
+                  <li className="list-group-item list-group-item-info text-left">
                     Flash Authoring, Photoshop, Illustrator, TexturePacker
                   </li>
-                  <li class="list-group-item list-group-item-info text-left">Jira</li>
+                  <li className="list-group-item list-group-item-info text-left">Jira</li>
                 </ul>
               </div>
             </div>
 
-            <div class="card-deck">
-              <div class="card card-inverse bg-info mb-3 text-center">
-                <div class="card-body">
-                  <h3 class="card-title text-white">Languages</h3>
+            <div className="card-deck">
+              <div className="card card-inverse bg-info mb-3 text-center">
+                <div className="card-body">
+                  <h3 className="card-title text-white">Languages</h3>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item list-group-item-info text-left">
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item list-group-item-info text-left">
                     Javascript, HTML5, CSS3
                   </li>
-                  <li class="list-group-item list-group-item-info text-left">PHP, MySql, C#</li>
-                  <li class="list-group-item list-group-item-info text-left">ActionScript 1-3</li>
+                  <li className="list-group-item list-group-item-info text-left">PHP, MySql, C#</li>
+                  <li className="list-group-item list-group-item-info text-left">
+                    ActionScript 1-3
+                  </li>
                 </ul>
               </div>
-              <div class="card card-inverse bg-info mb-3 text-center">
-                <div class="card-body">
-                  <h3 class="card-title text-white">Online Media</h3>
+              <div className="card card-inverse bg-info mb-3 text-center">
+                <div className="card-body">
+                  <h3 className="card-title text-white">Online Media</h3>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item list-group-item-info text-left">
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item list-group-item-info text-left">
                     3rd party ad serving
                   </li>
-                  <li class="list-group-item list-group-item-info text-left">
+                  <li className="list-group-item list-group-item-info text-left">
                     omniture, doubleclick, tangozebra, mediamind, flashtalking
                   </li>
-                  <li class="list-group-item list-group-item-info text-left">&nbsp;</li>
+                  <li className="list-group-item list-group-item-info text-left">&nbsp;</li>
                 </ul>
               </div>
             </div>

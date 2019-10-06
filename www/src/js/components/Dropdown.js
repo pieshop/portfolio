@@ -27,13 +27,13 @@ export default class Dropdown extends Component {
     const year_label = year_id === constants.ALL_YEARS ? 'All Years' : year_id;
 
     yearItems = yearItems.map((year, i) => {
-      let to = '/' + category_id + '/' + year;
+      const to = '/' + category_id + '/' + year;
       return { year: year, to: to };
     });
     return (
-      <div class={'dropdown year_drop text-center ' + dropClass}>
+      <div className={'dropdown year_drop text-center ' + dropClass}>
         <button
-          class="btn btn-sm btn-info dropdown-toggle"
+          className="btn btn-sm btn-info dropdown-toggle"
           type="button"
           id="dropdownMenuYear"
           onClick={this.toggleHide}
@@ -42,18 +42,18 @@ export default class Dropdown extends Component {
           aria-expanded="false"
         >
           {year_label}
-          <span class="caret" />
+          <span className="caret" />
         </button>
-        <div class={'dropdown-menu ' + dropClass} aria-labelledby="dropdownMenuYear">
+        <div className={'dropdown-menu ' + dropClass} aria-labelledby="dropdownMenuYear">
           <Link
             to={'/' + category_id + '/' + constants.ALL_YEARS}
-            class="dropdown-item date_link"
+            className="dropdown-item date_link"
             data-year={constants.ALL_YEARS}
             onClick={this.handleDropDownLinkClick}
           >
             All Years
           </Link>
-          <div class="dropdown-divider" />
+          <div className="dropdown-divider" />
           {yearItems.map(this.renderItem)}
         </div>
       </div>

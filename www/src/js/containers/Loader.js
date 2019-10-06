@@ -14,7 +14,7 @@ class Loader extends Component {
 
     const isVisible = this.props.isFetching || false;
     // console.log('Loader.render', isVisible);
-    return <Aux>{isVisible && <div class="loading" />}</Aux>;
+    return <Aux>{isVisible && <div className="loading" />}</Aux>;
   }
 }
 

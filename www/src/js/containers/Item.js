@@ -33,12 +33,12 @@ class Item extends Component {
     const linkTo = is_archive ? this.props.match.url : this.props.match.url + '/archive';
     const { title, client_label, description } = this.props.itemData;
     return (
-      <div class="main_region">
+      <div className="main_region">
         <Helmet>
           <title>{client_label + ' : ' + title}</title>
           <meta name="Description" content={description} />
         </Helmet>
-        <div class="item" ref={(item) => (this.item_ref = item)} style={opacity}>
+        <div className="item" ref={(item) => (this.item_ref = item)} style={opacity}>
           <ItemOverview {...itemData} is_archive={is_archive} linkTo={linkTo} />
           {!is_archive && <ItemDetails {...itemData} />}
           {!is_archive && has_awards && <ItemAwards awards={awards} />}

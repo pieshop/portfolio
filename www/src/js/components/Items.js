@@ -8,14 +8,14 @@ export default class Items extends Component {
     const { selectedCategoryMetaData } = this.props;
     const { label, description } = selectedCategoryMetaData;
     return (
-      <div class="main_region">
+      <div className="main_region">
         <Helmet>
           <title>{label + ' Portfolio Items'}</title>
           <meta name="Description" content={description} />
         </Helmet>
-        <ul class="list list-unstyled">
-          <div class="category_region">
-            <div class="row">{this.props.items.map(this.renderItem)}</div>
+        <ul className="list list-unstyled">
+          <div className="category_region">
+            <div className="row">{this.props.items.map(this.renderItem)}</div>
           </div>
         </ul>
       </div>

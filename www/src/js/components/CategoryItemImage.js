@@ -21,13 +21,13 @@ export default class CategoryItemImage extends Component {
       ? thumb_path + 'thumb_2x.jpg 2x,' + thumb_path + 'thumb_1x.jpg 1x'
       : '';
     return (
-      <div class="thumb text-center" ref={(item) => (this.item_ref = item)} style={opacity}>
+      <div className="thumb text-center" ref={(item) => (this.item_ref = item)} style={opacity}>
         {/*<Placeholder is_responsive={is_responsive} />*/}
         <img
           crossOrigin="anonymous"
           width="350"
           height="350"
-          class="img-fluid img-thumbnail"
+          className="img-fluid img-thumbnail"
           alt={title}
           srcSet={srcSet}
           src={thumb_path + 'thumb_1x.jpg'}

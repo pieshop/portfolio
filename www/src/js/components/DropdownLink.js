@@ -14,7 +14,7 @@ export default class DropdownLink extends Component {
     return (
       <Link
         to={this.props.to}
-        class="dropdown-item date_link"
+        className="dropdown-item date_link"
         data-year={this.props.year}
         onClick={this.props.linkClick}
       >

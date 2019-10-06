@@ -25,12 +25,12 @@ export default class ItemAward extends Component {
     const { showModal } = this.state;
     const pdf_url = get_awards_path() + pdf;
     return (
-      <div class="card card-inverse bg-success mb-3">
+      <div className="card card-inverse bg-success mb-3">
         <Fragment>
-          <div class="card-body">
-            <div class="d-flex flex-column w-100 justify-content-between">
+          <div className="card-body">
+            <div className="d-flex flex-column w-100 justify-content-between">
               <h4
-                class="card-title mb-1"
+                className="card-title mb-1"
                 data-toggle="tooltip"
                 data-placement="top"
                 title={award_long_name}
@@ -42,7 +42,7 @@ export default class ItemAward extends Component {
                   {pdf !== '' && (
                     <button
                       onClick={this.handlePDFClick}
-                      class="btn btn-xs btn-primary js-pdf-award mb-2"
+                      className="btn btn-xs btn-primary js-pdf-award mb-2"
                       data-toggle="modal"
                       data-target="#largeModal"
                     >
@@ -50,7 +50,7 @@ export default class ItemAward extends Component {
                     </button>
                   )}
                   {link !== '' && (
-                    <a href={link} target="_blank" class="btn btn-xs btn-primary">
+                    <a href={link} target="_blank" className="btn btn-xs btn-primary">
                       link
                     </a>
                   )}
@@ -60,8 +60,8 @@ export default class ItemAward extends Component {
               )}
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-title">
+          <div className="card-body">
+            <p className="card-title">
               <strong>{award_result}</strong>
               {hasAwardCategory && <small>: {award_category}</small>}
             </p>
@@ -95,9 +95,9 @@ export default class ItemAward extends Component {
     // modal.setAttribute('style', 'display: block');
 
     /*
-         *  TODO : Add Modal
-         *  http://stackoverflow.com/questions/16778336/modal-dialog-without-jquery
-         *  https://github.com/tomloprod/tomloprodModal
-         */
+     *  TODO : Add Modal
+     *  http://stackoverflow.com/questions/16778336/modal-dialog-without-jquery
+     *  https://github.com/tomloprod/tomloprodModal
+     */
   }
 }

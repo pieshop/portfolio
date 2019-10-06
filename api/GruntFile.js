@@ -20,8 +20,12 @@ module.exports = function (grunt) {
          * rsync host is defined in ~/.ssh/config
          */
         rsync: {
+            local: {
+                dest: '/Users/stephenhamilton/Sites/imac.api'
+            },
             mini: {
-                dest: '/Users/stephenhamilton/Sites/api.stephenhamilton.co.uk'
+                host: 'mini',
+                dest: '~/Sites/mini.api'
             },
             stage: {
                 host: 'ds1512_stephen',
@@ -45,9 +49,17 @@ module.exports = function (grunt) {
                 args     : ['--verbose', '--compress', '--archive']
                 //exclude: ['.DS_Store', '.svn', '*.txt','vendor']
             },
+            local: {
+                options: {
+                    src    : '<%= cfg.app %>/',
+                    dest   : '<%= cfg.rsync.local.dest %>',
+                    exclude: ['.DS_Store', '.svn', '*.txt', '.env', 'storage', 'bootstrap/cache']
+                }
+            },
             mini: {
                 options: {
                     src    : '<%= cfg.app %>/',
+                    host   : '<%= cfg.rsync.mini.host %>',
                     dest   : '<%= cfg.rsync.mini.dest %>',
                     exclude: ['.DS_Store', '.svn', '*.txt', '.env', 'storage', 'bootstrap/cache']
                 }
@@ -71,15 +83,19 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('0.deploy_mini', [
+    grunt.registerTask('0.deploy_local', [
+        'rsync:local'
+    ]);
+
+    grunt.registerTask('1.deploy_mini', [
         'rsync:mini'
     ]);
 
-    grunt.registerTask('1.deploy_stage', [
+    grunt.registerTask('2.deploy_stage', [
         'rsync:mini_server'
     ]);
 
-    grunt.registerTask('2.deploy_nas', [
+    grunt.registerTask('3.deploy_nas', [
         'rsync:nas'
     ]);
 };

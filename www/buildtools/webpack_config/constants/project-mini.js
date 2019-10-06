@@ -4,8 +4,13 @@ const specific = {
   environment : 'production',
   googleanalytics : false,
   serviceworker : false,
-  baseHref: '//stage.stephenhamilton.co.uk',
+  baseHref: '//mini.portfolio',
   cdn: '',
+
+  isHashed: false,
+  dropConsole: false,
+  isVendorChunked: true,
+  isManifestInlined: true,
 };
 const merged = {...base, ...specific};
 module.exports = merged;

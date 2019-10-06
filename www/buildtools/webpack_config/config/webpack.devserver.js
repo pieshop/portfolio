@@ -13,6 +13,7 @@ exports.setDevServer = ({ open, host, contentBase, port }) => ({
     hot: true,
     inline: true,
     compress: true,
+    disableHostCheck: true,
     stats: {
       assets: false,
       children: false,

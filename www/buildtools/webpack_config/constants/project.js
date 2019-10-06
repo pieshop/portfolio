@@ -13,6 +13,14 @@ const PROJECT = {
   browserSyncPort: BROWSERSYNC_PORT,
   manifestName: 'manifest',
   vendorName: 'vendor',
+
+  generateHTML: true,
+  generateSourcemaps: true,
+  isHashed: true,
+  dropConsole: true,
+  isVendorChunked: true,
+  isManifestInlined: true,
+  environmentVars: {},
 };
 
 module.exports = PROJECT;

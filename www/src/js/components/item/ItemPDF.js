@@ -8,8 +8,8 @@ const ItemPDF = ({ media_info, media_names, style }) => {
   const { media_name } = media_names;
   // console.log('ItemPDF', media_name, media_path);
   return (
-    <div class={style}>
-      <div class="thumbnail">
+    <div className={style}>
+      <div className="thumbnail">
         <embed
           id="pdf_content"
           src={media_path + media_name + '#view=FitH&scrollbar=1&toolbar=1&navpanes=0'}

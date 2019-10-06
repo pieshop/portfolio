@@ -18,7 +18,7 @@ function sync(options) {
   let sync_opts_js_css = {};
 
   switch (env) {
-    case 'local':
+    case 'imac':
       src = path.resolve('.', cfg[env]);
       dest = path.resolve('.', cfg.rsync[env].dest);
       host = cfg.rsync[env].host || '';
@@ -35,6 +35,17 @@ function sync(options) {
         sync_opts.ssh = true;
       }
       return Promise.all([createSync(sync_opts)]);
+    case 'mini': {
+      src = path.resolve('.', cfg[env]);
+      dest = path.resolve('.', cfg.rsync[env].dest);
+      host = cfg.rsync[env].host || '';
+      sync_opts = getOptions([src + '/'], dest, host);
+      const sync_app = createSync(sync_opts);
+      dest = path.resolve('.', cfg.rsync[env].assets);
+      sync_opts_js_css = getOptions([src + '/assets/json'], dest + '/', host);
+      const sync_js_css = createSync(sync_opts_js_css);
+      return Promise.all([sync_app, sync_js_css]);
+    }
     case 'stage': {
       src = path.resolve('.', cfg[env]);
       dest = path.resolve('.', cfg.rsync[env].dest);

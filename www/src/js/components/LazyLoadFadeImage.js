@@ -35,7 +35,7 @@ export default class LazyLoadFadeImage extends Component {
         style={opacity}
         width={width}
         height={height}
-        class={clazz}
+        className={clazz}
         // crossOrigin="anonymous"
         alt={title}
         srcSet={srcSet}

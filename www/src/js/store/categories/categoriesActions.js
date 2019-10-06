@@ -77,7 +77,7 @@ const receiveCategories = ({ categories, activeByYear }) => {
 };
 
 const parseCategories = (json) => {
-  let cats = json.map((o, i) => {
+  const cats = json.map((o, i) => {
     o.to = '/' + o.category_name + '/{year}';
     return o;
   });

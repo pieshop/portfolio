@@ -14,7 +14,7 @@ export default class NavBarLink extends Component {
     const goto = to.indexOf('{year}') !== -1 ? to.replace('{year}', selectedYear) : to;
     const clz = is_active ? '' : 'disabled';
     return (
-      <li class="nav-item">
+      <li className="nav-item">
         <NavLink
           to={goto}
           isActive={(match, location) =>
@@ -23,7 +23,7 @@ export default class NavBarLink extends Component {
           exact={false}
           // activeStyle={{ color: 'red' }}
           activeClassName="active"
-          class={'nav-link ' + clz}
+          className={'nav-link ' + clz}
           data-id={category_name}
           onClick={linkClick}
         >

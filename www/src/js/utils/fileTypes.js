@@ -55,10 +55,10 @@ export const getImageTypeFromName = (name) => {
   const returnType = is_desktop
     ? IMAGE_DESKTOP
     : is_smartphone
-      ? IMAGE_SMARTPHONE
-      : is_olm
-        ? IMAGE_OLM
-        : IMAGE_DESKTOP;
+    ? IMAGE_SMARTPHONE
+    : is_olm
+    ? IMAGE_OLM
+    : IMAGE_DESKTOP;
   return returnType;
 };
 

@@ -4,9 +4,6 @@ module.exports = function() {
   /**
    * configurable paths
    */
-
-  // const CDN = 'http://assets-6947.kxcdn.com/portfolio'; // KeyCDN
-  // const CDN = 'https://assets.b-cdn.net/portfolio'; // bunnycdn
   const USING_CDN = true;
   const CDN = 'https://cdn.stephenhamilton.co.uk/portfolio'; // bunnycdn using linked hostname with ssl
 
@@ -19,14 +16,15 @@ module.exports = function() {
   const WATCH_ASSETS = 'https://assets-stage.stephenhamilton.co.uk/portfolio';
   const WATCH_DATA = '/assets/json/archives';
 
+  const IMAC_BASE = 'http://imac.portfolio';
+  const IMAC_API = 'http://imac.api/api/v2';
+  const IMAC_ASSETS = 'http://imac.assets/portfolio';
+  const IMAC_DATA = '/assets/json/archives';
+
   const MINI_BASE = 'http://mini.portfolio';
   const MINI_API = 'http://mini.api/api/v2';
   const MINI_ASSETS = 'http://mini.assets/portfolio';
   const MINI_DATA = '/assets/json/archives';
-
-  // const MINI_BASE   = 'http://dev.stephenhamilton.co.uk';
-  // const MINI_API    = 'http://api-stage.stephenhamilton.co.uk/api/v2';
-  // const MINI_ASSETS = 'http://assets-stage.stephenhamilton.co.uk/portfolio';
 
   const STAGE_BASE = 'https://stage.stephenhamilton.co.uk';
   const STAGE_API = 'https://api-stage.stephenhamilton.co.uk/api/v2';
@@ -45,7 +43,8 @@ module.exports = function() {
     build_tools: './buildtools',
     build_templates: './buildtools/templates',
     app: './src',
-    local: './dev',
+    imac: './dev',
+    mini: './dev',
     stage: './stage',
     live: './dist',
     frontend: './frontend',
@@ -61,7 +60,16 @@ module.exports = function() {
         analytics_domain: '',
         sitemap_stylesheet_pattern: 'http://mini.api/vendor',
       },
-      local: {
+      imac: {
+        base: IMAC_BASE,
+        api_base: IMAC_API,
+        assets_base: IMAC_ASSETS,
+        data_base: IMAC_DATA,
+        analytics_id: '',
+        analytics_domain: '',
+        sitemap_stylesheet_pattern: 'http://imac.api/vendor',
+      },
+      mini: {
         base: MINI_BASE,
         api_base: MINI_API,
         assets_base: MINI_ASSETS,
@@ -93,9 +101,14 @@ module.exports = function() {
      * rsync host is defined in ~/.ssh/config
      */
     rsync: {
-      local: {
-        dest: '/Users/stephenhamilton/Sites/mini.stephenhamilton.co.uk',
-        assets: '/Users/stephenhamilton/Sites/assets.stephenhamilton.co.uk/portfolio',
+      imac: {
+        dest: '/Users/stephenhamilton/Sites/imac.portfolio',
+        assets: '/Users/stephenhamilton/Sites/imac.assets/portfolio',
+      },
+      mini: {
+        host: 'mini',
+        dest: '/Users/stephenhamilton/Sites/mini.portfolio',
+        assets: '/Users/stephenhamilton/Sites/mini.assets/portfolio',
       },
       stage: {
         host: 'ds1512_stephen',
@@ -119,7 +132,17 @@ module.exports = function() {
           { search: '{analytics_domain}', replace: '' },
         ],
       },
-      local: {
+      imac: {
+        multiple: [
+          { search: '{base_url}', replace: IMAC_BASE },
+          { search: '{api_base}', replace: IMAC_API },
+          { search: '{assets_base}', replace: IMAC_ASSETS },
+          { search: '{data_base}', replace: IMAC_DATA },
+          { search: '{analytics_id}', replace: '' },
+          { search: '{analytics_domain}', replace: '' },
+        ],
+      },
+      mini: {
         multiple: [
           { search: '{base_url}', replace: MINI_BASE },
           { search: '{api_base}', replace: MINI_API },

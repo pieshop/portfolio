@@ -13,7 +13,7 @@ export default class ArchiveItemSWF extends Component {
     // console.log('ArchiveItemSWF.componentDidMount', this.props);
     let { id, url, flashvars, bgcolor, base, wmode, scale, width, height } = this.props;
     flashvars = flashvars || {};
-    let params = {};
+    const params = {};
     params.bgcolor = bgcolor;
     params.menu = 'true';
     if (base) {
@@ -41,10 +41,10 @@ export default class ArchiveItemSWF extends Component {
   render() {
     const { id } = this.props;
     return (
-      <div class="row">
-        <div class="col text-center swf_outer">
-          <div class="thumbnail">
-            <div class="swf_container">
+      <div className="row">
+        <div className="col text-center swf_outer">
+          <div className="thumbnail">
+            <div className="swf_container">
               <div id={id} />
             </div>
           </div>

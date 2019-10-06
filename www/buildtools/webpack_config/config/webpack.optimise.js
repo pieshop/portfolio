@@ -1,6 +1,6 @@
 /* eslint-disable spaced-comment */
 
-const Uglify = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const safeParser = require('postcss-safe-parser');
@@ -17,6 +17,9 @@ exports.createInlineManifestChunk = (name) => ({
   },
 });
 
+/**
+ * https://webpack.js.org/configuration/optimization/#optimizationnamedmodules
+ */
 exports.nameModuleIDs = (val) => ({
   optimization: {
     namedModules: val,
@@ -28,25 +31,35 @@ exports.createVendorChunk = (name) => ({
     splitChunks: {
       cacheGroups: {
         vendor: {
-          // test: /[\\/]node_modules[\\/]/,
-          test: /node_modules|libs/,
           name,
+          test: /[\\/]node_modules[\\/]/,
           enforce: true,
           chunks: 'all',
+        },
+        styles: {
+          name,
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
         },
       },
     },
   },
 });
 
+/**
+ * Currently screwing up sourcemaps - so cssnano is added to postcss in compileSCSS (https://www.webfoobar.com/node/109)
+ * https://github.com/NMFR/optimize-css-assets-webpack-plugin/issues/91
+ * https://github.com/NMFR/optimize-css-assets-webpack-plugin/issues/101
+ */
 exports.minifyCSS = ({ sourceMap = true }) => ({
   optimization: {
     minimizer: [
       new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
+        cssProcessor: require('cssnano'),
+        cssProcessorPluginOptions: {
           map: sourceMap ? { inline: false, annotation: true } : false,
-          parser: safeParser,
-          discardComments: { removeAll: true },
+          preset: ['default', { discardComments: { removeAll: true } }],
         },
         canPrint: true,
       }),
@@ -54,25 +67,31 @@ exports.minifyCSS = ({ sourceMap = true }) => ({
   },
 });
 
-exports.minifyJS = ({ sourceMap = true }) => ({
+exports.minifyJS = ({ minimize = true, sourceMap = true, dropConsole = false }) => ({
   optimization: {
-    minimize: true,
+    minimize,
     minimizer: [
-      new Uglify({
-        parallel: true,
-        sourceMap: sourceMap,
-        uglifyOptions: {
+      new TerserPlugin({
+        cache: false,
+        parallel: true, // parallel: 4,
+        sourceMap,
+        extractComments: false, // /^\**!|@preserve|@license|@cc_on/i, // true
+        terserOptions: {
           ecma: 5,
-          mangle: true,
+          warnings: false,
+          parse: {},
           compress: {
-            warnings: true,
-            unused: true,
-            dead_code: true,
-            drop_console: false,
+            drop_console: dropConsole,
           },
-          output: {
-            comments: false,
-          },
+          mangle: true, // Note `mangle.properties` is `false` by default.
+          module: false,
+          output: null,
+          toplevel: false,
+          nameCache: null,
+          ie8: false,
+          keep_classnames: undefined,
+          keep_fnames: false,
+          safari10: false,
         },
       }),
     ],

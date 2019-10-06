@@ -39,7 +39,7 @@ const receiveItems = (category, json) => {
 
 const parseItems = (json, category, clients) => {
   json.entries = json.entries.map((obj, i) => {
-    let o = { ...obj };
+    const o = { ...obj };
     const { client_id, entry_id } = o;
     o.to = '/' + category + '/' + client_id + '/' + entry_id;
     o.is_responsive = !!o.is_responsive; // convert 1/0 to true/false
@@ -51,7 +51,7 @@ const parseItems = (json, category, clients) => {
     const itemLocalData = clients[client_id] && clients[client_id][entry_id];
     if (itemLocalData && itemLocalData.awards) {
       o.awards = itemLocalData.awards.reduce((acc, val, i) => {
-        let o = { ...val };
+        const o = { ...val };
         o.id = 'award_' + i;
         acc.push(o);
         return acc;

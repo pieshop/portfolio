@@ -16,30 +16,25 @@ exports.transpileJavaScript = () => ({
           options: {
             cacheDirectory: false,
             presets: [
-              'react',
+              '@babel/preset-react',
               [
-                'env',
+                '@babel/preset-env',
                 {
                   targets: {
+                    node: 'current',
                     browsers: ['>1%'],
                     ie: 11,
                   },
-                  exclude: ['transform-regenerator'],
+                  exclude: [],
                   debug: false,
-                  uglify: true,
-                  useBuiltIns: true,
+                  corejs: '3',
+                  useBuiltIns: 'usage',
                   modules: false,
                   loose: true,
-                  compact: true,
-                  node: 'current',
                 },
               ],
             ],
-            plugins: [
-              'react-html-attrs',
-              'transform-class-properties',
-              'transform-object-rest-spread',
-            ],
+            plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-runtime', '@babel/plugin-transform-modules-commonjs', '@babel/plugin-proposal-class-properties'],
           },
         },
       },
@@ -47,50 +42,52 @@ exports.transpileJavaScript = () => ({
   },
 });
 
-exports.extractCss = ({ cssOut = 'css', isProduction = false }) => ({
+exports.extractCss = ({ cssOut = 'css', isHashed = false }) => ({
   plugins: [
     new MiniCssExtractPlugin({
-      filename: isProduction ? cssOut + '/[name].[contenthash:8].css' : cssOut + '/[name].css',
-      chunkFilename: isProduction ? cssOut + '/[name].[id].[contenthash:8].css' : cssOut + '/[name].[id].css',
+      filename: isHashed ? cssOut + '/[name].[contenthash:8].css' : cssOut + '/[name].css',
+      chunkFilename: isHashed ? cssOut + '/[name].[id].[contenthash:8].css' : cssOut + '/[name].[id].css',
       allChunks: true,
     }),
   ],
 });
 
-exports.compileSCSS = ({ extract = true, isProduction = true, sourceMap = true }) => ({
+exports.compileSCSS = ({ extract = true, sourceMap = true }) => ({
   module: {
     rules: [
       {
         test: /\.(scss|css)$/,
         use: [
-          extract
-            ? MiniCssExtractPlugin.loader
-            : { loader: 'style-loader', options: { sourceMap: sourceMap } },
+          extract ? MiniCssExtractPlugin.loader : { loader: 'style-loader', options: { sourceMap } },
           {
             loader: 'css-loader',
-            options: { minimize: isProduction, sourceMap: sourceMap },
+            options: { sourceMap },
           },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => {
-                return [
-                  require('autoprefixer')({ browsers: 'last 2 versions' }),
-                  // require('autoprefixer')({browsers: ['> 3%']}})
-                ];
-              },
-              sourceMap: sourceMap,
+              // plugins: () => {
+              //   return [require('autoprefixer')({})];
+              // },
+              plugins: () => [
+                require('autoprefixer')({}),
+                require('cssnano')({
+                  preset: ['default', { discardComments: { removeAll: true } }],
+                }),
+              ],
+              sourceMap,
             },
           },
           {
             loader: 'resolve-url-loader',
             options: {
-              sourceMap: sourceMap,
+              sourceMap,
+              removeCR: true,
             },
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: sourceMap },
+            options: { sourceMap },
           },
         ],
       },

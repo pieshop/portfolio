@@ -18,7 +18,7 @@ export const get_localdata = () => {
 };
 
 export const get_config = () => {
-  let config_data = require('../../assets/json/config.json');
+  const config_data = require('../../assets/json/config.json');
   BASE_URL = config_data.base_url;
   BASE_API_URL = config_data.api_base;
   BASE_ASSETS_URL = config_data.assets_base;
@@ -41,7 +41,7 @@ export const get_all_active_categories_by_year = ({ isFiltered = true }) => {
     : BASE_API_URL + '/active_categories_by_year';
 };
 export const get_categories = () => {
-  let url = BASE_API_URL + '/available_categories/{year}';
+  const url = BASE_API_URL + '/available_categories/{year}';
   return url.replace('{year}', DEFAULT_YEAR);
 };
 
@@ -50,19 +50,19 @@ export const get_category = ({
   category_id = DEFAULT_CATEGORY,
   year_id = DEFAULT_YEAR,
 }) => {
-  let url = isFiltered
+  const url = isFiltered
     ? BASE_API_URL + '/filtered_categories/{id}/{year}'
     : BASE_API_URL + '/categories/{id}/{year}';
   return url.replace('{year}', year_id).replace('{id}', category_id);
 };
 
 export const get_item = ({ entry_id }) => {
-  let url = BASE_API_URL + '/item/{id}';
+  const url = BASE_API_URL + '/item/{id}';
   return url.replace('{id}', entry_id);
 };
 
 export const get_image_path = ({ client_id, entry_id }) => {
-  let url = BASE_ASSETS_URL + '/images/portfolio-entries/{client}/{entry}/screengrabs/';
+  const url = BASE_ASSETS_URL + '/images/portfolio-entries/{client}/{entry}/screengrabs/';
   return url.replace('{client}', client_id).replace('{entry}', entry_id);
 };
 
@@ -75,7 +75,7 @@ export const get_awards_path = () => {
 };
 
 export const get_thumb_path = ({ client_id, entry_id }) => {
-  let url = BASE_ASSETS_URL + '/images/portfolio-entries/{client}/{entry}/thumb/';
+  const url = BASE_ASSETS_URL + '/images/portfolio-entries/{client}/{entry}/thumb/';
   return url.replace('{client}', client_id).replace('{entry}', entry_id);
 };
 

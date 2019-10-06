@@ -1,7 +1,7 @@
 import run from './run';
 // import clean from './clean';
-import criticalCSS from './critical';
-import svninfo from './svninfo';
+// import criticalCSS from './critical';
+// import svninfo from './svninfo';
 import update from './update';
 import sync from './sync';
 

@@ -5,6 +5,6 @@ import React from 'react';
 
 const CategoryItemAward = (props) => {
   const title = props.award_long_name + ' ' + props.award_result;
-  return <span class="icon-star" data-toggle="tooltip" data-placement="top" title={title} />;
+  return <span className="icon-star" data-toggle="tooltip" data-placement="top" title={title} />;
 };
 export default CategoryItemAward;

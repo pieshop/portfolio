@@ -13,7 +13,7 @@ export default class ItemSWF extends Component {
     const { swf_data } = this.props;
     const { id, flashvars = {}, url } = swf_data;
     const { width, height, bgcolor, base, wmode = 'direct', scale = 'noscale' } = swf_data;
-    let params = {};
+    const params = {};
     params.bgcolor = bgcolor;
     params.menu = 'true';
     if (base) {
@@ -40,9 +40,9 @@ export default class ItemSWF extends Component {
   render() {
     const { id, style } = this.props;
     return (
-      <div class={style}>
-        <div class="thumbnail">
-          <div class="swf_container">
+      <div className={style}>
+        <div className="thumbnail">
+          <div className="swf_container">
             <div id={id} />
           </div>
         </div>

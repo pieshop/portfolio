@@ -52,8 +52,8 @@ exports.setLoaderOptions = ({ minimise = true, options }) => ({
   ],
 });
 
-exports.cleanDirectory = ({ cleanPaths, cleanOptions }) => ({
-  plugins: [new CleanWebpackPlugin(cleanPaths, cleanOptions)],
+exports.cleanDirectory = ({ cleanOptions }) => ({
+  plugins: [new CleanWebpackPlugin(cleanOptions)],
 });
 
 /**
@@ -96,20 +96,14 @@ exports.writeHTMLtoDisk = ({ outputPath }) => ({
   ],
 });
 
-exports.generateHTML = ({
-  title,
-  template,
-  filename = 'index.html',
-  writeToDisk = false,
-  opts,
-}) => ({
+exports.generateHTML = ({ title, template, filename = 'index.html', writeHTMLToDisk = false, opts }) => ({
   plugins: [
     new HTMLWebpackPlugin({
       title,
       template,
       filename,
       inject: false,
-      alwaysWriteToDisk: writeToDisk,
+      alwaysWriteToDisk: writeHTMLToDisk,
       minify: {
         collapseWhitespace: true,
         preserveLineBreaks: true,
@@ -125,8 +119,17 @@ exports.generateHTML = ({
  * htmlWebpackPlugin.files.chunks = array of chunk info :  key : { size:x, entry:x, hash:x }
  * so I'm checking for the runtimeChunk - name defined in webpack config - and inlining the src
  */
-exports.inlineManifest = () => ({
-  plugins: [new InlineManifestWebpackPlugin('webpackManifest')],
+exports.inlineManifest = (name) => ({
+  plugins: [new InlineManifestWebpackPlugin(name)],
+});
+
+exports.provideJquery = () => ({
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
+  ],
 });
 
 exports.provideReact = () => ({

@@ -14,7 +14,7 @@ export const selectedItem = (state = constants.DEFAULT_ITEM, action) => {
 };
 
 const item = (state = { isFetching: false, didInvalidate: false, item: {} }, action) => {
-  let nextState = {};
+  const nextState = {};
   switch (action.type) {
     case ITEM_INVALIDATE:
       nextState.isFetching = false;
@@ -38,7 +38,7 @@ const item = (state = { isFetching: false, didInvalidate: false, item: {} }, act
 
 const reducer = (state = initState, action) => {
   // console.log('>>>> itemsByID', state, action);
-  let nextState = {};
+  const nextState = {};
   switch (action.type) {
     case ITEM_INVALIDATE:
     case ITEM_RECEIVE:

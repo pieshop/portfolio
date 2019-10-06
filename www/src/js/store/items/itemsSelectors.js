@@ -39,7 +39,7 @@ export const getItemsByCategory = (state) => {
  */
 export const getItemsByYear = (state) => {
   let selectedYear = getSelectedYear(state);
-  let filtered = getFilteredState(state);
+  const filtered = getFilteredState(state);
   // console.log('getItemsByYear', selectedYear, filtered);
   const itemsByCategory = getItemsByCategory(state).items;
   if (selectedYear === constants.ALL_YEARS) {

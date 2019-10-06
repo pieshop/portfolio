@@ -54,7 +54,7 @@ export const filtered = (state = constants.DEFAULT_FILTER, action) => {
 };
 
 const reducer = (state = initState, action) => {
-  let nextState = {};
+  const nextState = {};
   switch (action.type) {
     case CATEGORIES_INVALIDATE:
       nextState.isFetching = false;
@@ -73,7 +73,7 @@ const reducer = (state = initState, action) => {
         nextState.lastUpdated = action.receivedAt;
         /*
          *  Merge arrays then dedupe
-        */
+         */
         // nextState.available = joinWithoutDupes(state.available, action.categories);
         return { ...state, ...nextState };
       } else {

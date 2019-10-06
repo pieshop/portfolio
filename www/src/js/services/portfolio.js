@@ -9,7 +9,7 @@ import {
 } from 'constants/AppConstants';
 
 export const fetchAvailableCategoriesService = () => {
-  let url = get_categories();
+  const url = get_categories();
   return new Promise((resolve, reject) => {
     request.get(url).end((err, response) => {
       // console.log('fetchAvailableCategoriesService',err,response);
@@ -22,7 +22,7 @@ export const fetchAvailableCategoriesService = () => {
 };
 
 export const fetchAllActiveCategoriesByYearService = (opts) => {
-  let url = get_all_active_categories_by_year(opts);
+  const url = get_all_active_categories_by_year(opts);
   return new Promise((resolve, reject) => {
     request.get(url).end((err, response) => {
       // console.log('>>> fetchAllActiveCategoriesByYearService', JSON.parse(response.text));
@@ -35,7 +35,7 @@ export const fetchAllActiveCategoriesByYearService = (opts) => {
 };
 
 export const fetchCategoryItemsService = (opts) => {
-  let url = get_category(opts);
+  const url = get_category(opts);
   return new Promise((resolve, reject) => {
     request.get(url).end((err, response) => {
       // console.log('fetchCategoryItemsService', err, response);
@@ -48,7 +48,7 @@ export const fetchCategoryItemsService = (opts) => {
 };
 
 export const fetchItemService = (opts) => {
-  let url = get_item(opts);
+  const url = get_item(opts);
   return new Promise((resolve, reject) => {
     request.get(url).end((err, response) => {
       // console.log('fetchItemService',err,response);
@@ -62,13 +62,13 @@ export const fetchItemService = (opts) => {
 
 export const fetchArchiveItemService = (opts) => {
   const { client_id, entry_id } = opts;
-  let url = get_archive_path({ client_id: client_id, entry_id: entry_id });
+  const url = get_archive_path({ client_id: client_id, entry_id: entry_id });
   return new Promise((resolve, reject) => {
     request.get(url).end((err, response) => {
       // console.log('getArchiveItem', err, response);
       if (err) {
         // reject(err);
-        reject(null);
+        reject(err);
       } else {
         resolve(JSON.parse(response.text));
       }
