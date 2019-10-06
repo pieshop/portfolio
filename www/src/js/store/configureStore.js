@@ -5,13 +5,14 @@ import reduxfreezeMiddleware from 'redux-freeze';
 import { applyMiddleware, createStore } from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from 'store/rootReducer';
+import createRootReducer from 'store/rootReducer';
 
 /**
  * Add all the state in local storage
  * @param getState
  * @returns {function(*): function(*=)}
  */
+
 const localStorageMiddleware = ({ getState }) => {
   return (next) => (action) => {
     const result = next(action);
@@ -54,7 +55,8 @@ const configureStore = (history) => {
   console.log('reHydrateStore ', initialState);
 
   const store = createStore(
-    connectRouter(history)(rootReducer), // new root reducer with router state
+    createRootReducer(history),
+    // connectRouter(history)(rootReducer), // new root reducer with router state
     initialState,
     composeWithDevTools(applyMiddleware(...middlewares))
   );

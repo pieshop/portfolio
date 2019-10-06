@@ -9,12 +9,14 @@ class App extends Component {
   }
 
   render() {
-    const { history } = this.props;
+    const { history, store } = this.props;
     return (
       <React.Fragment>
         <Loader />
         <div className="container-fluid">
-          <ConnectedRouter history={history}>{Routes}</ConnectedRouter>
+          <ConnectedRouter store={store} history={history}>
+            {Routes}
+          </ConnectedRouter>
         </div>
       </React.Fragment>
     );

@@ -24,7 +24,7 @@ class Categories extends Component {
     // this.props.fetchItemsIfNeeded(category_id, year_id);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     const { category_id, year_id } = this.props.match.params;
     const { category_id: next_category_id, year_id: next_year_id } = nextProps.match.params;
     if (category_id !== next_category_id) {

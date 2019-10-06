@@ -20,7 +20,7 @@ export default class Analytics extends Component {
     this.sendPageChange(this.props.location.pathname, this.props.location.search);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     // When props change, check if the URL has changed or not
     if (
       this.props.location.pathname !== nextProps.location.pathname ||

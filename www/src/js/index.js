@@ -34,7 +34,7 @@ logInfo();
 const doRender = (Component = App) => {
   render(
     <Provider store={store}>
-      <Component history={history} />
+      <Component store={store} history={history} />
     </Provider>,
     document.getElementById('app-root')
   );

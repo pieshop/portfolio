@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 import items from 'store/items/itemsReducer';
 import categories, {
   selectedCategory,
@@ -11,16 +12,16 @@ import localData from 'store/localdata/localDataReducer';
 
 import React from 'react';
 
-const rootReducer = combineReducers({
-  selectedCategory,
-  selectedCategoryMetaData,
-  selectedYear,
-  filtered,
-  selectedItem,
-  localData,
-  itemsByCategory: items,
-  itemsByID: item,
-  categories,
-});
-
-export default rootReducer;
+export default (history) =>
+  combineReducers({
+    router: connectRouter(history),
+    selectedCategory,
+    selectedCategoryMetaData,
+    selectedYear,
+    filtered,
+    selectedItem,
+    localData,
+    itemsByCategory: items,
+    itemsByID: item,
+    categories,
+  });
