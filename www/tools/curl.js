@@ -14,18 +14,22 @@ const cfg = require(CONFIG_DIR + '/app_config.js')();
 
 function curl() {
   const p1 = createRequest(
-    { url: cfg.env.local.api_base + '/sitemap.xml', verbose: true },
-    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/local.xml')
+    { url: cfg.env.imac.api_base + '/sitemap.xml', verbose: true },
+    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/imac.xml')
   );
   const p2 = createRequest(
+    { url: cfg.env.mini.api_base + '/sitemap.xml', verbose: true },
+    fs.createWriteStream(TEMPLATE_DIR + '/sitemap/mini.xml')
+  );
+  const p3 = createRequest(
     { url: cfg.env.stage.api_base + '/sitemap.xml', verbose: true },
     fs.createWriteStream(TEMPLATE_DIR + '/sitemap/stage.xml')
   );
-  const p3 = createRequest(
+  const p4 = createRequest(
     { url: cfg.env.live.api_base + '/sitemap.xml', verbose: true },
     fs.createWriteStream(TEMPLATE_DIR + '/sitemap/live.xml')
   );
-  return Promise.all([p1, p2, p3]);
+  return Promise.all([p1, p2, p3, p4]);
 }
 
 function createRequest(options, file) {

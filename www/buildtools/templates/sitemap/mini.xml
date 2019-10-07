@@ -1,650 +1,596 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="https://api-stage.stephenhamilton.co.uk/vendor/sitemap/styles/xml.xsl" type="text/xsl"?>
+<?xml-stylesheet href="http://mini.api/vendor/sitemap/styles/xml.xsl" type="text/xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/</loc>
+    <loc>http://mini.portfolio/all/</loc>
 		<priority>0.6</priority>
 		<lastmod>2016-05-25T22:00:00+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/web/</loc>
+    <loc>http://mini.portfolio/web/</loc>
 		<priority>0.6</priority>
 		<lastmod>2016-05-25T22:00:00+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/olm/</loc>
+    <loc>http://mini.portfolio/olm/</loc>
 		<priority>0.6</priority>
 		<lastmod>2016-05-25T22:00:00+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/responsive/</loc>
+    <loc>http://mini.portfolio/responsive/</loc>
 		<priority>0.6</priority>
 		<lastmod>2016-05-25T22:00:00+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/game/</loc>
+    <loc>http://mini.portfolio/game/</loc>
 		<priority>0.6</priority>
 		<lastmod>2016-05-25T22:00:00+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/app/</loc>
+    <loc>http://mini.portfolio/app/</loc>
 		<priority>0.6</priority>
 		<lastmod>2016-05-25T22:00:00+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/about</loc>
+    <loc>http://mini.portfolio/about</loc>
 		<priority>0.6</priority>
 		<lastmod>2016-05-25T22:00:00+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/bbc/horriblehistories</loc>
-		<priority>0.63</priority>
-		<lastmod>2018-09-04T16:54:03+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/dcthompson/beanlender</loc>
-		<priority>0.63</priority>
-		<lastmod>2018-09-04T16:24:26+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/bbc/nextstep_v3</loc>
-		<priority>0.63</priority>
-		<lastmod>2018-09-04T16:44:17+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/turner/letscreate</loc>
-		<priority>0.6</priority>
-		<lastmod>2018-09-04T17:03:00+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/bbc/nextstep_v2</loc>
-		<priority>0.6</priority>
-		<lastmod>2018-09-04T16:42:04+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/turner/potw</loc>
-		<priority>0.6</priority>
-		<lastmod>2018-09-04T17:05:14+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/turner/knockknock</loc>
-		<priority>0.6</priority>
-		<lastmod>2018-09-04T17:09:26+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/bbc/nextstepbullying</loc>
-		<priority>0.6</priority>
-		<lastmod>2018-09-04T16:45:24+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/grootdance</loc>
+    <loc>http://mini.portfolio/all/disney/grootdance</loc>
 		<priority>0.6</priority>
 		<lastmod>2017-04-13T21:51:13+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/jollywise/miscellaneous2017</loc>
-		<priority>0.6</priority>
-		<lastmod>2018-09-03T00:00:00+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/starwarsrogue</loc>
+    <loc>http://mini.portfolio/all/disney/starwarsrogue</loc>
 		<priority>0.57</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/bbc/nextstep</loc>
+    <loc>http://mini.portfolio/all/bbc/nextstep</loc>
 		<priority>0.57</priority>
-		<lastmod>2018-09-04T07:23:16+00:00</lastmod>
+		<lastmod>2017-02-20T15:08:25+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/turner/atimevr</loc>
-		<priority>0.57</priority>
-		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/dorybanner</loc>
+    <loc>http://mini.portfolio/all/turner/atimevr</loc>
 		<priority>0.57</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/capamerads</loc>
+    <loc>http://mini.portfolio/all/disney/dorybanner</loc>
 		<priority>0.57</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sony/tinypopartpad</loc>
+    <loc>http://mini.portfolio/all/disney/capamerads</loc>
 		<priority>0.57</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sony/tinypoptv</loc>
+    <loc>http://mini.portfolio/all/sony/tinypopartpad</loc>
 		<priority>0.57</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/universalpictures/dadsarmy</loc>
+    <loc>http://mini.portfolio/all/sony/tinypoptv</loc>
 		<priority>0.57</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/jollywise/miscellaneous2016</loc>
+    <loc>http://mini.portfolio/all/universalpictures/dadsarmy</loc>
 		<priority>0.57</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sky/movies</loc>
+    <loc>http://mini.portfolio/all/jollywise/miscellaneous2016</loc>
+		<priority>0.57</priority>
+		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://mini.portfolio/all/sky/movies</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-22T16:40:14+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/zootopia</loc>
+    <loc>http://mini.portfolio/all/disney/zootopia</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/fandf</loc>
+    <loc>http://mini.portfolio/all/disney/fandf</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sightsavers/donation</loc>
+    <loc>http://mini.portfolio/all/sightsavers/donation</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sky/tbyd</loc>
+    <loc>http://mini.portfolio/all/sky/tbyd</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-22T16:41:41+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/royalmail/tistheseason</loc>
+    <loc>http://mini.portfolio/all/royalmail/tistheseason</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-22T16:40:26+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/vocalink/nomophobia</loc>
+    <loc>http://mini.portfolio/all/vocalink/nomophobia</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sightsavers/imagine2030</loc>
+    <loc>http://mini.portfolio/all/sightsavers/imagine2030</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/tomorrowlandrich</loc>
+    <loc>http://mini.portfolio/all/disney/tomorrowlandrich</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/avengersaou</loc>
+    <loc>http://mini.portfolio/all/disney/avengersaou</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/nickelodeon/nickleap</loc>
+    <loc>http://mini.portfolio/all/nickelodeon/nickleap</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/jollywise/miscellaneous2015</loc>
+    <loc>http://mini.portfolio/all/jollywise/miscellaneous2015</loc>
 		<priority>0.53</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/stm2014</loc>
+    <loc>http://mini.portfolio/all/disney/stm2014</loc>
 		<priority>0.5</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/gotg</loc>
+    <loc>http://mini.portfolio/all/disney/gotg</loc>
 		<priority>0.5</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/universalpictures/mbb</loc>
+    <loc>http://mini.portfolio/all/universalpictures/mbb</loc>
 		<priority>0.5</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/universalpictures/badneighbourspb</loc>
+    <loc>http://mini.portfolio/all/universalpictures/badneighbourspb</loc>
 		<priority>0.5</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/cfuf</loc>
+    <loc>http://mini.portfolio/all/disney/cfuf</loc>
 		<priority>0.5</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/tbpf</loc>
+    <loc>http://mini.portfolio/all/disney/tbpf</loc>
 		<priority>0.5</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/jollywise/miscellaneous2014</loc>
+    <loc>http://mini.portfolio/all/jollywise/miscellaneous2014</loc>
 		<priority>0.5</priority>
 		<lastmod>2017-02-15T14:56:46+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/stm2013</loc>
+    <loc>http://mini.portfolio/all/disney/stm2013</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/samsung/monstersuniversity</loc>
+    <loc>http://mini.portfolio/all/samsung/monstersuniversity</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/planes</loc>
+    <loc>http://mini.portfolio/all/disney/planes</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/monstermatch</loc>
+    <loc>http://mini.portfolio/all/disney/monstermatch</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/cartoonnetwork/unlock2repack</loc>
+    <loc>http://mini.portfolio/all/cartoonnetwork/unlock2repack</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sony/playstationstore</loc>
+    <loc>http://mini.portfolio/all/sony/playstationstore</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/nickelodeon/chimpquiz</loc>
+    <loc>http://mini.portfolio/all/nickelodeon/chimpquiz</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/ironman3it</loc>
+    <loc>http://mini.portfolio/all/disney/ironman3it</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/cartoonnetwork/unlock2</loc>
+    <loc>http://mini.portfolio/all/cartoonnetwork/unlock2</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/cartoonnetwork/bentenrepack</loc>
+    <loc>http://mini.portfolio/all/cartoonnetwork/bentenrepack</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-22T13:34:22+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/jollywise/miscellaneous2013</loc>
+    <loc>http://mini.portfolio/all/jollywise/miscellaneous2013</loc>
 		<priority>0.47</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/stm2012</loc>
+    <loc>http://mini.portfolio/all/disney/stm2012</loc>
 		<priority>0.43</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/cartoonnetwork/benten</loc>
+    <loc>http://mini.portfolio/all/cartoonnetwork/benten</loc>
 		<priority>0.43</priority>
 		<lastmod>2017-02-22T13:27:06+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/disney/epicmickey</loc>
+    <loc>http://mini.portfolio/all/disney/epicmickey</loc>
 		<priority>0.43</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/jollywise/miscellaneous2012</loc>
+    <loc>http://mini.portfolio/all/jollywise/miscellaneous2012</loc>
 		<priority>0.43</priority>
 		<lastmod>2017-02-15T15:05:19+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/betgenius/variousolm</loc>
+    <loc>http://mini.portfolio/all/betgenius/variousolm</loc>
 		<priority>0.4</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/iip</loc>
+    <loc>http://mini.portfolio/all/intel/iip</loc>
 		<priority>0.36</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/gameon2010</loc>
+    <loc>http://mini.portfolio/all/intel/gameon2010</loc>
 		<priority>0.36</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/alico/metlife</loc>
+    <loc>http://mini.portfolio/all/alico/metlife</loc>
 		<priority>0.36</priority>
 		<lastmod>2017-02-09T10:37:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/mastercard/carousel</loc>
+    <loc>http://mini.portfolio/all/mastercard/carousel</loc>
 		<priority>0.34</priority>
 		<lastmod>2017-02-08T14:43:03+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/insidethegamepathfinding</loc>
+    <loc>http://mini.portfolio/all/intel/insidethegamepathfinding</loc>
 		<priority>0.34</priority>
 		<lastmod>2017-02-08T14:43:06+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/insidethegameparticles</loc>
+    <loc>http://mini.portfolio/all/intel/insidethegameparticles</loc>
 		<priority>0.34</priority>
 		<lastmod>2017-02-08T14:43:10+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/mrm/works</loc>
+    <loc>http://mini.portfolio/all/mrm/works</loc>
 		<priority>0.34</priority>
 		<lastmod>2017-02-08T14:43:15+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sky/hdplus</loc>
+    <loc>http://mini.portfolio/all/sky/hdplus</loc>
 		<priority>0.34</priority>
 		<lastmod>2017-02-08T14:27:25+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sky/rcc</loc>
+    <loc>http://mini.portfolio/all/sky/rcc</loc>
 		<priority>0.34</priority>
 		<lastmod>2017-02-09T18:28:19+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/gameon2008</loc>
+    <loc>http://mini.portfolio/all/intel/gameon2008</loc>
 		<priority>0.3</priority>
 		<lastmod>2017-02-14T19:04:24+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/studio</loc>
+    <loc>http://mini.portfolio/all/intel/studio</loc>
 		<priority>0.3</priority>
 		<lastmod>2017-02-09T17:57:03+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/msn/minimiseme</loc>
+    <loc>http://mini.portfolio/all/msn/minimiseme</loc>
 		<priority>0.3</priority>
 		<lastmod>2017-02-09T13:34:46+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sky/hd</loc>
+    <loc>http://mini.portfolio/all/sky/hd</loc>
 		<priority>0.3</priority>
 		<lastmod>2017-02-09T18:22:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/msn/videowall</loc>
+    <loc>http://mini.portfolio/all/msn/videowall</loc>
 		<priority>0.3</priority>
 		<lastmod>2017-02-17T14:01:40+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/microsoft/dynamics</loc>
+    <loc>http://mini.portfolio/all/microsoft/dynamics</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-14T19:55:40+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/msn/videoviral</loc>
+    <loc>http://mini.portfolio/all/msn/videoviral</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-09T18:43:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/ups/widget</loc>
+    <loc>http://mini.portfolio/all/ups/widget</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-09T18:35:53+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/unilever/heartbrand</loc>
+    <loc>http://mini.portfolio/all/unilever/heartbrand</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-15T10:44:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/unilever/kidsfun</loc>
+    <loc>http://mini.portfolio/all/unilever/kidsfun</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-14T19:49:10+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/msn/searchladder</loc>
+    <loc>http://mini.portfolio/all/msn/searchladder</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-14T20:05:25+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/itmgdynamicduo</loc>
+    <loc>http://mini.portfolio/all/intel/itmgdynamicduo</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-09T19:03:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/itmgpcmeltdown</loc>
+    <loc>http://mini.portfolio/all/intel/itmgpcmeltdown</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-09T19:00:52+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/sky/keyhole</loc>
+    <loc>http://mini.portfolio/all/sky/keyhole</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-09T18:33:06+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/microsoft/bcc</loc>
+    <loc>http://mini.portfolio/all/microsoft/bcc</loc>
 		<priority>0.27</priority>
 		<lastmod>2017-02-14T19:59:56+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/vprocompetition</loc>
+    <loc>http://mini.portfolio/all/intel/vprocompetition</loc>
 		<priority>0.23</priority>
 		<lastmod>2017-02-17T14:17:13+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/itmghackerinvasion</loc>
+    <loc>http://mini.portfolio/all/intel/itmghackerinvasion</loc>
 		<priority>0.23</priority>
 		<lastmod>2017-02-09T19:10:33+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/intel/itmgceo</loc>
+    <loc>http://mini.portfolio/all/intel/itmgceo</loc>
 		<priority>0.23</priority>
 		<lastmod>2017-02-17T14:20:54+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/louboutin/boutique</loc>
+    <loc>http://mini.portfolio/all/louboutin/boutique</loc>
 		<priority>0.2</priority>
 		<lastmod>2017-02-14T12:35:19+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/magnum/senses</loc>
+    <loc>http://mini.portfolio/all/magnum/senses</loc>
 		<priority>0.2</priority>
 		<lastmod>2017-02-17T14:08:47+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/msn/searchsupremo</loc>
+    <loc>http://mini.portfolio/all/msn/searchsupremo</loc>
 		<priority>0.2</priority>
 		<lastmod>2017-02-09T19:23:06+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/msn/kittycaper</loc>
+    <loc>http://mini.portfolio/all/msn/kittycaper</loc>
 		<priority>0.2</priority>
 		<lastmod>2017-02-09T19:19:31+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/peugeot/smartnav</loc>
+    <loc>http://mini.portfolio/all/peugeot/smartnav</loc>
 		<priority>0.2</priority>
 		<lastmod>2017-02-17T14:05:41+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/opel/tigra</loc>
+    <loc>http://mini.portfolio/all/opel/tigra</loc>
 		<priority>0.17</priority>
 		<lastmod>2017-02-14T12:49:19+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/hp/f1dynamicscreensaver</loc>
+    <loc>http://mini.portfolio/all/hp/f1dynamicscreensaver</loc>
 		<priority>0.17</priority>
 		<lastmod>2017-02-16T11:14:01+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/nesquik/plus</loc>
+    <loc>http://mini.portfolio/all/nesquik/plus</loc>
 		<priority>0.17</priority>
 		<lastmod>2017-02-14T13:26:29+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/msn/hotmail</loc>
+    <loc>http://mini.portfolio/all/msn/hotmail</loc>
 		<priority>0.17</priority>
 		<lastmod>2017-02-14T13:30:45+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/hp/f1interactivecar</loc>
+    <loc>http://mini.portfolio/all/hp/f1interactivecar</loc>
 		<priority>0.13</priority>
 		<lastmod>2017-02-16T11:13:49+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/microsoft/diver</loc>
+    <loc>http://mini.portfolio/all/microsoft/diver</loc>
 		<priority>0.13</priority>
 		<lastmod>2017-02-14T19:31:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/tourismireland/windows</loc>
+    <loc>http://mini.portfolio/all/tourismireland/windows</loc>
 		<priority>0.13</priority>
 		<lastmod>2017-02-14T13:36:01+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/natwest/advantagegold</loc>
+    <loc>http://mini.portfolio/all/natwest/advantagegold</loc>
 		<priority>0.1</priority>
 		<lastmod>2017-02-17T13:49:34+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/natwest/ag</loc>
+    <loc>http://mini.portfolio/all/natwest/ag</loc>
 		<priority>0.1</priority>
 		<lastmod>2017-02-14T13:42:18+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/nesquik/hopalong</loc>
+    <loc>http://mini.portfolio/all/nesquik/hopalong</loc>
 		<priority>0.07</priority>
 		<lastmod>2017-02-14T13:55:40+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/fidelity/fundsnetwork</loc>
+    <loc>http://mini.portfolio/all/fidelity/fundsnetwork</loc>
 		<priority>0.04</priority>
 		<lastmod>2017-02-16T12:56:54+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/birdseye/continent</loc>
+    <loc>http://mini.portfolio/all/birdseye/continent</loc>
 		<priority>0</priority>
 		<lastmod>2017-02-17T13:50:10+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/mini/avengers</loc>
+    <loc>http://mini.portfolio/all/mini/avengers</loc>
 		<priority>0</priority>
 		<lastmod>2017-02-17T14:30:47+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/telstar/challenge</loc>
+    <loc>http://mini.portfolio/all/telstar/challenge</loc>
 		<priority>0</priority>
 		<lastmod>2017-02-15T10:49:52+00:00</lastmod>
 		<changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://stage.stephenhamilton.co.uk/all/anirog/variousgames</loc>
+    <loc>http://mini.portfolio/all/anirog/variousgames</loc>
 		<priority>0</priority>
 		<lastmod>2017-02-14T14:10:30+00:00</lastmod>
 		<changefreq>monthly</changefreq>

@@ -1,6 +1,6 @@
 {
   "name": "portfolio-react-redux",
-  "version": "1.0.119",
+  "version": "1.0.120",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "deploy_mini": "npx babel-node tools/run deploy --env.target=mini",
     "deploy_stage": "npx babel-node tools/run deploy --env.target=stage",
     "deploy_dist": "npx babel-node tools/run deploy --env.target=live",
-    "update_sitemap_templates": "npx babel-node tools/run curl --env.target=local",
+    "update_sitemap_templates": "npx babel-node tools/run curl --env.target=imac",
     "prettier_format": "node_modules/.bin/prettier --config \"./.prettierrc\" --ignore-path \"./.prettierignore\" --write \"./src/js/**/*.js\"",
     "postbuild_deploy_imac": "babel-node tools/run deploy --env.target=imac",
     "postbuild_deploy_mini": "babel-node tools/run deploy --env.target=mini",

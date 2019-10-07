@@ -85,7 +85,7 @@ module.exports = function() {
         data_base: STAGE_DATA,
         analytics_id: '',
         analytics_domain: '',
-        sitemap_stylesheet_pattern: 'http://api-stage.stephenhamilton.co.uk/vendor',
+        sitemap_stylesheet_pattern: 'https://api-stage.stephenhamilton.co.uk/vendor',
       },
       live: {
         base: DIST_BASE,
