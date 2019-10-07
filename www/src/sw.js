@@ -1,19 +1,18 @@
-
 /**
  * Code above injected by webpack plugin addServiceWorker
  */
-const TEST = '{VERSION}';
-const VERSION = 'v1.0.67';
-const ASSET_CACHE_VERSION = 'v1.0.0';
+const TEST                = "{VERSION}";
+const VERSION             = "v1.0.68";
+const ASSET_CACHE_VERSION = "v1.0.0";
 
 workbox.setConfig({ debug: true });
 workbox.core.setLogLevel(workbox.core.LOG_LEVELS.debug);
 
 workbox.core.setCacheNameDetails({
-  prefix: 'portfolio',
-  suffix: VERSION,
-  precache: 'precache',
-  runtime: 'runtime',
+  prefix  : "portfolio",
+  suffix  : VERSION,
+  precache: "precache",
+  runtime : "runtime"
 });
 
 workbox.skipWaiting();
@@ -30,20 +29,27 @@ workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 const version = self.__precacheManifest.find((o) => {
-  return o.url === 'https://cdn.stephenhamilton.co.uk/portfolio/version.json';
+  return o.url === "https://cdn.stephenhamilton.co.uk/portfolio/version.json";
 });
-console.log('version', version.revision);
+console.log("version", version.revision);
 
 workbox.precaching.precache([
   {
-    url: '/index.html',
-    revision: version.revision,
+    url     : "/index.html",
+    revision: version.revision
   }
 ]);
 
 workbox.googleAnalytics.initialize();
 
 workbox.routing.registerNavigationRoute('/index.html', {});
+
+workbox.routing.registerRoute(
+  /^https:\/\/cdn.stephenhamilton\.co\.uk\/sitemap.xml$/,
+  new workbox.strategies.NetworkFirst({
+    cacheName: "xml-cache-" + ASSET_CACHE_VERSION
+  })
+);
 
 // workbox.routing.registerRoute(
 //   /about/,
@@ -70,32 +76,32 @@ workbox.routing.registerNavigationRoute('/index.html', {});
 workbox.routing.registerRoute(
   /^https:\/\/cdn.stephenhamilton\.co\.uk.*.(?:png|jpg|svg)$/,
   workbox.strategies.cacheFirst({
-    cacheName: 'images-cache-' + ASSET_CACHE_VERSION,
-    plugins: [
+    cacheName: "images-cache-" + ASSET_CACHE_VERSION,
+    plugins  : [
       new workbox.expiration.Plugin({
-        maxEntries: 60,
-        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        maxEntries   : 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
         // purgeOnQuotaError: true,
-      }),
-    ],
+      })
+    ]
   }),
-  'GET'
+  "GET"
 );
 
 workbox.routing.registerRoute(
   /^https:\/\/cdn.stephenhamilton\.co\.uk.*.(?:gif)$/,
-  workbox.strategies.staleWhileRevalidate({ cacheName: 'images-cache-' + ASSET_CACHE_VERSION, plugins: [] }),
-  'GET'
+  workbox.strategies.staleWhileRevalidate({ cacheName: "images-cache-" + ASSET_CACHE_VERSION, plugins: [] }),
+  "GET"
 );
 workbox.routing.registerRoute(
   /^https:\/\/cdn.stephenhamilton\.co\.uk.*.(?:json)$/,
-  workbox.strategies.cacheFirst({ cacheName: 'json-cache-' + ASSET_CACHE_VERSION, plugins: [] }),
-  'GET'
+  workbox.strategies.cacheFirst({ cacheName: "json-cache-" + ASSET_CACHE_VERSION, plugins: [] }),
+  "GET"
 );
 workbox.routing.registerRoute(
   /^https:\/\/api.stephenhamilton\.co\.uk.*$/,
-  workbox.strategies.staleWhileRevalidate({ cacheName: 'api-cache-' + ASSET_CACHE_VERSION, plugins: [] }),
-  'GET'
+  workbox.strategies.staleWhileRevalidate({ cacheName: "api-cache-" + ASSET_CACHE_VERSION, plugins: [] }),
+  "GET"
 );
 
 

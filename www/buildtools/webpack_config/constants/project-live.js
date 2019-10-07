@@ -2,7 +2,7 @@ const base = require(`./project`);
 const specific = {
   environment : 'production',
   googleanalytics : true,
-  serviceworker : true,
+  serviceworker : false,
   baseHref: '//www.stephenhamilton.co.uk',
   cdn: 'https://cdn.stephenhamilton.co.uk/portfolio',
 };

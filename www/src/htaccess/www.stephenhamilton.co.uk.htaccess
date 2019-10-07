@@ -287,6 +287,12 @@ AddType text/vtt                            vtt
 
     # http://www.josscrowcroft.com/2012/code/htaccess-for-html5-history-pushstate-url-routing/
     # html5 pushstate (history) support:
+
+    # If an existing asset or directory is requested go to it as it is
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+    RewriteRule ^ - [L]
+
     RewriteCond %{REQUEST_URI} !sitemap.xml
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
