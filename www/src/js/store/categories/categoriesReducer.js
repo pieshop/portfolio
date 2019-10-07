@@ -80,18 +80,20 @@ const reducer = (state = initState, action) => {
         nextState.didInvalidate = true;
         return { ...state, ...nextState };
       }
-    case YEAR_SELECT:
+    case YEAR_SELECT: {
+      const { year } = action;
       nextState.available = state.available.map((o, i) => {
         const category_name = o.category_name;
         let is_active = false;
         if (action.year === 'allyears' || category_name === 'about' || category_name === 'all') {
           is_active = true;
         } else {
-          is_active = state.activeByYear[category_name] === true;
+          is_active = state.activeByYear[year][category_name] === true;
         }
         return { ...o, is_active };
       });
       return { ...state, ...nextState };
+    }
     default:
       return state;
   }

@@ -24,7 +24,10 @@ class Categories extends Component {
     // this.props.fetchItemsIfNeeded(category_id, year_id);
   }
 
-  componentDidUpdate(nextProps) {
+  /*
+   * TODO : Refactor to get rid of UNSAFE_componentWillReceiveProps
+   */
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { category_id, year_id } = this.props.match.params;
     const { category_id: next_category_id, year_id: next_year_id } = nextProps.match.params;
     if (category_id !== next_category_id) {
