@@ -5,36 +5,36 @@ module.exports = function() {
    * configurable paths
    */
   const USING_CDN = true;
-  const CDN = 'https://cdn.stephenhamilton.co.uk/portfolio'; // bunnycdn using linked hostname with ssl
+  const CDN = '//cdn.stephenhamilton.co.uk/portfolio'; // bunnycdn using linked hostname with ssl
 
-  // const WATCH_BASE = 'http://mini.portfolio';
-  // const WATCH_API = 'http://mini.api/api/v2';
-  // const WATCH_ASSETS = 'http://mini.assets/portfolio';
+  // const WATCH_BASE = '//mini.portfolio';
+  // const WATCH_API = '//mini.api/api/v2';
+  // const WATCH_ASSETS = '//mini.assets/portfolio';
   // const WATCH_DATA = '/assets/json/archives';
-  const WATCH_BASE = 'https://stage.stephenhamilton.co.uk';
-  const WATCH_API = 'https://api-stage.stephenhamilton.co.uk/api/v2';
-  const WATCH_ASSETS = 'https://assets-stage.stephenhamilton.co.uk/portfolio';
+  const WATCH_BASE = '//stage.stephenhamilton.co.uk';
+  const WATCH_API = '//api-stage.stephenhamilton.co.uk/api/v2';
+  const WATCH_ASSETS = '//assets-stage.stephenhamilton.co.uk/portfolio';
   const WATCH_DATA = '/assets/json/archives';
 
-  const IMAC_BASE = 'http://portfolio.imac';
-  const IMAC_API = 'http://api.imac/api/v2';
-  const IMAC_ASSETS = 'http://assets.imac/portfolio';
+  const IMAC_BASE = '//portfolio.imac';
+  const IMAC_API = '//api.imac/api/v2';
+  const IMAC_ASSETS = '//assets.imac/portfolio';
   const IMAC_DATA = '/assets/json/archives';
 
-  const MINI_BASE = 'http://mini.portfolio';
-  const MINI_API = 'http://mini.api/api/v2';
-  const MINI_ASSETS = 'http://mini.assets/portfolio';
+  const MINI_BASE = '//mini.portfolio';
+  const MINI_API = '//mini.api/api/v2';
+  const MINI_ASSETS = '//mini.assets/portfolio';
   const MINI_DATA = '/assets/json/archives';
 
-  const STAGE_BASE = 'https://stage.stephenhamilton.co.uk';
-  const STAGE_API = 'https://api-stage.stephenhamilton.co.uk/api/v2';
-  const STAGE_ASSETS = 'https://assets-stage.stephenhamilton.co.uk/portfolio';
-  const STAGE_DATA = 'https://assets-stage.stephenhamilton.co.uk/portfolio/json/archives';
+  const STAGE_BASE = '//stage.stephenhamilton.co.uk';
+  const STAGE_API = '//api-stage.stephenhamilton.co.uk/api/v2';
+  const STAGE_ASSETS = '//assets-stage.stephenhamilton.co.uk/portfolio';
+  const STAGE_DATA = '//assets-stage.stephenhamilton.co.uk/portfolio/json/archives';
 
-  const DIST_BASE = 'https://www.stephenhamilton.co.uk';
-  const DIST_API = 'https://api.stephenhamilton.co.uk/api/v2';
-  const DIST_ASSETS = USING_CDN ? CDN : 'https://assets.stephenhamilton.co.uk/portfolio';
-  const DIST_DATA = USING_CDN ? CDN + '/json/archives' : 'https://assets.stephenhamilton.co.uk/portfolio/json/archives';
+  const DIST_BASE = '//www.stephenhamilton.co.uk';
+  const DIST_API = '//api.stephenhamilton.co.uk/api/v2';
+  const DIST_ASSETS = USING_CDN ? CDN : '//assets.stephenhamilton.co.uk/portfolio';
+  const DIST_DATA = USING_CDN ? CDN + '/json/archives' : '//assets.stephenhamilton.co.uk/portfolio/json/archives';
 
   const ANALYTICS_ID = 'UA-551725-1';
   const ANALYTICS_DOMAIN = 'stephenhamilton.co.uk';
@@ -58,7 +58,7 @@ module.exports = function() {
         data_base: WATCH_DATA,
         analytics_id: '',
         analytics_domain: '',
-        sitemap_stylesheet_pattern: 'http://mini.api/vendor',
+        sitemap_stylesheet_pattern: '//mini.api/vendor',
       },
       imac: {
         base: IMAC_BASE,
@@ -67,7 +67,7 @@ module.exports = function() {
         data_base: IMAC_DATA,
         analytics_id: '',
         analytics_domain: '',
-        sitemap_stylesheet_pattern: 'http://imac.api/vendor',
+        sitemap_stylesheet_pattern: '//imac.api/vendor',
       },
       mini: {
         base: MINI_BASE,
@@ -76,7 +76,7 @@ module.exports = function() {
         data_base: MINI_DATA,
         analytics_id: '',
         analytics_domain: '',
-        sitemap_stylesheet_pattern: 'http://mini.api/vendor',
+        sitemap_stylesheet_pattern: '//mini.api/vendor',
       },
       stage: {
         base: STAGE_BASE,
@@ -85,7 +85,7 @@ module.exports = function() {
         data_base: STAGE_DATA,
         analytics_id: '',
         analytics_domain: '',
-        sitemap_stylesheet_pattern: 'https://api-stage.stephenhamilton.co.uk/vendor',
+        sitemap_stylesheet_pattern: '//api-stage.stephenhamilton.co.uk/vendor',
       },
       live: {
         base: DIST_BASE,
@@ -94,7 +94,7 @@ module.exports = function() {
         data_base: DIST_DATA,
         analytics_id: ANALYTICS_ID,
         analytics_domain: ANALYTICS_DOMAIN,
-        sitemap_stylesheet_pattern: 'https://api.stephenhamilton.co.uk/vendor',
+        sitemap_stylesheet_pattern: '//api.stephenhamilton.co.uk/vendor',
       },
     },
     /**
