@@ -4,7 +4,7 @@ const specific = {
   environment : 'production',
   googleanalytics : false,
   serviceworker : false,
-  baseHref: '//portfolio.imac',
+  baseHref: '//portfolio.dev.imac',
   cdn: '',
 
   isHashed: false,

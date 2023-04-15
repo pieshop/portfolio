@@ -16,9 +16,9 @@ module.exports = function() {
   const WATCH_ASSETS = '//assets-stage.stephenhamilton.co.uk/portfolio';
   const WATCH_DATA = '/assets/json/archives';
 
-  const IMAC_BASE = '//portfolio.imac';
-  const IMAC_API = '//api.imac/api/v2';
-  const IMAC_ASSETS = '//assets.imac/portfolio';
+  const IMAC_BASE = '//portfolio.dev.imac';
+  const IMAC_API = '//api.dev.imac/api/v2';
+  const IMAC_ASSETS = '//assets.dev.imac/portfolio';
   const IMAC_DATA = '/assets/json/archives';
 
   const MINI_BASE = '//mini.portfolio';
