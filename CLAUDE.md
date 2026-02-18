@@ -1,6 +1,6 @@
 # Portfolio Project — CLAUDE.md
 
-> Codebase analysis as of February 2026. This is a personal portfolio website (~2018 origin) that has been maintained in production. The goal is to upgrade it.
+> Codebase analysis as of February 2026. This is a personal portfolio website (~2018 origin) that has been maintained in production. **Upgrade complete as of February 2026.**
 
 ---
 
@@ -19,23 +19,26 @@ A personal portfolio website for Stephen Hamilton (Interactive Developer) at **s
 ```
 portfolio/
 ├── www/                    # Frontend React/Redux app — the main codebase
-│   ├── src/js/             # Source JavaScript
-│   │   ├── index.js        # Entry point
-│   │   ├── App.js          # Root component
-│   │   ├── Analytics.js    # Google Analytics tracker
-│   │   ├── components/     # ~28 presentational components
-│   │   ├── containers/     # About, Categories, Item, Loader, NavBar
-│   │   ├── constants/      # AppConstants.js (URLs, API endpoints)
-│   │   ├── routes/         # mainRoutes.js (React Router config)
-│   │   ├── store/          # Redux store (categories, items, item, localdata)
-│   │   └── services/       # API service layer (superagent)
+│   ├── src/
+│   │   ├── main.tsx        # Entry point (Vite)
+│   │   ├── App.tsx         # Root component
+│   │   ├── vite-env.d.ts   # Vite env type declarations
+│   │   ├── components/     # ~28 presentational components (TypeScript)
+│   │   ├── containers/     # About, Categories, Item, Loader, NavBar (TypeScript)
+│   │   ├── constants/      # AppConstants.ts (URLs via import.meta.env)
+│   │   ├── routes/         # mainRoutes.tsx (React Router v7)
+│   │   ├── store/          # Redux store (RTK, TypeScript)
+│   │   ├── services/       # API service layer (native fetch)
+│   │   └── utils/          # Utility functions (TypeScript)
 │   ├── src/scss/           # SASS stylesheets
 │   ├── src/assets/         # JSON data, images, fonts, sitemap files
-│   ├── buildtools/         # Webpack config (modular, multi-env)
-│   ├── tools/              # Build scripts (run, deploy, sync, critical)
-│   ├── dist/               # Production build output
-│   ├── stage/              # Staging build output
-│   └── dev/                # Dev build output
+│   ├── index.html          # Vite entry HTML
+│   ├── vite.config.ts      # Vite config with path aliases
+│   ├── tsconfig.json       # TypeScript config
+│   ├── eslint.config.js    # ESLint v9 flat config
+│   ├── .env.development    # Dev env vars (VITE_*)
+│   ├── .env.staging        # Staging env vars
+│   └── .env.production     # Production env vars
 ├── api/                    # Legacy PHP/Laravel API (Grunt-managed, mostly unused)
 └── api_express/            # Newer Express.js API stub (src is empty — only node_modules)
 ```
@@ -47,27 +50,23 @@ portfolio/
 ### Frontend
 | Technology | Version | Notes |
 |---|---|---|
-| React | 16.8.4 | Hooks era but many class components remain |
-| Redux | 4.0.4 | |
-| React Router DOM | 5.1.2 | |
-| connected-react-router | 6.5.2 | |
-| Bootstrap | 4.1.2 | CSS only |
-| GSAP | 2.0.2 | Legacy v2 (not v3) |
-| React Helmet | 5.2.0 | SEO/head management |
-| React Lazyload | 2.3.0 | Image lazy loading |
-| React GA | 2.7.0 | Google Analytics |
-| Superagent | 3.8.3 | HTTP client |
-| Redux Thunk | 2.3.0 | Async middleware |
+| React | 18.3.1 | Functional components, hooks throughout |
+| Redux Toolkit | 2.2.6 | RTK configureStore |
+| React Router | 7.5.3 | Routes/Route/Navigate, useParams/useLocation |
+| Radix UI Themes | 3.2.1 | Replaces Bootstrap |
+| framer-motion | 12.x | Replaces GSAP v2 |
+| react-helmet-async | 2.0.5 | SEO/head management |
+| react-redux | 9.1.2 | useSelector/useDispatch typed hooks |
 
 ### Build Tools
 | Technology | Version | Notes |
 |---|---|---|
-| Webpack | 4.27.1 | Very old — v5 is current |
-| Babel | 7.6.2 | ES6+ transpilation |
-| Node requirement | >8.1.x | Very outdated |
-| ESLint | 5.1.0 | Google style guide |
-| Prettier | 1.18.2 | |
-| Workbox | 3.5.0 | Service Worker (disabled in prod) |
+| Vite | 6.0.1 | Replaces Webpack 4 |
+| TypeScript | 5.4.5 | Full migration from JavaScript |
+| Node requirement | ^22.17.1 | |
+| ESLint | 9.31.0 | Flat config (eslint.config.js) |
+| Prettier | 3.4.1 | |
+| sass-embedded | 1.97.3 | SCSS processing |
 
 ---
 
@@ -83,9 +82,8 @@ portfolio/
 
 ## Redux State Shape
 
-```js
+```ts
 {
-  router,                   // React Router state
   selectedCategory,
   selectedCategoryMetaData,
   selectedYear,
@@ -104,72 +102,97 @@ State is selectively persisted to localStorage via custom middleware.
 
 ## Build Targets
 
-The build system supports multiple environments via Webpack config composition (`buildtools/webpack_config/constants/project-*.js`):
+Environment config via `.env.*` files using `VITE_*` variables:
 
 | Target | Command | Notes |
 |---|---|---|
-| Development | `npm run watch` | HMR, no minification |
-| Local iMac | `npm run imac` | |
-| Staging | `npm run stage` | |
-| Production | `npm run dist` | Minified, versioned |
+| Development | `npm run dev` | Vite HMR dev server |
+| Dev build | `npm run build:dev` | tsc + vite build --mode development |
+| Staging build | `npm run build:stage` | tsc + vite build --mode staging |
+| Production build | `npm run build:prod` | tsc + vite build |
+| Preview | `npm run preview` | Preview production build locally |
 
 Deployment is done via rsync to SSH hosts defined in `~/.ssh/config`.
 
 ---
 
-## Known Issues / Technical Debt
+## Known Issues / Remaining Work
 
-- **Webpack 4** — Current is v5. Major upgrade needed.
-- **React 16** — Current is React 19. No concurrent features, no Server Components.
-- **React Router v5** — Current is v6/v7. Breaking API changes needed.
-- **GSAP v2** — Current is v3. Completely different API.
-- **Bootstrap 4** — Current is v5. Some API differences.
-- **Node requirement `>8.1.x`** — Node 8 has been EOL since 2019.
-- **`UNSAFE_componentWillReceiveProps`** — Used in containers; marked as TODO to refactor.
-- **Service Worker disabled in production** — Was breaking sitemaps; Workbox v3 is ancient.
+- **SCSS `@import` deprecation warnings** — Dart Sass 3.0.0 deprecates `@import`; non-breaking but should migrate to `@use`/`@forward`.
+- **No tests** — No test framework added during migration.
+- **Service Worker** — Still disabled (`sw.js` present but not wired up); could be re-enabled with Vite PWA plugin.
+- **Google Analytics removed** — react-ga was removed; no replacement added.
+- **Flash support removed** — SWF/Flash components deleted; legacy Flash projects will not display media.
 - **`api_express/src/`** — Directory exists but is empty (no source files, only `node_modules`).
 - **`api/`** — Legacy PHP/Laravel API managed by Grunt; appears to be dormant.
-- **Flash support** — Still present for legacy client projects.
-- **`package-lock.json` deleted** — Git shows `D www/package-lock.json` in working tree.
 
 ---
 
 ## Patterns & Architecture Notes
 
 - **Container/Presentational split** — Containers in `containers/`, UI in `components/`.
-- **Selector pattern** — `itemsSelectors.js`, `categoriesSelectors.js` abstract state shape.
-- **Data flow** — AppConstants loads config.json → containers dispatch → reducers → localStorage.
+- **Selector pattern** — `itemsSelectors.ts`, `categoriesSelectors.ts` abstract state shape.
+- **Data flow** — `import.meta.env.VITE_*` → containers dispatch → reducers → localStorage.
 - **Portfolio data** — Lives in `src/assets/json/data.json` and per-project archive JSON files.
-- **Config** — `src/assets/json/config.json` is environment-templated (base URL, GA ID, CDN).
-- **No TypeScript** — Plain JavaScript throughout.
-- **No tests** — No test framework or test files found.
+- **Config** — Environment vars in `.env.development` / `.env.staging` / `.env.production`.
+- **TypeScript** — Full TypeScript migration complete. All source files are `.ts`/`.tsx`.
+- **No tests** — No test framework added.
 
 ---
 
-## Upgrade Goals (TBD)
+## Frontend App Walkthrough (Concise)
 
-To be refined with the user, but likely includes:
-- Upgrade Node, npm/package tooling
-- Upgrade Webpack 4 → 5 (or migrate to Vite)
-- Upgrade React 16 → 18/19
-- Upgrade React Router v5 → v6/v7
-- Upgrade GSAP v2 → v3
-- Refactor class components with `UNSAFE_*` lifecycle methods
-- Re-enable Service Worker properly
-- Consider TypeScript migration
-- Add basic testing
+### Entry + App Shell
 
-## Tech
+- `www/src/main.tsx` wires React, Redux, Helmet, Radix Theme, CSS, logs env flags, and conditionally registers the service worker.
+- `www/src/App.tsx` renders the global `Loader`, then mounts the router.
+- `www/src/routes/mainRoutes.tsx` wraps routes with `Header` and `Footer` and defines `/about`, `/:category_id/:year_id`, and `/:category_id/:client_id/:entry_id`.
 
-I have added a new package.json with new dependencies. Please compare against package-original.json
+### Redux Store + Data Flow
 
-- Node 22.1.0
-- npm 8.1.3
-- Remove Webpack - use Vite
-- Remove Bootstrap - use Radix UI
-- Upgrade eslint to latest
-- Upgrade GSAP to v3
-- Upgrade React to latest - no server components
-- Upgrade React Router to latest
-- Upgrade Redux to latest
-- Migrate to Typescript
+- `www/src/store/configureStore.ts` sets RTK store, persists selected slices to `localStorage`, and rehydrates in production builds.
+- `www/src/store/rootReducer.ts` combines selected category/year/filter, category metadata, item lists, items by id, and local data.
+- `www/src/store/categories/categoriesActions.ts` fetches available categories + active-by-year, updates metadata, and triggers item fetches when category/year/filter changes.
+- `www/src/store/items/itemsActions.ts` fetches category items, enriches entries (paths, booleans, awards), and caches per category.
+- `www/src/store/item/itemActions.ts` fetches a single item, merges local data, parses media (images/pdfs/videos), and optionally loads archive JSON.
+- `www/src/utils/dateValidation.ts` gates refetching (15s dev, 1 day prod).
+
+### Routes + Containers
+
+- `www/src/containers/About.tsx` selects category/year and renders the about content with metadata.
+- `www/src/containers/Categories.tsx` reads params, dispatches category/year selection, and renders `Items`.
+- `www/src/containers/Item.tsx` fetches the item, toggles archive view, and renders overview/details/awards/media.
+- `www/src/containers/Loader.tsx` shows a full-page loader when category items are fetching.
+
+### Components + Styling
+
+- `www/src/components/Header.tsx` and `www/src/components/Footer.tsx` provide the global frame.
+- `www/src/components/Items.tsx` + `www/src/components/CategoryItem.tsx` render item cards with thumbnails and awards.
+- `www/src/components/item/*` renders item details and media (images, PDFs, videos) plus archive iframes.
+- `www/src/css/main.css` is the migrated SCSS bundle with custom properties and site styles.
+
+### API Folders
+
+- `api/` is legacy PHP/Laravel (Grunt-managed, not part of the Vite app).
+- `api_express/` is an empty Express stub (no source in `src/`).
+
+---
+
+## Upgrade Goals (Completed February 2026)
+
+- ✅ Node 22, npm — updated
+- ✅ Webpack 4 → Vite 6
+- ✅ React 16 → React 18 (createRoot, functional components)
+- ✅ React Router v5 → v7 (Routes/Route, hooks)
+- ✅ Redux → Redux Toolkit (configureStore, typed hooks)
+- ✅ GSAP v2 → framer-motion
+- ✅ Bootstrap → Radix UI Themes
+- ✅ Superagent → native fetch
+- ✅ react-lazyload → native `loading="lazy"`
+- ✅ react-helmet → react-helmet-async
+- ✅ Class components → functional components with hooks
+- ✅ `UNSAFE_componentWillReceiveProps` removed
+- ✅ Full TypeScript migration (all `.js` → `.ts`/`.tsx`)
+- ✅ ESLint v9 flat config
+- ✅ Flash/SWF support removed
+- ✅ Environment config via `import.meta.env.VITE_*`

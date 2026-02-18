@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite build:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(npm prune:*)",
+      "Bash(npm why:*)",
+      "Bash(npm uninstall:*)",
+      "WebFetch(domain:www.radix-ui.com)"
+    ]
+  }
+}
