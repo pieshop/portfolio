@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, Card, Grid, Heading, Separator } from '@radix-ui/themes';
 import ItemAward from 'components/item/ItemAward';
 
 interface ItemAwardsProps {
@@ -8,32 +9,29 @@ interface ItemAwardsProps {
 const ItemAwards: React.FC<ItemAwardsProps> = ({ awards }) => {
   return (
     <div className="item__awards">
-      <div className="card mb-3">
-        <div className="card-body block-header">
-          <h3 className="card-title">Awards</h3>
-        </div>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item flex-column align-items-start">
-            <div className="d-flex w-100 justify-content-between">
-              <div className="card-deck w-100">
-                {awards.map((data, index) => (
-                  <ItemAward
-                    key={index}
-                    award_name={data.award_name as string}
-                    award_long_name={data.award_long_name as string}
-                    award_result={data.award_result as string}
-                    award_category={data.award_category as string}
-                    link={(data.link as string) || ''}
-                    pdf={(data.pdf as string) || ''}
-                    hasLink={Boolean(data.hasLink)}
-                    hasAwardCategory={Boolean(data.hasAwardCategory)}
-                  />
-                ))}
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <Card style={{ marginBottom: 'var(--space-4)' }}>
+        <Box p="4" className="block-header">
+          <Heading size="4">Awards</Heading>
+        </Box>
+        <Separator size="4" />
+        <Box p="4">
+          <Grid columns={{ initial: '1', md: '2' }} gap="3">
+            {awards.map((data, index) => (
+              <ItemAward
+                key={index}
+                award_name={data.award_name as string}
+                award_long_name={data.award_long_name as string}
+                award_result={data.award_result as string}
+                award_category={data.award_category as string}
+                link={(data.link as string) || ''}
+                pdf={(data.pdf as string) || ''}
+                hasLink={Boolean(data.hasLink)}
+                hasAwardCategory={Boolean(data.hasAwardCategory)}
+              />
+            ))}
+          </Grid>
+        </Box>
+      </Card>
     </div>
   );
 };

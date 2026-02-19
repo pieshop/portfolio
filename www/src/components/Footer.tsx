@@ -1,49 +1,48 @@
-import React from 'react';
-import { get_sitemap } from 'constants/AppConstants';
+import React from "react";
+import { Box, Flex, IconButton, Text } from "@radix-ui/themes";
+import { get_sitemap } from "constants/AppConstants";
 
 const Footer: React.FC = () => {
   const sitemap_url = get_sitemap();
   const year = new Date().getFullYear();
 
   return (
-    <footer className="footer">
-      <div className="container-fluid">
-        <div className="seperator" />
-        <ul className="nav nav-pills nav-fill">
-          <li className="nav-item">
-            <a className="nav-link" href="mailto:stephenHamilton@mac.com?subject=CV request" title="Request my cv">
-              <span className="icon-mail" />
+    <Box pt="9" mt="auto">
+      <footer className="footer">
+        <div className="seperator"/>
+        <Flex justify="center" gap="6" py="5">
+          <IconButton asChild variant="ghost" size="3" aria-label="Request my CV">
+            <a href="mailto:stephenHamilton@mac.com?subject=CV request">
+              <span className="icon-mail"/>
             </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="http://twitter.com/shamiltonUK" title="Twitter">
-              <span className="icon-twitter-square" />
+          </IconButton>
+          <IconButton asChild variant="ghost" size="3" aria-label="Twitter">
+            <a href="http://twitter.com/shamiltonUK" target="_blank" rel="noreferrer">
+              <span className="icon-twitter-square"/>
             </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="https://github.com/pieshop" title="Github">
-              <span className="icon-github" />
+          </IconButton>
+          <IconButton asChild variant="ghost" size="3" aria-label="Github">
+            <a href="https://github.com/pieshop" target="_blank" rel="noreferrer">
+              <span className="icon-github"/>
             </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="http://uk.linkedin.com/in/stephenhamilton" title="Linkedin">
-              <span className="icon-linkedin" />
+          </IconButton>
+          <IconButton asChild variant="ghost" size="3" aria-label="LinkedIn">
+            <a href="http://uk.linkedin.com/in/stephenhamilton" target="_blank" rel="noreferrer">
+              <span className="icon-linkedin"/>
             </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href={sitemap_url} target="_blank" rel="noreferrer" title="Sitemap">
-              <span className="icon-sitemap" />
+          </IconButton>
+          <IconButton asChild variant="ghost" size="3" aria-label="Sitemap">
+            <a href={sitemap_url} target="_blank" rel="noreferrer">
+              <span className="icon-sitemap"/>
             </a>
-          </li>
-        </ul>
-        <div className="seperator" />
-        <div className="row justify-content-center">
-          <div className="col-xs-2 text-center">
-            <span className="text-muted credit">© {year} Stephen Hamilton</span>
-          </div>
-        </div>
-      </div>
-    </footer>
+          </IconButton>
+        </Flex>
+        <div className="seperator"/>
+        <Flex justify="center" py="5">
+          <Text size="1" color="gray">© {year} Stephen Hamilton</Text>
+        </Flex>
+      </footer>
+    </Box>
   );
 };
 

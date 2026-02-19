@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, Card, Flex, Heading, Separator, Text } from '@radix-ui/themes';
 
 interface Framework {
   name: string;
@@ -26,7 +27,7 @@ const ItemDetails: React.FC<ItemDetailsProps> = ({
   const renderFramework = (data: Framework) => {
     if (data.url) {
       return (
-        <a className="p-1" key={data.name} href={data.url} rel="noreferrer" target="_blank">
+        <a key={data.name} href={data.url} rel="noreferrer" target="_blank" style={{ padding: '0 0.25rem' }}>
           {data.name}
         </a>
       );
@@ -36,49 +37,50 @@ const ItemDetails: React.FC<ItemDetailsProps> = ({
 
   return (
     <div className="item__details">
-      <div className="card mb-3">
-        <div className="card-body block-header">
-          <h3 className="card-title">Details</h3>
-        </div>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item flex-column align-items-start">
-            <div className="d-flex w-100 justify-content-between">
-              <h5 className="mb-1">Client</h5>
-              <span>{client_label}</span>
-            </div>
-          </li>
-          <li className="list-group-item flex-column align-items-start">
-            <div className="d-flex w-100 justify-content-between">
-              <h5 className="mb-1">Tech</h5>
-              <span>{technologies}</span>
-            </div>
-          </li>
+      <Card style={{ marginBottom: 'var(--space-4)' }}>
+        <Box p="4" className="block-header">
+          <Heading size="4">Details</Heading>
+        </Box>
+        <Box>
+          <Separator size="4" />
+          <Flex justify="between" align="center" px="4" py="2">
+            <Text weight="bold">Client</Text>
+            <Text>{client_label}</Text>
+          </Flex>
+          <Separator size="4" />
+          <Flex justify="between" align="center" px="4" py="2">
+            <Text weight="bold">Tech</Text>
+            <Text>{technologies}</Text>
+          </Flex>
           {has_frameworks && (
-            <li className="list-group-item flex-column align-items-start">
-              <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">Frameworks / Libraries</h5>
-                <span className="flex-row">{frameworks.map(renderFramework)}</span>
-              </div>
-            </li>
+            <>
+              <Separator size="4" />
+              <Flex justify="between" align="center" px="4" py="2">
+                <Text weight="bold">Frameworks / Libraries</Text>
+                <Text as="span">{frameworks.map(renderFramework)}</Text>
+              </Flex>
+            </>
           )}
           {platforms !== '' && platforms !== undefined && (
-            <li className="list-group-item flex-column align-items-start">
-              <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">Platforms</h5>
-                <span>{platforms}</span>
-              </div>
-            </li>
+            <>
+              <Separator size="4" />
+              <Flex justify="between" align="center" px="4" py="2">
+                <Text weight="bold">Platforms</Text>
+                <Text>{platforms}</Text>
+              </Flex>
+            </>
           )}
           {territories !== '' && territories !== undefined && (
-            <li className="list-group-item flex-column align-items-start">
-              <div className="d-flex w-100 justify-content-between">
-                <h5 className="mb-1">Territories</h5>
-                <span>{territories}</span>
-              </div>
-            </li>
+            <>
+              <Separator size="4" />
+              <Flex justify="between" align="center" px="4" py="2">
+                <Text weight="bold">Territories</Text>
+                <Text>{territories}</Text>
+              </Flex>
+            </>
           )}
-        </ul>
-      </div>
+        </Box>
+      </Card>
     </div>
   );
 };

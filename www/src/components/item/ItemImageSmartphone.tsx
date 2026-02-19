@@ -13,12 +13,12 @@ interface MediaNames {
 }
 
 interface ItemImageSmartphoneProps {
-  style?: string;
   media_info: MediaInfo;
   media_names: MediaNames;
+  onLoad?: () => void;
 }
 
-const ItemImageSmartphone: React.FC<ItemImageSmartphoneProps> = ({ style, media_info, media_names }) => {
+const ItemImageSmartphone: React.FC<ItemImageSmartphoneProps> = ({ media_info, media_names, onLoad }) => {
   const { width = 500, height = 500, alt = '', media_path = '' } = media_info;
   const { media_name = '' } = media_names;
   const thumb_style = {
@@ -29,8 +29,7 @@ const ItemImageSmartphone: React.FC<ItemImageSmartphoneProps> = ({ style, media_
   const src = `${media_path}${media_name}`;
 
   return (
-    <div className={style}>
-      <motion.div
+    <motion.div
         className="thumbnail"
         style={thumb_style}
         initial={{ opacity: 0 }}
@@ -45,9 +44,9 @@ const ItemImageSmartphone: React.FC<ItemImageSmartphoneProps> = ({ style, media_
           alt={alt}
           src={src}
           loading="lazy"
+          onLoad={onLoad}
         />
-      </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

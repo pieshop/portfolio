@@ -1,4 +1,5 @@
 import React from 'react';
+import { Flex } from '@radix-ui/themes';
 
 interface ArchiveItemIframeProps {
   id?: string;
@@ -11,21 +12,19 @@ interface ArchiveItemIframeProps {
 
 const ArchiveItemIframe: React.FC<ArchiveItemIframeProps> = ({ id, url, frameborder, inline_style, height, width }) => {
   return (
-    <div className="row">
-      <div className="col text-center">
-        <div className="thumbnail">
-          <iframe
-            id={id}
-            src={url}
-            frameBorder={frameborder}
-            style={inline_style}
-            height={height}
-            width={width}
-            scrolling="no"
-          />
-        </div>
+    <Flex justify="center">
+      <div className="thumbnail">
+        <iframe
+          id={id}
+          src={url}
+          frameBorder={frameborder}
+          style={inline_style}
+          height={height}
+          width={width}
+          scrolling="no"
+        />
       </div>
-    </div>
+    </Flex>
   );
 };
 

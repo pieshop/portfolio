@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import { Box, Button, Card, Flex, Heading, Text } from '@radix-ui/themes';
 import ItemAwardModalPortal from 'components/item/ItemAwardModalPortal';
 import { get_awards_path } from 'constants/AppConstants';
 
@@ -33,40 +33,43 @@ const ItemAward: React.FC<ItemAwardProps> = ({
   };
 
   return (
-    <div className="card card-inverse bg-success mb-3">
+    <Card style={{ backgroundColor: 'var(--green-3)', marginBottom: 'var(--space-3)' }}>
       <Fragment>
-        <div className="card-body">
-          <div className="d-flex flex-column w-100 justify-content-between">
-            <h4 className="card-title mb-1" title={award_long_name}>
+        <Box p="4">
+          <Flex direction="column" gap="2">
+            <Heading size="4" title={award_long_name}>
               {award_name}
-            </h4>
+            </Heading>
             {hasLink ? (
               <Fragment>
                 {pdf !== '' && (
-                  <button
-                    onClick={handlePDFClick}
-                    className="btn btn-xs btn-primary js-pdf-award mb-2"
-                  >
+                  <Button size="1" onClick={handlePDFClick} className="js-pdf-award">
                     pdf
-                  </button>
+                  </Button>
                 )}
                 {link !== '' && (
-                  <a href={link} target="_blank" rel="noreferrer" className="btn btn-xs btn-primary">
-                    link
-                  </a>
+                  <Button size="1" asChild>
+                    <a href={link} target="_blank" rel="noreferrer">
+                      link
+                    </a>
+                  </Button>
                 )}
               </Fragment>
             ) : (
-              <small />
+              <Text size="1">&nbsp;</Text>
             )}
-          </div>
-        </div>
-        <div className="card-body">
-          <p className="card-title">
+          </Flex>
+        </Box>
+        <Box p="4">
+          <Text>
             <strong>{award_result}</strong>
-            {hasAwardCategory && <small>: {award_category}</small>}
-          </p>
-        </div>
+            {hasAwardCategory && (
+              <Text as="span" color="gray">
+                : {award_category}
+              </Text>
+            )}
+          </Text>
+        </Box>
       </Fragment>
       <ItemAwardModalPortal
         award_name={award_name}
@@ -75,7 +78,7 @@ const ItemAward: React.FC<ItemAwardProps> = ({
         onClose={() => setShowModal(false)}
         pdf={pdf_url}
       />
-    </div>
+    </Card>
   );
 };
 

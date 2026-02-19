@@ -1,4 +1,6 @@
 import React from 'react';
+import { Cross2Icon } from '@radix-ui/react-icons';
+import { Dialog, Flex, Heading, IconButton } from '@radix-ui/themes';
 
 interface ItemAwardModalProps {
   open: boolean;
@@ -9,44 +11,31 @@ interface ItemAwardModalProps {
 }
 
 const ItemAwardModal: React.FC<ItemAwardModalProps> = ({ open, pdf, award_name, award_result, onClose }) => {
-  if (!open) return null;
   return (
-    <div
-      className="modal fade show"
-      tabIndex={-1}
-      role="dialog"
-      aria-labelledby="largeModal"
-      aria-hidden="false"
-      style={{ display: 'block' }}
-    >
-      <div className="modal-dialog modal-dialog-centered modal-lg">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h3 className="modal-title">{award_name}</h3>
-            <button
-              onClick={onClose}
-              type="button"
-              className="close"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div className="modal-body">
-            <h4>{award_result}</h4>
-            <div id="pdf">
-              <embed
-                id="pdf_content"
-                src={pdf + '#view=FitH&scrollbar=1&toolbar=1&navpanes=0'}
-                width="100%"
-                height="600"
-                type="application/pdf"
-              />
-            </div>
-          </div>
+    <Dialog.Root open={open} onOpenChange={(nextOpen) => !nextOpen && onClose()}>
+      <Dialog.Content maxWidth="800px">
+        <Flex justify="between" align="center" mb="3">
+          <Dialog.Title>{award_name}</Dialog.Title>
+          <Dialog.Close>
+            <IconButton variant="ghost" aria-label="Close">
+              <Cross2Icon />
+            </IconButton>
+          </Dialog.Close>
+        </Flex>
+        <Heading size="4" mb="3">
+          {award_result}
+        </Heading>
+        <div id="pdf">
+          <embed
+            id="pdf_content"
+            src={pdf + '#view=FitH&scrollbar=1&toolbar=1&navpanes=0'}
+            width="100%"
+            height="600"
+            type="application/pdf"
+          />
         </div>
-      </div>
-    </div>
+      </Dialog.Content>
+    </Dialog.Root>
   );
 };
 

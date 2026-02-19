@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Box, Button, Card, Flex, Heading, Text } from '@radix-ui/themes';
 import { Link } from 'react-router';
 
 interface LinkItem {
@@ -44,78 +45,65 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
 }) => {
   return (
     <div className="item__overview">
-      <div className="card mb-3">
-        <div className="card-body card-inverse bg-primary text-white">
-          <h3 className="card-title text-center">
+      <Card style={{ marginBottom: 'var(--space-4)' }}>
+        <Box p="4" style={{ backgroundColor: 'var(--accent-9)', color: 'white' }}>
+          <Heading size="5" align="center">
             {client_label} : {title}
-          </h3>
-        </div>
-        <div className="card-body">
-          <div className="card-text lead" dangerouslySetInnerHTML={{ __html: description || '' }} />
-        </div>
-        <div className="card-body">
-          <h4 className="card-title">Responsibilities</h4>
-          <p className="card-text" dangerouslySetInnerHTML={{ __html: responsibilities || '' }} />
-        </div>
+          </Heading>
+        </Box>
+        <Box p="4">
+          <Text as="div" size="4" dangerouslySetInnerHTML={{ __html: description || '' }} />
+        </Box>
+        <Box p="4">
+          <Heading size="4">Responsibilities</Heading>
+          <Text as="p" dangerouslySetInnerHTML={{ __html: responsibilities || '' }} />
+        </Box>
 
         {has_archive_or_links && !is_archive && (
-          <div className="card-body">
-            <div className="d-flex w-100 justify-content-start">
+          <Box p="4">
+            <Flex align="center" gap="2">
               {has_archive && linkTo && (
-                <Link
-                  to={linkTo}
-                  className="btn btn-sm btn-info mr-2"
-                  data-entryid={entry_id}
-                  data-clientid={client_id}
-                  title="View archive"
-                >
-                  View archive
-                </Link>
+                <Button size="1" color="cyan" variant="soft" asChild>
+                  <Link to={linkTo} data-entryid={entry_id} data-clientid={client_id} title="View archive">
+                    View archive
+                  </Link>
+                </Button>
               )}
               {has_links && (
                 <Fragment>
                   {links.map((link) => (
-                    <a
-                      key={link.label}
-                      className="btn btn-sm btn-success mr-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href={link.url}
-                      title={link.label}
-                    >
-                      {link.label}
-                    </a>
+                    <Button key={link.label} size="1" color="green" variant="soft" asChild>
+                      <a target="_blank" rel="noreferrer" href={link.url} title={link.label}>
+                        {link.label}
+                      </a>
+                    </Button>
                   ))}
                 </Fragment>
               )}
-            </div>
-          </div>
+            </Flex>
+          </Box>
         )}
 
         {is_archive && linkTo && (
-          <div className="card-body">
-            <Link
-              to={linkTo}
-              className="btn btn-sm btn-info"
-              data-entryid={entry_id}
-              data-clientid={client_id}
-              title="Back"
-            >
-              Back
-            </Link>
-          </div>
+          <Box p="4">
+            <Button size="1" color="cyan" variant="soft" asChild>
+              <Link to={linkTo} data-entryid={entry_id} data-clientid={client_id} title="Back">
+                Back
+              </Link>
+            </Button>
+          </Box>
         )}
 
         <div role="presentation" className="details-seperator" />
-        <div className="card-body">
-          <p className="text-right">
+        <Box p="4">
+          <Text align="right" as="p">
             <a target="_blank" rel="noreferrer" href={affiliation_url}>
               {affiliation}
             </a>{' '}
             {year}
-          </p>
-        </div>
-      </div>
+          </Text>
+        </Box>
+      </Card>
     </div>
   );
 };

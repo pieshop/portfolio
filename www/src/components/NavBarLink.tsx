@@ -1,4 +1,5 @@
 import React from 'react';
+import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { Link, useLocation } from 'react-router';
 
 interface NavBarLinkProps {
@@ -24,16 +25,16 @@ const NavBarLink: React.FC<NavBarLinkProps> = ({
   const isActivePath = location.pathname.split('/')[1] === category_name;
 
   return (
-    <li className="nav-item">
+    <NavigationMenu.Link asChild active={isActivePath}>
       <Link
         to={goto}
-        className={`nav-link ${clz}${isActivePath ? ' active' : ''}`}
+        className={`site-nav__link ${clz}${isActivePath ? ' active' : ''}`}
         data-id={category_name}
         onClick={linkClick}
       >
         {category_label}
       </Link>
-    </li>
+    </NavigationMenu.Link>
   );
 };
 

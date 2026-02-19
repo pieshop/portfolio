@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { HelmetProvider } from 'react-helmet-async';
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
-import './css/main.css';
+import './css/index.css';
 import store from './store/configureStore';
 import prettyLog from 'utils/prettyLog';
 import App from './App';
@@ -38,7 +38,7 @@ ReactDOM.createRoot(document.getElementById('app-root')!).render(
   <React.StrictMode>
     <Provider store={store}>
       <HelmetProvider>
-        <Theme>
+        <Theme accentColor="violet">
           <App />
         </Theme>
       </HelmetProvider>

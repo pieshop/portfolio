@@ -16,12 +16,12 @@ interface MediaNames {
 }
 
 interface ItemImageDesktopProps {
-  style?: string;
   media_info: MediaInfo;
   media_names: MediaNames;
+  onLoad?: () => void;
 }
 
-const ItemImageDesktop: React.FC<ItemImageDesktopProps> = ({ style, media_info, media_names }) => {
+const ItemImageDesktop: React.FC<ItemImageDesktopProps> = ({ media_info, media_names, onLoad }) => {
   const { width = 500, height = 500, alt = '', media_path = '' } = media_info;
   const { media_name_3x = '', media_name_2x = '', media_name_1x = '' } = media_names;
   const thumb_style = {
@@ -34,8 +34,7 @@ const ItemImageDesktop: React.FC<ItemImageDesktopProps> = ({ style, media_info, 
   const src = `${media_path}${media_name_1x}`;
 
   return (
-    <div className={style}>
-      <motion.div
+    <motion.div
         className="thumbnail"
         style={thumb_style}
         initial={{ opacity: 0 }}
@@ -52,9 +51,9 @@ const ItemImageDesktop: React.FC<ItemImageDesktopProps> = ({ style, media_info, 
           src={src}
           sizes={sizes}
           loading="lazy"
+          onLoad={onLoad}
         />
-      </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

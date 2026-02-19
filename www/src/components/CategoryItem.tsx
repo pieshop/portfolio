@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box } from '@radix-ui/themes';
 import { Link } from 'react-router';
 import CategoryItemAward from 'components/CategoryItemAward';
 import CategoryItemImage from 'components/CategoryItemImage';
@@ -37,8 +38,8 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
   awards,
 }) => {
   return (
-    <div className="item__container col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-      <li className="list__item--subtle_shadow">
+    <Box className="item__container">
+      <Box className="list__item--subtle_shadow">
         <article id={id}>
           <Link
             to={to}
@@ -72,9 +73,9 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
             </dl>
           </div>
         </article>
-      </li>
+      </Box>
       <div className="entry-spacer" />
-    </div>
+    </Box>
   );
 };
 

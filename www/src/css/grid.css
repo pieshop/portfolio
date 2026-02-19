@@ -1,0 +1,76 @@
+/* ---- Layout + Grid ---- */
+.main_region {
+  margin-top: 20px;
+}
+
+.item__container {
+  &.appear {
+    opacity: 0.01;
+    visibility: hidden;
+  }
+  &.appear-active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in;
+  }
+  &.enter {
+    opacity: 0.01;
+    visibility: hidden;
+  }
+  &.enter-active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in;
+  }
+  &.leave {
+    opacity: 1;
+    visibility: visible;
+  }
+  &.leave-active {
+    opacity: 0.01;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in;
+  }
+}
+
+.entry-spacer {
+  height: 20px;
+}
+
+/* ---- Media list columns ---- */
+.media-col--full {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.media-col--half,
+.media-col--third,
+.media-col--quarter {
+  grid-column: span 1;
+  text-align: center;
+}
+
+/* ---- Category grid (matches old Bootstrap columns) ---- */
+.category_region {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .category_region {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .category_region {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .category_region {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}

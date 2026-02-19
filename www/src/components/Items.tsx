@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, Grid } from '@radix-ui/themes';
 import { Helmet } from 'react-helmet-async';
 import CategoryItem from 'components/CategoryItem';
 
@@ -15,34 +16,34 @@ interface ItemsProps {
 const Items: React.FC<ItemsProps> = ({ items, selectedCategoryMetaData }) => {
   const { label, description } = selectedCategoryMetaData;
   return (
-    <div className="main_region">
+    <Box className="main_region">
       <Helmet>
         <title>{label + ' Portfolio Items'}</title>
         <meta name="Description" content={description} />
       </Helmet>
-      <ul className="list list-unstyled">
-        <div className="category_region">
-          <div className="row">
-            {items.map((data, index) => (
-              <CategoryItem
-                key={data.id as string}
-                id={data.id as string}
-                title={data.title as string}
-                to={data.to as string}
-                client_label={data.client_label as string}
-                entry_id={data.entry_id as string}
-                client_id={data.client_id as string}
-                year={data.year as number}
-                thumb_path={data.thumb_path as string}
-                is_responsive={data.is_responsive as boolean}
-                awards={data.awards as Array<{ id: string; award_long_name: string; award_result: string }>}
-                index={index}
-              />
-            ))}
-          </div>
-        </div>
-      </ul>
-    </div>
+      <Grid
+        columns={{ initial: '2', md: '3', lg: '4', xl: '6' }}
+        gap="3"
+        className="category_region"
+      >
+        {items.map((data, index) => (
+          <CategoryItem
+            key={data.id as string}
+            id={data.id as string}
+            title={data.title as string}
+            to={data.to as string}
+            client_label={data.client_label as string}
+            entry_id={data.entry_id as string}
+            client_id={data.client_id as string}
+            year={data.year as number}
+            thumb_path={data.thumb_path as string}
+            is_responsive={data.is_responsive as boolean}
+            awards={data.awards as Array<{ id: string; award_long_name: string; award_result: string }>}
+            index={index}
+          />
+        ))}
+      </Grid>
+    </Box>
   );
 };
 

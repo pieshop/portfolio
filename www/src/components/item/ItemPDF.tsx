@@ -11,15 +11,13 @@ interface MediaNames {
 interface ItemPDFProps {
   media_info: MediaInfo;
   media_names: MediaNames;
-  style?: string;
 }
 
-const ItemPDF: React.FC<ItemPDFProps> = ({ media_info, media_names, style }) => {
+const ItemPDF: React.FC<ItemPDFProps> = ({ media_info, media_names }) => {
   const { media_path = '' } = media_info;
   const { media_name = '' } = media_names;
   return (
-    <div className={style}>
-      <div className="thumbnail">
+    <div className="thumbnail">
         <embed
           id="pdf_content"
           src={media_path + media_name + '#view=FitH&scrollbar=1&toolbar=1&navpanes=0'}
@@ -27,7 +25,6 @@ const ItemPDF: React.FC<ItemPDFProps> = ({ media_info, media_names, style }) => 
           height="600"
           type="application/pdf"
         />
-      </div>
     </div>
   );
 };

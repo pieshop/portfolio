@@ -1,14 +1,18 @@
 import React from 'react';
+import { Box, Heading, Text } from '@radix-ui/themes';
 import NavBar from 'containers/NavBar';
 
 const Header: React.FC = () => {
   return (
     <header>
-      <div className="page-header text-center">
-        <h1>
-          Stephen Hamilton <small className="text-muted">Interactive Developer</small>
-        </h1>
-      </div>
+      <Box py="8" style={{ textAlign: 'center' }}>
+        <Heading size="8" as="h1">
+          Stephen Hamilton{' '}
+          <Text size="6" color="gray" weight="regular">
+            Interactive Developer
+          </Text>
+        </Heading>
+      </Box>
       <NavBar />
     </header>
   );

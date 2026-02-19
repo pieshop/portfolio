@@ -14,12 +14,12 @@ interface MediaNames {
 }
 
 interface ItemImageOLMProps {
-  style?: string;
   media_info: MediaInfo;
   media_names: MediaNames;
+  onLoad?: () => void;
 }
 
-const ItemImageOLM: React.FC<ItemImageOLMProps> = ({ style, media_info, media_names }) => {
+const ItemImageOLM: React.FC<ItemImageOLMProps> = ({ media_info, media_names, onLoad }) => {
   const { width = 500, height = 500, alt = '', media_path = '' } = media_info;
   const { media_name_2x = '', media_name_1x = '' } = media_names;
   const thumb_style = {
@@ -31,8 +31,7 @@ const ItemImageOLM: React.FC<ItemImageOLMProps> = ({ style, media_info, media_na
   const src = `${media_path}${media_name_1x}`;
 
   return (
-    <div className={style}>
-      <motion.div
+    <motion.div
         className="thumbnail"
         style={thumb_style}
         initial={{ opacity: 0 }}
@@ -48,9 +47,9 @@ const ItemImageOLM: React.FC<ItemImageOLMProps> = ({ style, media_info, media_na
           srcSet={srcSet}
           src={src}
           loading="lazy"
+          onLoad={onLoad}
         />
-      </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
