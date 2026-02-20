@@ -16,13 +16,13 @@ const CategoryItemImage: React.FC<CategoryItemImageProps> = ({ title, thumb_path
     : '';
 
   return (
-    <div ref={ref} style={{ backgroundColor: 'var(--grey-light)', textAlign: 'center', height: 0, paddingBottom: '100%' }}>
+    <div ref={ref} style={{ position: 'relative', aspectRatio: '1 / 1', backgroundColor: 'var(--grey-light)', overflow: 'hidden' }}>
       {inView ? (
         <motion.img
           crossOrigin="anonymous"
           width="350"
           height="350"
-          style={{ maxWidth: '100%', height: 'auto', border: '1px solid var(--grey-dark)' }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', border: '1px solid var(--grey-dark)' }}
           alt={title}
           srcSet={srcSet}
           src={thumb_path + 'thumb_1x.jpg'}

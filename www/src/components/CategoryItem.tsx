@@ -62,16 +62,6 @@ const CategoryItem: React.FC<CategoryItemProps> = (opts) => {
               {client_label} ({year})
             </Text>
 
-            {/*<Flex gap="2" align="center" justify="center" mb="4">*/}
-            {/*  {awards && (*/}
-            {/*    <Flex gap="1" align="center" justify="center" className="item__awards">*/}
-            {/*      {awards.map((data, index) => (*/}
-            {/*        <CategoryItemAward key={data.id || index} {...data} />*/}
-            {/*      ))}*/}
-            {/*    </Flex>*/}
-            {/*  )}*/}
-            {/*</Flex>*/}
-
           </Flex>
         </article>
       </Box>
