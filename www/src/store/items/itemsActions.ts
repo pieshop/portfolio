@@ -68,7 +68,7 @@ const fetchItems = (state: RootState, category: string) => {
 const shouldFetchItems = (state: RootState): boolean => {
   if (getHasCategoryItems(state)) {
     const items = getItemsByCategory(state);
-    if (items.isFetching) return true;
+    if (items.isFetching) return false;
     if (shouldUpdateItems(items.lastUpdated ?? 0)) return true;
     return items.didInvalidate;
   }

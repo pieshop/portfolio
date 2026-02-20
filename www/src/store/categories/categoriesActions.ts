@@ -88,8 +88,8 @@ const fetchCategories = () => (dispatch: AppDispatch) => {
 };
 
 const shouldFetchCategories = (state: ReturnType<AppGetState>): boolean => {
-  const lastUpdated = getCategoriesLastUpdated(state);
-  return shouldUpdateCategories(lastUpdated);
+  if (state.categories.isFetching) return false;
+  return shouldUpdateCategories(getCategoriesLastUpdated(state));
 };
 
 export const fetchAvailableCategories = () => (dispatch: AppDispatch, getState: AppGetState) => {
