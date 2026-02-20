@@ -374,17 +374,6 @@ footer a.nav-link:hover {
 }
 
 /* ---- Portfolio Item ---- */
-.item__details {
-
-  & .block-header {
-    background-color: var(--blue-light);
-  }
-
-  & li:nth-child(odd) {
-    background-color: var(--grey-light);
-  }
-}
-
 .item__awards {
   border: 0;
 
@@ -396,10 +385,6 @@ footer a.nav-link:hover {
     &:hover {
       color: var(--item-awards-hover);
     }
-  }
-
-  & .block-header {
-    background-color: var(--blue-light);
   }
 
   & .award {

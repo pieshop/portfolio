@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, Flex, Grid, Heading, Separator, Text } from "@radix-ui/themes";
+import { Box, Grid, Text } from '@radix-ui/themes';
 
 interface Framework {
   name: string;
@@ -17,73 +17,53 @@ interface ItemDetailsProps {
 }
 
 const ItemDetails: React.FC<ItemDetailsProps> = ({
-                                                   client_label,
-                                                   technologies,
-                                                   territories,
-                                                   has_frameworks,
-                                                   frameworks = [],
-                                                   platforms,
-                                                 }) => {
+  client_label,
+  technologies,
+  territories,
+  has_frameworks,
+  frameworks = [],
+  platforms,
+}) => {
   const renderFramework = (data: Framework) => {
     if (data.url) {
       return (
-        <a key={data.name} href={data.url} rel="noreferrer" target="_blank" style={{ padding: '0 0.25rem' }}>
+        <a key={data.name} href={data.url} rel="noreferrer" target="_blank" style={{ marginRight: '0.4rem' }}>
           {data.name}
         </a>
       );
     }
-    return data.name;
+    return <span key={data.name} style={{ marginRight: '0.4rem' }}>{data.name}</span>;
   };
 
   return (
-    <Box className="item__details">
-      <Card style={{ marginBottom: 'var(--space-4)' }}>
-        <Box p="4" className="block-header">
-          <Heading size="4">Details</Heading>
-        </Box>
-        <Separator size="4" />
+    <Grid columns={{ initial: '2', sm: '3', md: '4' }} gap="4" px="4" py="3">
+      <Box>
+        <Text size="1" color="gray" as="p">Client</Text>
+        <Text size="2" weight="medium">{client_label}</Text>
+      </Box>
+      <Box>
+        <Text size="1" color="gray" as="p">Tech</Text>
+        <Text size="2">{technologies}</Text>
+      </Box>
+      {has_frameworks && (
         <Box>
-          {/*<Grid columns={{ initial: '1', sm: '2', md: '3', lg: '4' }} gap="3">*/}
-            <Flex justify="between" align="center" px="4" py="2">
-              <Text weight="bold">Client</Text>
-              <Text>{client_label}</Text>
-            </Flex>
-            <Separator size="4" />
-            <Flex justify="between" align="center" px="4" py="2">
-              <Text weight="bold">Tech</Text>
-              <Text>{technologies}</Text>
-            </Flex>
-            {has_frameworks && (
-              <>
-                <Separator size="4" />
-                <Flex justify="between" align="center" px="4" py="2">
-                  <Text weight="bold">Frameworks / Libraries</Text>
-                  <Text as="span">{frameworks.map(renderFramework)}</Text>
-                </Flex>
-              </>
-            )}
-            {platforms !== '' && platforms !== undefined && (
-              <>
-                <Separator size="4" />
-                <Flex justify="between" align="center" px="4" py="2">
-                  <Text weight="bold">Platforms</Text>
-                  <Text>{platforms}</Text>
-                </Flex>
-              </>
-            )}
-            {territories !== '' && territories !== undefined && (
-              <>
-                <Separator size="4" />
-                <Flex justify="between" align="center" px="4" py="2">
-                  <Text weight="bold">Territories</Text>
-                  <Text>{territories}</Text>
-                </Flex>
-              </>
-            )}
-          {/*</Grid>*/}
+          <Text size="1" color="gray" as="p">Frameworks / Libraries</Text>
+          <Text size="2" as="span">{frameworks.map(renderFramework)}</Text>
         </Box>
-      </Card>
-    </Box>
+      )}
+      {platforms && (
+        <Box>
+          <Text size="1" color="gray" as="p">Platforms</Text>
+          <Text size="2">{platforms}</Text>
+        </Box>
+      )}
+      {territories && (
+        <Box>
+          <Text size="1" color="gray" as="p">Territories</Text>
+          <Text size="2">{territories}</Text>
+        </Box>
+      )}
+    </Grid>
   );
 };
 

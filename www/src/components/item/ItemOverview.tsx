@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Box, Button, Card, Flex, Heading, Separator, Text } from '@radix-ui/themes';
 import { Link } from 'react-router';
+import ItemDetails from 'components/item/ItemDetails';
 
 interface LinkItem {
   label: string;
@@ -23,6 +24,11 @@ interface ItemOverviewProps {
   has_links?: boolean;
   has_archive_or_links?: boolean;
   linkTo?: string;
+  technologies?: string;
+  territories?: string;
+  has_frameworks?: boolean;
+  frameworks?: Array<{ name: string; url?: string }>;
+  platforms?: string;
   [key: string]: unknown;
 }
 
@@ -42,6 +48,11 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
   has_links,
   has_archive_or_links,
   linkTo,
+  technologies,
+  territories,
+  has_frameworks,
+  frameworks,
+  platforms,
 }) => {
   return (
     <Box>
@@ -93,6 +104,15 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
             </Button>
           </Box>
         )}
+
+        <ItemDetails
+          client_label={client_label}
+          technologies={technologies}
+          territories={territories}
+          has_frameworks={has_frameworks}
+          frameworks={frameworks}
+          platforms={platforms}
+        />
 
         <Separator size="4" my="2" style={{ color: "#000" }} />
 
