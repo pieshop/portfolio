@@ -25,12 +25,12 @@ const Dropdown: React.FC<DropdownProps> = ({ category_id, year_id, yearItems }) 
         </Button>
       </DropdownMenu.Trigger>
       <DropdownMenu.Content align="center">
-        <DropdownMenu.Item asChild>
+        <DropdownMenu.Item asChild color={year_id === constants.ALL_YEARS ? 'violet' : undefined}>
           <Link to={'/' + category_id + '/' + constants.ALL_YEARS}>All Years</Link>
         </DropdownMenu.Item>
         <DropdownMenu.Separator />
         {yearLinks.map((data) => (
-          <DropdownMenu.Item key={data.year} asChild>
+          <DropdownMenu.Item key={data.year} asChild color={String(data.year) === year_id ? 'violet' : undefined}>
             <Link to={data.to}>{data.year}</Link>
           </DropdownMenu.Item>
         ))}

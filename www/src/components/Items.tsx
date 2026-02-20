@@ -22,7 +22,7 @@ const Items: React.FC<ItemsProps> = ({ items, selectedCategoryMetaData }) => {
         <meta name="Description" content={description} />
       </Helmet>
       <Grid
-        columns={{ initial: '2', md: '3', lg: '4', xl: '6' }}
+        columns={{ initial: '1', xs: '2', sm: '3', md: '4', xl: '6' }}
         gap="3"
         className="category_region"
       >

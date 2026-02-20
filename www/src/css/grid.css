@@ -50,27 +50,3 @@
   text-align: center;
 }
 
-/* ---- Category grid (matches old Bootstrap columns) ---- */
-.category_region {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-@media screen and (min-width: 768px) {
-  .category_region {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .category_region {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .category_region {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-}
