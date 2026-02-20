@@ -9,7 +9,10 @@
       "Bash(npm prune:*)",
       "Bash(npm why:*)",
       "Bash(npm uninstall:*)",
-      "WebFetch(domain:www.radix-ui.com)"
+      "WebFetch(domain:www.radix-ui.com)",
+      "Bash(npx playwright:*)",
+      "Bash(docker ps:*)",
+      "Bash(curl:*)"
     ]
   }
 }

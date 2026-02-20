@@ -1,9 +1,4 @@
 /* ---- Utilities ---- */
-.navbar-text > a {
-  color: inherit;
-  text-decoration: none;
-}
-
 .loading {
   position: fixed;
   top: 0;
@@ -24,25 +19,10 @@ header {
     border-bottom: 0;
   }
 
-  & nav {
-    min-height: 56px;
-
-    & .navbar-right {
-      margin-right: -5px;
-    }
-  }
-
   & .year_drop {
     padding-right: 0.5rem;
   }
 
-  & button {
-    cursor: pointer;
-
-    &.filter {
-      width: 60px;
-    }
-  }
 }
 
 /* ---- Card + Item Tiles ---- */
@@ -334,10 +314,6 @@ footer {
   height: var(--footer-height);
   line-height: 60px;
 
-  & ul.nav {
-    background-color: var(--white);
-  }
-
   & .seperator {
     clear: both;
     background-color: var(--grey-med);
@@ -347,18 +323,6 @@ footer {
     box-sizing: border-box;
   }
 
-  & .credit {
-    font-size: 0.8em;
-  }
-}
-
-footer a.nav-link {
-  color: var(--font-dark);
-  text-decoration: none;
-}
-
-footer a.nav-link:hover {
-  color: #000000;
 }
 
 /* ---- Image utilities ---- */
@@ -420,13 +384,6 @@ footer a.nav-link:hover {
   background-color: var(--color-panel-solid);
 }
 
-/* ---- Legacy Dropdown ---- */
-.dropdown-menu {
-  left: 50%;
-  right: auto;
-  text-align: center;
-  transform: translate(-50%, 0);
-}
 
 /* ---- Media Queries ---- */
 @media screen and (max-width: 575px) {
