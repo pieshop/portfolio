@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Box, Button, Card, Flex, Heading, Separator, Text } from '@radix-ui/themes';
+import { Box, Button, Card, Flex, Heading, Link as RadixLink, Separator, Text } from '@radix-ui/themes';
 import { Link } from 'react-router';
 import ItemDetails from 'components/item/ItemDetails';
 
@@ -56,18 +56,17 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
 }) => {
   return (
     <Box>
-      <Card style={{ marginBottom: 'var(--space-4)' }}>
+      <Card>
         <Box p="4" style={{ backgroundColor: 'var(--accent-9)', color: 'white' }}>
           <Heading size="5" align="center">
             {client_label} : {title}
           </Heading>
         </Box>
         <Box p="4">
-          <Text as="div" size="4" dangerouslySetInnerHTML={{ __html: description || '' }} />
-        </Box>
-        <Box p="4">
-          <Heading size="4">Responsibilities</Heading>
-          <Text as="p" dangerouslySetInnerHTML={{ __html: responsibilities || '' }} />
+          <Heading size="4" mb="2">About</Heading>
+          <Text as="div" size="3" dangerouslySetInnerHTML={{ __html: description || '' }} />
+          <Heading size="4" mt="6" mb="2">Responsibilities</Heading>
+          <Text as="div" size="3" dangerouslySetInnerHTML={{ __html: responsibilities || '' }} />
         </Box>
 
         {has_archive_or_links && !is_archive && (
@@ -105,6 +104,8 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
           </Box>
         )}
 
+        <Separator size="4" style={{ color: "#000" }} />
+
         <ItemDetails
           client_label={client_label}
           technologies={technologies}
@@ -114,13 +115,13 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
           platforms={platforms}
         />
 
-        <Separator size="4" my="2" style={{ color: "#000" }} />
+        <Separator size="4" style={{ color: "#000" }} />
 
-        <Box p="2">
+        <Box mt="4" p="2">
           <Text align="right" as="p">
-            <a target="_blank" rel="noreferrer" href={affiliation_url}>
+            <RadixLink href={affiliation_url} target="_blank" rel="noreferrer">
               {affiliation}
-            </a>{' '}
+            </RadixLink>{' '}
             {year}
           </Text>
         </Box>

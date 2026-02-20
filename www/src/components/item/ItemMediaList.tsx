@@ -103,7 +103,7 @@ const ItemMediaList: React.FC<ItemMediaListProps> = ({ mediaItems = {} }) => {
 
   return (
     <Box>
-      <Card style={{ marginBottom: 'var(--space-4)' }}>
+      <Card>
       {(desktop.length > 0 || olm.length > 0 || smartphone.length > 0) && (
         <Grid columns={{ initial: '1', sm: '2', md: '3', lg: '4' }} gap="3">
           {desktop.map(renderItem)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Text } from '@radix-ui/themes';
+import { Box, Grid, Link, Text } from '@radix-ui/themes';
 
 interface Framework {
   name: string;
@@ -27,9 +27,9 @@ const ItemDetails: React.FC<ItemDetailsProps> = ({
   const renderFramework = (data: Framework) => {
     if (data.url) {
       return (
-        <a key={data.name} href={data.url} rel="noreferrer" target="_blank" style={{ marginRight: '0.4rem' }}>
+        <Link key={data.name} href={data.url} rel="noreferrer" target="_blank" mr="1">
           {data.name}
-        </a>
+        </Link>
       );
     }
     return <span key={data.name} style={{ marginRight: '0.4rem' }}>{data.name}</span>;
