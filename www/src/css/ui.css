@@ -1,75 +1,4 @@
-/* ---- Utilities ---- */
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.75);
-  z-index: 1000;
-}
-
-/* ---- Header ---- */
-header {
-  width: 100%;
-
-  & .page-header {
-    padding-bottom: 9px;
-    margin: 40px 0 20px;
-    border-bottom: 0;
-  }
-
-  & .year_drop {
-    padding-right: 0.5rem;
-  }
-
-}
-
 /* ---- Card + Item Tiles ---- */
-.list__item--subtle_shadow {
-  border: 1px solid #c4c4c4;
-  box-shadow: 2px 2px 1px 1px #dddddd;
-  background-color: var(--white);
-}
-
-.item__thumbnail {
-  position: relative;
-
-  & img {
-    box-shadow: #000000 0em 0em 0em;
-  }
-
-  & img:hover {
-    opacity: 0.5;
-  }
-
-  &.dark {
-    background-color: #666666;
-  }
-}
-
-.item__thumbnail--placeholder {
-  background: #ffffff;
-  height: 0;
-  padding-bottom: 100%;
-}
-
-.item__thumbnail .thumb {
-  position: relative;
-  background-color: var(--grey-light);
-  height: 0;
-  padding-bottom: 100%;
-}
-
-.thumb__placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--grey-light);
-}
-
 .item__decoration {
   position: relative;
   border-top: solid 1px var(--grey-dark);
@@ -79,60 +8,7 @@ header {
     background: url('../images/site/sprites.png') 0 0;
     height: 12px;
     width: 44px;
-    bottom: -1%;
-  }
-}
-
-.item__decoration .decoration__left {
-  left: 0;
-}
-
-.item__decoration .decoration__right {
-  right: 0;
-}
-
-.item__caption {
-  margin-top: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  padding-bottom: 8px;
-
-  & dl {
-    margin: 0;
-  }
-
-  & dt,
-  & dd {
-    margin: 0;
-    padding: 4px 0;
-  }
-
-  & dt.project-title {
-    min-height: 68px;
-    line-height: 1.2em;
-    padding: 0 5px;
-    color: var(--font-dark);
-    font-weight: 700;
-  }
-
-  & dd {
-    background-color: var(--grey-light);
-    border-top: solid 1px var(--grey-dark);
-    border-bottom: solid 1px var(--grey-dark);
-    color: var(--font-light);
-    line-height: 1.2em;
-    font-weight: 400;
-
-    &.client {
-      font-size: 0.8em;
-    }
-
-    &.year {
-      font-size: 0.6em;
-    }
-  }
-
-  & dd + dd {
-    margin-top: 4px;
+    bottom: -1px;
   }
 }
 
@@ -309,75 +185,14 @@ header {
 }
 
 /* ---- Footer ---- */
-footer {
-  width: 100%;
-  height: var(--footer-height);
-  line-height: 60px;
-
-  & .seperator {
-    clear: both;
-    background-color: var(--grey-med);
-    height: 4px;
-    border-top: solid 1px var(--grey-dark);
-    border-bottom: solid 1px var(--grey-dark);
-    box-sizing: border-box;
-  }
-
+.seperator {
+  clear: both;
+  background-color: var(--grey-med);
+  height: 4px;
+  border-top: solid 1px var(--grey-dark);
+  border-bottom: solid 1px var(--grey-dark);
+  box-sizing: border-box;
 }
-
-/* ---- Image utilities ---- */
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-.img-thumbnail {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid var(--grey-dark);
-}
-
-/* ---- Portfolio Item ---- */
-.item__awards {
-  border: 0;
-
-  & .icon-star {
-    cursor: pointer;
-    color: var(--item-awards-default);
-    font-size: 1em;
-
-    &:hover {
-      color: var(--item-awards-hover);
-    }
-  }
-
-  & .award {
-    padding-bottom: 10px;
-  }
-}
-
-/* ---- About ---- */
-.aboutme {
-  & .page-header {
-    margin: 0 0 20px;
-  }
-}
-
-/* ---- Lazy Load ---- */
-.item__media--placeholder {
-  position: relative;
-  background-color: var(--grey-light);
-  overflow: hidden;
-}
-
-.spinner-container {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 
 /* ---- Year Dropdown ---- */
 .rt-DropdownMenuContent {

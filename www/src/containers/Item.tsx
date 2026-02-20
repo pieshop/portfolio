@@ -35,7 +35,7 @@ const Item: React.FC = () => {
   const linkTo = is_archive ? basePath : location.pathname + "/archive";
 
   return (
-    <div className="main_region">
+    <div style={{ marginTop: 'var(--space-5)' }}>
       <Helmet>
         <title>{String(client_label || "")} : {String(title || "")}</title>
         <meta name="Description" content={String(description || "")}/>

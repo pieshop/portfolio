@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from '@radix-ui/themes';
+import { Flex, Spinner } from '@radix-ui/themes';
 
 interface ItemImagePlaceholderProps {
   width?: number;
@@ -13,10 +13,10 @@ const ItemImagePlaceholder: React.FC<ItemImagePlaceholderProps> = ({ width = 350
     paddingBottom: (height / width) * 100 + '%',
   };
   return (
-    <div className="item__media--placeholder" style={placeholder_style}>
-      <div className="spinner-container">
+    <div style={{ ...placeholder_style, position: 'relative', backgroundColor: 'var(--grey-light)', overflow: 'hidden' }}>
+      <Flex style={{ position: 'absolute', inset: 0 }} align="center" justify="center">
         <Spinner size="3" />
-      </div>
+      </Flex>
     </div>
   );
 };

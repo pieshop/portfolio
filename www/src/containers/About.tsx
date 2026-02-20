@@ -20,7 +20,7 @@ const About: React.FC = () => {
 
   return (
     <motion.div
-      className="main_region"
+      style={{ marginTop: 'var(--space-5)' }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeIn" }}
@@ -32,18 +32,17 @@ const About: React.FC = () => {
           content="Portfolio website for London based interactive developer Stephen Hamilton"
         />
       </Helmet>
-      <div className="aboutme">
-        <Box className="page-header" style={{ textAlign: "center" }}>
+      <Box mb="5" style={{ textAlign: "center" }}>
           <Heading size="8" as="h1">
             In a nut shell....
           </Heading>
-        </Box>
+      </Box>
 
         <Flex direction="row" gap="4">
           <Box width="200px" p="4">
             <img
               crossOrigin="anonymous"
-              className="img-fluid"
+              style={{ maxWidth: '100%', height: 'auto' }}
               alt="Profile image"
               src={BASE_ASSETS_URL + "/images/about/profile.png"}
             />
@@ -184,7 +183,6 @@ const About: React.FC = () => {
             </Card>
           </Grid>
         </Card>
-      </div>
     </motion.div>
   );
 };

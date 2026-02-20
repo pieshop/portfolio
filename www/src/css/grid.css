@@ -1,13 +1,3 @@
-/* ---- Layout + Grid ---- */
-.main_region {
-  margin-top: 20px;
-}
-
-
-.entry-spacer {
-  height: 20px;
-}
-
 /* ---- Media list columns ---- */
 .media-col--full {
   grid-column: 1 / -1;

@@ -8,7 +8,7 @@ interface ItemAwardsProps {
 
 const ItemAwards: React.FC<ItemAwardsProps> = ({ awards }) => {
   return (
-    <Box className="item__awards">
+    <Box>
       <Card>
         <Box p="4" style={{ backgroundColor: 'var(--accent-9)', color: 'white' }}>
           <Heading size="4">Awards</Heading>

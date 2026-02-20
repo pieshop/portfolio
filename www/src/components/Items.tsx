@@ -16,7 +16,7 @@ interface ItemsProps {
 const Items: React.FC<ItemsProps> = ({ items, selectedCategoryMetaData }) => {
   const { label, description } = selectedCategoryMetaData;
   return (
-    <Box className="main_region">
+    <Box mt="5">
       <Helmet>
         <title>{label + ' Portfolio Items'}</title>
         <meta name="Description" content={description} />

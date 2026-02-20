@@ -80,9 +80,7 @@ const NavBar: React.FC = () => {
 
         <Flex align="center" gap="2">
           {drop_is_active && (
-            <div className="year_drop">
-              <Dropdown category_id={selectedCategory} year_id={selectedYear} yearItems={years} />
-            </div>
+            <Dropdown category_id={selectedCategory} year_id={selectedYear} yearItems={years} />
           )}
           {drop_is_active && (
             <Button

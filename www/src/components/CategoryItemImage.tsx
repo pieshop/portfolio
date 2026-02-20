@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Spinner } from '@radix-ui/themes';
+import { Flex, Spinner } from '@radix-ui/themes';
 import { useInView } from 'react-intersection-observer';
 
 interface CategoryItemImageProps {
@@ -16,25 +16,26 @@ const CategoryItemImage: React.FC<CategoryItemImageProps> = ({ title, thumb_path
     : '';
 
   return (
-    <div ref={ref} className="thumb text-center">
+    <div ref={ref} style={{ backgroundColor: 'var(--grey-light)', textAlign: 'center', height: 0, paddingBottom: '100%' }}>
       {inView ? (
         <motion.img
           crossOrigin="anonymous"
           width="350"
           height="350"
-          className="img-fluid img-thumbnail"
+          style={{ maxWidth: '100%', height: 'auto', border: '1px solid var(--grey-dark)' }}
           alt={title}
           srcSet={srcSet}
           src={thumb_path + 'thumb_1x.jpg'}
           loading="lazy"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          whileHover={{ opacity: 0.5 }}
           transition={{ duration: 0.3, ease: 'easeIn' }}
         />
       ) : (
-        <div className="thumb__placeholder">
+        <Flex style={{ position: 'absolute', inset: 0 }} align="center" justify="center">
           <Spinner size="2" />
-        </div>
+        </Flex>
       )}
     </div>
   );
