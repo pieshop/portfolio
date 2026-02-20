@@ -98,11 +98,11 @@ const About: React.FC = () => {
               </Box>
               <Separator size="4"/>
               <Box p="2">
-                <Text>JSX, SASS, LESS, Stylus, Bootstrap, Handlebars, Mustache</Text>
+                <Text>Radix UI, JSX, SASS, LESS, Stylus, Bootstrap, Handlebars, Mustache</Text>
               </Box>
               <Separator size="4"/>
               <Box p="2">
-                <Text>Babel, Webpack, Browserify, RequireJS</Text>
+                <Text>Vite, Babel, Webpack, Browserify, RequireJS</Text>
               </Box>
               <Separator size="4"/>
               <Box p="2">
@@ -125,7 +125,7 @@ const About: React.FC = () => {
               </Box>
               <Separator size="4"/>
               <Box p="2">
-                <Text>Subversion, Git</Text>
+                <Text>Git, Subversion</Text>
               </Box>
               <Separator size="4"/>
               <Box p="2">
