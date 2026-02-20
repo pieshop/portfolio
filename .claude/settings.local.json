@@ -12,7 +12,8 @@
       "WebFetch(domain:www.radix-ui.com)",
       "Bash(npx playwright:*)",
       "Bash(docker ps:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(find:*)"
     ]
   }
 }
