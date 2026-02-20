@@ -8,14 +8,14 @@ interface ItemAwardsProps {
 
 const ItemAwards: React.FC<ItemAwardsProps> = ({ awards }) => {
   return (
-    <div className="item__awards">
+    <Box className="item__awards">
       <Card style={{ marginBottom: 'var(--space-4)' }}>
         <Box p="4" className="block-header">
           <Heading size="4">Awards</Heading>
         </Box>
         <Separator size="4" />
         <Box p="4">
-          <Grid columns={{ initial: '1', md: '2' }} gap="3">
+          <Grid columns={{ initial: '1', sm: '1', md: '2', lg: '3', xl: '3' }} gap="3">
             {awards.map((data, index) => (
               <ItemAward
                 key={index}
@@ -32,7 +32,7 @@ const ItemAwards: React.FC<ItemAwardsProps> = ({ awards }) => {
           </Grid>
         </Box>
       </Card>
-    </div>
+    </Box>
   );
 };
 

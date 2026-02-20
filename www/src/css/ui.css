@@ -374,12 +374,7 @@ footer a.nav-link:hover {
 }
 
 /* ---- Portfolio Item ---- */
-.item__overview {
-  margin-bottom: 50px;
-}
-
 .item__details {
-  margin-bottom: 50px;
 
   & .block-header {
     background-color: var(--blue-light);
@@ -390,15 +385,8 @@ footer a.nav-link:hover {
   }
 }
 
-.item__media {
-  padding-left: 0;
-  padding-bottom: 10px;
-}
-
 .item__awards {
   border: 0;
-  padding-left: 5px;
-  margin-bottom: 50px;
 
   & .icon-star {
     cursor: pointer;
@@ -417,13 +405,6 @@ footer a.nav-link:hover {
   & .award {
     padding-bottom: 10px;
   }
-}
-
-.details-seperator {
-  border-top: 1px dashed var(--grey-dark);
-  margin-top: 0.5em;
-  padding-bottom: 0.5em;
-  height: 1px;
 }
 
 /* ---- About ---- */

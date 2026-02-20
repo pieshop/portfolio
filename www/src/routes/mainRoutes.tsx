@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router';
-import { Box } from '@radix-ui/themes';
+import { Box, Container } from '@radix-ui/themes';
 import About from '../containers/About';
 import Item from '../containers/Item';
 import Categories from '../containers/Categories';
@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 const MainRoutes: React.FC = () => {
   return (
-    <React.Fragment>
+    <Container size="4" align="center">
       <Header />
       <Box flexGrow="1">
         <Routes>
@@ -22,7 +22,7 @@ const MainRoutes: React.FC = () => {
         </Routes>
       </Box>
       <Footer />
-    </React.Fragment>
+    </Container>
   );
 };
 

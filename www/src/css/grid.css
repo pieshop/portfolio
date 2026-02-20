@@ -3,35 +3,6 @@
   margin-top: 20px;
 }
 
-.item__container {
-  &.appear {
-    opacity: 0.01;
-    visibility: hidden;
-  }
-  &.appear-active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s ease-in;
-  }
-  &.enter {
-    opacity: 0.01;
-    visibility: hidden;
-  }
-  &.enter-active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s ease-in;
-  }
-  &.leave {
-    opacity: 1;
-    visibility: visible;
-  }
-  &.leave-active {
-    opacity: 0.01;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in;
-  }
-}
 
 .entry-spacer {
   height: 20px;

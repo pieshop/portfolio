@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Box, Button, Card, Flex, Heading, Text } from '@radix-ui/themes';
+import { Box, Button, Card, Flex, Heading, Separator, Text } from '@radix-ui/themes';
 import { Link } from 'react-router';
 
 interface LinkItem {
@@ -44,7 +44,7 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
   linkTo,
 }) => {
   return (
-    <div className="item__overview">
+    <Box>
       <Card style={{ marginBottom: 'var(--space-4)' }}>
         <Box p="4" style={{ backgroundColor: 'var(--accent-9)', color: 'white' }}>
           <Heading size="5" align="center">
@@ -70,7 +70,7 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
                 </Button>
               )}
               {has_links && (
-                <Fragment>
+                <>
                   {links.map((link) => (
                     <Button key={link.label} size="1" color="green" variant="soft" asChild>
                       <a target="_blank" rel="noreferrer" href={link.url} title={link.label}>
@@ -78,7 +78,7 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
                       </a>
                     </Button>
                   ))}
-                </Fragment>
+                </>
               )}
             </Flex>
           </Box>
@@ -94,8 +94,9 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
           </Box>
         )}
 
-        <div role="presentation" className="details-seperator" />
-        <Box p="4">
+        <Separator size="4" my="2" style={{ color: "#000" }} />
+
+        <Box p="2">
           <Text align="right" as="p">
             <a target="_blank" rel="noreferrer" href={affiliation_url}>
               {affiliation}
@@ -104,7 +105,7 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
           </Text>
         </Box>
       </Card>
-    </div>
+    </Box>
   );
 };
 

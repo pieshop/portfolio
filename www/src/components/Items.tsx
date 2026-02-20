@@ -24,7 +24,6 @@ const Items: React.FC<ItemsProps> = ({ items, selectedCategoryMetaData }) => {
       <Grid
         columns={{ initial: '1', xs: '2', sm: '3', md: '4', xl: '6' }}
         gap="3"
-        className="category_region"
       >
         {items.map((data, index) => (
           <CategoryItem

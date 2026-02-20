@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@radix-ui/themes';
+import { Box, Card, Grid } from "@radix-ui/themes";
 import { useInView } from 'react-intersection-observer';
 import ItemPDF from 'components/item/ItemPDF';
 import * as fileTypes from 'utils/fileTypes';
@@ -102,9 +102,10 @@ const ItemMediaList: React.FC<ItemMediaListProps> = ({ mediaItems = {} }) => {
   const { desktop = [], olm = [], smartphone = [] } = images;
 
   return (
-    <div className="item__media">
+    <Box>
+      <Card style={{ marginBottom: 'var(--space-4)' }}>
       {(desktop.length > 0 || olm.length > 0 || smartphone.length > 0) && (
-        <Grid columns={{ initial: '1', sm: '2', md: '3' }} gap="3">
+        <Grid columns={{ initial: '1', sm: '2', md: '3', lg: '4' }} gap="3">
           {desktop.map(renderItem)}
           {olm.map(renderItem)}
           {smartphone.map(renderItem)}
@@ -120,7 +121,8 @@ const ItemMediaList: React.FC<ItemMediaListProps> = ({ mediaItems = {} }) => {
           {videos.map(renderItem)}
         </Grid>
       )}
-    </div>
+      </Card>
+    </Box>
   );
 };
 
