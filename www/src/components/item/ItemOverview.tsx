@@ -73,7 +73,7 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
           <Box p="4">
             <Flex align="center" gap="2">
               {has_archive && linkTo && (
-                <Button size="1" color="cyan" variant="soft" asChild>
+                <Button size="2" variant="soft" asChild>
                   <Link to={linkTo} data-entryid={entry_id} data-clientid={client_id} title="View archive">
                     View archive
                   </Link>
@@ -82,7 +82,7 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
               {has_links && (
                 <>
                   {links.map((link) => (
-                    <Button key={link.label} size="1" color="green" variant="soft" asChild>
+                    <Button key={link.label} size="2" variant="soft" asChild>
                       <a target="_blank" rel="noreferrer" href={link.url} title={link.label}>
                         {link.label}
                       </a>
@@ -96,7 +96,7 @@ const ItemOverview: React.FC<ItemOverviewProps> = ({
 
         {is_archive && linkTo && (
           <Box p="4">
-            <Button size="1" color="cyan" variant="soft" asChild>
+            <Button size="2" variant="soft" asChild>
               <Link to={linkTo} data-entryid={entry_id} data-clientid={client_id} title="Back">
                 Back
               </Link>

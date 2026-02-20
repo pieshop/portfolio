@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Link, Text } from '@radix-ui/themes';
+import { Badge, Box, Flex, Grid, Link, Text } from '@radix-ui/themes';
 
 interface Framework {
   name: string;
@@ -24,43 +24,49 @@ const ItemDetails: React.FC<ItemDetailsProps> = ({
   frameworks = [],
   platforms,
 }) => {
-  const renderFramework = (data: Framework) => {
-    if (data.url) {
-      return (
-        <Link key={data.name} href={data.url} rel="noreferrer" target="_blank" mr="1">
-          {data.name}
-        </Link>
-      );
-    }
-    return <span key={data.name} style={{ marginRight: '0.4rem' }}>{data.name}</span>;
-  };
+  const splitValues = (value?: string) =>
+    value?.split(',').map(v => v.trim()).filter(Boolean) ?? [];
 
   return (
     <Grid columns={{ initial: '2', sm: '3', md: '4' }} gap="4" px="4" py="3">
       <Box>
         <Text size="1" color="gray" as="p">Client</Text>
-        <Text size="2" weight="medium">{client_label}</Text>
+        <Badge color="violet">{client_label}</Badge>
       </Box>
       <Box>
         <Text size="1" color="gray" as="p">Tech</Text>
-        <Text size="2">{technologies}</Text>
+        <Flex gap="1" wrap="wrap">
+          {splitValues(technologies).map(t => <Badge key={t} color="violet">{t}</Badge>)}
+        </Flex>
       </Box>
       {has_frameworks && (
         <Box>
           <Text size="1" color="gray" as="p">Frameworks / Libraries</Text>
-          <Text size="2" as="span">{frameworks.map(renderFramework)}</Text>
+          <Flex gap="1" wrap="wrap">
+            {frameworks.map(data => data.url ? (
+              <Badge key={data.name} color="violet" asChild>
+                <Link href={data.url} rel="noreferrer" target="_blank">{data.name}</Link>
+              </Badge>
+            ) : (
+              <Badge key={data.name} color="violet">{data.name}</Badge>
+            ))}
+          </Flex>
         </Box>
       )}
       {platforms && (
         <Box>
           <Text size="1" color="gray" as="p">Platforms</Text>
-          <Text size="2">{platforms}</Text>
+          <Flex gap="1" wrap="wrap">
+            {splitValues(platforms).map(p => <Badge key={p} color="violet">{p}</Badge>)}
+          </Flex>
         </Box>
       )}
       {territories && (
         <Box>
           <Text size="1" color="gray" as="p">Territories</Text>
-          <Text size="2">{territories}</Text>
+          <Flex gap="1" wrap="wrap">
+            {splitValues(territories).map(t => <Badge key={t} color="violet">{t}</Badge>)}
+          </Flex>
         </Box>
       )}
     </Grid>
