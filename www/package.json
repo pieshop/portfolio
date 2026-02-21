@@ -11,7 +11,7 @@
     "build:prod": "tsc && vite build",
     "preview": "vite preview",
     "-- docker --": "------------------------",
-    "deploy:live": "./scripts/deploy.sh live",
+    "deploy:prod": "./scripts/deploy.sh live",
     "deploy:stage": "./scripts/deploy.sh stage",
     "deploy:local": "./scripts/deploy.sh local",
     "docker:local:stop": "docker compose -f docker-compose.dev.yml down",
