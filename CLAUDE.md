@@ -8,9 +8,8 @@
 
 A personal portfolio website for Stephen Hamilton (Interactive Developer) at **stephenhamilton.co.uk**. It showcases client work organised by category (Web, App, Game, Responsive, OLM, etc.) and year, with project detail pages including images, descriptions, awards, and archive data.
 
-**Key URLs:**
+**Key URL:**
 - Frontend: www.stephenhamilton.co.uk
-- API: api.stephenhamilton.co.uk
 
 ---
 
@@ -25,10 +24,10 @@ portfolio/
 │   │   ├── vite-env.d.ts   # Vite env type declarations
 │   │   ├── components/     # Presentational components (TypeScript)
 │   │   ├── containers/     # About, Categories, Item, Loader, NavBar (TypeScript)
-│   │   ├── constants/      # AppConstants.ts (URLs via import.meta.env)
+│   │   ├── constants/      # AppConstants.ts (asset paths, defaults)
 │   │   ├── routes/         # mainRoutes.tsx (React Router v7)
 │   │   ├── store/          # Redux store (RTK, TypeScript)
-│   │   ├── services/       # API service layer (native fetch)
+│   │   ├── services/       # Data service layer (reads local JSON)
 │   │   └── utils/          # Utility functions (TypeScript)
 │   ├── src/css/            # Plain CSS stylesheets (split into partials)
 │   │   ├── index.css       # Imports all partials + Radix colour tokens
@@ -36,8 +35,15 @@ portfolio/
 │   │   ├── typography.css  # Font faces, base type styles
 │   │   ├── grid.css        # Category grid + media item column classes
 │   │   └── ui.css          # Component styles (navbar, footer, cards, etc.)
-│   ├── src/assets/         # JSON data, images, fonts, sitemap files
-│   ├── public/             # Static files served by Vite (archive JSON under assets/json/archive/)
+│   ├── src/assets/         # JSON data, images, fonts
+│   │   └── json/
+│   │       └── portfolio.json  # All portfolio data (entries, categories, clients, etc.)
+│   ├── public/             # Static files served by Vite
+│   │   ├── assets/json/archive/  # Per-project archive JSON files
+│   │   └── sitemap.xml     # Generated sitemap (committed)
+│   ├── scripts/            # Shell scripts
+│   │   ├── deploy.sh       # Build/deploy script (build, local, push, live, stage, assets, assets:pull)
+│   │   └── purge-cdn.sh    # Ad-hoc BunnyCDN cache purge for portfolio images
 │   ├── index.html          # Vite entry HTML
 │   ├── vite.config.ts      # Vite config with path aliases + dev proxy
 │   ├── tsconfig.json       # TypeScript config
@@ -50,14 +56,18 @@ portfolio/
 │   ├── nginx.conf          # SPA routing, gzip, cache headers, security headers
 │   ├── docker-compose.yml  # Production (runs on NAS, port 8080)
 │   ├── docker-compose.stage.yml  # Staging (runs on NAS, port 8081)
-│   ├── docker-compose.dev.yml    # Local testing (builds + runs on Mac, port 8080)
-│   ├── deploy.sh           # Build/deploy script (build, local, push, live, stage, assets, assets:pull)
-│   └── purge-cdn.sh        # Ad-hoc BunnyCDN cache purge for portfolio images
+│   └── docker-compose.dev.yml    # Local testing (builds + runs on Mac, port 8080)
+├── scripts/                # Build-time TypeScript scripts
+│   ├── convert-db.ts       # One-time SQL → JSON conversion (reads sql/portfolio.sql)
+│   ├── generate-sitemap.ts # Generates www/public/sitemap.xml from portfolio.json
+│   └── tsconfig.json       # TypeScript config for scripts (uses www's @types/node)
+├── sql/                    # Database archive
+│   └── portfolio.sql       # phpMyAdmin dump — permanent archive of the original DB
 ├── assets/                 # Local portfolio media (git-ignored, ~90MB)
 │   └── portfolio/
 │       └── images/         # Thumbnails, screengrabs, awards — synced from NAS via SSH
-├── api/                    # Legacy PHP/Laravel API (Grunt-managed, mostly unused)
-└── api_express/            # Newer Express.js API stub (src is empty — only node_modules)
+├── api/                    # Legacy PHP/Laravel API (dormant, kept for reference)
+└── api_express/            # Express.js API stub (empty src/, never completed)
 ```
 
 ---
@@ -85,6 +95,75 @@ portfolio/
 | Node requirement | ^22.17.1 | |
 | ESLint | 9.31.0 | Flat config (eslint.config.js) |
 | Prettier | 3.4.1 | |
+
+---
+
+## Data Architecture
+
+All portfolio data lives in a single local JSON file — no API or database dependency at runtime.
+
+### portfolio.json
+
+`www/src/assets/json/portfolio.json` is the single source of truth for all portfolio data. It is imported directly by the service layer and bundled into the app at build time.
+
+**Structure** — Normalized with shared lookup tables at the top level; entries reference by key:
+
+```json
+{
+  "categories":   { "web": { "label": "Websites", "description": "..." }, ... },
+  "clients":      { "bbc": { "name": "BBC" }, ... },
+  "technologies": { "html": "HTML", "css": "CSS", ... },
+  "frameworks":   { "react": { "name": "React", "url": "..." }, ... },
+  "platforms":    { "desktop": "Desktop", ... },
+  "affiliations": { "jollywise": { "name": "Jollywise Media", "url": "..." }, ... },
+  "territories":  { "uk": "UK", "emea": "EMEA", ... },
+  "entries": [
+    {
+      "entry_key": "nextstep",
+      "title": "Take it to the Top!",
+      "description": "...",
+      "responsibilities": "...",
+      "year": 2016, "week": 45,
+      "modified": "2026-02-18T14:41:54",
+      "is_featured": true, "is_nda": false, "is_summary": false, "is_responsive": true,
+      "client": "bbc",
+      "categories": ["web", "game", "responsive", "app"],
+      "affiliation": "jollywise",
+      "technologies": ["html", "css", "javascript"],
+      "frameworks": ["babel", "vuejs"],
+      "platforms": ["desktop", "tablet", "smartphone"],
+      "territories": ["uk"],
+      "has_archive": false, "is_flash": false, "is_dark_background": false,
+      "images": [{ "id": "desktop_01.jpg", "width": 1024, "height": 847 }],
+      "pdfs": [], "videos": [], "links": [], "awards": []
+    }
+  ]
+}
+```
+
+### How portfolio.json was generated
+
+The `scripts/convert-db.ts` script performed a one-time conversion:
+1. Parsed `sql/portfolio.sql` (phpMyAdmin dump of the MariaDB database with 15+ tables and junction tables)
+2. Resolved all many-to-many relationships (entries ↔ categories, technologies, frameworks, platforms, territories, affiliations, awards)
+3. Merged with the former `data.json` which provided media data (images with dimensions, PDFs, videos, links, awards with full detail, archive/flash/dark-background flags)
+4. Output the merged, denormalized result
+
+To regenerate: `npx tsx scripts/convert-db.ts` (from project root)
+
+### Archive JSON
+
+Per-project archive data (iframe embeds for legacy Flash content) is served as static JSON from `www/public/assets/json/archive/{client}/{entry}.json`. This is the only data still loaded via `fetch()` at runtime.
+
+### Sitemap
+
+`www/public/sitemap.xml` is generated from portfolio.json by `scripts/generate-sitemap.ts`. Run manually when data changes:
+
+```bash
+cd www && npm run sitemap
+```
+
+Or from the project root: `npx tsx scripts/generate-sitemap.ts`
 
 ---
 
@@ -133,10 +212,11 @@ Environment config via `.env.*` files using `VITE_*` variables:
 | `npm run build:stage` | tsc + vite build --mode staging |
 | `npm run build:dev` | tsc + vite build --mode development |
 | `npm run preview` | Preview production build locally |
+| `npm run sitemap` | Generate sitemap.xml from portfolio.json |
 
 ### Deploy Commands
 
-All deploy commands run from `www/` and delegate to `deploy.sh`:
+All deploy commands run from `www/` and delegate to `scripts/deploy.sh`:
 
 | Command | What it does |
 |---|---|
@@ -148,16 +228,16 @@ All deploy commands run from `www/` and delegate to `deploy.sh`:
 | `npm run deploy:assets` | Sync local portfolio images → NAS via SSH |
 | `npm run assets:pull` | Pull portfolio images from NAS → local via SSH |
 
-Or use `deploy.sh` directly:
+Or use `scripts/deploy.sh` directly:
 
 ```bash
-./deploy.sh live                # build + deploy to production
-./deploy.sh stage               # build + deploy to staging
-./deploy.sh local               # build + run locally in Docker
-./deploy.sh build [prod|stage]  # build only (no deploy)
-./deploy.sh push [live|stage]   # push only (no rebuild)
-./deploy.sh assets              # sync local images → NAS
-./deploy.sh assets:pull         # pull images from NAS → local
+./scripts/deploy.sh live                # build + deploy to production
+./scripts/deploy.sh stage               # build + deploy to staging
+./scripts/deploy.sh local               # build + run locally in Docker
+./scripts/deploy.sh build [prod|stage]  # build only (no deploy)
+./scripts/deploy.sh push [live|stage]   # push only (no rebuild)
+./scripts/deploy.sh assets              # sync local images → NAS
+./scripts/deploy.sh assets:pull         # pull images from NAS → local
 ```
 
 ### Deploy Pipeline
@@ -213,7 +293,7 @@ Three types of assets, each served differently:
 Only needed when existing portfolio images are **replaced** (same filename, new content). New images cache naturally.
 
 ```bash
-./purge-cdn.sh images/portfolio-entries/disney/capamerads/thumb/thumb.jpg
+./scripts/purge-cdn.sh images/portfolio-entries/disney/capamerads/thumb/thumb.jpg
 ```
 
 Requires `BUNNY_API_KEY` env var or `www/.env.local` file.
@@ -225,7 +305,7 @@ Portfolio media images (~90MB, ~1,800 files) can be served locally during develo
 - **If present:** A Vite plugin serves `/assets-proxy/*` directly from the local `assets/portfolio/` directory. No network requests to the NAS.
 - **If absent:** Falls back to the remote proxy (`/assets-proxy` → `https://assets.stephenhamilton.co.uk/portfolio`), same as before.
 
-Initial setup: `cd www && ./deploy.sh assets:pull`
+Initial setup: `cd www && ./scripts/deploy.sh assets:pull`
 
 The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (`ds918_stephen:/volume1/web/assets.stephenhamilton.co.uk/portfolio/images/`). Synology `@eaDir` metadata directories are excluded.
 
@@ -235,7 +315,6 @@ The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (
 |---|---|---|---|
 | `VITE_ASSETS_BASE` | `/assets-proxy` | `https://assets...` | `https://cdn...` |
 | `VITE_DATA_BASE` | `/assets/json/archive` | `/assets/json/archive` | `/assets/json/archive` |
-| `VITE_API_BASE` | `https://api...` | `https://api...` | `https://api...` |
 
 ### NAS Docker Setup (one-time, already done)
 
@@ -254,7 +333,7 @@ The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (
 - **Google Analytics removed** — react-ga was removed; no replacement added.
 - **Flash support removed** — SWF/Flash components deleted; legacy Flash projects will not display media.
 - **`api_express/src/`** — Directory exists but is empty (no source files, only `node_modules`).
-- **`api/`** — Legacy PHP/Laravel API managed by Grunt; appears to be dormant.
+- **`api/`** — Legacy PHP/Laravel API; dormant, kept for reference.
 - **`src/utils/DateFormat.ts`** — Unused utility file (date formatting); safe to delete.
 
 ---
@@ -263,8 +342,10 @@ The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (
 
 - **Container/Presentational split** — Containers in `containers/`, UI in `components/`.
 - **Selector pattern** — `itemsSelectors.ts`, `categoriesSelectors.ts`, `itemSelectors.ts` all use `createSelector` with stable fallback constants to prevent unnecessary re-renders.
-- **Data flow** — `import.meta.env.VITE_*` → containers dispatch → reducers → localStorage.
-- **Portfolio data** — Lives in `src/assets/json/data.json` and per-project archive JSON files (also copied to `public/`).
+- **Data flow** — `portfolio.json` is imported at build time → service layer filters/transforms → Redux actions dispatch → reducers → localStorage.
+- **Portfolio data** — All entry metadata, media info, and lookup tables live in `src/assets/json/portfolio.json`. Per-project archive JSON files are loaded at runtime from `public/assets/json/archive/`.
+- **Service layer** — `src/services/portfolio.ts` reads directly from the imported `portfolio.json` and returns Promises (matching the original API-based signatures). No network requests except for archive JSON. Redux actions/reducers are unchanged.
+- **Local data derivation** — `AppConstants.ts` derives the `localdata` lookup (`client → entry → media`) from `portfolio.json` entries at import time, maintaining the same shape used by `localDataReducer` and `itemActions`.
 - **Config** — Environment vars in `.env.development` / `.env.staging` / `.env.production`.
 - **TypeScript** — Full TypeScript migration complete. All source files are `.ts`/`.tsx`.
 - **CSS** — Plain CSS (no preprocessor). Split into partials under `src/css/`. Uses native CSS nesting and custom properties. No Bootstrap — Radix UI Themes primitives used throughout.
@@ -285,7 +366,7 @@ The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (
 
 - `www/src/store/configureStore.ts` sets RTK store, persists selected slices to `localStorage`, and rehydrates in production builds.
 - `www/src/store/rootReducer.ts` combines selected category/year/filter, category metadata, item lists, items by id, and local data.
-- `www/src/store/categories/categoriesActions.ts` fetches available categories + active-by-year, updates metadata, and triggers item fetches when category/year/filter changes.
+- `www/src/store/categories/categoriesActions.ts` fetches available categories + active-by-year from the service layer, updates metadata, and triggers item fetches when category/year/filter changes.
 - `www/src/store/items/itemsActions.ts` fetches category items, enriches entries (paths, booleans, awards), and caches per category.
 - `www/src/store/item/itemActions.ts` fetches a single item, merges local data, parses media (images/pdfs/videos), and optionally loads archive JSON.
 - `www/src/utils/dateValidation.ts` gates refetching (15s dev, 1 day prod).
@@ -306,10 +387,10 @@ The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (
 - `www/src/components/item/ItemMediaList.tsx` uses `MediaImageCell` (internal component) with `useInView` to defer item detail images; shows `ItemImagePlaceholder` (Radix `<Spinner>`) until in range.
 - `www/src/css/` contains all styles as plain CSS partials (no SCSS).
 
-### API Folders
+### Legacy API Folders
 
-- `api/` is legacy PHP/Laravel (Grunt-managed, not part of the Vite app).
-- `api_express/` is an empty Express stub (no source in `src/`).
+- `api/` is legacy PHP/Laravel (Grunt-managed, dormant). Was the original data source before the local JSON migration.
+- `api_express/` is an empty Express stub (no source in `src/`). Never completed.
 
 ---
 
@@ -335,3 +416,5 @@ The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (
 - ✅ Bootstrap modal → Radix `Dialog`
 - ✅ Bootstrap dropdown → Radix `DropdownMenu`
 - ✅ Bootstrap navbar → Radix `NavigationMenu` primitive
+- ✅ API + MariaDB → local JSON (`portfolio.json`; API eliminated)
+- ✅ Build-time sitemap generation

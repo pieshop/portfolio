@@ -13,10 +13,11 @@ set -euo pipefail
 
 CDN_BASE="https://cdn.stephenhamilton.co.uk/portfolio"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WWW_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 # Load API key from .env.local if not already set
-if [[ -z "${BUNNY_API_KEY:-}" ]] && [[ -f "$SCRIPT_DIR/.env.local" ]]; then
-    BUNNY_API_KEY="$(grep '^BUNNY_API_KEY=' "$SCRIPT_DIR/.env.local" | cut -d= -f2-)"
+if [[ -z "${BUNNY_API_KEY:-}" ]] && [[ -f "$WWW_DIR/.env.local" ]]; then
+    BUNNY_API_KEY="$(grep '^BUNNY_API_KEY=' "$WWW_DIR/.env.local" | cut -d= -f2-)"
 fi
 
 if [[ -z "${BUNNY_API_KEY:-}" ]]; then

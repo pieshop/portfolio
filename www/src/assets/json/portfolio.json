@@ -1,0 +1,6538 @@
+{
+  "categories": {
+    "web": {
+      "label": "Websites",
+      "description": "A selection of websites I have built over the years."
+    },
+    "olm": {
+      "label": "OLM",
+      "description": "A selection of online media I have built over the years."
+    },
+    "responsive": {
+      "label": "Responsive",
+      "description": "A selection of responsive websites I have built over the years."
+    },
+    "prototype": {
+      "label": "Prototypes",
+      "description": "A selection of prototypes I have built over the years."
+    },
+    "game": {
+      "label": "Games",
+      "description": "A selection of games I have built over the years."
+    },
+    "app": {
+      "label": "Apps",
+      "description": "A selection of native apps I have built over the years."
+    }
+  },
+  "clients": {
+    "intel": {
+      "name": "Intel"
+    },
+    "kraft": {
+      "name": "Kraft"
+    },
+    "sky": {
+      "name": "Sky"
+    },
+    "mastercard": {
+      "name": "Mastercard"
+    },
+    "mrm": {
+      "name": "MRM"
+    },
+    "msn": {
+      "name": "MSN"
+    },
+    "microsoft": {
+      "name": "Microsoft"
+    },
+    "ups": {
+      "name": "UPS"
+    },
+    "unilever": {
+      "name": "Unilever"
+    },
+    "louboutin": {
+      "name": "Louboutin"
+    },
+    "magnum": {
+      "name": "Magnum"
+    },
+    "peugeot": {
+      "name": "Peugeot"
+    },
+    "opel": {
+      "name": "Opel"
+    },
+    "hp": {
+      "name": "HP"
+    },
+    "nesquik": {
+      "name": "Nesquik"
+    },
+    "natwest": {
+      "name": "Natwest"
+    },
+    "mini": {
+      "name": "Mini"
+    },
+    "birdseye": {
+      "name": "Birdseye"
+    },
+    "apl": {
+      "name": "APL"
+    },
+    "tourismireland": {
+      "name": "Tourism Ireland"
+    },
+    "betgenius": {
+      "name": "Betgenius"
+    },
+    "alico": {
+      "name": "Alico"
+    },
+    "anirog": {
+      "name": "Anirog"
+    },
+    "jollywise": {
+      "name": "Jollywise"
+    },
+    "cartoonnetwork": {
+      "name": "Cartoon Network"
+    },
+    "disney": {
+      "name": "Disney"
+    },
+    "nickelodeon": {
+      "name": "Nickelodeon"
+    },
+    "samsung": {
+      "name": "Samsung"
+    },
+    "sony": {
+      "name": "Sony"
+    },
+    "universalpictures": {
+      "name": "Universal"
+    },
+    "vocalink": {
+      "name": "Vocalink"
+    },
+    "sightsavers": {
+      "name": "Sightsavers"
+    },
+    "royalmail": {
+      "name": "Royal Mail"
+    },
+    "turner": {
+      "name": "Turner"
+    },
+    "bbc": {
+      "name": "BBC"
+    },
+    "telstar": {
+      "name": "Telstar"
+    },
+    "fidelity": {
+      "name": "Fidelity"
+    },
+    "dcthompson": {
+      "name": "DC Thompson"
+    }
+  },
+  "technologies": {
+    "html": "HTML",
+    "php": "PHP",
+    "flash": "Flash",
+    "xml": "XML",
+    "mysql": "MySQL",
+    "css": "CSS",
+    "javascript": "Javascript",
+    "as3": "AS3",
+    "as2": "AS2",
+    "as1": "AS1",
+    "directorlingo": "Director Lingo",
+    "6502assembly": "6502 Assembly",
+    "facebook": "Facebook",
+    "unity": "Unity",
+    "ios": "iOS",
+    "android": "Android"
+  },
+  "frameworks": {
+    "robotlegs": {
+      "name": "Robotlegs",
+      "url": "http://www.robotlegs.org/"
+    },
+    "puremvc": {
+      "name": "PureMVC",
+      "url": "http://www.puremvc.org/"
+    },
+    "jqtouch": {
+      "name": "JQTouch",
+      "url": "http://jqtouch.com/"
+    },
+    "phonegap": {
+      "name": "PhoneGap",
+      "url": "http://www.phonegap.com"
+    },
+    "inhousemvc": {
+      "name": "inhouse MVC",
+      "url": ""
+    },
+    "jquery": {
+      "name": "JQuery",
+      "url": "http://jquery.com"
+    },
+    "mustache": {
+      "name": "Mustache",
+      "url": "http://mustache.github.io"
+    },
+    "backbone": {
+      "name": "Backbone",
+      "url": "http://backbonejs.org"
+    },
+    "marionette": {
+      "name": "Marionette",
+      "url": "http://marionettejs.com"
+    },
+    "handlebars": {
+      "name": "Handlebars",
+      "url": "http://handlebarsjs.com/"
+    },
+    "greensockgsap": {
+      "name": "Greensock GSAP",
+      "url": "https://greensock.com/gsap"
+    },
+    "easeljs": {
+      "name": "EaselJS",
+      "url": "http://www.createjs.com/easeljs"
+    },
+    "phaser": {
+      "name": "Phaser",
+      "url": "http://phaser.io/"
+    },
+    "babel": {
+      "name": "Babel",
+      "url": "https://babeljs.io"
+    },
+    "vuejs": {
+      "name": "Vue.js",
+      "url": "https://vuejs.org"
+    },
+    "react": {
+      "name": "React",
+      "url": "https://facebook.github.io/react/"
+    },
+    "pixi": {
+      "name": "Pixi",
+      "url": "http://www.pixijs.com/"
+    },
+    "redux": {
+      "name": "Redux",
+      "url": "https://redux.js.org/"
+    }
+  },
+  "platforms": {
+    "desktop": "Desktop",
+    "tablet": "Tablet",
+    "smartphone": "Smartphone"
+  },
+  "affiliations": {
+    "mrmlondon": {
+      "name": "MRMLondon",
+      "url": "http://mrm-meteorite.com"
+    },
+    "zentropypartners": {
+      "name": "Zentropy Partners",
+      "url": "http://mrm-meteorite.com"
+    },
+    "christianlouboutin": {
+      "name": "Christian Louboutin",
+      "url": "http://www.christianlouboutin.com"
+    },
+    "apldigital": {
+      "name": "APL Digital",
+      "url": "http://mrm-meteorite.com"
+    },
+    "betgenius": {
+      "name": "Betgenius",
+      "url": "http://www.betgenius.com/products/customer-marketing/marketing-services/"
+    },
+    "anirog": {
+      "name": "Anirog",
+      "url": "http://www.mobygames.com/company/anco-software-ltd"
+    },
+    "jollywisemedia": {
+      "name": "Jollywise Media",
+      "url": "https://www.jollywise.co.uk"
+    },
+    "kerve": {
+      "name": "Kerve",
+      "url": "http://www.kerve.co.uk"
+    },
+    "ctvmultimediastudio": {
+      "name": "CTV Multimedia Studio",
+      "url": "http://www.ctvob.co.uk/"
+    }
+  },
+  "territories": {
+    "emea": "EMEA",
+    "uk": "UK",
+    "us": "US",
+    "fr": "FR",
+    "de": "DE",
+    "ru": "RU",
+    "it": "IT",
+    "pt": "PT",
+    "es": "ES",
+    "dk": "DK",
+    "nl": "NL",
+    "befl": "BEFL",
+    "befr": "BEFR",
+    "uk__fr__de__it__pt__es__dk": "UK, FR, DE, IT, PT, ES, DK"
+  },
+  "entries": [
+    {
+      "entry_key": "horriblehistories",
+      "title": "Horrible Histories",
+      "description": "<p>A game for 4-12 year olds based on the popular Horrible Histories TV series. The game was built to sit on the CBBC games website, and was also designed to be packaged as an App for all mobile platforms, served up into mobile browsers.</p>",
+      "responsibilities": "Front-end developer, working alongside front-end developer Paul. Together we were responsible for the build. Paul created the framework, and between us we built the 29 minigames currently playable.",
+      "year": 2018,
+      "week": 25,
+      "modified": "2026-02-18 14:39:35",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "bbc",
+      "categories": [
+        "app",
+        "game",
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "phaser"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_08.jpg",
+          "width": 1024,
+          "height": 847
+        }
+      ],
+      "pdfs": [],
+      "videos": [
+        {
+          "id": "horriblehistories_sneakpeak.mp4",
+          "width": 375,
+          "height": 667
+        }
+      ],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "beanlender",
+      "title": "Return to Lender",
+      "description": "<p>With every school summer holiday comes the annual Summer Reading Challenge, coordinated by The Reading Agency in partnership with public libraries across the UK. It’s a simple yet brilliant concept – kids sign up for free at their local library, then read six books of their choice over the summer holidays to collect rewards and complete the challenge.</p>\r\n<p>This year, the theme ‘Mischief Makers’ has seen the SRC taken over by Dennis and Gnasher – not to mention all your other Beanotown favourites. Kids sign up to get their very own map of Beanotown, collecting stickers with every book read to find the location of a hidden treasure chest. What’s more, we have a brand-new game up on the Beano website, so they can help Dennis return his overdue library books without getting caught!</p>",
+      "responsibilities": "Front-end developer responsible for the javascript Phaser build of the UI for this responsive micro-site.",
+      "year": 2018,
+      "week": 20,
+      "modified": "2026-02-18 14:39:42",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "dcthompson",
+      "categories": [
+        "game",
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "phaser"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 847
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "https://www.beano.com/games/return-to-lender",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "nextstep_v3",
+      "title": "Take it to Paris!",
+      "description": "<p>The third and final chapter of the branching dialogue narrative game for 4-12 year olds based on the popular NextStep TV series. The game was built to sit on the CBBC games website.</p>\r\n<p>Take it to Paris! sees you join A-Troupe for their latest adventures, navigating the everyday dramas that inevitably arise between characters you know and love from the show.</p>\r\n<p>While previous chapters have taken the dance troupe from the studio to the beach, Chapter 3 invites you all the way to Paris for some of the biggest challenges yet.</p>",
+      "responsibilities": "Front-end developer, working alongside front-end developer Paul. Together we were responsible for the new chapter build.",
+      "year": 2018,
+      "week": 8,
+      "modified": "2026-02-18 14:37:37",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "bbc",
+      "categories": [
+        "web",
+        "game",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "babel",
+        "vuejs"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 847
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.bbc.co.uk/cbbc/games/the-next-step-take-it-to-the-top",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "letscreate",
+      "title": "Let's Create",
+      "description": "Jollywise is responsible for www.boomerangtv.co.uk. Let's create is a section of the site that allows users to explore various creative activities and upload their own creations to be showcased in a gallery. Users are able to 'like' content, and feeds are used to surface 'most popular', 'trending' and 'featured' creations.",
+      "responsibilities": "Front-end developer responsible for the react/redux build of the gallery and media upload module.",
+      "year": 2017,
+      "week": 32,
+      "modified": "2026-02-18 14:40:57",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "turner",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "react",
+        "redux"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 839
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.boomerangtv.co.uk/lets-create",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "nextstep_v2",
+      "title": "Take it to the Beach!",
+      "description": "<p>The second chapter of the branching dialogue narrative game for 4-12 year olds based on the popular NextStep TV series. The game was built to sit on the CBBC games website.</p>\r\n<p>Take it to the Beach! sees you join A-Troupe for their latest adventures, navigating the everyday dramas that inevitably arise between characters you know and love from the show.</p>\r\n<p>While the previous chapter introduced the dance troupe in the Studio, Chapter 2 invites you all the way to the Beach.</p>",
+      "responsibilities": "Front-end developer, working alongside front-end developer Paul. Together we were responsible for the new chapter build.",
+      "year": 2017,
+      "week": 28,
+      "modified": "2026-02-18 14:41:13",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "bbc",
+      "categories": [
+        "web",
+        "game",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "babel",
+        "vuejs"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 847
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "potw",
+      "title": "Pet Of The Week",
+      "description": "Jollywise is responsible for www.boomerangtv.co.uk. Pet of the Week is a section of the site that allows users to explore various pet related activities and upload videos or images of their own pets to be showcased in a gallery. Users are able to 'like' content, and feeds are used to surface 'most popular', 'trending' and 'featured' pets.",
+      "responsibilities": "Front-end developer responsible for the react/redux build of the gallery and media upload module.",
+      "year": 2017,
+      "week": 18,
+      "modified": "2026-02-18 14:41:04",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "turner",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "react",
+        "redux"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 839
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.boomerangtv.co.uk/animals",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "knockknock",
+      "title": "Knock Knock",
+      "description": "Jollywise is responsible for www.boomerangtv.co.uk. Knock knock is a section of the site that allows users to upload their favourite jokes as audio or text to be showcased in a gallery. Users are able to 'like' their favourite jokes in the gallery, and a 'joke of the month' surfaced the most popular submission.",
+      "responsibilities": "Front-end developer responsible for the react/redux build of the gallery and media upload module.",
+      "year": 2017,
+      "week": 17,
+      "modified": "2026-02-18 14:40:52",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "turner",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "react",
+        "redux"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 839
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.boomerangtv.co.uk/shows/knock-knock-boom-boom",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "nextstepbullying",
+      "title": "Stand up to Bullying",
+      "description": "<p>A standalone chapter of the branching dialogue narrative game for 4-12 year olds based on the popular NextStep TV series. The game was built to sit on the CBBC games website.</p>\r\n<p>Stand up to Bullying sees you join A-Troupe for their latest adventures, navigating the everyday dramas that inevitably arise between characters you know and love from the show.</p>\r\n<p>While the previous chapter introduced the dance troupe in the Studio, this standalone chapter remains in the Studio and explores a bullying theme.</p>",
+      "responsibilities": "Front-end developer, working alongside front-end developer Paul. Together we were responsible for the new chapter build.",
+      "year": 2017,
+      "week": 14,
+      "modified": "2026-02-18 14:39:55",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "bbc",
+      "categories": [
+        "web",
+        "app",
+        "game",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "babel",
+        "vuejs"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 847
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "https://www.bbc.co.uk/cbbc/games/the-next-step-take-it-to-the-top-stand-up-to-bullying",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "grootdance",
+      "title": "Dancing Groot",
+      "description": "A campaign website built to to support the launch of the 2017 Guardians Of The Galaxy film.",
+      "responsibilities": "Front-end developer responsible for the html/css/js build for this responsive micro-site.",
+      "year": 2017,
+      "week": 12,
+      "modified": "2026-02-18 14:39:50",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "javascript",
+        "css"
+      ],
+      "frameworks": [
+        "react",
+        "pixi"
+      ],
+      "platforms": [],
+      "territories": [],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 850
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 850
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 850
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 850
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 850
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 850
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "miscellaneous2017",
+      "title": "Freelance",
+      "description": "In 2017 I worked on builds for various clients.\r\n\r\nPlease contact me directly if you need to see specific samples.",
+      "responsibilities": "Front-end developer - various responsibilities.",
+      "year": 2017,
+      "week": 1,
+      "modified": "2018-09-02 22:00:00",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": true,
+      "is_responsive": true,
+      "client": "jollywise",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "starwarsrogue",
+      "title": "Star Wars",
+      "description": "HTML banners in mpu, skyscraper and leaderboard dimensions.",
+      "responsibilities": "Front-end developer responsible for the javascript build of these html banners, working from psd's.",
+      "year": 2016,
+      "week": 52,
+      "modified": "2026-02-18 14:41:59",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "javascript",
+        "css"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_10.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_10.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_07.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_08.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_09.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_10.jpg",
+          "width": 512,
+          "height": 512
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "nextstep",
+      "title": "Take it to the Top!",
+      "description": "A branching dialogue narrative game for 4-12 year olds based on the popular NextStep TV series. The game was built to sit on the CBBC website, and also had to be playable via the new BBC mobile app 'Playtime Island'.",
+      "responsibilities": "<p>Tech Lead responsible for project delivery. The project was split into several streams. The main areas I was involved with were : game editor, game model, game ui.</p>  <ul>     <li>Tech Architecture and game data design</li>     <li>BBC platform integration (BBC jenkins build pipeline and GMI integration)</li>     <li>Devops role developing various project builds using webpack</li>     <li>Game data editor build : Using Babel, Backbone and Marionette</li>     <li>Game dialogue editor integration - using a modified version of <a target='_blank' href='https://github.com/InfiniteAmmoInc/Yarn'>Yarn</a></li>     <li>Game data entry</li>     <li>Managing and co-ordinating the tech deliverables from a team of 3 developers</li> </ul>",
+      "year": 2016,
+      "week": 45,
+      "modified": "2026-02-18 14:41:54",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "bbc",
+      "categories": [
+        "web",
+        "game",
+        "responsive",
+        "app"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "babel",
+        "vuejs"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 847
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 640
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 640
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 640
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 640
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 1024,
+          "height": 640
+        },
+        {
+          "id": "desktop_08.jpg",
+          "width": 1024,
+          "height": 640
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "atimevr",
+      "title": "Adventure Time VR",
+      "description": "A campaign website built to encourage users to submit on pack promo codes.",
+      "responsibilities": "Front-end developer responsible for the html/css/js build for this responsive website.",
+      "year": 2016,
+      "week": 35,
+      "modified": "2026-02-18 14:41:46",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "turner",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "backbone",
+        "marionette"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 839
+        },
+        {
+          "id": "smartphone_01.jpg",
+          "width": 322,
+          "height": 570
+        },
+        {
+          "id": "smartphone_02.jpg",
+          "width": 322,
+          "height": 570
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://unlock.cartoonnetwork.co.uk/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "dorybanner",
+      "title": "Finding Dory",
+      "description": "HTML banners in mpu, skyscraper and leaderboard dimensions.",
+      "responsibilities": "Front-end developer responsible for the javascript build of these html banners, working from psd's.",
+      "year": 2016,
+      "week": 22,
+      "modified": "2026-02-18 14:41:42",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "greensockgsap"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 512
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "capamerads",
+      "title": "Captain America Civil War",
+      "description": "HTML banners in mpu, skyscraper and leaderboard dimensions.",
+      "responsibilities": "Front-end developer responsible for the javascript build of all alternative ad unit sizes of these html banners, working from a prebuilt 300x600 template.",
+      "year": 2016,
+      "week": 17,
+      "modified": "2026-02-18 14:41:37",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 512
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "tinypopartpad",
+      "title": "TinyPop Artpad",
+      "description": "<p>This unity project was inherited from another client. The app was already live on both ios/android app stores. It is a fairly high profile app with a large user install base, but had been receiving bad reviews from users complaining about it not working properly. My job was to get it up and running, make amends, and add additional features, and then deploy to the ios and android app stores.</p> <p>Challenges included first exposure to unity and C#, first in-depth exposure to ios/android development and first in-depth exposure to deployment strategies across both ios and android app stores (certificates, provisioning profiles etc).</p>",
+      "responsibilities": "<ul>   <li>Decipher provided source files - no documentation provided.</li>   <li>Amend/fix existing features and add new features.</li>   <li>Integrate existing and new platform specific services (Pushwoosh, SuperAwesome, Localytics, Google Analytics, Facebook).</li>   <li>Deployment : adhoc, testflight and live.</li> </ul>",
+      "year": 2016,
+      "week": 12,
+      "modified": "2026-02-18 14:41:26",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sony",
+      "categories": [
+        "app"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "unity",
+        "ios",
+        "android"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": true,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 901,
+          "height": 676
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 901,
+          "height": 676
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 901,
+          "height": 676
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 901,
+          "height": 676
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 901,
+          "height": 676
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "https://itunes.apple.com/gb/app/pop-artpad/id898203063?mt=8",
+          "target": "_blank",
+          "label": "ios App Store"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "tinypoptv",
+      "title": "TinyPop TV",
+      "description": "<p>This unity project was inherited from another client. It wasn't yet published but was 95% feature complete. Jollywise's job was to get it up and running, make amends, and add additional features, and then deploy to the ios and android app stores. My job was initial evaluation and to add some of the ios/android platform features. Once I was finished the project was taken over and completed by another developer.</p> <p>Challenges included first exposure to unity and C#, first in-depth exposure to ios/android development and first in-depth exposure to deployment strategies across both ios and android app stores (certificates, provisioning profiles etc).</p>",
+      "responsibilities": "<ul>   <li>Decipher provided source files - no documentation provided.</li>   <li>Integrate existing ios specific services (Pushwoosh, SuperAwesome).</li>   <li>Ios setup (certificates, provisioning profiles etc).</li> </ul>",
+      "year": 2016,
+      "week": 10,
+      "modified": "2026-02-18 14:41:32",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sony",
+      "categories": [
+        "app"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "unity",
+        "ios",
+        "android"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": true,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "https://itunes.apple.com/gb/app/tiny-pop-tv/id874837680?mt=8",
+          "target": "_blank",
+          "label": "ios App Store"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "dadsarmy",
+      "title": "Dad's Army",
+      "description": "A simple point and click game built to support the launch of the 2016 Dad's Army film.",
+      "responsibilities": "Front-end developer responsible for the javascript build for this responsive game.",
+      "year": 2016,
+      "week": 2,
+      "modified": "2026-02-18 14:41:19",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "universalpictures",
+      "categories": [
+        "game",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "phaser"
+      ],
+      "platforms": [
+        "desktop",
+        "tablet",
+        "smartphone"
+      ],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 651
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 651
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 651
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 651
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 580
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.dadsarmy-nightwatch.com",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "miscellaneous2016",
+      "title": "Freelance",
+      "description": "In 2016 I have worked on builds for various clients.\nPlease contact me directly if you need to see specific samples.",
+      "responsibilities": "Front-end developer - various responsibilities.",
+      "year": 2016,
+      "week": 1,
+      "modified": "2017-02-09 10:37:23",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": true,
+      "is_responsive": true,
+      "client": "jollywise",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "movies",
+      "title": "Movies",
+      "description": "HTML interactive banners in mpu, skyscraper and leaderboard dimensions.",
+      "responsibilities": "Front-end developer responsible for the javascript build of these html banners, working from psd's.",
+      "year": 2015,
+      "week": 50,
+      "modified": "2017-02-22 16:40:14",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sky",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "kerve",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "easeljs"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_07.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_08.jpg",
+          "width": 512,
+          "height": 427
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "zootopia",
+      "title": "Zootopia Ads",
+      "description": "HTML banners in mpu, skyscraper and leaderboard dimensions.",
+      "responsibilities": "Front-end developer responsible for the javascript build of these html banners, working from psd's.",
+      "year": 2015,
+      "week": 48,
+      "modified": "2026-02-18 14:42:47",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "greensockgsap"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": true,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_07.jpg",
+          "width": 512,
+          "height": 427
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "fandf",
+      "title": "Friends And Family",
+      "description": "An internal Disney promotional website created to enable Disney friends and family members to download promotional vouchers.",
+      "responsibilities": "Front-end developer responsible for the javascript build for this responsive website, working alongside an html/css developer.",
+      "year": 2015,
+      "week": 42,
+      "modified": "2026-02-18 14:42:28",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "javascript",
+        "html"
+      ],
+      "frameworks": [
+        "backbone",
+        "marionette",
+        "handlebars"
+      ],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1147,
+          "height": 1057
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1147,
+          "height": 1175
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "donation",
+      "title": "Donation Ads",
+      "description": "HTML banners in mpu, skyscraper and leaderboard dimensions.",
+      "responsibilities": "Front-end developer responsible for the javascript build of these html banners, working from psd's.",
+      "year": 2015,
+      "week": 41,
+      "modified": "2026-02-18 14:42:43",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sightsavers",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "javascript",
+        "css"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 427
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "tbyd",
+      "title": "Broadband Unlimited",
+      "description": "HTML animated MPU banner - 3 variations.",
+      "responsibilities": "Front-end developer responsible for the javascript build of these html banners, working from psd's.",
+      "year": 2015,
+      "week": 40,
+      "modified": "2017-02-22 16:41:41",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sky",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "kerve",
+      "technologies": [
+        "html",
+        "javascript"
+      ],
+      "frameworks": [
+        "easeljs"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 427
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "tistheseason",
+      "title": "Tis the season",
+      "description": "HTML animated banners in mpu, skyscraper and leaderboard dimensions (300x250, 300x600, 120x600, 160x600, 728x90, 970x250)",
+      "responsibilities": "Front-end developer responsible for the javascript build of all alternative ad unit sizes of these html banners, working from prebuilt 300x600 templates.",
+      "year": 2015,
+      "week": 38,
+      "modified": "2017-02-22 16:40:26",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "royalmail",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "kerve",
+      "technologies": [
+        "html",
+        "javascript",
+        "css"
+      ],
+      "frameworks": [
+        "greensockgsap"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_07.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_08.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_09.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_10.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_12.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_13.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_14.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_15.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 427
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "nomophobia",
+      "title": "Nomophobia",
+      "description": "A website built to create an engaging digital campaign to extend ‘nomophobia’ to new audiences. ",
+      "responsibilities": "Front-end developer responsible for the javascript build for this responsive website, working alongside an html/css developer.",
+      "year": 2015,
+      "week": 24,
+      "modified": "2026-02-18 14:42:08",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "vocalink",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "javascript",
+        "html"
+      ],
+      "frameworks": [
+        "backbone",
+        "marionette",
+        "handlebars"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 964
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 964
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 964
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 964
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 964
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 964
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 1024,
+          "height": 964
+        },
+        {
+          "id": "desktop_08.jpg",
+          "width": 1024,
+          "height": 964
+        },
+        {
+          "id": "desktop_09.jpg",
+          "width": 1024,
+          "height": 964
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "imagine2030",
+      "title": "Imagine 2030",
+      "description": "A campaign website built to encourage users to submit a meme of how they imagine the world will be in 2030.",
+      "responsibilities": "Front-end developer responsible for the javascript build for this responsive website, working alongside an html/css developer.",
+      "year": 2015,
+      "week": 18,
+      "modified": "2026-02-18 14:42:19",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sightsavers",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "javascript",
+        "html"
+      ],
+      "frameworks": [
+        "backbone",
+        "handlebars"
+      ],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1140,
+          "height": 1174
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1153,
+          "height": 1362
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.sightsavers.org.uk/our_campaign/your-2030/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "tomorrowlandrich",
+      "title": " Tomorrowland",
+      "description": "Flash (mpu, leaderboard) and html (mpu, overlay) banners, built to promote the launch of the film Tomorrowland. The campaign launched in 11 markets.",
+      "responsibilities": "Flash developer. Built the rich media executions, and handled the doubleclick deployment of both HTML and Flash. This was a challenge as we were supporting 11 markets, and each market had 6 flash and 6 html units, making 132 units that had to be uploaded and setup correctly.",
+      "year": 2015,
+      "week": 16,
+      "modified": "2026-02-18 14:42:35",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "flash",
+        "as3"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 426
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "avengersaou",
+      "title": "Avengers : Age of Ultron",
+      "description": "A campaign website, and associated facebook integration, built to support the launch of the 2015 Avengers film. This was a simple reskin of the Guardians of the Galaxy version created in 2014.",
+      "responsibilities": "Flash Developer, responsible for facebook timeline build.",
+      "year": 2015,
+      "week": 10,
+      "modified": "2026-02-18 14:42:12",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3",
+        "facebook"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "us"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1136,
+          "height": 1069
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1136,
+          "height": 1069
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1136,
+          "height": 1069
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1140,
+          "height": 1072
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "https://www.whichavengerareyou.com/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "nickleap",
+      "title": "Nick Leap",
+      "description": "‘Leap' was a website designed for Nickelodeon UK with education based learning in mind. The experience invites children into 4 different game worlds, each led by a favourite Nick Jr. character.",
+      "responsibilities": "Front-end developer responsible for the javascript build of two of the game worlds. The site had to support user access via desktop, tablet or smartphone.",
+      "year": 2015,
+      "week": 2,
+      "modified": "2026-02-18 14:42:03",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "nickelodeon",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 776
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 776
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 776
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 776
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 776
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 776
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 1024,
+          "height": 776
+        },
+        {
+          "id": "desktop_08.jpg",
+          "width": 1024,
+          "height": 776
+        },
+        {
+          "id": "desktop_09.jpg",
+          "width": 1024,
+          "height": 776
+        },
+        {
+          "id": "desktop_10.jpg",
+          "width": 1024,
+          "height": 776
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.nickjr.co.uk/_/leap/",
+          "target": "_blank",
+          "label": "Live"
+        },
+        {
+          "url": "http://www.jollywise.co.uk/case-studies/nick-jr-leap",
+          "target": "_blank",
+          "label": "Case Study"
+        }
+      ],
+      "awards": [
+        {
+          "id": 14,
+          "award_name": "Lovies\n",
+          "award_long_name": "Lovies",
+          "award_result": "Bronze",
+          "award_category": "Schools and Education",
+          "link": "http://bit.ly/2nPvhsn",
+          "pdf": "pdf/nickelodeon-nickleap-lovie.pdf"
+        }
+      ]
+    },
+    {
+      "entry_key": "miscellaneous2015",
+      "title": "Freelance",
+      "description": "In 2015 I worked on builds for various clients.\n\nPlease contact me directly if you need to see specific samples.",
+      "responsibilities": "Front-end developer - various responsibilities.",
+      "year": 2015,
+      "week": 1,
+      "modified": "2017-02-09 10:37:23",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": true,
+      "is_responsive": true,
+      "client": "jollywise",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "stm2014",
+      "title": "Share The Magic",
+      "description": "<p>A seasonal website for Disney&rsquo;s Share the Magic. This year the site was built with html/javascript. It ran two competitions and had a 'letter to Santa' component.</p>",
+      "responsibilities": "Front-end developer responsible for the javascript build for this responsive website, working alongside an html/css developer. Responsible for integrating into Disney's IUR registration process via Jollywise's app api. The site had to support user access via desktop, tablet or smartphone.",
+      "year": 2014,
+      "week": 44,
+      "modified": "2026-02-18 14:44:38",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk__fr__de__it__pt__es__dk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1056,
+          "height": 942
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1056,
+          "height": 942
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1056,
+          "height": 942
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1056,
+          "height": 942
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1056,
+          "height": 942
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1056,
+          "height": 942
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 1056,
+          "height": 942
+        },
+        {
+          "id": "desktop_08.jpg",
+          "width": 1056,
+          "height": 942
+        },
+        {
+          "id": "desktop_09.jpg",
+          "width": 1056,
+          "height": 942
+        },
+        {
+          "id": "desktop_10.jpg",
+          "width": 1056,
+          "height": 942
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "gotg",
+      "title": "Guardians Of The Galaxy",
+      "description": "A campaign website, and associated facebook integration, built to support the launch of the 2014 Guardians Of The Galaxy film.",
+      "responsibilities": "Flash Developer, responsible for facebook timeline build.",
+      "year": 2014,
+      "week": 24,
+      "modified": "2026-02-18 14:44:27",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3",
+        "facebook"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "de",
+        "it",
+        "us"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 976,
+          "height": 541
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 976,
+          "height": 541
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 976,
+          "height": 541
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 976,
+          "height": 541
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 976,
+          "height": 541
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 976,
+          "height": 961
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://which-guardian-are-you.com/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "mbb",
+      "title": "Mrs Browns Boys",
+      "description": "Mrs Brown’s Boys is a hugely popular TV show – with ratings some of the highest seen on British TV and being the most popular show aired during Christmas time with 9.4 million viewers. \r\n\r\nWith the movie on the way, the challenge was creating awareness of the fans of the TV show to the big screen and mobilising them online. ",
+      "responsibilities": "Front-end developer responsible for the javascript build of the surrounding hub and integrating/optimising two (meme machine and get snappy) of the hub elements, working alongside an html/css developer. ",
+      "year": 2014,
+      "week": 20,
+      "modified": "2026-02-18 14:44:22",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "universalpictures",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 1205
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 1205
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 1205
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 1205
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 1205
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 1205
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 1024,
+          "height": 770
+        },
+        {
+          "id": "desktop_08.jpg",
+          "width": 1024,
+          "height": 770
+        },
+        {
+          "id": "desktop_09.jpg",
+          "width": 1024,
+          "height": 770
+        },
+        {
+          "id": "desktop_10.jpg",
+          "width": 1024,
+          "height": 770
+        },
+        {
+          "id": "smartphone_01.jpg",
+          "width": 320,
+          "height": 573
+        },
+        {
+          "id": "smartphone_02.jpg",
+          "width": 320,
+          "height": 573
+        },
+        {
+          "id": "smartphone_03.jpg",
+          "width": 320,
+          "height": 573
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://mrsbrowngetsdigital.com/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "badneighbourspb",
+      "title": "Bad Neighbours Photobomb",
+      "description": "A campaign website built to support the launch of the 2014 Bad Neighbours film.",
+      "responsibilities": "Front-end developer responsible for the javascript build for this responsive website, working alongside an html/css developer. The site had to support user access via desktop, tablet or smartphone.",
+      "year": 2014,
+      "week": 12,
+      "modified": "2026-02-18 14:44:17",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "universalpictures",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "javascript",
+        "css"
+      ],
+      "frameworks": [
+        "jquery"
+      ],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 928,
+          "height": 798
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 928,
+          "height": 798
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 928,
+          "height": 798
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 928,
+          "height": 798
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 928,
+          "height": 798
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 928,
+          "height": 798
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 928,
+          "height": 798
+        },
+        {
+          "id": "desktop_08.jpg",
+          "width": 928,
+          "height": 798
+        },
+        {
+          "id": "desktop_09.jpg",
+          "width": 928,
+          "height": 798
+        },
+        {
+          "id": "smartphone_01.jpg",
+          "width": 320,
+          "height": 571
+        },
+        {
+          "id": "smartphone_02.jpg",
+          "width": 320,
+          "height": 571
+        },
+        {
+          "id": "smartphone_03.jpg",
+          "width": 320,
+          "height": 571
+        },
+        {
+          "id": "smartphone_04.jpg",
+          "width": 320,
+          "height": 571
+        },
+        {
+          "id": "smartphone_05.jpg",
+          "width": 320,
+          "height": 571
+        },
+        {
+          "id": "smartphone_06.jpg",
+          "width": 320,
+          "height": 571
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.badneighboursphotobomb.co.uk/",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "cfuf",
+      "title": "Cars Fuel Your Fun",
+      "description": "A one week project to build a competition and game microsite to tie in with the launch of the Disney Cars 'Fuel Your Fun' promotion.",
+      "responsibilities": "Front-end developer responsible for the javascript build for this responsive website, working alongside an html/css developer. Responsible for integrating into Disney's IUR registration process via Jollywise's app api. The site had to support user access via desktop, tablet or smartphone.",
+      "year": 2014,
+      "week": 6,
+      "modified": "2026-02-18 14:44:11",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "javascript",
+        "css"
+      ],
+      "frameworks": [
+        "jquery"
+      ],
+      "platforms": [
+        "desktop",
+        "tablet",
+        "smartphone"
+      ],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 992,
+          "height": 1128
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 992,
+          "height": 1128
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 992,
+          "height": 1128
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 992,
+          "height": 1128
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 992,
+          "height": 1128
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 992,
+          "height": 1128
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 992,
+          "height": 1128
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 992,
+          "height": 1128
+        },
+        {
+          "id": "smartphone.jpg",
+          "width": 320,
+          "height": 571
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "tbpf",
+      "title": "TinkerBell And The Pirate Fairy",
+      "description": "A short two week project to build a competition based microsite to tie in with the launch of the new Disney film 'TinkerBell and the Pirate Fairy'.",
+      "responsibilities": "Front-end developer responsible for the javascript build for this responsive website, working alongside an html/css developer. Responsible for integrating into Disney's IUR registration process via Jollywise's app api. Part of the competition mechanic involved moderated user image upload that needed to work on IE8. The site had to support user access via desktop, tablet or smartphone.",
+      "year": 2014,
+      "week": 2,
+      "modified": "2026-02-18 14:44:08",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "javascript",
+        "css"
+      ],
+      "frameworks": [
+        "jquery"
+      ],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1600,
+          "height": 1070
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1600,
+          "height": 1070
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1600,
+          "height": 1070
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1600,
+          "height": 1070
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1600,
+          "height": 1070
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1600,
+          "height": 1070
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.disney.co.uk/piratefairycomp/",
+          "target": "_blank",
+          "label": "Live Site"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "miscellaneous2014",
+      "title": "Freelance",
+      "description": "In 2014 I worked on builds for various clients.\n\nPlease contact me directly if you need to see specific samples.",
+      "responsibilities": "Front-end developer responsible for several multi-market javascript sites, micro-sites and olm campaigns.",
+      "year": 2014,
+      "week": 1,
+      "modified": "2017-02-15 14:56:46",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": true,
+      "is_responsive": true,
+      "client": "jollywise",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "php",
+        "css",
+        "javascript"
+      ],
+      "frameworks": [
+        "jquery"
+      ],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "stm2013",
+      "title": "Share The Magic",
+      "description": "<p>A seasonal website for Disney&rsquo;s Share the Magic. This year the site was built with html/javascript. It ran two competitions and had a 'letter to Santa' component.</p>",
+      "responsibilities": "Front-end developer responsible for the javascript build for this responsive website, working alongside an html/css developer. Responsible for integrating into Disney's IUR registration process via Jollywise's app api. The site had to support user access via desktop, tablet or smartphone.",
+      "year": 2013,
+      "week": 48,
+      "modified": "2026-02-18 14:45:40",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "javascript",
+        "css"
+      ],
+      "frameworks": [
+        "jquery"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk__fr__de__it__pt__es__dk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1391,
+          "height": 914
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1391,
+          "height": 914
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1391,
+          "height": 914
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1391,
+          "height": 914
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1391,
+          "height": 914
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1391,
+          "height": 914
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 871,
+          "height": 798
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "monstersuniversity",
+      "title": "Monsters University",
+      "description": "An interesting project. Required a variety of skills.",
+      "responsibilities": "Front-end developer responsible for the javascript build of the surrounding hub and integrating/optimising two of the games, working alongside an html/css developer. Responsible for integrating into Disney's IUR registration process via Jollywise's app api. The site had to support user access via desktop, tablet or smartphone.",
+      "year": 2013,
+      "week": 28,
+      "modified": "2026-02-18 14:45:23",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "samsung",
+      "categories": [
+        "web",
+        "responsive"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "javascript",
+        "html",
+        "css"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "it",
+        "fr",
+        "de",
+        "es"
+      ],
+      "has_archive": true,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 883
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 883
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 883
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 883
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "planes",
+      "title": "Planes",
+      "description": "Flash banners in mpu, skyscraper and leaderboard sizes.",
+      "responsibilities": "Flash developer. Built 3 of the 5 rich media executions.",
+      "year": 2013,
+      "week": 27,
+      "modified": "2026-02-18 14:45:30",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "flash",
+        "as3"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_07.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_08.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_09.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_10.jpg",
+          "width": 512,
+          "height": 427
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "monstermatch",
+      "title": "Monster Match",
+      "description": "Disney requested a simple javascript 'guess who' type game that would work on desktop/tablet and smartphones.",
+      "responsibilities": "Front-end developer responsible for the Javascript game component of this microsite.",
+      "year": 2013,
+      "week": 20,
+      "modified": "2026-02-18 14:45:34",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "html",
+        "javascript",
+        "css"
+      ],
+      "frameworks": [
+        "jquery"
+      ],
+      "platforms": [],
+      "territories": [
+        "us"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 960,
+          "height": 640
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 960,
+          "height": 640
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 960,
+          "height": 640
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.jollyhosting2.com/Disney/monsters_university/monster_match/uk/",
+          "target": "_blank",
+          "label": "View external archive"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "unlock2repack",
+      "title": "Ben 10 Alien Unlock 2 Repack",
+      "description": "I built a simple version of the Unlock 2 site that enabled users to quickly play the still popular games.",
+      "responsibilities": "Flash Developer, responsible for website build, excluding the ten games. The excellent <a href='http://uk.linkedin.com/pub/pawel-drozd/4/848/267'>Pawel Drozd</a> developed the games.",
+      "year": 2013,
+      "week": 19,
+      "modified": "2026-02-18 14:45:13",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "cartoonnetwork",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [
+        "robotlegs"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 936
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 936
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 651
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 651
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.cartoonnetwork.co.uk/show/ben-10-omniverse/games/ben-10-alien-unlock-2",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "playstationstore",
+      "title": "Playstation Store",
+      "description": "Flash banners in mpu, skyscraper and leaderboard sizes. Built for flashtalking platform.",
+      "responsibilities": "Flash Developer. This was a simple production job. The banner templates had been made and I was tasked with producing many of the variations.",
+      "year": 2013,
+      "week": 18,
+      "modified": "2017-02-09 10:37:23",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sony",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "kerve",
+      "technologies": [
+        "flash",
+        "as3"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "de",
+        "fr"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 300,
+          "height": 250
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 300,
+          "height": 250
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 300,
+          "height": 250
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 300,
+          "height": 250
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.flashtalking.net/view/508379/",
+          "target": "_blank",
+          "label": "Flashtalking"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "chimpquiz",
+      "title": "Chimpanzee Quiz",
+      "description": "Nickelodeon teamed up with Disneynature's Chimpanzee to create a microsite with a quiz that allowed users to enter a competition to win an adventure holiday.",
+      "responsibilities": "Front-end developer responsible for the Javascript quiz component of this microsite.",
+      "year": 2013,
+      "week": 16,
+      "modified": "2026-02-18 14:44:58",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "nickelodeon",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "javascript"
+      ],
+      "frameworks": [
+        "jquery",
+        "mustache"
+      ],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 956,
+          "height": 1065
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "ironman3it",
+      "title": "Iron Man 3",
+      "description": "Flash Interactive banner in various sizes. The Iron Man 3 video plays with interactive hotspots tracking elements over the top. The aim of the interactive was for the user to engage with the ad by clicking as many hotspots as they can.",
+      "responsibilities": "Flash Developer responsible for build.",
+      "year": 2013,
+      "week": 16,
+      "modified": "2026-02-18 14:45:07",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "fr",
+        "nl",
+        "befl",
+        "befr"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 447
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 447
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 447
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 447
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 447
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 447
+        },
+        {
+          "id": "olm_07.jpg",
+          "width": 512,
+          "height": 447
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "unlock2",
+      "title": "Ben 10 Alien Unlock 2",
+      "description": "<p>New year, new Ben 10 episodes. I was approached to build a new site that enabled users to play 5 new games featuring the new aliens. I also built the featured javascript voting app.</p>\n<p>The site used a simpler game release mechanic than the original Ben 10 Omniverse site, and went live in 18 markets.</p>",
+      "responsibilities": "Flash Developer, responsible for website build, excluding the ten games. The excellent <a href='http://uk.linkedin.com/pub/pawel-drozd/4/848/267'>Pawel Drozd</a> developed the games.",
+      "year": 2013,
+      "week": 10,
+      "modified": "2026-02-18 14:44:52",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "cartoonnetwork",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3",
+        "javascript"
+      ],
+      "frameworks": [
+        "robotlegs"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 965,
+          "height": 1099
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 965,
+          "height": 1099
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 681
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 681
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 681
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 681
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 1024,
+          "height": 681
+        },
+        {
+          "id": "desktop_08.jpg",
+          "width": 1024,
+          "height": 681
+        },
+        {
+          "id": "desktop_09.jpg",
+          "width": 1024,
+          "height": 681
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "bentenrepack",
+      "title": "Ben 10 Alien Unlock",
+      "description": "Following the Ben 10 Omniverse campaign sites success, I was approached to build a simple version of the site that enabled users to quickly play the still popular games.",
+      "responsibilities": "Flash Developer, responsible for website build, excluding the ten games. The excellent <a href='http://uk.linkedin.com/pub/pawel-drozd/4/848/267'>Pawel Drozd</a> developed the games.",
+      "year": 2013,
+      "week": 1,
+      "modified": "2026-02-18 14:44:45",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "cartoonnetwork",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3",
+        "javascript"
+      ],
+      "frameworks": [
+        "robotlegs"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 936
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 936
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 695
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 695
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.cartoonnetwork.co.uk/show/ben-10-omniverse/games/ben-10-alien-unlock",
+          "target": "_blank",
+          "label": "Live"
+        }
+      ],
+      "awards": []
+    },
+    {
+      "entry_key": "miscellaneous2013",
+      "title": "Freelance",
+      "description": "In 2013 I worked on builds for various clients including Cartoon Network, Disney, Samsung and Nickelodeon.\n\nPlease contact me directly if you need to see specific samples.",
+      "responsibilities": "Front-end developer responsible for several multi-market flash and javascript sites, micro-sites and olm campaigns.",
+      "year": 2013,
+      "week": 1,
+      "modified": "2017-02-09 10:37:23",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": true,
+      "is_responsive": true,
+      "client": "jollywise",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "javascript",
+        "html",
+        "css",
+        "php",
+        "facebook",
+        "as3",
+        "flash"
+      ],
+      "frameworks": [
+        "robotlegs",
+        "jquery"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "stm2012",
+      "title": "Share The Magic",
+      "description": "<p>A seasonal website for Disney&rsquo;s Share the Magic. The site launched with a Christmas Wish List competition, and then provided an online &rsquo;letter to Santa&rsquo; section. The letter writing component ran in parallel with an offline component, where participating Disney Store&rsquo;s allowed children to write letters and post them in-store.</p>\n<p>For each letter received, Disney donated a soft toy to a variety of local children&rsquo;s charities (up to 10,000 toys)</p>",
+      "responsibilities": "Flash Developer, responsible for website build.",
+      "year": 2012,
+      "week": 48,
+      "modified": "2026-02-18 14:45:55",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3",
+        "javascript"
+      ],
+      "frameworks": [
+        "robotlegs"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "fr",
+        "de",
+        "it",
+        "pt",
+        "es",
+        "dk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1278,
+          "height": 973
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1278,
+          "height": 973
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1278,
+          "height": 973
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1278,
+          "height": 973
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1278,
+          "height": 973
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "benten",
+      "title": "Ben 10 Omniverse",
+      "description": "<p>Ben 10 is a popular children's animated TV series. I was approached to help build this website designed to promote the launch of the new TV series. The initial promotion involved releasing two new games a week. Players had to complete tasks in games to unlock new content. The campaign has now ended but the games are still proving popular.</p>\n\n<p>The site was live in 17 markets, and has had an average engagement of 14 minutes per visit, and over 5 million unique visits.</p>",
+      "responsibilities": "Flash Developer, responsible for website build, excluding the ten games. The excellent <a href='http://uk.linkedin.com/pub/pawel-drozd/4/848/267'>Pawel Drozd</a> developed the games.",
+      "year": 2012,
+      "week": 36,
+      "modified": "2026-02-18 14:45:48",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "cartoonnetwork",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3",
+        "javascript"
+      ],
+      "frameworks": [
+        "robotlegs"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 937
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 937
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 937
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 937
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "epicmickey",
+      "title": "Epic Mickey",
+      "description": "Facebook promotion.",
+      "responsibilities": "Flash Developer responsible for build.",
+      "year": 2012,
+      "week": 1,
+      "modified": "2026-02-18 14:45:59",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "disney",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3",
+        "php"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1008,
+          "height": 897
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1008,
+          "height": 897
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "miscellaneous2012",
+      "title": "Freelance",
+      "description": "In 2012 I worked on builds for various clients including Cartoon Network, Disney, Samsung and Nickelodeon.\n\nPlease contact me directly if you need to see specific samples.",
+      "responsibilities": "Front-end developer responsible for several multi-market flash and javascript sites, micro-sites and olm campaigns.",
+      "year": 2012,
+      "week": 1,
+      "modified": "2017-02-15 15:05:19",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": true,
+      "is_responsive": true,
+      "client": "jollywise",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "jollywisemedia",
+      "technologies": [
+        "as3",
+        "flash",
+        "html",
+        "javascript",
+        "facebook",
+        "css",
+        "php"
+      ],
+      "frameworks": [
+        "robotlegs",
+        "jquery"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "variousolm",
+      "title": "Betgenius Various",
+      "description": "Working from photoshop flat designs I built various ad units for clients of Betgenius, and integrated them into the Connextra adserver platform. The ads had to be built using actionscript 2 as the platform only supported flash player 8 (AS2) at the time.",
+      "responsibilities": "Flash developer. Responsible for build.",
+      "year": 2011,
+      "week": 1,
+      "modified": "2017-02-09 10:37:23",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "betgenius",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "betgenius",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 426
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "iip",
+      "title": "IIP",
+      "description": "Flash front-end to a portal website for third party computer suppliers designed to enable them to create customised marketing pages.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build.",
+      "year": 2010,
+      "week": 1,
+      "modified": "2017-02-09 10:37:23",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [
+        "puremvc"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 759
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "gameon2010",
+      "title": "Game On",
+      "description": "The Pan European Intel Game On website showcases Intel&rsquo;s collaboration with top computer and video game companies and designers.",
+      "responsibilities": "Flash developer. The 2010 version involved working with a global Intel marquee template developed by a US agency, and integrating the Game On content.",
+      "year": 2010,
+      "week": 1,
+      "modified": "2017-02-09 10:37:23",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 998,
+          "height": 385
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "metlife",
+      "title": "MetLife",
+      "description": "A complex and challenging project that unfortunately never went live. Metlife was a financial planning tool that enabled users to adjust personal financial scenarios via sliders and drag and drop elements. The application visualised the result of decisions made via the use of animated graphs and a series of characters that responded to the changing scenarios. This enabled users to see the impact of certain decisions in a rich and accessible way. To conclude the user was sent a pdf personalised plan summary detailing all the information they had entered.",
+      "responsibilities": "Flash developer. Responsible for build of the model for a financial application.",
+      "year": 2010,
+      "week": 1,
+      "modified": "2017-02-09 10:37:23",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "alico",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3",
+        "flash"
+      ],
+      "frameworks": [
+        "robotlegs"
+      ],
+      "platforms": [],
+      "territories": [],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 984,
+          "height": 766
+        },
+        {
+          "id": "desktop_02.png",
+          "width": 984,
+          "height": 766
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1023,
+          "height": 614
+        }
+      ],
+      "pdfs": [
+        "output.pdf"
+      ],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "carousel",
+      "title": "UCL Marquee",
+      "description": "A simple image and video carousel built for Mastercard&rsquo;s UK site.",
+      "responsibilities": "Flash developer. Responsible for build. This simple project provided me with my first opportunity to use the <a href=\"http://www.robotlegs.org/\">Robotlegs framework</a> that I had previously been looking at.",
+      "year": 2009,
+      "week": 1,
+      "modified": "2017-02-08 14:43:03",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "mastercard",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [
+        "robotlegs"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 987,
+          "height": 307
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 987,
+          "height": 307
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "insidethegamepathfinding",
+      "title": "ITG Pathfinding",
+      "description": "A subsection of the Pan European Intel Game On website, Inside the game was created to tell the story of the technologies used in games today.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of this simulation for the <a href=\"http://game-on.intel.com/eng/geekout/inside-the-game/pathfinder/default.aspx\">Inside the game</a> section of the Intel Game On site. Made use of <a href=\"http://www.dauntless.be/astar/\">dauntless.be&rsquo;s</a> implementation of the A* algorithm for this pathfinding based simulation.",
+      "year": 2009,
+      "week": 1,
+      "modified": "2017-02-08 14:43:06",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [
+        "puremvc"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 615
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 615
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 615
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 615
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "insidethegameparticles",
+      "title": "ITG Particles",
+      "description": "A subsection of the Pan European Intel Game On website, Inside the game was created to tell the story of the technologies used in games today.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of this simulation for the <a href=\"http://game-on.intel.com/eng/geekout/inside-the-game/particle/default.aspx\">Inside the game</a> section of the Intel Game On site. Made use of <a href=\"http://flintparticles.org/\">flint particles</a>, an excellent open-source particle system library for Flash and Flex developed by <a href=\"http://www.richardlord.net/blog\">Richard Lord</a> for this particle based simulation.",
+      "year": 2009,
+      "week": 1,
+      "modified": "2017-02-08 14:43:10",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [
+        "puremvc"
+      ],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 543
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 543
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 543
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 543
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "works",
+      "title": "Training videos",
+      "description": "A microsite created to deliver training videos to MRMworks users.",
+      "responsibilities": "Flash developer. Responsible for build.",
+      "year": 2009,
+      "week": 1,
+      "modified": "2017-02-08 14:43:15",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "mrm",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [
+        "puremvc"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "us"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 960,
+          "height": 600
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "hdplus",
+      "title": "HD+",
+      "description": "As part of an online brand awareness campaign, MRM were responsible for producing online rich media executions that allowed the user to interact with video clips and immerse themselves in the HD experience offered by this footage.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build.",
+      "year": 2009,
+      "week": 1,
+      "modified": "2017-02-08 14:27:25",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sky",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.png",
+          "width": 512,
+          "height": 306
+        },
+        {
+          "id": "olm_02.png",
+          "width": 512,
+          "height": 306
+        },
+        {
+          "id": "olm_03.png",
+          "width": 512,
+          "height": 306
+        },
+        {
+          "id": "olm_04.png",
+          "width": 512,
+          "height": 256
+        },
+        {
+          "id": "olm_05.png",
+          "width": 512,
+          "height": 256
+        },
+        {
+          "id": "olm_06.png",
+          "width": 512,
+          "height": 256
+        },
+        {
+          "id": "olm_07.png",
+          "width": 512,
+          "height": 256
+        },
+        {
+          "id": "olm_08.png",
+          "width": 512,
+          "height": 256
+        },
+        {
+          "id": "olm_09.png",
+          "width": 512,
+          "height": 256
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "rcc",
+      "title": "Relevant Content",
+      "description": "A series of ad units developed for Sky to help promote new TV bundles available at the time.",
+      "responsibilities": "Flash developer. Responsible for build.",
+      "year": 2009,
+      "week": 1,
+      "modified": "2017-02-09 18:28:19",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sky",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_07.jpg",
+          "width": 512,
+          "height": 426
+        },
+        {
+          "id": "olm_08.jpg",
+          "width": 512,
+          "height": 426
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "gameon2008",
+      "title": "Game On",
+      "description": "The Pan European Intel Game On website showcases Intel&rsquo;s collaboration with top computer and video game companies and designers.",
+      "responsibilities": "Flash developer. The 2008 version was an upgrade the original marquee created by a flash designer in 2006.",
+      "year": 2008,
+      "week": 1,
+      "modified": "2017-02-14 19:04:24",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 998,
+          "height": 385
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "studio",
+      "title": "Studio",
+      "description": "The Intel Studio website allowed unsigned bands to upload tracks which other site visitors could then listen to and rank according to their favourites. The best acts as voted for were then offered support slots at a series of Intel Studio gigs. The <a href=\"http://www.music-news.com/ShowNews.asp?nItemID=22606&amp;bPrint=1\">winner</a> was offered a record contract.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of this collection of XML driven flash widgets, including a jukebox, mp3 player, video player, news ticker and a Facebook player. All data was consumed via SOAP services. The Facebook player enabled users to embed a music player of their favourite bands track on their homepage.",
+      "year": 2008,
+      "week": 1,
+      "modified": "2017-02-09 17:57:03",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [
+        "inhousemvc"
+      ],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 598,
+          "height": 545
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 260,
+          "height": 310
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": [
+        {
+          "id": 1,
+          "award_name": "BIMA",
+          "award_long_name": "British Interactive Media Association",
+          "award_result": "Winner",
+          "award_category": "B2C Measurement & Results",
+          "link": "http://www.bima.co.uk/bima-award/020E131703/bima-awards-2008/view-shortlist/81/",
+          "pdf": "pdf/intelstudio-bima.pdf"
+        }
+      ]
+    },
+    {
+      "entry_key": "minimiseme",
+      "title": "MinimiseMe",
+      "description": "MinimiseMe was a flash application which enabled users to customise their own &#8216;emoticons&#8217; and characters. In addition, a series of preset British celebrity Minimise Me characters were available. The application was essentially a flash version of Nintendo&rsquo;s Mii character creator, with added integration into Windows Messenger. MinimiseMe was even mentioned on the Sun website.",
+      "responsibilities": "Flash developer. The majority of the development work was done by an excellent contractor, <a href=\"http://uk.linkedin.com/pub/alan-killip/3/51b/522\">Alan Killip</a>. I handled the final amends and polish to the build after Alan&rsquo;s contract finished.",
+      "year": 2008,
+      "week": 1,
+      "modified": "2017-02-09 13:34:46",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "msn",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as3"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 532
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 532
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 532
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 532
+        },
+        {
+          "id": "desktop_05.png",
+          "width": 1024,
+          "height": 1450
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": [
+        {
+          "id": 2,
+          "award_name": "NMA",
+          "award_long_name": "New Media Age Effectiveness",
+          "award_result": "Finalist",
+          "award_category": "Best Technology Campaign",
+          "link": "",
+          "pdf": ""
+        },
+        {
+          "id": 3,
+          "award_name": "BIMA",
+          "award_long_name": "British Interactive Media Association",
+          "award_result": "Finalist",
+          "award_category": "B2C Measurement & Results",
+          "link": "http://www.bima.co.uk/bima-award/020E131703/bima-awards-2008/view-shortlist/53/",
+          "pdf": "pdf/msn-minimise-bima.pdf"
+        }
+      ]
+    },
+    {
+      "entry_key": "hd",
+      "title": "HD",
+      "description": "As part of an online brand awareness campaign, MRM were responsible for producing online rich media executions that allowed the user to interact with and immerse themselves in the experience offered by Sky HD.\n<p>Built for flashtalking platform.</p>",
+      "responsibilities": "Flash developer. Responsible for interaction design and build.",
+      "year": 2008,
+      "week": 1,
+      "modified": "2017-02-09 18:22:48",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sky",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_04.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_05.jpg",
+          "width": 512,
+          "height": 288
+        },
+        {
+          "id": "olm_06.jpg",
+          "width": 512,
+          "height": 288
+        },
+        {
+          "id": "olm_07.jpg",
+          "width": 512,
+          "height": 288
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "videowall",
+      "title": "Video Wall",
+      "description": "The brief was to promote the quantity and variety of content on the <a href=\"http://video.uk.msn.com/\">video section</a> of MSN's site. In response, MRM suggested building an MPU that simulated an 'infinite scrolling' video wall.\r\n\r\n",
+      "responsibilities": "Flash developer. Responsible for interaction design and build. The main challenge was dealing with the lack of api documentation for the video service.",
+      "year": 2008,
+      "week": 1,
+      "modified": "2017-02-17 14:01:40",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "msn",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 956,
+          "height": 534
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "dynamics",
+      "title": "Dynamics",
+      "description": "A small microsite created for the launch of Microsoft Dynamics', and designed to explain the business benefits of their business communications software.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build. Built with a simple 3d system to handle the parallax scrolling. The content inside the rooms was created by a contractor and loaded as external swf modules.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-14 19:55:40",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "microsoft",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 700,
+          "height": 500
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "videoviral",
+      "title": "Slack-O-Meter",
+      "description": "MSN produced 10 short videos featuring the comedian Ed Burn to promote their MSN Video service. They then needed a way of drive traffic to the videos and requested a concept that could potentially go viral. The Slack-0-metre site asked users to pledge to watch the videos (at work) and then tells them how much of their employer&rsquo;s money they would have wasted by doing so.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-09 18:43:48",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "msn",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 900,
+          "height": 550
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 900,
+          "height": 550
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": [
+        {
+          "id": 4,
+          "award_name": "NMA",
+          "award_long_name": "New Media Age Effectiveness",
+          "award_result": "Finalist",
+          "award_category": "Entertainment",
+          "link": "",
+          "pdf": ""
+        }
+      ]
+    },
+    {
+      "entry_key": "widget",
+      "title": "Widget",
+      "description": "This site was part of a wider campaign to support the launch of a new parcel tracking desktop widget, and was responsible for the introduction to the digital character and download of the executable. A total of 3.3m visitors hit the UPS widget site and it was downloaded 78,737 times.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of this XML driven Flash micro-site. The biggest challenge with this project was an aggressive deadline that meant I had three weeks to deliver the core flash application.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-09 18:35:53",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "ups",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "fr",
+        "de"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 768,
+          "height": 573
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 768,
+          "height": 573
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 768,
+          "height": 573
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 768,
+          "height": 573
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 768,
+          "height": 573
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 768,
+          "height": 573
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 768,
+          "height": 573
+        },
+        {
+          "id": "desktop_08.jpg",
+          "width": 768,
+          "height": 573
+        },
+        {
+          "id": "desktop_09.jpg",
+          "width": 768,
+          "height": 573
+        },
+        {
+          "id": "desktop_10.jpg",
+          "width": 768,
+          "height": 573
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": [
+        {
+          "id": 5,
+          "award_name": "NMA",
+          "award_long_name": "New Media Age Effectiveness",
+          "award_result": "Winner",
+          "award_category": "Business to Business",
+          "link": "",
+          "pdf": "pdf/ups-nma.pdf"
+        },
+        {
+          "id": 6,
+          "award_name": "IAA",
+          "award_long_name": "Innovative Advertising Awards",
+          "award_result": "Finalist",
+          "award_category": "Best Integrated Campaign",
+          "link": "",
+          "pdf": "pdf/ups-iaa.pdf"
+        }
+      ]
+    },
+    {
+      "entry_key": "heartbrand",
+      "title": "Heartbrand",
+      "description": "<p>People love ice cream, but they often worry about what goes into it.</p><p>So the big idea behind Wall’s Heartbrand pan European web site redesign was that by interacting with the ingredients (milk, chocolate, fruit) in their simplest forms, carefully sourced and diligently prepared, we can see that there are no artificial colours or preservatives.</p><p>Customers can experience for themselves the passion and fun Wall’s has for their ice cream.</p>",
+      "responsibilities": "Flash developer. Responsible for build. All data pulled from a Magnolia CMS backend.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-15 10:44:23",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "unilever",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_00.jpg",
+          "width": 972,
+          "height": 945
+        },
+        {
+          "id": "desktop_01.jpg",
+          "width": 980,
+          "height": 610
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 980,
+          "height": 610
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 980,
+          "height": 610
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "kidsfun",
+      "title": "Kidsfun",
+      "description": "Alongside the walls.co.uk site build, Unilever commissioned a microsite that appealed to children and featured key children's ice cream products.",
+      "responsibilities": "Flash developer. Responsible for build.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-14 19:49:10",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "unilever",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 980,
+          "height": 610
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 980,
+          "height": 610
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 980,
+          "height": 610
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "searchladder",
+      "title": "Search Ladder",
+      "description": "Search ladder was a game which used the MSN Search API and saw two celebrities pit against each other, allowing the user to select a keyword from a pre-defined list. The player had to determine which celebrity would return the most search result for a specific keyword and made use of real-time MSN Search query's to determine if the selected celebrity was correct.",
+      "responsibilities": "Flash developer. Completed this project when the contractors' term ended.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-14 20:05:25",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "msn",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 950,
+          "height": 700
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 500,
+          "height": 384
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "itmgdynamicduo",
+      "title": "Dynamic Duo",
+      "description": "IT Manager 2 was an award-winning flash sim game developed for Intel, to promote Intel products and technologies in-game to their IT audience. I built a series of self-contained game modules, designed to run standalone as promotional units, as well as integrated into the main sim game.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of game module. All text content, game settings and levels were configurable via external XML files. Dynamic Duo made use of A* for pathfinding.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-09 19:03:48",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 550,
+          "height": 480
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 550,
+          "height": 480
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "itmgpcmeltdown",
+      "title": "PC Meltdown",
+      "description": "IT Manager 2 was an award-winning flash sim game developed for Intel, to promote Intel products and technologies in-game to their IT audience. I built a series of self-contained game modules, designed to run standalone as promotional units, as well as integrated into the main sim game.\r\n<br/><br/>\r\nControls are:<br/>\r\nI = Thrust<br/>\r\nJ = Rotate Left<br/>\r\nL = Rotate Right<br/>\r\nA = Fire<br/>\r\nS = Boost",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of game module. All text content, game settings and levels were configurable via external XML files. PC Meltdown was a retro asteroids type clone, and was built with a top down virtual camera to handle sprite movement, and had a modular system for power-ups and enemies.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-09 19:00:52",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 550,
+          "height": 480
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 550,
+          "height": 480
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "keyhole",
+      "title": "Key Hole",
+      "description": "Two online ad placements were seamlessly synchronised with a shared hi-res image. As the mouse position changed the image scrolled around both ad placements. Most of the development work was done by an excellent contractor, <a href=\"http://uk.linkedin.com/pub/alan-killip/3/51b/522\">Alan Killip</a>. I was involved with the final amends and polish to the build after Alan's contract finished.\n<p>Built for flashtalking platform.</p>",
+      "responsibilities": "Flash developer.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-09 18:33:06",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "sky",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 768,
+          "height": 713
+        },
+        {
+          "id": "olm_01.jpg",
+          "width": 512,
+          "height": 427
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 512,
+          "height": 63
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "bcc",
+      "title": "People Ready",
+      "description": "People ready was a software and hardware solution for SME and Microsoft UK wanted an interactive ad unit to introduce it online.",
+      "responsibilities": "Flash developer. Responsible for build.",
+      "year": 2007,
+      "week": 1,
+      "modified": "2017-02-14 19:59:56",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "microsoft",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 787,
+          "height": 300
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "vprocompetition",
+      "title": "vPro Competition",
+      "description": "Intel vPro was a new business technology platform, announced to the press in 2006. The vPro competiton microsite ran for three months and was designed to raise awareness of the platform. It featured technology questions and pattern recognition challenges. The winner in each country received an all-expenses paid trip to a European Grand Prix event.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build.",
+      "year": 2006,
+      "week": 1,
+      "modified": "2017-02-17 14:17:13",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "fr",
+        "ru"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 750,
+          "height": 512
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "itmghackerinvasion",
+      "title": "Hacker Invasion",
+      "description": "IT Manager 2 was an award-winning flash sim game developed for Intel, to promote Intel products and technologies in-game to their IT audience. I built a series of self-contained game modules, designed to run standalone as promotional units, as well as integrated into the main sim game.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of game module. All text content, game settings and levels were configurable via external XML files. Hacker Invasion was a puzzle game that made use of isometric projection.",
+      "year": 2006,
+      "week": 1,
+      "modified": "2017-02-09 19:10:33",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 550,
+          "height": 480
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 550,
+          "height": 480
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "itmgceo",
+      "title": "CEO",
+      "description": "IT Manager 2 was an award-winning flash sim game developed for Intel, to promote Intel products and technologies in-game to their IT audience. I built a series of self-contained game modules, designed to run standalone as promotional units, as well as integrated into the main sim game.",
+      "responsibilities": "Flash developer. Game module conversion of original ITMG1 version.",
+      "year": 2006,
+      "week": 1,
+      "modified": "2017-02-17 14:20:54",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "intel",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as2"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 551,
+          "height": 343
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "boutique",
+      "title": "Boutique",
+      "description": "I worked with designer <a href=\"http://cockenadoodledoo.com/\">Jared Cocken</a> to create <a href=\"http://www.christianlouboutin.com/\">Christian Louboutins'</a> first web presence.",
+      "responsibilities": "Flash developer. Responsible for build of this XML driven Flash microsite.",
+      "year": 2005,
+      "week": 1,
+      "modified": "2017-02-14 12:35:19",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "louboutin",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "christianlouboutin",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk",
+        "fr"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 824,
+          "height": 492
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 824,
+          "height": 492
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 824,
+          "height": 492
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "senses",
+      "title": "Five Senses",
+      "description": "Magnum wanted a website for the limited-edition Magnum 5 Senses ice cream to be purchase-linked, promotion-led and focused on the bottom line. They also wanted it to be engaging and interactive. Users could play a spin-the-globe game to win instant prizes over the ten week campaign. The campaign ended with one lucky player winning a &pound;50K cash prize.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of the XML driven flash elements.",
+      "year": 2005,
+      "week": 1,
+      "modified": "2017-02-17 14:08:47",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "magnum",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 800,
+          "height": 574
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "searchsupremo",
+      "title": "Search Supremo",
+      "description": "The objective of this campaign micro-site was to drive consumers to the MSN Search site in a creative and engaging manner whilst at the same time reminding them that MSN Search delivers relevant results, fast. It drove 1,000,000 search queries and had 250,000 user sessions in the six weeks it was live. It&rsquo;s success meant it was re-skinned as a football competition six months later.",
+      "responsibilities": "Flash developer. Responsible for the build of the XML driven flash elements. I worked closely with the server side developer to interface with the web application. The flash elements were composed into an online quiz, making use of the MSN search bar. All quiz logic was run from the server as a cash prize could be won.",
+      "year": 2005,
+      "week": 1,
+      "modified": "2017-02-09 19:23:06",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "msn",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 963,
+          "height": 687
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": [
+        {
+          "id": 7,
+          "award_name": "IMAA",
+          "award_long_name": "Interactive Marketing and Advertising",
+          "award_result": "Finalist",
+          "award_category": "",
+          "link": "",
+          "pdf": ""
+        }
+      ]
+    },
+    {
+      "entry_key": "kittycaper",
+      "title": "Kitty Caper Game",
+      "description": "The Kitty Caper Game was a &#8216;point and click&#8217; game designed to explain the benefits of the MSN Search Toolbar, as well as encourage downloads. The game was a huge success when launched, enthusiastically played by the online gaming community. Several gaming forums had threads (<a href=\"http://www.gamershood.com/forum/showthread.php?t=281\">see example</a>) devoted to solving the game. The target of 20,000 Search Toolbar downloads was tripled, with MSN registering 60,000 downloads within the first two weeks. 158,000 email addresses registered to play Kitty Caper, with an average gameplay of 146 minutes.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of this XML driven Flash game. I worked with 3 Flash animators who built the Flash assets and animation sequences.",
+      "year": 2005,
+      "week": 1,
+      "modified": "2017-02-09 19:19:31",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "msn",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 1024,
+          "height": 531
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 1024,
+          "height": 531
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 1024,
+          "height": 531
+        },
+        {
+          "id": "desktop_04.jpg",
+          "width": 1024,
+          "height": 531
+        },
+        {
+          "id": "desktop_05.jpg",
+          "width": 1024,
+          "height": 531
+        },
+        {
+          "id": "desktop_06.jpg",
+          "width": 1024,
+          "height": 531
+        },
+        {
+          "id": "desktop_07.jpg",
+          "width": 1024,
+          "height": 531
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": [
+        {
+          "id": 8,
+          "award_name": "NMA",
+          "award_long_name": "New Media Age Effectiveness",
+          "award_result": "Winner",
+          "award_category": "Technology",
+          "link": "",
+          "pdf": "pdf/kittycaper-nma.pdf"
+        },
+        {
+          "id": 9,
+          "award_name": "IMAA",
+          "award_long_name": "Interactive Marketing and Advertising",
+          "award_result": "Winner",
+          "award_category": "Technology",
+          "link": "",
+          "pdf": "pdf/kittycaper-imaa.pdf"
+        },
+        {
+          "id": 10,
+          "award_name": "DMA",
+          "award_long_name": "Direct Marketing Association",
+          "award_result": "Bronze",
+          "award_category": "Online Advertising",
+          "link": "",
+          "pdf": "pdf/kittycaper-dma.pdf"
+        }
+      ]
+    },
+    {
+      "entry_key": "smartnav",
+      "title": "SmartNav",
+      "description": "A campaign destination microsite to promote Peugeots Smartnav feature in its 407 Saloon and SW models.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build.",
+      "year": 2005,
+      "week": 1,
+      "modified": "2017-02-17 14:05:41",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "peugeot",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "mrmlondon",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 773,
+          "height": 485
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "tigra",
+      "title": "Tigra Twintop",
+      "description": "GM wanted a launch campaign that would generate dealer leads. The Tigra TwinTop only had 2 seats, so you had to choose your passenger wisely. The rendezvous microsite enabled you to take someone on a virtual 'date' drive to get you in the mood to try it for real.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of this XML driven Flash application. I worked with two Flash animators who built Flash assets and animation sequences. This website was deployed in seven different languages in countries across Europe.",
+      "year": 2004,
+      "week": 1,
+      "modified": "2017-02-14 12:49:19",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "opel",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 742,
+          "height": 428
+        },
+        {
+          "id": "desktop_03.jpg",
+          "width": 742,
+          "height": 428
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 972,
+          "height": 1336
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "f1dynamicscreensaver",
+      "title": "F1 Screensavers",
+      "description": "Following the merger between HP and Compaq, HP inherited the role of principal sponsor of the BMW WilliamsF1 Team. After the successful campaign for Compaq&rsquo;s Formula One participation, HP looked to Zentropy to support the sponsorship change, and utilise this high-profile partnership to illustrate its core brand and product values to current and prospective customers.",
+      "responsibilities": "Creative lead for Zentropy&rsquo;s online activity for Compaq (Hewlett Packard after the merger) across EMEA territories for three consecutive years. I was responsible for concept development and ensuring adherence to the online guidelines across all projects, spanning OLM, page template design and rich media micro-sites. I was also the Flash developer, responsible for interaction design and build of rich media modules.",
+      "year": 2004,
+      "week": 1,
+      "modified": "2017-02-16 11:14:01",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "hp",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_2002ss.jpg",
+          "width": 800,
+          "height": 600
+        },
+        {
+          "id": "desktop_2003ss.jpg",
+          "width": 1024,
+          "height": 768
+        },
+        {
+          "id": "desktop_2004ss.jpg",
+          "width": 1024,
+          "height": 768
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "plus",
+      "title": "Plus Game",
+      "description": "Nestl&eacute; commissioned Zentropy Partners to create a consumer loyalty programme for the Nesquik brand. The aim was to build a consistent experience across European markets and make it relevant to &lsquo;digitally literate&rsquo; six and seven year olds. The result was an award wining rich brand experience website with interactive stickers, a treehouse builder and games.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build.",
+      "year": 2004,
+      "week": 1,
+      "modified": "2017-02-14 13:26:29",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "nesquik",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 700,
+          "height": 400
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 700,
+          "height": 400
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "hotmail",
+      "title": "Hotmail",
+      "description": "MSN launched a new and improved 250Mb version of MSN Hotmail. They required a suite of online advertising units to promote the launch. Key product features included larger inbox size and localised domain names. The target audience were existing Hotmail and competing web email users. The idea was to take MSN's primary brand icon - The Butterfly - and create a series of elegant ad units that drew together these key features. The final executions are reminiscent of a fully rendered 3D sequence and yet were delivered within traditional ad unit file sizes as low as 15k.",
+      "responsibilities": "Flash developer. Responsible for interaction design and build of a template ad unit in a variety of sizes.",
+      "year": 2004,
+      "week": 1,
+      "modified": "2017-02-14 13:30:45",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "msn",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 300,
+          "height": 250
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 300,
+          "height": 250
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 500,
+          "height": 300
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "f1interactivecar",
+      "title": "F1 Interactive Car",
+      "description": "Following the merger between HP and Compaq, HP inherited the role of principal sponsor of the BMW WilliamsF1 Team. After the successful campaign for Compaq&rsquo;s Formula One participation, HP looked to Zentropy to support the sponsorship change, and utilise this high-profile partnership to illustrate its core brand and product values to current and prospective customers.",
+      "responsibilities": "Creative lead for Zentropy&rsquo;s online activity for Compaq (Hewlett Packard after the merger) across EMEA territories for three consecutive years. I was responsible for concept development and ensuring adherence to the online guidelines across all projects, spanning OLM, page template design and rich media micro-sites. I was also the Flash developer, responsible for interaction design and build of rich media modules.",
+      "year": 2003,
+      "week": 1,
+      "modified": "2017-02-16 11:13:49",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "hp",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 759,
+          "height": 566
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 759,
+          "height": 566
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "diver",
+      "title": "Office 2003",
+      "description": "A European wide launch campaign for Microsoft Office 2003 featuring flash and non-flash ad units in all traditional sizes alongside various Eyeblaster rich media.",
+      "responsibilities": "Flash developer. Responsible for build.",
+      "year": 2003,
+      "week": 1,
+      "modified": "2017-02-14 19:31:48",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "microsoft",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 336,
+          "height": 280
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 777,
+          "height": 487
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "windows",
+      "title": "Windows on Ireland",
+      "description": "The brief was to develop short but effective online tactical campaigns encouraging people to visit the new Tourism Ireland web site. I worked with a designer developing concepts and building the Flash executions in a wide range of formats and to allow easy adaptation for multiple languages. The executions used subtle animation effects overlaying scenic photography. The natural effects are all code based to reduce file size.",
+      "responsibilities": "Flash developer, responsible for concept development, interaction design and build.",
+      "year": 2003,
+      "week": 1,
+      "modified": "2017-02-14 13:36:01",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "tourismireland",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 548,
+          "height": 596
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": [
+        {
+          "id": 11,
+          "award_name": "One Show Interactive",
+          "award_long_name": "One Show Interactive",
+          "award_result": "Merit",
+          "award_category": "",
+          "link": "http://www.oneclub.org/#olb=/_ajax/archive/?action=arc_work%26value=2628",
+          "pdf": "pdf/tourismireland-oneshow.pdf"
+        },
+        {
+          "id": 12,
+          "award_name": "LIA",
+          "award_long_name": "London International Advertising",
+          "award_result": "Finalist",
+          "award_category": "Interactive Banner",
+          "link": "http://2008.liaawards.com/2004/finalists/finalists/interactive/i29.html",
+          "pdf": "pdf/tourismireland-liaa.pdf"
+        },
+        {
+          "id": 13,
+          "award_name": "Creative Showcase",
+          "award_long_name": "Creative Showcase",
+          "award_result": "1st Runner Up",
+          "award_category": "",
+          "link": "http://www.creativeshowcase.net/campaigns/window-on-ireland",
+          "pdf": "pdf/tourismireland-creativeshowcase.pdf"
+        }
+      ]
+    },
+    {
+      "entry_key": "advantagegold",
+      "title": "Advantage Gold",
+      "description": "The site was designed to help sell the benefits of the fee based account Advantage Gold. It was one part of an integrated campaign that included Press, Radio, DM and TV as well as in branch posters.",
+      "responsibilities": "Flash Designer. Responsible for graphic and interaction design of the microsite and associated ad units in the olm campaign.",
+      "year": 2002,
+      "week": 1,
+      "modified": "2017-02-17 13:49:34",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "natwest",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 690,
+          "height": 500
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 690,
+          "height": 500
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "ag",
+      "title": "Advantage Gold",
+      "description": "The olm was designed to drive traffic to the Advantage Gold microsite which was one part of an integrated campaign that included Press, Radio, DM and TV as well as in branch posters.",
+      "responsibilities": "Flash Designer. Responsible for graphic and interaction design of the microsite and associated ad units in the olm campaign.",
+      "year": 2002,
+      "week": 1,
+      "modified": "2017-02-14 13:42:18",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "natwest",
+      "categories": [
+        "olm"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "olm_01.jpg",
+          "width": 502,
+          "height": 374
+        },
+        {
+          "id": "olm_02.jpg",
+          "width": 160,
+          "height": 140
+        },
+        {
+          "id": "olm_03.jpg",
+          "width": 468,
+          "height": 60
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "hopalong",
+      "title": "Hop A Long Quicky",
+      "description": "Nestl&eacute; commissioned Zentropy Partners to create a consumer loyalty programme for the Nesquik brand. The aim was to build a consistent experience across European markets and make it relevant to &lsquo;digitally literate&rsquo; six and seven year olds. The result was an award wining rich brand experience website with interactive stickers, a treehouse builder and games.",
+      "responsibilities": "Macromedia Director developer. Responsible for interaction design and build.",
+      "year": 2001,
+      "week": 1,
+      "modified": "2017-02-14 13:55:40",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "nesquik",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "zentropypartners",
+      "technologies": [
+        "directorlingo"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 608,
+          "height": 416
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 608,
+          "height": 416
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "fundsnetwork",
+      "title": "Fidelity FundsNetwork",
+      "description": "<p>Fidelity wanted to enable private and professional investors to deal in shares and funds; open and tailor ISAs; and manage their entire investment portfolio online.</p>\n \n<p>With a best in class customer experience, Fidelity Funds Supermarket achieved £400 million in new assets under management by June 2001, with, 35% of Fidelity’s direct ISA sales in the UK coming through the website. It was consistently ranked top ISA-providing site.</p>",
+      "responsibilities": "Creative Lead.",
+      "year": 2000,
+      "week": 1,
+      "modified": "2017-02-16 12:56:54",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "fidelity",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "apldigital",
+      "technologies": [],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 780,
+          "height": 600
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 972,
+          "height": 661
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": [
+        {
+          "id": 33,
+          "award_name": "Money Award",
+          "award_long_name": "Money Award",
+          "award_result": "",
+          "award_category": "",
+          "link": "",
+          "pdf": ""
+        },
+        {
+          "id": 34,
+          "award_name": "Investor’s Week",
+          "award_long_name": "Investor’s Week",
+          "award_result": "",
+          "award_category": "",
+          "link": "",
+          "pdf": ""
+        }
+      ]
+    },
+    {
+      "entry_key": "continent",
+      "title": "Lost Continent",
+      "description": "<p>In the late 90s children were increasingly using the Internet. It provided a great opportunity for Unilever to make a significant investment in the new Captain Birds Eye brand across all their main European markets.</p><p>The site was an ambitious interactive experience that invited users to join the Captain’s crew and participate in his adventures. A series of interactive adventure episodes were built in Flash and optimised across 7 European markets.</p>",
+      "responsibilities": "Flash developer. Responsible, as part of team, for script, character design, interaction design and project management.",
+      "year": 1999,
+      "week": 1,
+      "modified": "2017-02-17 13:50:10",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "birdseye",
+      "categories": [
+        "web",
+        "game"
+      ],
+      "affiliation": "apldigital",
+      "technologies": [
+        "directorlingo"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 972,
+          "height": 1471
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": [
+        {
+          "id": 30,
+          "award_name": "CONNECTIONS",
+          "award_long_name": "Marketing Connections Awards",
+          "award_result": "WINNER",
+          "award_category": "Best use of the internet for customer communications (consumer)",
+          "link": "http://www.campaignlive.co.uk/article/71862/connections-2000---marketing-awards-best-use-internet-customer-communications-consumer",
+          "pdf": "pdf/captain_birdseye_connections2000.pdf"
+        },
+        {
+          "id": 31,
+          "award_name": "LIAA",
+          "award_long_name": "London International Advertising Awards",
+          "award_result": "Finalist",
+          "award_category": "Best Food Website",
+          "link": "",
+          "pdf": ""
+        },
+        {
+          "id": 32,
+          "award_name": "FAB",
+          "award_long_name": "International Food and Beverage",
+          "award_result": "Finalist",
+          "award_category": "Best Savoury Foods Website",
+          "link": "http://www.fab-awards.com/winners.html",
+          "pdf": ""
+        }
+      ]
+    },
+    {
+      "entry_key": "avengers",
+      "title": "Avengers Screensaver",
+      "description": "In 1998 a new avengers film was released. We created this downloadable screensaver as a cross promotion for the mini website.",
+      "responsibilities": "Flash designer. Responsible for build.",
+      "year": 1998,
+      "week": 1,
+      "modified": "2017-02-17 14:30:47",
+      "is_featured": false,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "mini",
+      "categories": [
+        "web"
+      ],
+      "affiliation": "apldigital",
+      "technologies": [
+        "as1"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "uk"
+      ],
+      "has_archive": true,
+      "is_flash": true,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 800,
+          "height": 494
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [],
+      "awards": []
+    },
+    {
+      "entry_key": "challenge",
+      "title": "20th Century Challenge",
+      "description": "<p>The Pathé News 20th Century Challenge was a news trivia family game featuring over 500 film clips and 3000 questions. The British Pathé News archives featured historical film footage from most of the key landmarks in the 20th Century.</p>\n \n<p>The twin CD-ROM repackaged this historic footage to an educative quiz played on the PC. The project took over six months and the final product was available nationally at WH Smiths.</p>",
+      "responsibilities": "Design and programming, CD production.",
+      "year": 1997,
+      "week": 1,
+      "modified": "2017-02-15 10:49:52",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "telstar",
+      "categories": [
+        "app",
+        "game"
+      ],
+      "affiliation": "ctvmultimediastudio",
+      "technologies": [
+        "directorlingo"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 972,
+          "height": 810
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.oldgames.sk/en/mag/level-28/page/98/",
+          "target": "_blank",
+          "label": "Old Magazine Spread"
+        },
+        {
+          "url": "http://www.cdaccess.com/html/pc/trivchal.htm",
+          "target": "_blank",
+          "label": "Old Details"
+        }
+      ],
+      "awards": [
+        {
+          "id": 4,
+          "award_name": "MONITOR",
+          "award_long_name": "Monitor Award",
+          "award_result": "",
+          "award_category": "",
+          "link": "",
+          "pdf": ""
+        }
+      ]
+    },
+    {
+      "entry_key": "variousgames",
+      "title": "8-bit Games",
+      "description": "<p>Skramble - You fly your spaceship through a cave system split in six sections. Pressing the joystick button will unleash both your front mounted gun and your bombs. Missiles will launch in your path in order to intercept you, and you must not only shoot those down, but also bomb all fuel cisterns you see, or you will run out of fuel.</p>\n\n<p>Admittedly it doesn't look like much now. However, if you grew up playing home console games in the 80's then you'll probably appreciate it. There's more tearing and graphical glitches then I remember, maybe due to using an emulator!</p>",
+      "responsibilities": "Whilst doing my A levels I bought a Commodore Vic20 and taught myself to program in assembly. I designed and programmed 3 commercial games (Skramble, Jungle Drums and Cosmic Commando) for the Vic20 and Commodore 64.",
+      "year": 1983,
+      "week": 1,
+      "modified": "2017-02-14 14:10:30",
+      "is_featured": true,
+      "is_nda": false,
+      "is_summary": false,
+      "is_responsive": true,
+      "client": "anirog",
+      "categories": [
+        "game"
+      ],
+      "affiliation": "anirog",
+      "technologies": [
+        "6502assembly"
+      ],
+      "frameworks": [],
+      "platforms": [],
+      "territories": [
+        "emea"
+      ],
+      "has_archive": false,
+      "is_flash": false,
+      "is_dark_background": false,
+      "images": [
+        {
+          "id": "desktop_01.jpg",
+          "width": 800,
+          "height": 418
+        },
+        {
+          "id": "desktop_02.jpg",
+          "width": 708,
+          "height": 630
+        },
+        {
+          "id": "commodore_user.png",
+          "width": 908,
+          "height": 1167
+        }
+      ],
+      "pdfs": [],
+      "videos": [],
+      "links": [
+        {
+          "url": "http://www.mobygames.com/game/vic-20/skramble_/screenshots",
+          "label": "Skramble on Moby Games1",
+          "target": "_blank"
+        },
+        {
+          "url": "http://www.youtube.com/watch?v=Rc9nUwttO4E",
+          "label": "Scramble play 1",
+          "target": "_blank"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=IJlozsi6Djg",
+          "label": "Scramble play 2",
+          "target": "_blank"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=seTZESC4-5Y",
+          "label": "Jungle Drums long play",
+          "target": "_blank"
+        }
+      ],
+      "awards": []
+    }
+  ]
+}

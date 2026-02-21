@@ -11,12 +11,13 @@ set -euo pipefail
 #   ./deploy.sh stage               — Shorthand: build stage + push stage
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WWW_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 SSH_HOST="ds918_stephen"
 REMOTE_COMPOSE_DIR="/volume1/docker/portfolio"
 IMAGE_NAME="portfolio"
 DATE_TAG="$(date +%Y-%m-%d)"
 
-cd "$SCRIPT_DIR"
+cd "$WWW_DIR"
 
 # ─── Helpers ──────────────────────────────────────────────
 
@@ -112,7 +113,7 @@ cmd_push() {
 
 # ─── Assets ──────────────────────────────────────────────
 
-ASSETS_LOCAL="$SCRIPT_DIR/../assets/portfolio/images"
+ASSETS_LOCAL="$WWW_DIR/../assets/portfolio/images"
 ASSETS_REMOTE="/volume1/web/assets.stephenhamilton.co.uk/portfolio/images"
 
 cmd_assets() {
