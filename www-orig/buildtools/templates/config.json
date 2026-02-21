@@ -1,0 +1,7 @@
+{
+  "base_url": "{base_url}",
+  "assets_base": "{assets_base}",
+  "api_base": "{api_base}",
+  "analytics_id": "{analytics_id}",
+  "analytics_domain": "{analytics_domain}"
+}
