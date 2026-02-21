@@ -11,7 +11,12 @@
     "build:prod": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write \"./src/**/*.{ts,tsx}\""
+    "format": "prettier --write \"./src/**/*.{ts,tsx}\"",
+    "deploy:live": "./deploy.sh live",
+    "deploy:stage": "./deploy.sh stage",
+    "deploy:local": "./deploy.sh local",
+    "docker:build": "./deploy.sh build prod",
+    "docker:push": "./deploy.sh push live"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.2",

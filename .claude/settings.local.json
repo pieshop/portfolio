@@ -13,7 +13,14 @@
       "Bash(npx playwright:*)",
       "Bash(docker ps:*)",
       "Bash(curl:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(chmod +x /Users/stephenhamilton/projects/20.personal/git/2018/portfolio/www/deploy.sh)",
+      "Bash(chmod +x /Users/stephenhamilton/projects/20.personal/git/2018/portfolio/www/purge-cdn.sh)",
+      "Bash(docker build -t portfolio:latest -t portfolio:2026-02-21 . 2>&1)",
+      "Bash(docker save portfolio:latest | ssh ds918_stephen \"docker load\" 2>&1)",
+      "Bash(ssh ds918_stephen \"which docker 2>/dev/null; ls /usr/local/bin/docker* 2>/dev/null; ls /usr/bin/docker* 2>/dev/null; find / -name docker -type f 2>/dev/null | head -5\")",
+      "Bash(ssh ds918_stephen \"ls /usr/local/bin/docker* 2>/dev/null; ls /var/packages/ContainerManager/target/usr/bin/docker* 2>/dev/null; ls /var/packages/Docker/target/usr/bin/docker* 2>/dev/null\" 2>&1)",
+      "Bash(docker save portfolio:latest | ssh ds918_stephen \"/usr/local/bin/docker load\" 2>&1)"
     ]
   }
 }

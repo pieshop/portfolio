@@ -37,14 +37,22 @@ portfolio/
 │   │   ├── grid.css        # Category grid + media item column classes
 │   │   └── ui.css          # Component styles (navbar, footer, cards, etc.)
 │   ├── src/assets/         # JSON data, images, fonts, sitemap files
-│   ├── public/             # Static files served by Vite (archive JSON files)
+│   ├── public/             # Static files served by Vite (archive JSON under assets/json/archive/)
 │   ├── index.html          # Vite entry HTML
 │   ├── vite.config.ts      # Vite config with path aliases + dev proxy
 │   ├── tsconfig.json       # TypeScript config
 │   ├── eslint.config.js    # ESLint v9 flat config
 │   ├── .env.development    # Dev env vars (VITE_*)
 │   ├── .env.staging        # Staging env vars
-│   └── .env.production     # Production env vars
+│   ├── .env.production     # Production env vars
+│   ├── Dockerfile          # nginx:alpine image for production
+│   ├── .dockerignore       # Limits build context to dist/ + nginx.conf
+│   ├── nginx.conf          # SPA routing, gzip, cache headers, security headers
+│   ├── docker-compose.yml  # Production (runs on NAS, port 8080)
+│   ├── docker-compose.stage.yml  # Staging (runs on NAS, port 8081)
+│   ├── docker-compose.dev.yml    # Local testing (builds + runs on Mac, port 8080)
+│   ├── deploy.sh           # Build/deploy script (build, local, push, live, stage)
+│   └── purge-cdn.sh        # Ad-hoc BunnyCDN cache purge for portfolio images
 ├── api/                    # Legacy PHP/Laravel API (Grunt-managed, mostly unused)
 └── api_express/            # Newer Express.js API stub (src is empty — only node_modules)
 ```
@@ -109,27 +117,119 @@ All selectors use `createSelector` from RTK to avoid unnecessary re-renders.
 
 ---
 
-## Build Targets
+## Build & Deploy
+
+### Build Commands
 
 Environment config via `.env.*` files using `VITE_*` variables:
 
-| Target | Command | Notes |
-|---|---|---|
-| Development | `npm run dev` | Vite HMR dev server |
-| Dev build | `npm run build:dev` | tsc + vite build --mode development |
-| Staging build | `npm run build:stage` | tsc + vite build --mode staging |
-| Production build | `npm run build:prod` | tsc + vite build |
-| Preview | `npm run preview` | Preview production build locally |
+| Command | What it does |
+|---|---|
+| `npm run dev` | Vite HMR dev server |
+| `npm run build:prod` | tsc + vite build (production) |
+| `npm run build:stage` | tsc + vite build --mode staging |
+| `npm run build:dev` | tsc + vite build --mode development |
+| `npm run preview` | Preview production build locally |
 
-Deployment is done via rsync to SSH hosts defined in `~/.ssh/config`.
+### Deploy Commands
+
+All deploy commands run from `www/` and delegate to `deploy.sh`:
+
+| Command | What it does |
+|---|---|
+| `npm run deploy:live` | Full deploy: build prod → Docker image → push to NAS → restart |
+| `npm run deploy:stage` | Full deploy: build stage → Docker image → push to NAS → restart |
+| `npm run deploy:local` | Build prod → run in Docker locally on :8080 |
+| `npm run docker:build` | Build prod Vite app + Docker image (no deploy) |
+| `npm run docker:push` | Push existing image to NAS + restart container |
+
+Or use `deploy.sh` directly:
+
+```bash
+./deploy.sh live                # build + deploy to production
+./deploy.sh stage               # build + deploy to staging
+./deploy.sh local               # build + run locally in Docker
+./deploy.sh build [prod|stage]  # build only (no deploy)
+./deploy.sh push [live|stage]   # push only (no rebuild)
+```
+
+### Deploy Pipeline
+
+```
+npm run build:prod              # Vite builds to dist/
+    → docker build --platform linux/amd64    # nginx:alpine image (~25MB)
+    → docker save | ssh ds918_stephen sudo docker load   # pipe to NAS
+    → ssh sudo docker compose -p <project> up -d --force-recreate
+```
+
+- Images are tagged with both `portfolio:latest` and `portfolio:YYYY-MM-DD` for rollback
+- Builds target `linux/amd64` (NAS platform) from Apple Silicon Mac
+- SSH host `ds918_stephen` defined in `~/.ssh/config` (192.168.1.75:51966)
+- Passwordless sudo for docker via `/etc/sudoers.d/docker-deploy` on NAS
+- Compose projects are isolated by name (`portfolio-prod`, `portfolio-stage`) so deploying one doesn't affect the other
+- Both containers have `restart: unless-stopped` — they survive NAS reboots
+
+### Rollback
+
+```bash
+# On the NAS (via SSH):
+sudo docker tag portfolio:2026-02-20 portfolio:latest
+cd /volume1/docker/portfolio && sudo docker compose -p portfolio-prod -f docker-compose.yml up -d --force-recreate
+```
+
+### Hosting Architecture
+
+- **Frontend:** Docker nginx container on Synology DS-918 NAS, port 8080
+- **Reverse proxy:** Synology DSM reverse proxy (HTTPS → HTTP):
+  - `www.stephenhamilton.co.uk:443` → `localhost:8080`
+  - `stephenhamilton.co.uk:443` → `localhost:8080`
+  - `stage.stephenhamilton.co.uk:443` → `localhost:8081`
+- **SSL:** Let's Encrypt via Synology DSM, assigned to each reverse proxy entry
+- **DNS/CDN edge:** Cloudflare
+- **Containers:** Both `restart: unless-stopped` — auto-restart after NAS reboot
+
+### Asset Architecture
+
+Three types of assets, each served differently:
+
+**1. Build artifacts (JS/CSS/fonts)** — Served by the nginx container from `/assets/*`. Hashed filenames, immutable cache headers. No CDN needed.
+
+**2. Portfolio media (images, thumbnails, awards)** — Served via BunnyCDN:
+- Origin: `assets.stephenhamilton.co.uk` (Web Station/Apache on NAS, unchanged)
+- CDN: `cdn.stephenhamilton.co.uk` (BunnyCDN pull zone)
+- Referenced via `VITE_ASSETS_BASE` → `get_image_path()`, `get_thumb_path()`, `get_awards_path()`
+
+**3. Archive JSON (per-project data)** — Served by the nginx container from `/assets/json/archive/{client}/{entry}.json`. Source files in `www/public/assets/json/archive/`.
+
+### CDN Cache Purge
+
+Only needed when existing portfolio images are **replaced** (same filename, new content). New images cache naturally.
+
+```bash
+./purge-cdn.sh images/portfolio-entries/disney/capamerads/thumb/thumb.jpg
+```
+
+Requires `BUNNY_API_KEY` env var or `www/.env.local` file.
 
 ### Dev Proxy
 
 `vite.config.ts` proxies `/assets-proxy` → `https://assets.stephenhamilton.co.uk/portfolio` to avoid CORS in development. `VITE_ASSETS_BASE=/assets-proxy` in `.env.development`.
 
-### Archive JSON (local dev)
+### Environment Variables
 
-Per-project archive JSON files are copied into `www/public/` so Vite serves them statically at e.g. `/disney/capamerads.json`. `VITE_DATA_BASE` is empty in all envs — paths resolve relative to the site root.
+| Variable | Development | Staging | Production |
+|---|---|---|---|
+| `VITE_ASSETS_BASE` | `/assets-proxy` | `https://assets...` | `https://cdn...` |
+| `VITE_DATA_BASE` | `/assets/json/archive` | `/assets/json/archive` | `/assets/json/archive` |
+| `VITE_API_BASE` | `https://api...` | `https://api...` | `https://api...` |
+
+### NAS Docker Setup (one-time, already done)
+
+- Compose files at `/volume1/docker/portfolio/` on NAS
+- Old site backed up to `.bak.www.stephenhamilton.co.uk` in `/volume1/web/`
+- `www.stephenhamilton.co.uk` and `stephenhamilton.co.uk` vhosts removed from Web Station
+- `assets.stephenhamilton.co.uk` remains on Web Station (BunnyCDN origin)
+- Passwordless sudo: `stephen ALL=(root) NOPASSWD: /usr/local/bin/docker, /usr/local/bin/docker-compose`
 
 ---
 

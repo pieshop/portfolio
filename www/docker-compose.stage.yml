@@ -1,0 +1,7 @@
+services:
+  portfolio:
+    image: portfolio:stage
+    container_name: portfolio-stage
+    restart: unless-stopped
+    ports:
+      - "8081:80"
