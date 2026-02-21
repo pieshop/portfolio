@@ -48,6 +48,7 @@ These are the actual portfolio content images — thousands of files at:
 
 ### 3. Archive JSON (per-project data files)
 
+**Current (messy):** 30+ client directories dumped at the root of `dist/`:
 ```
 dist/disney/capamerads.json
 dist/sky/movies.json
@@ -55,11 +56,20 @@ dist/intel/ultrabook.json
 ...
 ```
 
-- **In Vite build:** Copied from `www/public/` into `dist/` at build time
-- **Referenced via:** `VITE_DATA_BASE` (empty string = relative to site root) → `get_archive_path()`
-- **Served from:** Same origin as HTML (relative paths like `/disney/capamerads.json`)
+**Proposed:** Nest under `dist/assets/json/archive/` for a clean structure:
+```
+dist/assets/json/archive/disney/capamerads.json
+dist/assets/json/archive/sky/movies.json
+dist/assets/json/archive/intel/ultrabook.json
+...
+```
 
-**What this means:** These are bundled into the Docker image alongside `index.html`. No CDN involvement.
+- **Source:** Vite copies `www/public/` contents into `dist/` verbatim at build time
+- **Fix:** Restructure `www/public/` to nest client dirs under `assets/json/archive/`
+- **Referenced via:** `VITE_DATA_BASE` → `get_archive_path()` in `AppConstants.ts`
+- **Env change:** `VITE_DATA_BASE=` → `VITE_DATA_BASE=/assets/json/archive` in all `.env.*` files
+- **No code changes** — `get_archive_path()` already prepends `BASE_DATA_URL`
+- **Served from:** Same origin as HTML (Docker nginx container)
 
 ---
 
@@ -134,7 +144,8 @@ docker save | ssh ─────────────────→ docker 
                                     │  - index.html      │
                                     │  - /assets/* (JS,  │
                                     │    CSS, fonts)     │
-                                    │  - archive JSON    │
+                                    │  - /assets/json/   │
+                                    │    archive/* (JSON)│
                                     └────────────────────┘
                                          │
                                     Synology Reverse Proxy
@@ -165,7 +176,28 @@ For a personal site with local builds, pushing to Docker Hub or GHCR adds unnece
 
 ## Implementation Steps
 
-### 1. Create nginx configuration
+### 1. Restructure archive JSON in `www/public/`
+
+Move all client directories into a nested structure:
+
+```
+www/public/                              www/public/
+├── disney/capamerads.json        →      └── assets/json/archive/
+├── sky/movies.json                          ├── disney/capamerads.json
+├── intel/ultrabook.json                     ├── sky/movies.json
+└── ... (30+ client dirs)                    ├── intel/ultrabook.json
+                                             └── ...
+```
+
+Update `VITE_DATA_BASE` in all `.env.*` files:
+```diff
+- VITE_DATA_BASE=
++ VITE_DATA_BASE=/assets/json/archive
+```
+
+No changes needed to `AppConstants.ts` — `get_archive_path()` already prepends `BASE_DATA_URL`.
+
+### 2. Create nginx configuration
 
 **New file:** `www/nginx.conf`
 
@@ -177,7 +209,7 @@ A minimal nginx config for serving the SPA:
 - Cache headers: `index.html` → `Cache-Control: no-cache` (always revalidate)
 - Security headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy)
 
-### 2. Create Dockerfile
+### 3. Create Dockerfile
 
 **New file:** `www/Dockerfile`
 
@@ -187,16 +219,19 @@ Multi-stage is unnecessary since we build locally. Simple single-stage:
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY dist/ /usr/share/nginx/html/
+HEALTHCHECK --interval=30s --timeout=3s \
+  CMD wget -q --spider http://localhost/ || exit 1
 EXPOSE 80
 ```
 
 - Uses `nginx:alpine` (< 30MB)
 - Copies the pre-built `dist/` output (HTML, JS/CSS bundles, archive JSON)
 - No Node.js in the image — purely a static file server
+- Healthcheck lets Docker (and Synology Container Manager) report container status
 
-### 3. Create docker-compose files
+### 4. Create docker-compose files
 
-**New file:** `www/docker-compose.yml`
+**New file:** `www/docker-compose.yml` (production — runs on NAS)
 
 ```yaml
 services:
@@ -208,7 +243,7 @@ services:
       - "8080:80"
 ```
 
-**New file:** `www/docker-compose.stage.yml` (override for staging)
+**New file:** `www/docker-compose.stage.yml` (staging — runs on NAS)
 
 ```yaml
 services:
@@ -219,29 +254,54 @@ services:
       - "8081:80"
 ```
 
-### 4. Create deploy script
+**New file:** `www/docker-compose.dev.yml` (local testing — runs on Mac)
+
+```yaml
+services:
+  portfolio:
+    build: .
+    container_name: portfolio-dev
+    ports:
+      - "8080:80"
+```
+
+This compose file uses `build: .` rather than a pre-built image, so `docker compose up --build` will build and run in one command — production-identical nginx serving locally.
+
+### 5. Create deploy script
 
 **New file:** `www/deploy.sh`
 
-A single shell script replacing the Node.js rsync tooling:
+A single shell script replacing the Node.js rsync tooling, with subcommands:
 
 ```bash
 #!/bin/bash
-# Usage: ./deploy.sh [live|stage]
+# Usage:
+#   ./deploy.sh build [prod|stage]  — Build Vite app + Docker image (no deploy)
+#   ./deploy.sh local               — Build prod + run locally in Docker on :8080
+#   ./deploy.sh push [live|stage]   — Transfer image to NAS + restart container
+#   ./deploy.sh live                — Shorthand: build prod + push live
+#   ./deploy.sh stage               — Shorthand: build stage + push stage
 
-# 1. Run TypeScript check + Vite build (production or staging mode)
-# 2. Build Docker image with tag (portfolio:latest or portfolio:stage)
-#    Also tag with date for rollback: portfolio:2026-02-21
-# 3. docker save | ssh ds918_stephen docker load
-# 4. ssh ds918_stephen "cd /volume1/docker/portfolio && docker compose up -d"
-# 5. Print success message with URL
+# Image tagging:
+#   Always tags with date (portfolio:2026-02-21) for rollback history
+#   Plus portfolio:latest (live) or portfolio:stage (staging)
 ```
 
-Supports two targets:
-- `./deploy.sh live` — builds prod, deploys to ds918 as `portfolio:latest`
-- `./deploy.sh stage` — builds staging, deploys to ds918 as `portfolio:stage`
+Subcommand details:
 
-### 5. Create CDN purge utility
+| Command | What it does |
+|---|---|
+| `build prod` | `npm run build:prod` → `docker build -t portfolio:latest -t portfolio:$(date +%Y-%m-%d)` |
+| `build stage` | `npm run build:stage` → `docker build -t portfolio:stage` |
+| `local` | Runs `build prod`, then `docker compose -f docker-compose.dev.yml up --build` |
+| `push live` | `docker save portfolio:latest \| ssh ds918_stephen docker load` → restart container |
+| `push stage` | `docker save portfolio:stage \| ssh ds918_stephen docker load` → restart container |
+| `live` | `build prod` + `push live` (full deploy shorthand) |
+| `stage` | `build stage` + `push stage` (full deploy shorthand) |
+
+This split lets you **build once, test locally, then push the same image** without rebuilding.
+
+### 6. Create CDN purge utility
 
 **New file:** `www/purge-cdn.sh`
 
@@ -261,7 +321,7 @@ Ad-hoc script for purging BunnyCDN cache when portfolio images are updated:
 
 This is **not** part of the regular deploy pipeline — used only when media files on the CDN origin are replaced with new content at the same URL.
 
-### 6. Add npm scripts
+### 7. Add npm scripts
 
 **Modified file:** `www/package.json`
 
@@ -271,24 +331,38 @@ Add convenience scripts:
   "scripts": {
     "deploy:live": "./deploy.sh live",
     "deploy:stage": "./deploy.sh stage",
-    "docker:build": "docker build -t portfolio:latest .",
-    "docker:preview": "docker run --rm -p 8080:80 portfolio:latest"
+    "deploy:local": "./deploy.sh local",
+    "docker:build": "./deploy.sh build prod",
+    "docker:push": "./deploy.sh push live"
   }
 }
 ```
 
-### 7. Update production env to use CDN hostname
+All npm scripts delegate to `deploy.sh` — single source of truth for all build/deploy logic.
+
+### 8. Update environment files
 
 **Modified file:** `www/.env.production`
-
 ```diff
 - VITE_ASSETS_BASE=https://assets.stephenhamilton.co.uk/portfolio
 + VITE_ASSETS_BASE=https://cdn.stephenhamilton.co.uk/portfolio
+- VITE_DATA_BASE=
++ VITE_DATA_BASE=/assets/json/archive
 ```
 
-Ensures portfolio images are loaded via BunnyCDN edge nodes rather than hitting the origin directly.
+**Modified file:** `www/.env.staging`
+```diff
+- VITE_DATA_BASE=
++ VITE_DATA_BASE=/assets/json/archive
+```
 
-### 8. Create .dockerignore
+**Modified file:** `www/.env.development`
+```diff
+- VITE_DATA_BASE=
++ VITE_DATA_BASE=/assets/json/archive
+```
+
+### 9. Create .dockerignore
 
 **New file:** `www/.dockerignore`
 
@@ -300,7 +374,7 @@ Exclude everything except `dist/` and `nginx.conf` from the Docker build context
 !nginx.conf
 ```
 
-### 9. Synology setup (manual, one-time)
+### 10. Synology setup (manual, one-time)
 
 **Docker setup:**
 - Create `/volume1/docker/portfolio/` on the NAS
@@ -312,8 +386,8 @@ Exclude everything except `dist/` and `nginx.conf` from the Docker build context
 - **Before switching:** Rename the old site directory as a backup (e.g. `www.stephenhamilton.co.uk.bak`)
 - Remove the `www.stephenhamilton.co.uk` virtual host from Web Station
 - Add a **Reverse Proxy** rule in DSM (Control Panel → Login Portal → Advanced → Reverse Proxy):
-  - `www.stephenhamilton.co.uk:443` → `localhost:8080` (HTTPS → HTTP)
-  - `stage.stephenhamilton.co.uk:443` → `localhost:8081`
+    - `www.stephenhamilton.co.uk:443` → `localhost:8080` (HTTPS → HTTP)
+    - `stage.stephenhamilton.co.uk:443` → `localhost:8081`
 - **`assets.stephenhamilton.co.uk` stays on Web Station** — it's the BunnyCDN origin and must remain accessible
 - Other sites (api.stephenhamilton.co.uk, sarah-brady, etc.) remain on Web Station — unaffected
 - SSL via Synology's Let's Encrypt integration (likely already configured for this domain)
@@ -324,15 +398,62 @@ Exclude everything except `dist/` and `nginx.conf` from the Docker build context
 
 | File | Action | Description |
 |---|---|---|
-| `www/Dockerfile` | Create | nginx:alpine serving dist/ |
+| `www/public/assets/json/archive/` | Move | Restructure archive JSON from `public/{client}/` to nested path |
+| `www/Dockerfile` | Create | nginx:alpine serving dist/, with healthcheck |
 | `www/.dockerignore` | Create | Exclude everything except dist/ and nginx.conf |
 | `www/nginx.conf` | Create | SPA-friendly nginx config with caching rules |
-| `www/docker-compose.yml` | Create | Production compose file |
-| `www/docker-compose.stage.yml` | Create | Staging compose override |
-| `www/deploy.sh` | Create | Build + deploy script (replaces Node.js rsync tooling) |
+| `www/docker-compose.yml` | Create | Production compose file (runs on NAS) |
+| `www/docker-compose.stage.yml` | Create | Staging compose override (runs on NAS) |
+| `www/docker-compose.dev.yml` | Create | Local testing compose file (build + run on Mac) |
+| `www/deploy.sh` | Create | Build/test/deploy script with subcommands |
 | `www/purge-cdn.sh` | Create | Ad-hoc BunnyCDN cache purge utility |
-| `www/.env.production` | Modify | Point `VITE_ASSETS_BASE` to CDN hostname |
+| `www/.env.production` | Modify | Point `VITE_ASSETS_BASE` to CDN, set `VITE_DATA_BASE` |
+| `www/.env.staging` | Modify | Set `VITE_DATA_BASE` |
+| `www/.env.development` | Modify | Set `VITE_DATA_BASE` |
 | `www/package.json` | Modify | Add deploy/docker npm scripts |
+
+---
+
+## Local Testing Workflow
+
+The local testing experience mirrors production as closely as possible:
+
+### Quick test (Vite dev server — fastest feedback loop)
+
+```bash
+npm run dev          # HMR, hot reload, proxy for assets
+```
+
+Uses Vite's dev server with the proxy for CDN assets. Best for active development.
+
+### Production-identical test (Docker + nginx — verify before deploy)
+
+```bash
+npm run deploy:local    # builds prod, runs in Docker on :8080
+```
+
+This runs `deploy.sh local` which:
+1. Builds the Vite app in production mode
+2. Builds a Docker image using the same Dockerfile as production
+3. Runs it locally via `docker-compose.dev.yml` on `:8080`
+
+Visit `http://localhost:8080` and verify:
+- SPA routing works (navigate to `/about`, refresh — should not 404)
+- Portfolio images load from CDN
+- Archive JSON loads at `/assets/json/archive/{client}/{entry}.json`
+- nginx cache headers are correct (check DevTools Network tab)
+- Gzip compression is active
+
+### Build once, test, then ship
+
+```bash
+npm run docker:build         # build prod + Docker image
+npm run deploy:local         # test locally
+# verify everything works...
+npm run docker:push          # ship the same image to NAS (no rebuild)
+```
+
+This avoids rebuilding between test and deploy — the exact image you tested is what goes to production.
 
 ---
 
@@ -373,12 +494,13 @@ cd /volume1/docker/portfolio && docker compose up -d
 
 ---
 
-## Verification
+## Verification Checklist
 
-1. **Local preview:** `npm run build:prod && npm run docker:build && npm run docker:preview` — visit `http://localhost:8080`, verify:
-  - SPA routing works (navigate to `/about`, refresh — should not 404)
-  - Portfolio images load from CDN (`cdn.stephenhamilton.co.uk`)
-  - Archive JSON loads (click into a project with archive data)
+1. **Local Docker test:** `npm run deploy:local` — visit `http://localhost:8080`, verify:
+    - SPA routing works (navigate to `/about`, refresh — should not 404)
+    - Portfolio images load from CDN (`cdn.stephenhamilton.co.uk`)
+    - Archive JSON loads (click into a project with archive data)
+    - Check nginx response headers (cache-control, gzip, security headers)
 2. **Stage deploy:** `npm run deploy:stage` — verify site loads at `stage.stephenhamilton.co.uk`
 3. **Production deploy:** `npm run deploy:live` — verify site loads at `www.stephenhamilton.co.uk`
 4. **Rollback test:** Tag images with dates, verify you can roll back by loading a previous tag
@@ -389,6 +511,5 @@ cd /volume1/docker/portfolio && docker compose up -d
 
 - **GitHub Actions CI:** Could automate builds on push to `master`, build the Docker image in CI, and transfer to the NAS via SSH. Worth adding later if you want hands-off deploys.
 - **Watchtower:** Auto-pull new images if you switch to a registry later.
-- **Health checks:** Add a Docker healthcheck hitting nginx.
 - **The API:** The PHP/Laravel API could also be containerised, but it's separate scope.
 - **Serve bundles via CDN too:** Could set Vite's `base` config to the CDN URL and rsync `dist/assets/` to the CDN origin, gaining edge caching for JS/CSS. Marginal benefit for a personal site but easy to add later.
