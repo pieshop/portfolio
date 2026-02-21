@@ -57,6 +57,10 @@ portfolio/
 │   ├── docker-compose.yml  # Production (runs on NAS, port 8080)
 │   ├── docker-compose.stage.yml  # Staging (runs on NAS, port 8081)
 │   └── docker-compose.dev.yml    # Local testing (builds + runs on Mac, port 8080)
+├── docs/                   # Detailed documentation
+│   ├── api.md              # Data architecture & service layer
+│   ├── architecture.md     # Frontend architecture & patterns
+│   └── build.md            # Build, deploy & infrastructure
 ├── scripts/                # Build-time TypeScript scripts
 │   ├── convert-db.ts       # One-time SQL → JSON conversion (reads sql/portfolio.sql)
 │   ├── generate-sitemap.ts # Generates www/public/sitemap.xml from portfolio.json
@@ -100,70 +104,9 @@ portfolio/
 
 ## Data Architecture
 
-All portfolio data lives in a single local JSON file — no API or database dependency at runtime.
+All portfolio data lives in `www/src/assets/json/portfolio.json` — a single local JSON file imported at build time. No API or database at runtime. The service layer (`src/services/portfolio.ts`) reads directly from the imported JSON and returns Promises matching the original API signatures. Per-project archive JSON is the only data fetched at runtime (`public/assets/json/archive/`).
 
-### portfolio.json
-
-`www/src/assets/json/portfolio.json` is the single source of truth for all portfolio data. It is imported directly by the service layer and bundled into the app at build time.
-
-**Structure** — Normalized with shared lookup tables at the top level; entries reference by key:
-
-```json
-{
-  "categories":   { "web": { "label": "Websites", "description": "..." }, ... },
-  "clients":      { "bbc": { "name": "BBC" }, ... },
-  "technologies": { "html": "HTML", "css": "CSS", ... },
-  "frameworks":   { "react": { "name": "React", "url": "..." }, ... },
-  "platforms":    { "desktop": "Desktop", ... },
-  "affiliations": { "jollywise": { "name": "Jollywise Media", "url": "..." }, ... },
-  "territories":  { "uk": "UK", "emea": "EMEA", ... },
-  "entries": [
-    {
-      "entry_key": "nextstep",
-      "title": "Take it to the Top!",
-      "description": "...",
-      "responsibilities": "...",
-      "year": 2016, "week": 45,
-      "modified": "2026-02-18T14:41:54",
-      "is_featured": true, "is_nda": false, "is_summary": false, "is_responsive": true,
-      "client": "bbc",
-      "categories": ["web", "game", "responsive", "app"],
-      "affiliation": "jollywise",
-      "technologies": ["html", "css", "javascript"],
-      "frameworks": ["babel", "vuejs"],
-      "platforms": ["desktop", "tablet", "smartphone"],
-      "territories": ["uk"],
-      "has_archive": false, "is_flash": false, "is_dark_background": false,
-      "images": [{ "id": "desktop_01.jpg", "width": 1024, "height": 847 }],
-      "pdfs": [], "videos": [], "links": [], "awards": []
-    }
-  ]
-}
-```
-
-### How portfolio.json was generated
-
-The `scripts/convert-db.ts` script performed a one-time conversion:
-1. Parsed `sql/portfolio.sql` (phpMyAdmin dump of the MariaDB database with 15+ tables and junction tables)
-2. Resolved all many-to-many relationships (entries ↔ categories, technologies, frameworks, platforms, territories, affiliations, awards)
-3. Merged with the former `data.json` which provided media data (images with dimensions, PDFs, videos, links, awards with full detail, archive/flash/dark-background flags)
-4. Output the merged, denormalized result
-
-To regenerate: `npx tsx scripts/convert-db.ts` (from project root)
-
-### Archive JSON
-
-Per-project archive data (iframe embeds for legacy Flash content) is served as static JSON from `www/public/assets/json/archive/{client}/{entry}.json`. This is the only data still loaded via `fetch()` at runtime.
-
-### Sitemap
-
-`www/public/sitemap.xml` is generated from portfolio.json by `scripts/generate-sitemap.ts`. Run manually when data changes:
-
-```bash
-cd www && npm run sitemap
-```
-
-Or from the project root: `npx tsx scripts/generate-sitemap.ts`
+See [docs/api.md](docs/api.md) for full schema, service layer functions, URL builders, and data generation scripts.
 
 ---
 
@@ -178,32 +121,9 @@ Or from the project root: `npx tsx scripts/generate-sitemap.ts`
 
 ---
 
-## Redux State Shape
-
-```ts
-{
-  selectedCategory,
-  selectedCategoryMetaData,
-  selectedYear,
-  filtered,                 // Persisted to localStorage
-  selectedItem,
-  localData,
-  itemsByCategory,          // Persisted to localStorage
-  itemsByID,                // Persisted to localStorage
-  categories                // Persisted to localStorage
-}
-```
-
-State is selectively persisted to localStorage via custom middleware.
-All selectors use `createSelector` from RTK to avoid unnecessary re-renders.
-
----
-
 ## Build & Deploy
 
 ### Build Commands
-
-Environment config via `.env.*` files using `VITE_*` variables:
 
 | Command | What it does |
 |---|---|
@@ -216,114 +136,23 @@ Environment config via `.env.*` files using `VITE_*` variables:
 
 ### Deploy Commands
 
-All deploy commands run from `www/` and delegate to `scripts/deploy.sh`:
-
 | Command | What it does |
 |---|---|
 | `npm run deploy:live` | Full deploy: build prod → Docker image → push to NAS → restart |
 | `npm run deploy:stage` | Full deploy: build stage → Docker image → push to NAS → restart |
 | `npm run deploy:local` | Build prod → run in Docker locally on :8080 |
-| `npm run docker:local:stop` | Stop the local Docker container |
-| `npm run docker:build` | Build prod Vite app + Docker image (no deploy) |
-| `npm run docker:push` | Push existing image to NAS + restart container |
 | `npm run deploy:assets` | Sync local portfolio images → NAS via SSH |
 | `npm run assets:pull` | Pull portfolio images from NAS → local via SSH |
 
-Or use `scripts/deploy.sh` directly:
+See [docs/build.md](docs/build.md) for the full deploy pipeline, Docker setup, hosting architecture, environment variables, CDN purge, and local asset serving.
 
-```bash
-./scripts/deploy.sh live                # build + deploy to production
-./scripts/deploy.sh stage               # build + deploy to staging
-./scripts/deploy.sh local               # build + run locally in Docker
-./scripts/deploy.sh build [prod|stage]  # build only (no deploy)
-./scripts/deploy.sh push [live|stage]   # push only (no rebuild)
-./scripts/deploy.sh assets              # sync local images → NAS
-./scripts/deploy.sh assets:pull         # pull images from NAS → local
-```
+---
 
-### Deploy Pipeline
+## Patterns & Architecture
 
-```
-npm run build:prod              # Vite builds to dist/
-    → docker build --platform linux/amd64    # nginx:alpine image (~25MB)
-    → docker save | ssh ds918_stephen sudo docker load   # pipe to NAS
-    → ssh sudo docker compose -p <project> up -d --force-recreate
-```
+Container/Presentational split with Redux Toolkit. Data flows from `portfolio.json` (build-time import) → service layer → Redux actions → reducers → localStorage persistence. All selectors use `createSelector` with stable fallback constants. Images lazy-loaded via `react-intersection-observer` (`useInView`). Plain CSS with native nesting and custom properties.
 
-- Images are tagged with both `portfolio:latest` and `portfolio:YYYY-MM-DD` for rollback
-- Builds target `linux/amd64` (NAS platform) from Apple Silicon Mac
-- SSH host `ds918_stephen` defined in `~/.ssh/config` (192.168.1.75:51966)
-- Passwordless sudo for docker via `/etc/sudoers.d/docker-deploy` on NAS
-- Compose projects are isolated by name (`portfolio-prod`, `portfolio-stage`) so deploying one doesn't affect the other
-- Both containers have `restart: unless-stopped` — they survive NAS reboots
-
-### Rollback
-
-```bash
-# On the NAS (via SSH):
-sudo docker tag portfolio:2026-02-20 portfolio:latest
-cd /volume1/docker/portfolio && sudo docker compose -p portfolio-prod -f docker-compose.yml up -d --force-recreate
-```
-
-### Hosting Architecture
-
-- **Frontend:** Docker nginx container on Synology DS-918 NAS, port 8080
-- **Reverse proxy:** Synology DSM reverse proxy (HTTPS → HTTP):
-  - `www.stephenhamilton.co.uk:443` → `localhost:8080`
-  - `stephenhamilton.co.uk:443` → `localhost:8080`
-  - `stage.stephenhamilton.co.uk:443` → `localhost:8081`
-- **SSL:** Let's Encrypt via Synology DSM, assigned to each reverse proxy entry
-- **DNS/CDN edge:** Cloudflare
-- **Containers:** Both `restart: unless-stopped` — auto-restart after NAS reboot
-
-### Asset Architecture
-
-Three types of assets, each served differently:
-
-**1. Build artifacts (JS/CSS/fonts)** — Served by the nginx container from `/assets/*`. Hashed filenames, immutable cache headers. No CDN needed.
-
-**2. Portfolio media (images, thumbnails, awards)** — Served via BunnyCDN:
-- Origin: `assets.stephenhamilton.co.uk` (Web Station/Apache on NAS, unchanged)
-- CDN: `cdn.stephenhamilton.co.uk` (BunnyCDN pull zone)
-- Referenced via `VITE_ASSETS_BASE` → `get_image_path()`, `get_thumb_path()`, `get_awards_path()`
-
-**3. Archive JSON (per-project data)** — Served by the nginx container from `/assets/json/archive/{client}/{entry}.json`. Source files in `www/public/assets/json/archive/`.
-
-### CDN Cache Purge
-
-Only needed when existing portfolio images are **replaced** (same filename, new content). New images cache naturally.
-
-```bash
-./scripts/purge-cdn.sh images/portfolio-entries/disney/capamerads/thumb/thumb.jpg
-```
-
-Requires `BUNNY_API_KEY` env var or `www/.env.local` file.
-
-### Local Assets (Dev)
-
-Portfolio media images (~90MB, ~1,800 files) can be served locally during development. `vite.config.ts` checks for `../assets/portfolio/images/` at startup:
-
-- **If present:** A Vite plugin serves `/assets-proxy/*` directly from the local `assets/portfolio/` directory. No network requests to the NAS.
-- **If absent:** Falls back to the remote proxy (`/assets-proxy` → `https://assets.stephenhamilton.co.uk/portfolio`), same as before.
-
-Initial setup: `cd www && ./scripts/deploy.sh assets:pull`
-
-The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (`ds918_stephen:/volume1/web/assets.stephenhamilton.co.uk/portfolio/images/`). Synology `@eaDir` metadata directories are excluded.
-
-### Environment Variables
-
-| Variable | Development | Staging | Production |
-|---|---|---|---|
-| `VITE_ASSETS_BASE` | `/assets-proxy` | `https://assets...` | `https://cdn...` |
-| `VITE_DATA_BASE` | `/assets/json/archive` | `/assets/json/archive` | `/assets/json/archive` |
-
-### NAS Docker Setup (one-time, already done)
-
-- Compose files at `/volume1/docker/portfolio/` on NAS
-- Old site backed up to `.bak.www.stephenhamilton.co.uk` in `/volume1/web/`
-- `www.stephenhamilton.co.uk` and `stephenhamilton.co.uk` vhosts removed from Web Station
-- `assets.stephenhamilton.co.uk` remains on Web Station (BunnyCDN origin)
-- Passwordless sudo: `stephen ALL=(root) NOPASSWD: /usr/local/bin/docker, /usr/local/bin/docker-compose`
+See [docs/architecture.md](docs/architecture.md) for the full app walkthrough, Redux state shape, component details, and CSS architecture.
 
 ---
 
@@ -336,62 +165,6 @@ The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (
 - **`api_express/src/`** — Directory exists but is empty (no source files, only `node_modules`).
 - **`api/`** — Legacy PHP/Laravel API; dormant, kept for reference.
 - **`src/utils/DateFormat.ts`** — Unused utility file (date formatting); safe to delete.
-
----
-
-## Patterns & Architecture Notes
-
-- **Container/Presentational split** — Containers in `containers/`, UI in `components/`.
-- **Selector pattern** — `itemsSelectors.ts`, `categoriesSelectors.ts`, `itemSelectors.ts` all use `createSelector` with stable fallback constants to prevent unnecessary re-renders.
-- **Data flow** — `portfolio.json` is imported at build time → service layer filters/transforms → Redux actions dispatch → reducers → localStorage.
-- **Portfolio data** — All entry metadata, media info, and lookup tables live in `src/assets/json/portfolio.json`. Per-project archive JSON files are loaded at runtime from `public/assets/json/archive/`.
-- **Service layer** — `src/services/portfolio.ts` reads directly from the imported `portfolio.json` and returns Promises (matching the original API-based signatures). No network requests except for archive JSON. Redux actions/reducers are unchanged.
-- **Local data derivation** — `AppConstants.ts` derives the `localdata` lookup (`client → entry → media`) from `portfolio.json` entries at import time, maintaining the same shape used by `localDataReducer` and `itemActions`.
-- **Config** — Environment vars in `.env.development` / `.env.staging` / `.env.production`.
-- **TypeScript** — Full TypeScript migration complete. All source files are `.ts`/`.tsx`.
-- **CSS** — Plain CSS (no preprocessor). Split into partials under `src/css/`. Uses native CSS nesting and custom properties. No Bootstrap — Radix UI Themes primitives used throughout.
-- **Lazy loading** — `react-intersection-observer` (`useInView`) withholds `src`/`srcSet` until an image is within 200px of the viewport (`triggerOnce: true`). Applies to both the category grid thumbnails (`CategoryItemImage`) and item detail images (`ItemMediaList`). Loading placeholder uses Radix `<Spinner>`.
-- **No tests** — No test framework added.
-
----
-
-## Frontend App Walkthrough (Concise)
-
-### Entry + App Shell
-
-- `www/src/main.tsx` wires React, Redux, Helmet, Radix Theme, CSS, logs env flags, and conditionally registers the service worker.
-- `www/src/App.tsx` renders the global `Loader`, then mounts the router inside `<Flex direction="column" minHeight="100vh">` for sticky footer layout.
-- `www/src/routes/mainRoutes.tsx` wraps routes with `Header` and `Footer` and defines all four routes.
-
-### Redux Store + Data Flow
-
-- `www/src/store/configureStore.ts` sets RTK store, persists selected slices to `localStorage`, and rehydrates in production builds.
-- `www/src/store/rootReducer.ts` combines selected category/year/filter, category metadata, item lists, items by id, and local data.
-- `www/src/store/categories/categoriesActions.ts` fetches available categories + active-by-year from the service layer, updates metadata, and triggers item fetches when category/year/filter changes.
-- `www/src/store/items/itemsActions.ts` fetches category items, enriches entries (paths, booleans, awards), and caches per category.
-- `www/src/store/item/itemActions.ts` fetches a single item, merges local data, parses media (images/pdfs/videos), and optionally loads archive JSON.
-- `www/src/utils/dateValidation.ts` gates refetching (15s dev, 1 day prod).
-
-### Routes + Containers
-
-- `www/src/containers/About.tsx` selects category/year and renders the about content with metadata.
-- `www/src/containers/Categories.tsx` reads params, dispatches category/year selection, and renders `Items`.
-- `www/src/containers/Item.tsx` fetches the item, toggles archive view, and renders overview/details/awards/media.
-- `www/src/containers/Loader.tsx` shows a full-page loader when category items are fetching.
-
-### Components + Styling
-
-- `www/src/components/Header.tsx` and `www/src/components/Footer.tsx` provide the global frame. Footer uses Radix `IconButton` with `asChild` for icon links.
-- `www/src/components/NavBar.tsx` uses `@radix-ui/react-navigation-menu` for accessible nav with keyboard support; Radix `DropdownMenu` for the year filter; collapses to hamburger on mobile via React state + `.site-nav__collapse.is-open` CSS class.
-- `www/src/components/Items.tsx` + `www/src/components/CategoryItem.tsx` render item cards with thumbnails, awards, and lazy-loaded images.
-- `www/src/components/CategoryItemImage.tsx` uses `useInView` to defer image loading; shows Radix `<Spinner>` placeholder until in range.
-- `www/src/components/item/ItemMediaList.tsx` uses `MediaImageCell` (internal component) with `useInView` to defer item detail images; shows `ItemImagePlaceholder` (Radix `<Spinner>`) until in range.
-- `www/src/css/` contains all styles as plain CSS partials (no SCSS).
-
-### Legacy API Folders
-
-- `api/` is legacy PHP/Laravel (Grunt-managed, dormant). Was the original data source before the local JSON migration.
-- `api_express/` is an empty Express stub (no source in `src/`). Never completed.
 
 ---
 
