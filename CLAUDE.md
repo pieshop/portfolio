@@ -223,6 +223,7 @@ All deploy commands run from `www/` and delegate to `scripts/deploy.sh`:
 | `npm run deploy:live` | Full deploy: build prod → Docker image → push to NAS → restart |
 | `npm run deploy:stage` | Full deploy: build stage → Docker image → push to NAS → restart |
 | `npm run deploy:local` | Build prod → run in Docker locally on :8080 |
+| `npm run docker:local:stop` | Stop the local Docker container |
 | `npm run docker:build` | Build prod Vite app + Docker image (no deploy) |
 | `npm run docker:push` | Push existing image to NAS + restart container |
 | `npm run deploy:assets` | Sync local portfolio images → NAS via SSH |
