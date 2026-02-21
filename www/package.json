@@ -16,7 +16,9 @@
     "deploy:stage": "./deploy.sh stage",
     "deploy:local": "./deploy.sh local",
     "docker:build": "./deploy.sh build prod",
-    "docker:push": "./deploy.sh push live"
+    "docker:push": "./deploy.sh push live",
+    "deploy:assets": "./deploy.sh assets",
+    "assets:pull": "./deploy.sh assets:pull"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.2",

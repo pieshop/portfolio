@@ -51,8 +51,11 @@ portfolio/
 │   ├── docker-compose.yml  # Production (runs on NAS, port 8080)
 │   ├── docker-compose.stage.yml  # Staging (runs on NAS, port 8081)
 │   ├── docker-compose.dev.yml    # Local testing (builds + runs on Mac, port 8080)
-│   ├── deploy.sh           # Build/deploy script (build, local, push, live, stage)
+│   ├── deploy.sh           # Build/deploy script (build, local, push, live, stage, assets, assets:pull)
 │   └── purge-cdn.sh        # Ad-hoc BunnyCDN cache purge for portfolio images
+├── assets/                 # Local portfolio media (git-ignored, ~90MB)
+│   └── portfolio/
+│       └── images/         # Thumbnails, screengrabs, awards — synced from NAS via SSH
 ├── api/                    # Legacy PHP/Laravel API (Grunt-managed, mostly unused)
 └── api_express/            # Newer Express.js API stub (src is empty — only node_modules)
 ```
@@ -142,6 +145,8 @@ All deploy commands run from `www/` and delegate to `deploy.sh`:
 | `npm run deploy:local` | Build prod → run in Docker locally on :8080 |
 | `npm run docker:build` | Build prod Vite app + Docker image (no deploy) |
 | `npm run docker:push` | Push existing image to NAS + restart container |
+| `npm run deploy:assets` | Sync local portfolio images → NAS via SSH |
+| `npm run assets:pull` | Pull portfolio images from NAS → local via SSH |
 
 Or use `deploy.sh` directly:
 
@@ -151,6 +156,8 @@ Or use `deploy.sh` directly:
 ./deploy.sh local               # build + run locally in Docker
 ./deploy.sh build [prod|stage]  # build only (no deploy)
 ./deploy.sh push [live|stage]   # push only (no rebuild)
+./deploy.sh assets              # sync local images → NAS
+./deploy.sh assets:pull         # pull images from NAS → local
 ```
 
 ### Deploy Pipeline
@@ -211,9 +218,16 @@ Only needed when existing portfolio images are **replaced** (same filename, new 
 
 Requires `BUNNY_API_KEY` env var or `www/.env.local` file.
 
-### Dev Proxy
+### Local Assets (Dev)
 
-`vite.config.ts` proxies `/assets-proxy` → `https://assets.stephenhamilton.co.uk/portfolio` to avoid CORS in development. `VITE_ASSETS_BASE=/assets-proxy` in `.env.development`.
+Portfolio media images (~90MB, ~1,800 files) can be served locally during development. `vite.config.ts` checks for `../assets/portfolio/images/` at startup:
+
+- **If present:** A Vite plugin serves `/assets-proxy/*` directly from the local `assets/portfolio/` directory. No network requests to the NAS.
+- **If absent:** Falls back to the remote proxy (`/assets-proxy` → `https://assets.stephenhamilton.co.uk/portfolio`), same as before.
+
+Initial setup: `cd www && ./deploy.sh assets:pull`
+
+The `assets/` directory is git-ignored. Synced to/from the NAS via SSH + rsync (`ds918_stephen:/volume1/web/assets.stephenhamilton.co.uk/portfolio/images/`). Synology `@eaDir` metadata directories are excluded.
 
 ### Environment Variables
 

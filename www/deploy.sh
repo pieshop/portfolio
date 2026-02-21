@@ -110,6 +110,27 @@ cmd_push() {
     esac
 }
 
+# ─── Assets ──────────────────────────────────────────────
+
+ASSETS_LOCAL="$SCRIPT_DIR/../assets/portfolio/images"
+ASSETS_REMOTE="/volume1/web/assets.stephenhamilton.co.uk/portfolio/images"
+
+cmd_assets() {
+    if [[ ! -d "$ASSETS_LOCAL" ]]; then
+        err "Local assets not found at $ASSETS_LOCAL — run '$0 assets:pull' first"
+    fi
+    log "Syncing local assets → NAS via SSH"
+    rsync -avz --delete --exclude='@eaDir' -e ssh "$ASSETS_LOCAL/" "$SSH_HOST:$ASSETS_REMOTE/"
+    log "Asset deploy complete"
+}
+
+cmd_assets_pull() {
+    mkdir -p "$ASSETS_LOCAL"
+    log "Pulling assets from NAS → local via SSH"
+    rsync -avz --exclude='@eaDir' -e ssh "$SSH_HOST:$ASSETS_REMOTE/" "$ASSETS_LOCAL/"
+    log "Asset pull complete"
+}
+
 # ─── Shorthands ───────────────────────────────────────────
 
 cmd_live() {
@@ -125,13 +146,15 @@ cmd_stage() {
 # ─── Main ─────────────────────────────────────────────────
 
 case "${1:-}" in
-    build) cmd_build "${2:-prod}" ;;
-    local) cmd_local ;;
-    push)  cmd_push "${2:-live}" ;;
-    live)  cmd_live ;;
-    stage) cmd_stage ;;
+    build)       cmd_build "${2:-prod}" ;;
+    local)       cmd_local ;;
+    push)        cmd_push "${2:-live}" ;;
+    live)        cmd_live ;;
+    stage)       cmd_stage ;;
+    assets)      cmd_assets ;;
+    assets:pull) cmd_assets_pull ;;
     *)
-        echo "Usage: $0 {build|local|push|live|stage}"
+        echo "Usage: $0 {build|local|push|live|stage|assets|assets:pull}"
         echo ""
         echo "Commands:"
         echo "  build [prod|stage]  Build Vite app + Docker image"
@@ -139,6 +162,8 @@ case "${1:-}" in
         echo "  push [live|stage]   Transfer image to NAS + restart"
         echo "  live                Build prod + push to NAS (full deploy)"
         echo "  stage               Build stage + push to NAS"
+        echo "  assets              Sync local assets → NAS"
+        echo "  assets:pull         Pull assets from NAS → local"
         exit 1
         ;;
 esac
