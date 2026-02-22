@@ -255,6 +255,39 @@ Archive JSON is loaded by `fetchArchiveItemService()` when a user navigates to `
 
 ---
 
+## Express API (`api_express/`)
+
+The Express.js API in `api_express/` serves portfolio entry metadata directly from MariaDB. It provides the same response shapes as the service layer functions in `www/src/services/portfolio.ts`, allowing the frontend to optionally fetch data from the API instead of the bundled JSON.
+
+### Relationship to the service layer
+
+The API endpoints map 1:1 to the service layer functions:
+
+| Endpoint | Service function | Notes |
+|---|---|---|
+| `GET /api/categories` | `fetchAvailableCategoriesService()` | Same shape |
+| `GET /api/categories/active` | `fetchAllActiveCategoriesByYearService()` | Same shape |
+| `GET /api/categories/:categoryId/:yearId` | `fetchCategoryItemsService()` | Same shape |
+| `GET /api/item/:entryId` | `fetchItemService()` | Same shape |
+
+### What the API does NOT serve
+
+The database does not contain media data in the shape the frontend needs. The following fields exist only in `portfolio.json` (merged from a separate `data.json` during the migration):
+
+- `has_archive`, `is_flash`, `is_dark_background` flags
+- `images` with `width`/`height` dimensions
+- `pdfs`, `videos`, `links`, `awards` arrays
+
+Archive JSON continues to be served as static files from `www/public/assets/json/archive/`.
+
+### Stack
+
+- Node.js ^22.17.1, native ESM
+- Express 4, mysql2 (promise pool), cors, morgan, dotenv
+- No TypeScript, no build step — runs directly with `node --watch`
+
+---
+
 ## Sitemap Generation
 
 `www/public/sitemap.xml` is generated from `portfolio.json` by `scripts/generate-sitemap.ts`.

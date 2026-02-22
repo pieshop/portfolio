@@ -1,0 +1,12 @@
+import 'dotenv/config';
+
+export const config = {
+  db: {
+    host: process.env.DB_HOST || 'localhost',
+    port: parseInt(process.env.DB_PORT || '3306', 10),
+    user: process.env.DB_USER || 'portfoliouser',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'portfolio',
+  },
+  port: parseInt(process.env.PORT || '3010', 10),
+};

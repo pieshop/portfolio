@@ -162,7 +162,7 @@ See [docs/architecture.md](docs/architecture.md) for the full app walkthrough, R
 - **Service Worker** — Still disabled (`sw.js` present but not wired up); could be re-enabled with Vite PWA plugin.
 - **Google Analytics removed** — react-ga was removed; no replacement added.
 - **Flash support removed** — SWF/Flash components deleted; legacy Flash projects will not display media.
-- **`api_express/src/`** — Directory exists but is empty (no source files, only `node_modules`).
+- **`api_express/`** — Express.js API upgraded to Node 22 ESM; serves entry metadata from MariaDB. See `api_express/README.md`.
 - **`api/`** — Legacy PHP/Laravel API; dormant, kept for reference.
 - **`src/utils/DateFormat.ts`** — Unused utility file (date formatting); safe to delete.
 

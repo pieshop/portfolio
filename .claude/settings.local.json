@@ -20,7 +20,9 @@
       "Bash(docker save portfolio:latest | ssh ds918_stephen \"docker load\" 2>&1)",
       "Bash(ssh ds918_stephen \"which docker 2>/dev/null; ls /usr/local/bin/docker* 2>/dev/null; ls /usr/bin/docker* 2>/dev/null; find / -name docker -type f 2>/dev/null | head -5\")",
       "Bash(ssh ds918_stephen \"ls /usr/local/bin/docker* 2>/dev/null; ls /var/packages/ContainerManager/target/usr/bin/docker* 2>/dev/null; ls /var/packages/Docker/target/usr/bin/docker* 2>/dev/null\" 2>&1)",
-      "Bash(docker save portfolio:latest | ssh ds918_stephen \"/usr/local/bin/docker load\" 2>&1)"
+      "Bash(docker save portfolio:latest | ssh ds918_stephen \"/usr/local/bin/docker load\" 2>&1)",
+      "Bash(cd /Users/stephenhamilton/projects/20.personal/git/2018/portfolio/api_express && rm -f src/config/config.json && rm -rf src/views/ && rm -rf src/public/ && rm -f src/routes/user.js src/routes/users.js && rm -f src/bin/npm-debug.log src/bin/www && rm -f src/package.json src/package-lock.json && rm -f .eslintrc .eslintignore .prettierrc .prettierignore .editorconfig .npmrc && rm -f package-lock.json && rm -rf node_modules/ src/node_modules/ && echo \"Done deleting files\")",
+      "Bash(npm install 2>&1)"
     ]
   }
 }

@@ -1,0 +1,136 @@
+# Upgrade api_express — Implementation Plan
+
+## Context
+
+The `api_express/` directory contains a partially completed Express.js API (~2018) that served portfolio data from MariaDB. It was superseded by the local JSON approach but the user has restored its source code and wants to upgrade it to modern Node.js and complete the endpoints to match what `www/` needs.
+
+**Key discovery:** The DB does not contain media data in the shape the frontend needs. `has_archive`, `is_flash`, `is_dark_background` flags and image dimensions (`width`, `height`) don't exist in the DB — they came from a separate `data.json` file that was merged into `portfolio.json` during the migration. The API will serve entry metadata only; media data stays in `portfolio.json` at build time.
+
+---
+
+## Decisions
+
+- **Data source:** MariaDB on the NAS
+- **Runtime:** Node 22, native ESM (no Babel, no TypeScript)
+- **Legacy dirs:** Keep `_sequelizejs/`, `buildtools/`, `tools/`, `autorun/` as reference
+- **Deployment:** Simple `npm start` — no Docker for now
+- **Media data:** Not served by the API (DB lacks the required fields)
+
+---
+
+## API Endpoints (matching www service layer)
+
+| Endpoint | Matches service function | Response shape |
+|---|---|---|
+| `GET /api/categories` | `fetchAvailableCategoriesService()` | `[{ category_id, category_name, category_label, category_description, is_active }]` |
+| `GET /api/categories/active` | `fetchAllActiveCategoriesByYearService()` | `{ "2018": { "web": true }, "allyears": { ... } }` |
+| `GET /api/categories/:categoryId/:yearId` | `fetchCategoryItemsService()` | `{ entries: [...], years: [...], active_categories: {...} }` |
+| `GET /api/item/:entryId` | `fetchItemService()` | `{ id, client_id, entry_id, client_label, category, title, description, responsibilities, year, is_responsive, is_summary, is_featured, affiliation, affiliation_url, technologies, frameworks, territories, platforms }` |
+
+Archive JSON (`fetchArchiveItemService`) continues to be served as static files from `www/public/` — no API endpoint needed.
+
+---
+
+## Implementation Steps
+
+### 1. Rewrite `package.json` (single root file)
+
+Merge `src/package.json` into root. Set `"type": "module"`, Node 22 engine. Five dependencies:
+
+```
+express ^4.21, mysql2 ^3.12, cors ^2.8, morgan ^1.10, dotenv ^16.4
+```
+
+Remove all Babel, jade, body-parser, cookie-parser, sequelize, async, rsyncwrapper. Script: `"start": "node --watch src/bin/www.js"`.
+
+### 2. Environment config
+
+Replace `src/config/config.json` (hardcoded credentials) with:
+- `.env` file (gitignored) for DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, PORT
+- `.env.example` as committed template
+- `src/config/index.js` reads from `process.env`
+
+### 3. Rewrite core infrastructure (ESM)
+
+- **`src/db.js`** — `mysql2/promise` pool, `connect()` and `getPool()` exports
+- **`src/app.js`** — Express + cors + morgan + `express.json()`, JSON error handlers, no jade/views
+- **`src/bin/www.js`** — Minimal entry point, imports app, listens on configured port
+
+### 4. Rewrite models
+
+- **`src/models/Categories.js`** — Three functions:
+  - `getAvailableCategories()` — single JOIN query, returns array with `is_active: true`
+  - `getActiveCategoriesByYear()` — single JOIN query, builds year→category map + `allyears`
+  - `getCategoryEntries(categoryId, yearId)` — efficient JOINs replacing N+1 queries; returns `{ entries, years, active_categories }`
+
+- **`src/models/Entries.js`** — One function:
+  - `getEntryByID(entryKey)` — entry query + batch lookups for categories, client, affiliation, technologies, frameworks, platforms, territories
+
+Key fixes vs. existing code:
+- Map `id` to `entry_key` (string), not numeric `entry_id` — matches frontend expectation
+- Coerce MySQL `0`/`1` to `true`/`false` for boolean fields
+- Eliminate N+1 queries (current code makes per-entry sub-queries)
+- Add `active_categories` to category entries response (currently missing)
+
+### 5. Rewrite routes
+
+- **`src/routes/index.js`** — Four `GET` endpoints with async handlers + error forwarding
+
+### 6. Delete unused files
+
+- `src/config/config.json` — replaced by `.env`
+- `src/views/` — jade templates (API is JSON-only)
+- `src/public/` — empty
+- `src/routes/user.js`, `src/routes/users.js` — empty stubs
+- `src/bin/npm-debug.log`
+- `src/package.json`, `src/package-lock.json` — merged into root
+- `.eslintrc`, `.eslintignore`, `.prettierrc`, `.prettierignore`, `.editorconfig`, `.npmrc`
+- Both `node_modules/` directories
+
+### 7. Update docs
+
+- `api_express/README.md` — document setup, env vars, endpoints, Node 22 requirement
+- `CLAUDE.md` — update Known Issues to remove "empty src/" note; add api_express description
+- `docs/api.md` — add section about the Express API and its relationship to the service layer
+
+---
+
+## File structure after
+
+```
+api_express/
+  .env.example          # NEW
+  .env                  # NEW (gitignored)
+  .gitignore            # UPDATED
+  package.json          # REWRITTEN
+  README.md             # UPDATED
+  src/
+    bin/www.js          # REWRITTEN
+    config/index.js     # NEW
+    db.js               # REWRITTEN
+    app.js              # REWRITTEN
+    routes/index.js     # REWRITTEN
+    models/
+      Categories.js     # REWRITTEN
+      Entries.js        # REWRITTEN
+  _sequelizejs/         # kept
+  buildtools/           # kept
+  tools/                # kept
+  autorun/              # kept
+```
+
+---
+
+## Verification
+
+1. `cd api_express && npm install` — clean install with 5 deps
+2. `npm start` — server starts on port 3010 (requires MariaDB running)
+3. Test each endpoint against the DB:
+   - `curl localhost:3010/api/categories`
+   - `curl localhost:3010/api/categories/active`
+   - `curl localhost:3010/api/categories/web/allyears`
+   - `curl localhost:3010/api/categories/all/2018`
+   - `curl localhost:3010/api/item/nextstep`
+4. Compare response shapes against `www/src/services/portfolio.ts` return types
+5. Verify boolean fields are `true`/`false` not `0`/`1`
+6. Verify `id` and `entry_id` fields are both the string `entry_key`
