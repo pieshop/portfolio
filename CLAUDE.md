@@ -70,8 +70,9 @@ portfolio/
 ├── assets/                 # Local portfolio media (git-ignored, ~90MB)
 │   └── portfolio/
 │       └── images/         # Thumbnails, screengrabs, awards — synced from NAS via SSH
-├── api/                    # Legacy PHP/Laravel API (dormant, kept for reference)
-└── api_express/            # Express.js API stub (empty src/, never completed)
+├── api/                    # Express.js API — serves entry metadata from MariaDB (Node 22 ESM)
+└── archived/               # Archived legacy code
+    └── api/                # Former PHP/Laravel API (dormant)
 ```
 
 ---
@@ -162,8 +163,8 @@ See [docs/architecture.md](docs/architecture.md) for the full app walkthrough, R
 - **Service Worker** — Still disabled (`sw.js` present but not wired up); could be re-enabled with Vite PWA plugin.
 - **Google Analytics removed** — react-ga was removed; no replacement added.
 - **Flash support removed** — SWF/Flash components deleted; legacy Flash projects will not display media.
-- **`api_express/`** — Express.js API upgraded to Node 22 ESM; serves entry metadata from MariaDB. See `api_express/README.md`.
-- **`api/`** — Legacy PHP/Laravel API; dormant, kept for reference.
+- **`api/`** — Express.js API upgraded to Node 22 ESM; serves entry metadata from MariaDB. Not deployed. See `api/README.md`.
+- **`archived/api/`** — Legacy PHP/Laravel API; dormant, kept for reference.
 - **`src/utils/DateFormat.ts`** — Unused utility file (date formatting); safe to delete.
 
 ---

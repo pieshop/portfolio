@@ -255,7 +255,7 @@ Archive JSON is loaded by `fetchArchiveItemService()` when a user navigates to `
 
 ---
 
-## Express API (`api_express/`)
+## Express API (`api/`)
 
 The Express.js API in `api_express/` serves portfolio entry metadata directly from MariaDB. It provides the same response shapes as the service layer functions in `www/src/services/portfolio.ts`, allowing the frontend to optionally fetch data from the API instead of the bundled JSON.
 
