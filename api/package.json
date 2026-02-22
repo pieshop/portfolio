@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node --watch src/bin/www.js"
+    "start": "node --watch src/bin/www.js",
+    "serve": "node src/bin/www.js",
+    "deploy:live": "./scripts/deploy.sh live",
+    "deploy:local": "./scripts/deploy.sh local"
   },
   "dependencies": {
     "cors": "^2.8.5",

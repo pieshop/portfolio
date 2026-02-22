@@ -1,0 +1,8 @@
+node_modules/
+.env
+.env.*
+.git
+_sequelizejs/
+buildtools/
+tools/
+autorun/

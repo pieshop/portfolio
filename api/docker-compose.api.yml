@@ -1,0 +1,8 @@
+services:
+  portfolio-api:
+    image: portfolio-api:latest
+    container_name: portfolio-api
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3010:3010"

@@ -40,6 +40,60 @@ The server starts on port 3010 by default (configurable via `PORT` in `.env`).
 | `GET` | `/api/categories/:categoryId/:yearId` | Entries filtered by category and year |
 | `GET` | `/api/item/:entryId` | Single entry with full metadata |
 
+## Curl Tests
+
+```bash
+# All active categories
+curl http://192.168.1.75:3010/api/categories
+
+# Year → category map for navigation
+curl http://192.168.1.75:3010/api/categories/active
+
+# Entries for web category, year 2018
+curl http://192.168.1.75:3010/api/categories/web/2018
+
+# All entries across all categories and years
+curl http://192.168.1.75:3010/api/categories/all/allyears
+
+# Single entry by key
+curl http://192.168.1.75:3010/api/item/horriblehistories
+
+# 404 for non-existent entry
+curl http://192.168.1.75:3010/api/item/doesnotexist
+```
+
+## Docker
+
+### Local testing
+
+```bash
+docker compose -f docker-compose.dev.yml up --build
+# API available at http://localhost:3010
+```
+
+### Commands
+
+- Restart image and container on NAS
+```bash
+ssh ds918_stephen "cd /volume1/docker/portfolio && sudo /usr/local/bin/docker compose -p portfolio-api -f docker-compose.api.yml up -d --force-recreate"
+```
+
+- Delete image and container on NAS
+```bash
+ssh ds918_stephen "cd /volume1/docker/portfolio && sudo /usr/local/bin/docker compose -p portfolio-api -f docker-compose.api.yml down && sudo /usr/local/bin/docker rmi portfolio-api:latest"
+```
+
+Requires a `.env` file with DB credentials (the container reads it via `env_file`).
+
+### Deploy to NAS
+
+```bash
+./scripts/deploy.sh build   # Build Docker image
+./scripts/deploy.sh push    # Transfer to NAS + restart
+./scripts/deploy.sh live    # Shorthand: build + push
+./scripts/deploy.sh local   # Build + run locally in Docker
+```
+
 ## Legacy Directories
 
 The following directories are kept for historical reference only:

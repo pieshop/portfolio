@@ -147,6 +147,17 @@ See [docs/api.md](docs/api.md) for full schema, service layer functions, URL bui
 
 See [docs/build.md](docs/build.md) for the full deploy pipeline, Docker setup, hosting architecture, environment variables, CDN purge, and local asset serving.
 
+### API Deploy Commands (from `api/`)
+
+| Command | What it does |
+|---|---|
+| `npm start` | Dev server with `--watch` |
+| `npm run serve` | Production server (no watch) |
+| `./scripts/deploy.sh build` | Build Docker image (`portfolio-api:latest`) |
+| `./scripts/deploy.sh local` | Build + run locally in Docker on :3010 |
+| `./scripts/deploy.sh push` | Transfer image to NAS + restart container |
+| `./scripts/deploy.sh live` | Shorthand: build + push |
+
 ---
 
 ## Patterns & Architecture

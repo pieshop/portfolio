@@ -1,0 +1,7 @@
+services:
+  portfolio-api:
+    build: .
+    container_name: portfolio-api-dev
+    env_file: .env
+    ports:
+      - "3010:3010"
