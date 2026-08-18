@@ -2,7 +2,7 @@
 
 > Detailed build pipeline, Docker setup, hosting architecture, and deployment procedures.
 >
-> Quick reference tables are also in [CLAUDE.md](../CLAUDE.md).
+> Quick reference tables are also in [AGENTS.md](../AGENTS.md).
 
 ---
 
