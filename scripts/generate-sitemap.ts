@@ -23,6 +23,11 @@ interface Entry {
   client: string;
   categories: string[];
   modified: string;
+  playables?: Playable[];
+}
+
+interface Playable {
+  routeUrl?: string;
 }
 
 function escapeXml(str: string): string {
@@ -72,6 +77,16 @@ function generate() {
     <lastmod>${lastmod}</lastmod>
     <priority>0.6</priority>
   </url>`);
+
+    for (const playable of entry.playables || []) {
+      if (!playable.routeUrl?.startsWith('/')) continue;
+
+      urls.push(`  <url>
+    <loc>${escapeXml(BASE_URL + playable.routeUrl)}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <priority>0.5</priority>
+  </url>`);
+    }
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
