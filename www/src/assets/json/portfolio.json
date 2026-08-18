@@ -6557,8 +6557,8 @@
           "machine": "Commodore 64",
           "emulatorCore": "vice_x64",
           "controls": [
-            "Arrow keys - move",
-            "X - start / fire"
+            "A - start",
+            "Arrow keys - move"
           ]
         }
       ]

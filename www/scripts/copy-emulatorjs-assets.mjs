@@ -41,15 +41,21 @@ const games = [
     id: 'jungledrums',
     sourceFiles: [
       {
-        from: path.join(repoRoot, 'commodore', 'c64', 'jungledrums', 'jungledrums.T64'),
-        to: 'jungledrums.T64',
+        from: path.join(
+          repoRoot,
+          'commodore',
+          'c64',
+          'jungledrums',
+          'Jungle Drums (1984)(Anirog Software)[cr FCS].T64',
+        ),
+        to: 'Jungle Drums (1984)(Anirog Software)[cr FCS].T64',
       },
     ],
     config: {
       name: 'Jungle Drums',
       core: 'vice_x64',
       emulatorCore: 'vice_x64',
-      gameUrl: '/commodore/games/jungledrums/jungledrums.T64',
+      gameUrl: '/commodore/games/jungledrums/Jungle Drums (1984)(Anirog Software)[cr FCS].T64',
       defaultOptions: {
         vice_reset: 'autostart',
         vice_autostart: 'enabled',

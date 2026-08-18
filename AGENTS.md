@@ -91,7 +91,7 @@ Use that workspace as the source of truth for original VIC-20 PRGs, reverse-engi
 Relevant docs in this repo:
 
 - `docs/commodore/scramble.md` - Scramble/Skramble reverse-engineering summary.
-- `docs/commodore/game-integration-plan.md` - plan for adding the playable VIC-20 game overlay to `/game/anirog/variousgames`.
+- `docs/commodore/game-integration-plan.md` - plan for adding standalone playable Commodore game routes linked from `/game/anirog/variousgames`.
 
 Current integration branch:
 
