@@ -76,6 +76,14 @@ The full production deploy (`deploy.sh live`) runs these steps:
 - Compose projects are isolated by name (`portfolio-prod`, `portfolio-stage`) so deploying one doesn't affect the other
 - Both containers have `restart: unless-stopped` — they survive NAS reboots
 
+### Post-deploy metadata cache
+
+The production React app rehydrates selected Redux slices from browser `localStorage` key `portfolioState`. It persists `filtered`, `itemsByID`, `categories`, and `itemsByCategory` after every action.
+
+Item/category data is considered fresh for 1 day in production (`www/src/utils/dateValidation.ts`). A deploy that only changes bundled portfolio metadata can therefore appear missing for returning users until their local cache expires.
+
+Persisted state also includes a manual cache version from `www/src/store/configureStore.ts`. Bump that version when a deploy needs to force-refresh existing browser metadata, such as adding a new field to `portfolio.json` entries or changing how cached item/category data is interpreted. When the app sees a saved `portfolioState` with an old version, it clears the saved state and fetches from the current bundle.
+
 ### Staging deploy
 
 Staging (`deploy.sh stage`) is identical except:

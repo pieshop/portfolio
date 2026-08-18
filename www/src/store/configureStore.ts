@@ -4,10 +4,13 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import rootReducer from 'store/rootReducer';
 import type { RootState } from 'store/rootReducer';
 
+const PORTFOLIO_STATE_VERSION = 2;
+
 const localStorageMiddleware: Middleware<Record<string, never>, RootState> = (storeAPI) => (next) => (action) => {
   const result = next(action);
   const state = storeAPI.getState();
   const stateToSave = {
+    version: PORTFOLIO_STATE_VERSION,
     filtered: state.filtered,
     itemsByID: state.itemsByID,
     categories: state.categories,
@@ -21,7 +24,14 @@ const reHydrateStore = (): Partial<RootState> | undefined => {
   const saved = localStorage.getItem('portfolioState');
   if (saved !== null) {
     try {
-      return JSON.parse(saved) as Partial<RootState>;
+      const parsed = JSON.parse(saved) as Partial<RootState> & { version?: number };
+      if (parsed.version !== PORTFOLIO_STATE_VERSION) {
+        localStorage.removeItem('portfolioState');
+        return undefined;
+      }
+
+      const { version: _version, ...state } = parsed;
+      return state;
     } catch {
       return undefined;
     }

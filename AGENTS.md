@@ -88,6 +88,8 @@ $HOME/projects/20.personal/commodore
 
 Use that workspace as the source of truth for original VIC-20 PRGs, reverse-engineering notes, and generated disassemblies. Copy only runtime assets needed by the portfolio into this repo.
 
+Production metadata caveat: the frontend persists `itemsByID`, `itemsByCategory`, `categories`, and `filtered` to browser `localStorage` under `portfolioState`. Production considers item/category data fresh for 1 day (`www/src/utils/dateValidation.ts`). The persisted state has a manual version in `www/src/store/configureStore.ts`; bump it when metadata-only deploys need to force returning users to reload cached item/category data.
+
 Relevant docs in this repo:
 
 - `docs/commodore/scramble.md` - Scramble/Skramble reverse-engineering summary.
