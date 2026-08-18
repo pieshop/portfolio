@@ -6558,7 +6558,10 @@
           "emulatorCore": "vice_x64",
           "controls": [
             "A - start",
-            "Arrow keys - move"
+            "Left / Right - move",
+            "Up - jump",
+            "Down - crouch",
+            "X + direction - fire"
           ]
         }
       ]

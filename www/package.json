@@ -5,7 +5,7 @@
   "type": "module",
   "author": "Stephen Hamilton",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run emulatorjs:copy && vite",
     "emulatorjs:copy": "node scripts/copy-emulatorjs-assets.mjs",
     "build:dev": "npm run emulatorjs:copy && tsc && vite build --mode development",
     "build:stage": "npm run emulatorjs:copy && tsc && vite build --mode staging",

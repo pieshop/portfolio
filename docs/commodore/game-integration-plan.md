@@ -121,7 +121,10 @@ Use a `playables` array rather than a single `playable` field, because the same 
     "emulatorCore": "vice_x64",
     "controls": [
       "A - start",
-      "Arrow keys - move"
+      "Left / Right - move",
+      "Up - jump",
+      "Down - crouch",
+      "X + direction - fire"
     ]
   }
 ]
@@ -182,7 +185,7 @@ EJS_defaultOptions = {
 Open questions for Jungle Drums:
 
 - Confirm the preferred runtime file: start with `Jungle Drums (1984)(Anirog Software)[cr FCS].T64` because `jungledrums.T64` is a TLG cracked/trainer release with an intro.
-- Confirm keyboard/joystick controls. Current browser test: `A` starts the game and arrow keys move. `X` does nothing; jump/fire mapping remains unknown if the game uses one.
+- Confirm keyboard/joystick controls. Current browser test: `A` starts the game, left/right move, up jumps, down crouches, and `X` fires while a direction key is held. `V` opens the EmulatorJS/VICE virtual keyboard and is not a game control.
 - Confirm whether `vice_x64` is sufficient or `vice_x64sc` is needed.
 - Confirm whether autostart works directly from T64 or whether a PRG extraction is preferable.
 
