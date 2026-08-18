@@ -7,6 +7,7 @@ import { selectItem } from "store/item/itemActions";
 import { getItemData } from "store/item/itemSelectors";
 import ItemOverview from "components/item/ItemOverview";
 import ItemAwards from "components/item/ItemAwards";
+import PlayableItemsPanel from "components/item/PlayableItemsPanel";
 import ItemMediaList from "components/item/ItemMediaList";
 import ArchiveItemMediaList from "components/item/ArchiveItemMediaList";
 import { Flex } from "@radix-ui/themes";
@@ -48,6 +49,7 @@ const Item: React.FC = () => {
       >
         <Flex direction="column" gap="4">
           <ItemOverview {...item} is_archive={is_archive} linkTo={linkTo}/>
+          {!is_archive && Array.isArray(item.playables) && <PlayableItemsPanel playables={item.playables}/>}
           {!is_archive && Boolean(has_awards) && <ItemAwards awards={(awards as Array<Record<string, unknown>>) || []}/>}
           {!is_archive ? (
             <ItemMediaList mediaItems={(media_items as Record<string, unknown>) || {}}/>

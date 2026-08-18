@@ -184,6 +184,103 @@
   }
 }
 
+/* ---- Playable Commodore Games ---- */
+.playable-panel {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent-9), transparent 70%);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent-3), transparent 8%), transparent 52%),
+    var(--color-panel-solid);
+}
+
+.playable-trigger {
+  box-shadow: 0 0 0 1px color-mix(in srgb, white, transparent 84%) inset;
+}
+
+.playable-controls {
+  padding: var(--space-3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-3);
+  background: rgba(255, 255, 255, 0.05);
+
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  & li {
+    padding: 0.25rem 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 0.875rem;
+  }
+}
+
+.playable-frame-shell {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-4);
+  background: #05040a;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.42);
+}
+
+.playable-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.commodore-player-page {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+
+.commodore-player-frame-shell {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #000;
+  box-shadow: none;
+}
+
+.commodore-player-help {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1001;
+  max-width: min(32rem, calc(100vw - 2rem));
+  padding: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.62);
+  color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.commodore-player-help-key {
+  padding: 0.18rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
 /* ---- Footer ---- */
 .seperator {
   clear: both;

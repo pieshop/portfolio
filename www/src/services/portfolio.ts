@@ -172,6 +172,8 @@ export const fetchItemService = (opts: {
     .map((key) => portfolioData.platforms[key as keyof typeof portfolioData.platforms] || key)
     .join(', ');
 
+  const entryWithPlayables = entry as PortfolioEntry & { playables?: unknown[] };
+
   const item: Record<string, unknown> = {
     id: entry.entry_key,
     client_id: entry.client,
@@ -191,6 +193,7 @@ export const fetchItemService = (opts: {
     frameworks,
     territories,
     platforms,
+    playables: entryWithPlayables.playables || [],
   };
 
   return Promise.resolve(item);

@@ -6532,7 +6532,36 @@
           "target": "_blank"
         }
       ],
-      "awards": []
+      "awards": [],
+      "playables": [
+        {
+          "id": "skramble",
+          "type": "commodore",
+          "title": "Play Skramble",
+          "routeUrl": "/play/commodore/skramble",
+          "playerUrl": "/commodore/player.html?game=skramble",
+          "machine": "VIC-20 +16K",
+          "memory": "16kB",
+          "emulatorCore": "vice_xvic",
+          "controls": [
+            "Arrow keys - move",
+            "X - start / fire"
+          ]
+        },
+        {
+          "id": "jungledrums",
+          "type": "commodore",
+          "title": "Play Jungle Drums",
+          "routeUrl": "/play/commodore/jungledrums",
+          "playerUrl": "/commodore/player.html?game=jungledrums",
+          "machine": "Commodore 64",
+          "emulatorCore": "vice_x64",
+          "controls": [
+            "Arrow keys - move",
+            "X - start / fire"
+          ]
+        }
+      ]
     }
   ]
 }

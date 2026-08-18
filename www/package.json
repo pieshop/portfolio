@@ -6,9 +6,10 @@
   "author": "Stephen Hamilton",
   "scripts": {
     "dev": "vite",
-    "build:dev": "tsc && vite build --mode development",
-    "build:stage": "tsc && vite build --mode staging",
-    "build:prod": "tsc && vite build",
+    "emulatorjs:copy": "node scripts/copy-emulatorjs-assets.mjs",
+    "build:dev": "npm run emulatorjs:copy && tsc && vite build --mode development",
+    "build:stage": "npm run emulatorjs:copy && tsc && vite build --mode staging",
+    "build:prod": "npm run emulatorjs:copy && tsc && vite build",
     "preview": "vite preview",
     "-- docker --": "------------------------",
     "deploy:prod": "./scripts/deploy.sh live",
@@ -24,6 +25,9 @@
     "sitemap": "npx tsx ../scripts/generate-sitemap.ts"
   },
   "dependencies": {
+    "@emulatorjs/core-vice_x64": "^4.2.3",
+    "@emulatorjs/core-vice_xvic": "^4.2.3",
+    "@emulatorjs/emulatorjs": "^4.2.3",
     "@radix-ui/react-icons": "^1.3.2",
     "@radix-ui/react-navigation-menu": "^1.2.7",
     "@radix-ui/themes": "^3.2.1",

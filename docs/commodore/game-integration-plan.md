@@ -2,14 +2,14 @@
 
 ## Goal
 
-Add Stephen's playable Commodore games to the portfolio using an overlay from existing project detail pages.
+Add Stephen's playable Commodore games to the portfolio using standalone, shareable player routes.
 
 Initial games:
 
 - VIC-20: `Skramble` / `ScrambleVic.prg`
 - Commodore 64: `Jungle Drums` / `jungledrums.T64`
 
-The games should open from the project detail page in an overlay, rather than being embedded inline in the page content.
+The games should be reachable directly by URL, and the project detail page should open each game route in a new browser tab.
 
 ## Current branch
 
@@ -58,19 +58,21 @@ Use those external folders only as reference/source-of-truth archives. Do not ma
 
 ## Recommended architecture
 
-Use a generic iframe-based Commodore player:
+Use a first-class React route that hosts a generic iframe-based Commodore player:
 
 ```text
 React portfolio page
-  -> Radix Dialog overlay
-    -> iframe: /commodore/player.html?game=skramble
-       -> static player page loads EmulatorJS using per-game config JSON
+  -> new browser tab: /play/commodore/skramble
+     -> React player route
+        -> iframe: /commodore/player.html?game=skramble
+           -> static player page loads EmulatorJS using per-game config JSON
 ```
 
 Reasons:
 
 - Keeps EmulatorJS globals out of the main React app.
-- Closing the dialog removes the iframe and reliably stops the emulator.
+- Gives every game a direct, shareable portfolio URL.
+- Closing the browser tab reliably stops the emulator.
 - Avoids React StrictMode duplicate effect/script-loading issues in development.
 - Supports VIC-20 and C64 games with the same React component.
 - Keeps the portfolio UI data-driven.
@@ -99,6 +101,7 @@ Use a `playables` array rather than a single `playable` field, because the same 
     "id": "skramble",
     "type": "commodore",
     "title": "Play Skramble",
+    "routeUrl": "/play/commodore/skramble",
     "playerUrl": "/commodore/player.html?game=skramble",
     "machine": "VIC-20 +16K",
     "memory": "16kB",
@@ -112,6 +115,7 @@ Use a `playables` array rather than a single `playable` field, because the same 
     "id": "jungledrums",
     "type": "commodore",
     "title": "Play Jungle Drums",
+    "routeUrl": "/play/commodore/jungledrums",
     "playerUrl": "/commodore/player.html?game=jungledrums",
     "machine": "Commodore 64",
     "emulatorCore": "vice_x64",
@@ -135,7 +139,7 @@ Use EmulatorJS with VICE cores:
 
 Do not use the CDN for the portfolio integration. The EmulatorJS runtime and required cores should be copied from `node_modules` into Vite `public/` assets at build time.
 
-Use `vice_x64` first for C64. If Jungle Drums has compatibility issues, test `@emulatorjs/core-vice_x64sc` as an alternative.
+Use `vice_x64` first for C64 and set `EJS_core` to `vice_x64`. EmulatorJS maps `c64` to `vice_x64sc` by default, so using `c64` would require copying `@emulatorjs/core-vice_x64sc`. If Jungle Drums has compatibility issues, test `@emulatorjs/core-vice_x64sc` as an alternative.
 
 ## Known working VIC-20 configuration
 
@@ -168,7 +172,7 @@ Create a static C64 player test for Jungle Drums before wiring it into the portf
 Expected starting point:
 
 ```js
-EJS_core = 'c64';
+EJS_core = 'vice_x64';
 EJS_defaultOptions = {
   vice_reset: 'autostart',
   vice_autostart: 'enabled',
@@ -249,7 +253,7 @@ Use per-game config JSON loaded by the static player.
 ```json
 {
   "name": "Jungle Drums",
-  "core": "c64",
+  "core": "vice_x64",
   "emulatorCore": "vice_x64",
   "gameUrl": "/commodore/games/jungledrums/jungledrums.T64",
   "defaultOptions": {
@@ -297,6 +301,8 @@ Core setup:
     window.EJS_pathtodata = '/emulatorjs/data/';
     window.EJS_startOnLoaded = true;
     window.EJS_threads = false;
+    window.EJS_DEBUG_XX = true;
+    window.EJS_disableAutoLang = false;
     window.EJS_defaultOptions = config.defaultOptions || {};
 
     const script = document.createElement('script');
@@ -350,25 +356,54 @@ Avoid relying on `postinstall`. It can be used as a convenience, but production 
 
 Deploy note: `www/scripts/deploy.sh` calls `npm run build:prod` / `npm run build:stage`, then builds a Docker image from `dist/` only. Therefore EmulatorJS and Commodore runtime assets must be copied into `www/public/` before Vite builds `dist/`, otherwise they will not reach the NAS container.
 
+## React route
+
+Add a direct player route:
+
+```text
+/play/commodore/:game_id
+```
+
+Modify:
+
+```text
+www/src/routes/mainRoutes.tsx
+```
+
+Route responsibilities:
+
+- Render a standalone Commodore game player page.
+- Validate `game_id` against known `playables` from `portfolio.json`, or against a strict allow-list derived from that data.
+- Show a useful not-found/error state for unsupported game IDs.
+- Render the game title, controls, and technical details.
+- Embed `/commodore/player.html?game=<game_id>` in an iframe.
+- Make the page usable when loaded directly or refreshed.
+
+Suggested route component:
+
+```text
+www/src/containers/CommodorePlayer.tsx
+```
+
+The route component can find matching playable metadata from the same data source used by the portfolio item page. Keep the EmulatorJS runtime isolated in the static iframe; do not load EmulatorJS scripts directly into React.
+
 ## React components
 
-### `PlayableItemDialog`
+### `PlayableItemLink`
 
 Create:
 
 ```text
-www/src/components/item/PlayableItemDialog.tsx
+www/src/components/item/PlayableItemLink.tsx
 ```
 
 Responsibilities:
 
 - Accept a single `playable` object from `portfolio.json`.
-- Render a Radix `Dialog` trigger button using `playable.title`, e.g. `Play Skramble`.
-- Open a large centred overlay.
-- Mount an iframe only while the dialog is open.
-- Use `playable.playerUrl` as the iframe `src`.
-- Show controls from `playable.controls` and a short technical note from `playable.machine`, `playable.memory`, and `playable.emulatorCore`.
-- Closing the dialog unmounts the iframe and stops the emulator.
+- Render a Radix `Button` as an anchor using `playable.title`, e.g. `Play Skramble`.
+- Use `playable.routeUrl` as the link target.
+- Open in a new browser tab with `target="_blank"` and `rel="noreferrer"`.
+- Do not embed the emulator on the portfolio item page.
 
 ### `PlayableItemsPanel`
 
@@ -382,7 +417,7 @@ Responsibilities:
 
 - Accept `playables: PlayableItem[]`.
 - Filter to supported `type === "commodore"` entries.
-- Render one `PlayableItemDialog` per game.
+- Render one `PlayableItemLink` per game.
 - Render nothing when no supported playables are present.
 
 ## Integration point
@@ -393,7 +428,7 @@ Modify:
 www/src/containers/Item.tsx
 ```
 
-Render playable buttons whenever an item has supported `playables` and the page is not in archive mode:
+Render playable links whenever an item has supported `playables` and the page is not in archive mode:
 
 ```tsx
 {!is_archive && Array.isArray(item.playables) && (
@@ -401,7 +436,7 @@ Render playable buttons whenever an item has supported `playables` and the page 
 )}
 ```
 
-Preferred placement: after `ItemOverview` and before awards/media list. Since existing external links are generated from data, the first implementation can place a standalone play panel directly below the overview card.
+Preferred placement: after `ItemOverview` and before awards/media list. Since existing external links are generated from data, the first implementation can place a standalone play panel directly below the overview card. The buttons should open the standalone game route in a new browser tab.
 
 ## Styling
 
@@ -412,7 +447,7 @@ Use existing CSS structure:
 Design direction:
 
 - Keep the main page consistent with the current portfolio styling.
-- The overlay can have a darker retro treatment.
+- The standalone player route can have a darker retro treatment.
 - Emulator iframe should be centred and responsive.
 - Recommended iframe dimensions: 768 x 576 or 724 x 576 depending on EmulatorJS output.
 - Avoid inline emulator on the main project page.
@@ -428,6 +463,7 @@ export interface PlayableItem {
   id: string;
   type: 'commodore';
   title: string;
+  routeUrl: string;
   playerUrl: string;
   machine?: string;
   memory?: string;
@@ -436,7 +472,7 @@ export interface PlayableItem {
 }
 ```
 
-If `player.html` is kept as plain static HTML, no React `Window` global declarations are needed.
+If `player.html` is kept as plain static HTML, no React `Window` global declarations are needed. The React route only embeds the static player iframe.
 
 ## Deploy / NAS considerations
 
@@ -452,6 +488,7 @@ Implications for this integration:
 - Runtime emulator/game assets must exist in `www/public/` before `vite build`, so they are copied into `dist/`.
 - No separate NAS asset sync is needed for the PRG/T64/core if they are bundled into `dist/`.
 - `.dockerignore` is fine because Docker only needs the already-built `dist/`.
+- The direct React route `/play/commodore/:game_id` is handled by the existing SPA fallback and should work on refresh.
 - `nginx.conf` currently has a specific immutable cache rule only for `/assets/`. EmulatorJS assets under `/emulatorjs/` and game files under `/commodore/` will fall through to the SPA route and get `Cache-Control: no-cache` while still being served correctly if the file exists.
 - Add explicit nginx locations for `/emulatorjs/` and `/commodore/` with `try_files $uri =404` and suitable cache headers. This avoids large core files being revalidated too often and prevents SPA fallback for missing emulator files.
 - Keep `EJS_threads` disabled unless Synology reverse proxy/Cloudflare headers are configured for COOP/COEP. Threads require `Cross-Origin-Opener-Policy` and `Cross-Origin-Embedder-Policy`; the current setup does not include those headers.
@@ -461,6 +498,20 @@ Suggested nginx additions:
 ```nginx
 location /emulatorjs/ {
     add_header Cache-Control "public, max-age=31536000, immutable" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    try_files $uri =404;
+}
+
+location = /commodore/player.html {
+    add_header Cache-Control "no-cache" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    try_files $uri =404;
+}
+
+location ~ ^/commodore/games/[^/]+/config\.json$ {
+    add_header Cache-Control "no-cache" always;
     add_header X-Frame-Options "SAMEORIGIN" always;
     add_header X-Content-Type-Options "nosniff" always;
     try_files $uri =404;
@@ -490,16 +541,19 @@ Manual browser checks:
 1. Open `http://localhost:5173/game/anirog/variousgames`.
 2. Confirm play buttons appear based on the `playables` field in `portfolio.json`.
 3. Click `Play Skramble`.
-4. Confirm overlay opens and the VIC-20 EmulatorJS iframe loads.
-5. Confirm the VIC-20 screen appears.
-6. Press `X` to start/fire.
-7. Use arrow keys to move.
-8. Close overlay and confirm the portfolio page remains usable.
-9. Click `Play Jungle Drums`.
-10. Confirm C64 EmulatorJS iframe loads.
-11. Confirm Jungle Drums starts or reaches a valid load/start screen.
-12. Confirm C64 controls.
-13. Close overlay and confirm the portfolio page remains usable.
+4. Confirm `/play/commodore/skramble` opens in a new browser tab.
+5. Confirm direct refresh on `/play/commodore/skramble` keeps working.
+6. Confirm the VIC-20 EmulatorJS iframe loads.
+7. Confirm the VIC-20 screen appears.
+8. Press `X` to start/fire.
+9. Use arrow keys to move.
+10. Return to the original portfolio tab and confirm the page remains usable.
+11. Click `Play Jungle Drums`.
+12. Confirm `/play/commodore/jungledrums` opens in a new browser tab.
+13. Confirm C64 EmulatorJS iframe loads.
+14. Confirm Jungle Drums starts or reaches a valid load/start screen.
+15. Confirm C64 controls.
+16. Confirm direct URL access works for both game routes.
 
 Production-style check:
 
@@ -515,4 +569,5 @@ Then confirm both games work from the local Docker/nginx build.
 - Need to confirm Jungle Drums preferred file and controls.
 - Need to confirm whether C64 `vice_x64` is sufficient or `vice_x64sc` is needed.
 - Need to decide whether `player.html` is committed or generated by the copy script.
+- Need to decide whether game-route metadata is derived from `portfolio.json` only, or from a small dedicated playable registry shared by the item page and direct player route.
 - Generated EmulatorJS assets should stay reproducible and should not be manually edited in `www/public/`.
