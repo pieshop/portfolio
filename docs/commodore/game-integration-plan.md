@@ -7,7 +7,7 @@ Add Stephen's playable Commodore games to the portfolio using standalone, sharea
 Initial games:
 
 - VIC-20: `Skramble` / `ScrambleVic.prg`
-- Commodore 64: `Jungle Drums` / `Jungle Drums (1984)(Anirog Software)[cr FCS].T64`
+- Commodore 64: `Jungle Drums` / `jungle-drums-cracked-bypass.prg`
 
 The games should be reachable directly by URL, and the project detail page should open each game route in a new browser tab.
 
@@ -29,8 +29,8 @@ Current source files:
 
 ```text
 commodore/vic20/ScrambleVic.prg
-commodore/c64/jungledrums/jungledrums.T64
-commodore/c64/jungledrums/Jungle Drums (1984)(Anirog Software)[cr FCS].T64
+commodore/c64/jungledrums/jungle-drums-original.T64
+commodore/c64/jungledrums/jungle-drums-cracked-bypass.prg
 commodore/c64/jungledrums/VERSION.NFO
 ```
 
@@ -184,7 +184,7 @@ EJS_defaultOptions = {
 
 Open questions for Jungle Drums:
 
-- Confirm the preferred runtime file: start with `Jungle Drums (1984)(Anirog Software)[cr FCS].T64` because `jungledrums.T64` is a TLG cracked/trainer release with an intro.
+- Preferred runtime file: use `jungle-drums-cracked-bypass.prg`. It is derived from the FCS source image, skips the FCS crack intro, and was verified locally in VICE. `jungle-drums-original.T64` is retained as the source/reference image.
 - Confirm keyboard/joystick controls. Current browser test: `A` starts the game, left/right move, up jumps, down crouches, and `X` fires while a direction key is held. `V` opens the EmulatorJS/VICE virtual keyboard and is not a game control.
 - Confirm whether `vice_x64` is sufficient or `vice_x64sc` is needed.
 - Confirm whether autostart works directly from T64 or whether a PRG extraction is preferable.
@@ -198,7 +198,7 @@ www/public/commodore/player.html
 www/public/commodore/games/skramble/config.json
 www/public/commodore/games/skramble/ScrambleVic.prg
 www/public/commodore/games/jungledrums/config.json
-www/public/commodore/games/jungledrums/Jungle Drums (1984)(Anirog Software)[cr FCS].T64
+www/public/commodore/games/jungledrums/jungle-drums.prg
 www/public/emulatorjs/data/loader.js
 www/public/emulatorjs/data/src/...
 www/public/emulatorjs/data/localization/...
@@ -258,7 +258,7 @@ Use per-game config JSON loaded by the static player.
   "name": "Jungle Drums",
   "core": "vice_x64",
   "emulatorCore": "vice_x64",
-  "gameUrl": "/commodore/games/jungledrums/Jungle Drums (1984)(Anirog Software)[cr FCS].T64",
+  "gameUrl": "/commodore/games/jungledrums/jungle-drums.prg",
   "defaultOptions": {
     "vice_reset": "autostart",
     "vice_autostart": "enabled"
