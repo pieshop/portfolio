@@ -45,3 +45,4 @@ www/.env.local
 /backup
 /www-orig
 /archived/
+.env

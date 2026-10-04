@@ -11,8 +11,7 @@ www/
 Project documentation and agent guidance lives in:
 
 - [`AGENTS.md`](AGENTS.md) - main project overview, architecture notes, build/deploy guidance, and current integration notes.
-- [`docs/`](docs/) - detailed project documentation.
-- [`docs/commodore/`](docs/commodore/) - VIC-20/Commodore preservation and Scramble game integration notes.
+- Detailed documentation (data layer, architecture, build and deploy, Commodore notes) is kept in a separate private agents hub, located by `HUB_PATH` in the repo-root `.env`.
 
 ## Local development
 

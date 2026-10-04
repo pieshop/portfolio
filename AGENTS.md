@@ -11,6 +11,8 @@ A personal portfolio website for Stephen Hamilton (Interactive Developer) at **s
 **Key URL:**
 - Frontend: www.stephenhamilton.co.uk
 
+**Detailed docs** live in the private agents hub, `$HUB_PATH` (set in the repo-root `.env`, which is gitignored): `docs/api.md`, `docs/architecture.md`, `docs/build.md` and `docs/commodore/`.
+
 ---
 
 ## Repository Structure
@@ -57,11 +59,6 @@ portfolio/
 │   ├── docker-compose.yml  # Production (runs on NAS, port 8080)
 │   ├── docker-compose.stage.yml  # Staging (runs on NAS, port 8081)
 │   └── docker-compose.dev.yml    # Local testing (builds + runs on Mac, port 8080)
-├── docs/                   # Detailed documentation
-│   ├── api.md              # Data architecture & service layer
-│   ├── architecture.md     # Frontend architecture & patterns
-│   ├── build.md            # Build, deploy & infrastructure
-│   └── commodore/          # VIC-20/Commodore preservation and integration notes
 ├── scripts/                # Build-time TypeScript scripts
 │   ├── convert-db.ts       # One-time SQL → JSON conversion (reads sql/portfolio.sql)
 │   ├── generate-sitemap.ts # Generates www/public/sitemap.xml from portfolio.json
@@ -90,10 +87,10 @@ Use that workspace as the source of truth for original VIC-20 PRGs, reverse-engi
 
 Production metadata caveat: the frontend persists `itemsByID`, `itemsByCategory`, `categories`, and `filtered` to browser `localStorage` under `portfolioState`. Production considers item/category data fresh for 1 day (`www/src/utils/dateValidation.ts`). The persisted state has a manual version in `www/src/store/configureStore.ts`; bump it when metadata-only deploys need to force returning users to reload cached item/category data.
 
-Relevant docs in this repo:
+Relevant docs in the agents hub (`$HUB_PATH`):
 
-- `docs/commodore/scramble.md` - Scramble/Skramble reverse-engineering summary.
-- `docs/commodore/game-integration-plan.md` - plan for adding standalone playable Commodore game routes linked from `/game/anirog/variousgames`.
+- `$HUB_PATH/docs/commodore/scramble.md` - Scramble/Skramble reverse-engineering summary.
+- `$HUB_PATH/plans/archive/commodore-game-integration.md` - plan for adding standalone playable Commodore game routes linked from `/game/anirog/variousgames` (completed).
 
 Current integration branch:
 
@@ -133,7 +130,7 @@ feature/vic20-scramble-overlay
 
 All portfolio data lives in `www/src/assets/json/portfolio.json` — a single local JSON file imported at build time. No API or database at runtime. The service layer (`src/services/portfolio.ts`) reads directly from the imported JSON and returns Promises matching the original API signatures. Per-project archive JSON is the only data fetched at runtime (`public/assets/json/archive/`).
 
-See [docs/api.md](docs/api.md) for full schema, service layer functions, URL builders, and data generation scripts.
+See `$HUB_PATH/docs/api.md` for full schema, service layer functions, URL builders, and data generation scripts.
 
 ---
 
@@ -171,7 +168,7 @@ See [docs/api.md](docs/api.md) for full schema, service layer functions, URL bui
 | `npm run deploy:assets` | Sync local portfolio images → NAS via SSH |
 | `npm run assets:pull` | Pull portfolio images from NAS → local via SSH |
 
-See [docs/build.md](docs/build.md) for the full deploy pipeline, Docker setup, hosting architecture, environment variables, CDN purge, and local asset serving.
+See `$HUB_PATH/docs/build.md` for the full deploy pipeline, Docker setup, hosting architecture, environment variables, CDN purge, and local asset serving.
 
 ### API Deploy Commands (from `api/`)
 
@@ -190,7 +187,7 @@ See [docs/build.md](docs/build.md) for the full deploy pipeline, Docker setup, h
 
 Container/Presentational split with Redux Toolkit. Data flows from `portfolio.json` (build-time import) → service layer → Redux actions → reducers → localStorage persistence. All selectors use `createSelector` with stable fallback constants. Images lazy-loaded via `react-intersection-observer` (`useInView`). Plain CSS with native nesting and custom properties.
 
-See [docs/architecture.md](docs/architecture.md) for the full app walkthrough, Redux state shape, component details, and CSS architecture.
+See `$HUB_PATH/docs/architecture.md` for the full app walkthrough, Redux state shape, component details, and CSS architecture.
 
 ---
 
