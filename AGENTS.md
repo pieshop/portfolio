@@ -193,8 +193,8 @@ What to do about these is tracked in the hub's queue, `$HUB_PATH/plans/queue.md`
 - **Service Worker** — Still disabled (`sw.js` present but not wired up); could be re-enabled with Vite PWA plugin.
 - **Google Analytics removed** — react-ga was removed; no replacement added.
 - **Flash support removed** — SWF/Flash components deleted; legacy Flash projects will not display media.
-- **`api/`** — Express.js API upgraded to Node 22 ESM; serves entry metadata from MariaDB. Not deployed. See `api/README.md`.
-- **`archived/api/`** — Legacy PHP/Laravel API; dormant, kept for reference.
+- **`api/`** — Express.js API upgraded to Node 22 ESM; serves entry metadata from MariaDB. The site doesn't use it. Its NAS container (`portfolio-api`, port 3010) ran from February to 22/10/2026 and is now stopped, not removed (`docker start portfolio-api` brings it back). See `api/README.md`.
+- **`archived/api/`** — Legacy PHP/Laravel API; dormant here, kept for reference. A copy still answered publicly at `api.stephenhamilton.co.uk` (NAS Web Station) on 22/10/2026.
 - **`src/utils/DateFormat.ts`** — Unused utility file (date formatting); safe to delete.
 
 ---
