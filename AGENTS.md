@@ -11,7 +11,7 @@ A personal portfolio website for Stephen Hamilton (Interactive Developer) at **s
 **Key URL:**
 - Frontend: www.stephenhamilton.co.uk
 
-**Detailed docs** live in the private agents hub, `$HUB_PATH` (set in the repo-root `.env`, which is gitignored): `docs/api.md`, `docs/architecture.md`, `docs/build.md` and `docs/commodore/`.
+**Detailed docs** live in the private agents hub, `$HUB_PATH` (set in the repo-root `.env`, which is gitignored): `docs/api.md`, `docs/architecture.md`, `docs/build.md` and `docs/commodore/`. So do plans (`plans/`, not `.claude/plans/` here) and next steps (`plans/queue.md`).
 
 ---
 
@@ -92,12 +92,6 @@ Relevant docs in the agents hub (`$HUB_PATH`):
 - `$HUB_PATH/docs/commodore/scramble.md` - Scramble/Skramble reverse-engineering summary.
 - `$HUB_PATH/plans/archive/commodore-game-integration.md` - plan for adding standalone playable Commodore game routes linked from `/game/anirog/variousgames` (completed).
 
-Current integration branch:
-
-```text
-feature/vic20-scramble-overlay
-```
-
 ---
 
 ## Tech Stack
@@ -151,7 +145,7 @@ See `$HUB_PATH/docs/api.md` for full schema, service layer functions, URL builde
 
 | Command | What it does |
 |---|---|
-| `npm run dev` | Vite HMR dev server |
+| `npm run dev` | Copy EmulatorJS and the Commodore games into `public/` (`emulatorjs:copy`), then the Vite HMR dev server |
 | `npm run build:prod` | tsc + vite build (production) |
 | `npm run build:stage` | tsc + vite build --mode staging |
 | `npm run build:dev` | tsc + vite build --mode development |
@@ -162,7 +156,7 @@ See `$HUB_PATH/docs/api.md` for full schema, service layer functions, URL builde
 
 | Command | What it does |
 |---|---|
-| `npm run deploy:live` | Full deploy: build prod → Docker image → push to NAS → restart |
+| `npm run deploy:prod` | Full deploy: build prod → Docker image → push to NAS → restart |
 | `npm run deploy:stage` | Full deploy: build stage → Docker image → push to NAS → restart |
 | `npm run deploy:local` | Build prod → run in Docker locally on :8080 |
 | `npm run deploy:assets` | Sync local portfolio images → NAS via SSH |
@@ -192,6 +186,8 @@ See `$HUB_PATH/docs/architecture.md` for the full app walkthrough, Redux state s
 ---
 
 ## Known Issues / Remaining Work
+
+What to do about these is tracked in the hub's queue, `$HUB_PATH/plans/queue.md`.
 
 - **No tests** — No test framework added during migration.
 - **Service Worker** — Still disabled (`sw.js` present but not wired up); could be re-enabled with Vite PWA plugin.
