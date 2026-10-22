@@ -41,7 +41,9 @@ const Footer: React.FC = () => {
         </Box>
         <div className="seperator"/>
         <Flex justify="center" py="5">
-          <Text size="1" color="gray">© {year} Stephen Hamilton</Text>
+          <Text size="1" color="gray" title={`Build ${__APP_COMMIT__}, ${__APP_BUILD_DATE__}`}>
+            © {year} Stephen Hamilton (v{__APP_VERSION__})
+          </Text>
         </Flex>
       </footer>
     </Box>

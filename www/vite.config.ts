@@ -2,6 +2,8 @@ import { defineConfig, Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import fs from 'fs';
+import { execSync } from 'child_process';
+import pkg from './package.json';
 
 function localAssetsPlugin(): Plugin {
   const assetsDir = path.resolve(__dirname, '../assets/portfolio');
@@ -23,6 +25,16 @@ function localAssetsPlugin(): Plugin {
   };
 }
 
+// Short commit of the build, shown with the version in the footer's tooltip; "-dirty" when built
+// with uncommitted changes.
+function gitCommit(): string {
+  try {
+    return execSync('git describe --always --dirty').toString().trim();
+  } catch {
+    return 'unknown';
+  }
+}
+
 export default defineConfig(() => {
   const localAssetsExist = fs.existsSync(
     path.resolve(__dirname, '../assets/portfolio/images'),
@@ -30,6 +42,11 @@ export default defineConfig(() => {
 
   return {
     plugins: [react(), ...(localAssetsExist ? [localAssetsPlugin()] : [])],
+    define: {
+      __APP_VERSION__: JSON.stringify(pkg.version),
+      __APP_COMMIT__: JSON.stringify(gitCommit()),
+      __APP_BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
+    },
     server: {
       proxy: {
         ...(!localAssetsExist && {
