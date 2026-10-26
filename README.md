@@ -13,6 +13,17 @@ Project documentation and agent guidance lives in:
 - [`AGENTS.md`](AGENTS.md) - main project overview, architecture notes, build/deploy guidance, and current integration notes.
 - Detailed documentation (data layer, architecture, build and deploy, Commodore notes) is kept in a separate private agents hub, located by `HUB_PATH` in the repo-root `.env`.
 
+## Tech Stack
+
+- **Frontend:** React 18, Redux Toolkit 2, React Router 7, Radix UI Themes 3, framer-motion 12, react-helmet-async 2, react-intersection-observer 10
+- **Runtime:** Node.js 22, TypeScript 5
+- **Styles:** plain CSS, Radix Colors
+- **Emulator:** EmulatorJS 4 (VICE x64, xvic)
+- **Data:** local JSON, tsx build scripts
+- **Build:** Vite 6, ESLint 9, Prettier 3
+- **Hosting:** Docker, nginx on the NAS, BunnyCDN for images
+- **Backend (unused):** Express 4, MariaDB (mysql2 3)
+
 ## Local development
 
 ```sh

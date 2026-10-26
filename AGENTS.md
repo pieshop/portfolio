@@ -94,29 +94,15 @@ Relevant docs in the agents hub (`$HUB_PATH`):
 
 ---
 
-## Tech Stack
+## Working with the stack
 
-### Frontend
-| Technology | Version | Notes |
-|---|---|---|
-| React | 18.3.1 | Functional components, hooks throughout |
-| Redux Toolkit | 2.2.6 | RTK configureStore; all selectors memoized with `createSelector` |
-| React Router | 7.5.3 | Routes/Route/Navigate, useParams/useLocation |
-| Radix UI Themes | 3.2.1 | Replaces Bootstrap; accent color violet |
-| Radix UI Primitives | latest | `@radix-ui/react-navigation-menu` for navbar |
-| framer-motion | 12.x | Replaces GSAP v2; used for image fade-in on load |
-| react-intersection-observer | ^10.0.3 | Replaces react-lazyload; withholds src until near viewport |
-| react-helmet-async | 2.0.5 | SEO/head management |
-| react-redux | 9.1.2 | useSelector/useDispatch typed hooks |
+The stack and its versions are in the README's `## Tech Stack` section.
 
-### Build Tools
-| Technology | Version | Notes |
-|---|---|---|
-| Vite | 6.0.1 | Replaces Webpack 4 |
-| TypeScript | 5.4.5 | Full migration from JavaScript |
-| Node requirement | ^22.17.1 | |
-| ESLint | 9.31.0 | Flat config (eslint.config.js) |
-| Prettier | 3.4.1 | |
+- Functional components and hooks throughout; typed `useSelector`/`useDispatch` hooks, and every selector memoized with `createSelector`.
+- Radix UI Themes with accent colour violet; the navbar uses the `@radix-ui/react-navigation-menu` primitive.
+- Images: `react-intersection-observer` (`useInView`) withholds `src` until near the viewport; framer-motion fades them in on load.
+- `react-helmet-async` manages SEO and `<head>`.
+- Node `^22.17.1` (`engines` in `www/package.json`); ESLint uses the flat config, `www/eslint.config.js`.
 
 ---
 
